@@ -7,12 +7,15 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import { useEffect } from "react";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
+import { MessageCircle } from "lucide-react";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Applications from "./pages/Applications";
 import About from "./pages/About";
 import Concepts from "./pages/Concepts";
 import Contact from "./pages/Contact";
+import FAQ from "./pages/FAQ";
+import ThankYou from "./pages/ThankYou";
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -29,7 +32,7 @@ const PlaceholderPage = ({ title }: { title: string }) => (
   <div className="pt-40 pb-20 px-6 min-h-screen bg-white">
     <div className="max-w-7xl mx-auto text-center">
       <h1 className="text-sm font-medium text-slate-400 uppercase tracking-[0.3em] mb-4">Coming Soon</h1>
-      <h2 className="text-6xl font-serif italic text-slate-900 mb-8">{title}</h2>
+      <h2 className="text-6xl font-serif text-slate-900 mb-8">{title}</h2>
       <p className="text-slate-500 font-light max-w-lg mx-auto">
         We are currently updating our {title.toLowerCase()} page to provide you with the most detailed architectural information.
       </p>
@@ -50,10 +53,23 @@ export default function App() {
             <Route path="/applications" element={<Applications />} />
             <Route path="/about" element={<About />} />
             <Route path="/concepts" element={<Concepts />} />
+            <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/thank-you" element={<ThankYou />} />
           </Routes>
         </main>
         <Footer />
+
+        {/* Global Sticky WA Icon on Bottom Right */}
+        <a
+          href="https://wa.me/917337074370"
+          target="_blank"
+          rel="noreferrer"
+          className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center"
+          aria-label="Chat on WhatsApp"
+        >
+          <MessageCircle size={28} />
+        </a>
       </div>
     </Router>
   );

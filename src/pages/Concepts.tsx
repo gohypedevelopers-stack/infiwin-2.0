@@ -124,31 +124,36 @@ export default function FAQ() {
 
   return (
     <div className="pt-24 min-h-screen bg-white">
-      {/* Hero */}
-      <section className="px-6 py-20 bg-slate-50 border-b border-slate-100">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-          >
-            <h1 className="text-sm font-medium text-slate-400 uppercase tracking-[0.3em] mb-4">Expertise, Defined</h1>
-            <h2 className="text-5xl md:text-7xl font-serif text-slate-900 leading-tight italic mb-8">Spatial <span className="not-italic">Knowledge</span></h2>
-            <p className="text-slate-500 font-light text-lg mb-12">
-              Explore our comprehensive guide to architectural glass systems, structural integrity, and premium installation standards.
-            </p>
+      {/* Hero Section */}
+      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-[-1] pointer-events-none">
+          <img loading="lazy" 
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80" 
+            alt="Concepts Background" 
+            className="w-full h-full object-cover opacity-30 mix-blend-overlay"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+        
+        <div className="text-center text-white px-6 w-full max-w-4xl mx-auto">
+          <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Expertise, Defined</p>
+          <h1 className="text-5xl md:text-7xl font-serif mb-4">Spatial Knowledge</h1>
+          <p className="mt-8 text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed mb-12">
+            Explore our comprehensive guide to architectural glass systems, structural integrity, and premium installation standards.
+          </p>
 
-            {/* Search Bar */}
-            <div className="relative max-w-lg mx-auto">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
-              <input
-                type="text"
-                placeholder="Search technical topics..."
-                className="w-full pl-12 pr-4 py-4 rounded-full border border-slate-200 outline-none focus:border-luxury-gold transition-colors text-sm font-light"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div>
-          </motion.div>
+          {/* Search Bar */}
+          <div className="relative max-w-lg mx-auto">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-300" size={20} />
+            <input
+              type="text"
+              placeholder="Search technical topics..."
+              className="w-full pl-12 pr-4 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-slate-300 outline-none focus:border-luxury-gold transition-colors text-sm font-light"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
         </div>
       </section>
 
@@ -161,7 +166,7 @@ export default function FAQ() {
                 <div key={idx} id={section.title.toLowerCase().replace(/\s+/g, '-')}>
                   <div className="flex items-center gap-3 mb-8">
                     <span className="text-2xl">{section.icon}</span>
-                    <h3 className="text-2xl font-serif italic text-slate-900 border-b border-luxury-gold/20 pb-2 flex-grow">{section.title}</h3>
+                    <h3 className="text-2xl font-serif text-slate-900 border-b border-luxury-gold/20 pb-2 flex-grow">{section.title}</h3>
                   </div>
                   <div className="space-y-2">
                     {section.items.map((item, i) => (
@@ -173,7 +178,7 @@ export default function FAQ() {
             </div>
           ) : (
             <div className="text-center py-20">
-              <p className="text-slate-400 font-serif italic text-2xl">No topics matching your search.</p>
+              <p className="text-slate-400 font-serif text-2xl">No topics matching your search.</p>
             </div>
           )}
         </div>
@@ -185,7 +190,7 @@ export default function FAQ() {
           <div className="w-16 h-16 rounded-full bg-luxury-gold flex items-center justify-center mb-8">
             <MessageSquare className="text-white" size={32} />
           </div>
-          <h4 className="text-3xl font-serif italic mb-6">Still have questions?</h4>
+          <h4 className="text-3xl font-serif mb-6">Still have questions?</h4>
           <p className="text-white/50 font-light mb-10 leading-relaxed">
             Our architectural consultants are available for complex technical queries and structural assessments.
           </p>

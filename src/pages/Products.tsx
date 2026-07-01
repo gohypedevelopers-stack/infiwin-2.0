@@ -14,7 +14,7 @@ export default function Products() {
   const [activeFilter, setActiveFilter] = useState("All");
 
   const products = [
-    { title: "Guillotine Glass System", category: "Balcony System", img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2002_50_39%20PM.png" },
+    { title: "Guillotine Glass System", category: "Balcony", img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2002_50_39%20PM.png" },
     { title: "Telescopic Sliders", category: "Internal Partition", img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2012_15_29%20PM.png" },
     { title: "Synchronized Systems", category: "Internal Partition", img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2002_29_01%20PM.png" },
     { title: "Top Hang Bi Fold", category: "Internal Partition", img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2012_27_22%20PM.png" },
@@ -23,32 +23,33 @@ export default function Products() {
     { title: "Foldable Doors (Bi Fold)", category: "Doors & Windows", img: "/foldable_doors.png" },
     { title: "90 Degree Encloser", category: "Bathroom", img: "/ninety_degree.png" },
     { title: "Sliding Enclouser", category: "Bathroom", img: "/sliding_enclosure.png" },
-    { title: "Openable Door", category: "Bathroom", img: "/openable_door.png" },
-    { title: "Fixed Partition", category: "Bathroom", img: "/fixed_partition.png" },
-    { title: "Slide & Turn", category: "Balcony System", img: "/slide_turn.png" }
+    { title: "Terrace Lounge System", category: "Terrace", img: "https://images.unsplash.com/photo-1600607687931-cebf66711469?auto=format&fit=crop&q=80" },
+    { title: "Slide & Turn", category: "Balcony", img: "/slide_turn.png" }
   ];
 
-  const categories = ["All", "Balcony System", "Internal Partition", "Doors & Windows", "Bathroom"];
+  const categories = ["All", "Balcony", "Terrace", "Internal Partition", "Doors & Windows", "Bathroom"];
   const filteredProducts = activeFilter === "All" ? products : products.filter(p => p.category === activeFilter);
 
   return (
     <div className="pt-24 min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="px-6 py-20 bg-slate-50 overflow-hidden relative">
-        <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <h1 className="text-sm font-medium text-slate-400 uppercase tracking-[0.3em] mb-4">Structural Excellence</h1>
-            <h2 className="text-6xl md:text-8xl font-serif text-slate-900 leading-tight italic mb-8">Precision <br /> <span className="not-italic">Engineered</span></h2>
-            <p className="max-w-2xl text-slate-500 font-light text-lg leading-relaxed mb-10">
-              Experience the pinnacle of precision-engineered glass systems. Our collection defines the boundaries of transparency and structural innovation.
-            </p>
-          </motion.div>
+      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img loading="lazy" 
+            src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&q=80" 
+            alt="Products Background" 
+            className="w-full h-full object-cover opacity-30 mix-blend-overlay"
+            referrerPolicy="no-referrer"
+          />
         </div>
-        {/* Background decorative element */}
-        <div className="absolute -bottom-20 -right-20 w-96 h-96 border border-slate-200 rounded-full opacity-50 pointer-events-none"></div>
+        
+        <div className="relative z-10 text-center text-white px-6">
+          <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Structural Excellence</p>
+          <h1 className="text-5xl md:text-7xl font-serif mb-4">Precision Engineered</h1>
+          <p className="mt-8 text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            Experience the pinnacle of precision-engineered glass systems. Our collection defines the boundaries of transparency and structural innovation.
+          </p>
+        </div>
       </section>
 
       {/* Signature Range */}
@@ -57,7 +58,7 @@ export default function Products() {
           <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div>
               <h3 className="text-sm font-medium text-slate-400 uppercase tracking-[0.3em] mb-4">Signature Range</h3>
-              <h4 className="text-4xl font-serif italic text-slate-900">Highly Engineered Systems</h4>
+              <h4 className="text-4xl font-serif text-slate-900">Highly Engineered Systems</h4>
             </div>
 
             <div className="flex flex-wrap gap-4 items-center">
@@ -87,7 +88,7 @@ export default function Products() {
                 className="group cursor-pointer"
               >
                 <div className="aspect-[16/10] overflow-hidden rounded-sm mb-6 shadow-md transition-shadow hover:shadow-xl relative">
-                  <img
+                  <img loading="lazy"
                     src={p.img}
                     alt={p.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -98,7 +99,7 @@ export default function Products() {
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
-                  <h5 className="text-2xl font-serif italic group-hover:text-luxury-gold transition-colors">{p.title}</h5>
+                  <h5 className="text-2xl font-serif group-hover:text-luxury-gold transition-colors">{p.title}</h5>
                   <ArrowRight size={20} className="text-slate-300 group-hover:text-luxury-gold transform translate-x-0 group-hover:translate-x-2 transition-all" />
                 </div>
               </motion.div>
@@ -113,7 +114,7 @@ export default function Products() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
               <h3 className="text-sm font-medium text-white/40 uppercase tracking-[0.3em] mb-4">Configurations & Variants</h3>
-              <h4 className="text-5xl font-serif mb-12 italic">Structural <span className="not-italic">Integration</span></h4>
+              <h4 className="text-5xl font-serif mb-12">Structural <span className="not-italic">Integration</span></h4>
 
               <div className="space-y-12">
                 <div className="flex gap-6">
@@ -150,7 +151,7 @@ export default function Products() {
 
             <div className="relative">
               <div className="aspect-[4/5] rounded-sm overflow-hidden shadow-2xl">
-                <img
+                <img loading="lazy"
                   src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&q=80&w=800"
                   alt="Configuration Example"
                   className="w-full h-full object-cover"
@@ -159,7 +160,7 @@ export default function Products() {
               </div>
               {/* Floating stat */}
               <div className="absolute -bottom-10 -left-10 glass-morphism p-8 rounded-sm text-black">
-                <p className="text-4xl font-serif italic mb-1">3200mm</p>
+                <p className="text-4xl font-serif mb-1">3200mm</p>
                 <p className="text-[10px] uppercase tracking-widest font-bold text-slate-500">Single Pane Reach</p>
               </div>
             </div>
@@ -184,7 +185,7 @@ export default function Products() {
             ].map((stat, i) => (
               <div key={i} className="p-8 border border-slate-100 rounded-sm hover:border-luxury-gold transition-colors">
                 <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-4">{stat.label}</p>
-                <p className="text-3xl font-serif italic mb-2">{stat.value}</p>
+                <p className="text-3xl font-serif mb-2">{stat.value}</p>
                 <p className="text-sm text-slate-500 font-light">{stat.desc}</p>
               </div>
             ))}
@@ -201,7 +202,7 @@ export default function Products() {
       {/* Call to Action */}
       <section className="px-6 py-20 bg-luxury-gold/5 border-y border-luxury-gold/10">
         <div className="max-w-4xl mx-auto text-center">
-          <h4 className="text-3xl font-serif italic mb-8">Ready to upgrade your space?</h4>
+          <h4 className="text-3xl font-serif mb-8">Ready to upgrade your space?</h4>
           <p className="text-slate-600 font-light mb-10 leading-relaxed">
             Our consultants are ready to provide a detailed technical assessment and quote for your project.
           </p>

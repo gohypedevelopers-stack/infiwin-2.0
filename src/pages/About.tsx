@@ -1,17 +1,16 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { 
-  ShieldCheck, 
-  CheckCircle2,
-  Eye
+  Target, 
+  Shield,
+  Globe
 } from "lucide-react";
 
 export default function About() {
   const milestones = [
-    { year: "2010", num: "10", title: "The Beginning", desc: "Founded with a vision to revolutionize the glass facade industry with premium solutions." },
-    { year: "2015", num: "15", title: "Pioneering Tech", desc: "Introduced our signature slide & fold system that disrupted the domestic market." },
-    { year: "2018", num: "18", title: "Commercial Expansion", desc: "Expanded our portfolio to serve large scale commercial projects and office spaces." },
-    { year: "2023", num: "23", title: "Global Standards", desc: "Reached milestone of delivering projects across 15+ states with global quality standards." }
+    { year: "01", num: "1", title: "Scorching Heat", desc: "Summer heatwaves frequently exceeding 45 degrees lock homeowners indoors. Traditional open balconies become completely unusable for months." },
+    { year: "02", num: "2", title: "Intense Monsoons", desc: "Heavy downpours and high-altitude wind pressures destroy unprotected outdoor furniture, making it impossible to maintain a premium lounge setup outside." },
+    { year: "03", num: "3", title: "Urban Pollution", desc: "High levels of urban noise pollution and heavy dust layers render open spaces hostile, forcing residents to keep their sliding doors permanently shut." }
   ];
 
   const timelineRef = useRef<HTMLDivElement>(null);
@@ -22,27 +21,23 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative w-full flex flex-col lg:flex-row pt-24 min-h-screen lg:min-h-0 lg:h-[700px]">
-        {/* Left Side - Image */}
-        <div className="w-full lg:w-1/2 h-[400px] lg:h-full relative">
-          <img 
+      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img loading="lazy" 
             src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80" 
-            alt="About Infiwin" 
-            className="w-full h-full object-cover"
+            alt="About Infiwin Background" 
+            className="w-full h-full object-cover opacity-30 mix-blend-overlay"
             referrerPolicy="no-referrer"
           />
         </div>
         
-        {/* Right Side - Content */}
-        <div className="w-full lg:w-1/2 flex items-center justify-center bg-slate-900 p-12 lg:p-24">
-          <div className="text-left max-w-xl">
-            <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Our Heritage</p>
-            <h1 className="text-5xl md:text-7xl font-serif italic text-white mb-6">ABOUT INFIWIN</h1>
-            <p className="text-lg md:text-xl font-light text-slate-300 leading-relaxed">
-              Crafting Premium Frameless Glass Solutions Aligned with Global Standards of Architectural Excellence
-            </p>
-          </div>
+        <div className="relative z-10 text-center text-white px-6">
+          <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">The Infiwin Story</p>
+          <h1 className="text-5xl md:text-7xl font-serif mb-4">Redefining Views</h1>
+          <p className="mt-8 text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            Crafting India's Premier Frameless Glass Solutions Aligned with Global Standards of Architectural Excellence.
+          </p>
         </div>
       </section>
 
@@ -55,17 +50,14 @@ export default function About() {
             viewport={{ once: true }}
             className="flex flex-col"
           >
-            <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Our Story</p>
-            <h2 className="text-4xl md:text-5xl font-serif italic text-slate-900 mb-8">Beyond Boundaries</h2>
+            <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">About Us</p>
+            <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-8">Our Story</h2>
             <div className="space-y-6 text-slate-600 font-light leading-relaxed">
               <p>
-                Infiwin System is a pioneer in developing India's Frameless Slide and Fold System Industry. We have introduced our Smart And Slim Glass System that transformed architectural designing worldwide one breathtaking view at a time.
+                The concept of Infiwin was born out of a clear structural gap in modern Indian architecture. Standard balconies, patios, and terraces across high-rise residential projects and commercial hubs in cities like Delhi NCR, Noida, Mumbai, and Bangalore frequently sit unused.
               </p>
               <p>
-                INFIWIN is a premium Frameless Glass Doors and Windows System for Exterior and Interior applications. Our innovative window, door and motorized glass wall systems are designed to maximize the efficiency of your existing space seamlessly and silently, carefully maintaining the traditional premium aesthetic without distracting without your outdoor view.
-              </p>
-              <p>
-                Infiwin's glass enclosures blend with your internal dimensions, to open the space to bring the outside indoors without losing connection to nature while providing protection from the elements. Whether you need a warm retreat, a stylish entertainment area, or a barrier without a physical barrier, Infiwin gives house its true, timeless expression of luxury and functionality for outdoor living.
+                At Infiwin, we believe that your connection to the outside world should never be obstructed by bulky metal frames, nor should it be compromised by extreme weather.
               </p>
             </div>
           </motion.div>
@@ -75,7 +67,7 @@ export default function About() {
             viewport={{ once: true }}
             className="relative rounded-3xl overflow-hidden shadow-2xl aspect-square lg:aspect-auto lg:h-[600px]"
           >
-            <img 
+            <img loading="lazy" 
               src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80" 
               alt="Balcony View" 
               className="w-full h-full object-cover"
@@ -88,9 +80,12 @@ export default function About() {
       {/* A Decade of Excellence Section */}
       <section className="py-32 px-6 bg-slate-50 text-slate-900 overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-32 relative z-10">
-            <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Our Journey</p>
-            <h2 className="text-4xl md:text-6xl font-serif italic text-slate-900">A Decade of Excellence</h2>
+          <div className="text-center mb-16 relative z-10">
+            <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Conquering the Elements</p>
+            <h2 className="text-4xl md:text-6xl font-serif text-slate-900 mb-6">Journey</h2>
+            <p className="text-slate-600 font-light leading-relaxed max-w-3xl mx-auto text-lg">
+              Our journey has always been about conquering the extreme Indian climate to reclaim your outdoor spaces.
+            </p>
           </div>
           
           <div ref={timelineRef} className="max-w-5xl mx-auto relative">
@@ -138,7 +133,7 @@ export default function About() {
                           <span className="text-luxury-gold text-lg font-bold tracking-widest">{m.year}</span>
                           <span className="hidden md:block w-12 h-[1px] bg-luxury-gold/50"></span>
                         </div>
-                        <h3 className="text-3xl md:text-4xl font-serif italic text-slate-900 mb-6">{m.title}</h3>
+                        <h3 className="text-3xl md:text-4xl font-serif text-slate-900 mb-6">{m.title}</h3>
                         <p className="text-slate-500 font-light leading-relaxed text-sm md:text-base max-w-md">{m.desc}</p>
                       </motion.div>
                     </div>
@@ -153,12 +148,12 @@ export default function About() {
         </div>
       </section>
 
-      {/* The Infiwin Difference Section */}
+      {/* The Infiwin Difference Section -> What Sets us apart */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-20">
-            <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Innovation & Design</p>
-            <h2 className="text-4xl md:text-5xl font-serif italic text-slate-900">The Infiwin Difference</h2>
+            <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">The Foundational Principles</p>
+            <h2 className="text-4xl md:text-5xl font-serif text-slate-900">What Sets us apart</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -169,11 +164,11 @@ export default function About() {
               className="text-center flex flex-col items-center"
             >
               <div className="w-16 h-16 text-luxury-gold border border-luxury-gold/20 rounded-full flex items-center justify-center mb-6">
-                <ShieldCheck size={32} />
+                <Target size={32} />
               </div>
-              <h3 className="text-2xl font-serif italic text-slate-900 mb-4">Easy Maintenance & Zero<br/>Cleaning Cost</h3>
+              <h3 className="text-2xl font-serif text-slate-900 mb-4">Innovation First</h3>
               <p className="text-slate-500 font-light leading-relaxed max-w-sm">
-                Designed by experts to minimize industry downtime and maximize efficiency. Smartly engineered for zero maintenance and cost-effective operations.
+                Continually testing new technologies—such as our smart-sensor Bioclimatic Pergolas and motorized Walking Motor Systems—to stay at the forefront of automated luxury glazing.
               </p>
             </motion.div>
 
@@ -184,11 +179,11 @@ export default function About() {
               className="text-center flex flex-col items-center"
             >
               <div className="w-16 h-16 text-luxury-gold border border-luxury-gold/20 rounded-full flex items-center justify-center mb-6">
-                <CheckCircle2 size={32} />
+                <Shield size={32} />
               </div>
-              <h3 className="text-2xl font-serif italic text-slate-900 mb-4">Simple Operation</h3>
+              <h3 className="text-2xl font-serif text-slate-900 mb-4">Uncompromising Integrity</h3>
               <p className="text-slate-500 font-light leading-relaxed max-w-sm">
-                Engineered with smooth sliding mechanics requiring no physical force to operate. Enjoy a breezy, hands-free sliding experience with just a gentle push.
+                Providing honest, transparent quotes with zero hidden charges. All our baseline estimations are calculated using a uniform, area-based cost formulation at ₹1,800/sq.ft.
               </p>
             </motion.div>
 
@@ -200,14 +195,25 @@ export default function About() {
               className="text-center flex flex-col items-center"
             >
               <div className="w-16 h-16 text-luxury-gold border border-luxury-gold/20 rounded-full flex items-center justify-center mb-6">
-                <Eye size={32} />
+                <Globe size={32} />
               </div>
-              <h3 className="text-2xl font-serif italic text-slate-900 mb-4">Unobstructed<br/>Panoramic Views</h3>
+              <h3 className="text-2xl font-serif text-slate-900 mb-4">Client-Centric Customization</h3>
               <p className="text-slate-500 font-light leading-relaxed max-w-sm">
-                Our frameless glass system completely eliminates visual barriers, providing a seamless transition between your indoor and outdoor spaces.
+                Working closely with architects, interior designers, and estate managers to bring custom spatial visions to life.
               </p>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Vision Section */}
+      <section className="py-24 px-6 bg-slate-50">
+        <div className="max-w-5xl mx-auto text-center">
+          <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">The Future of Living Spaces</p>
+          <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-8">Vision</h2>
+          <p className="text-slate-600 font-light text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
+            Our mission is simple: To expand your functional living space while providing absolute protection. We manufacture, deliver, and install India's most advanced Slide & Turn glass systems, motorized vertical barriers, and smart structural roofs. By blending high-luxury minimalist designs with rugged, heavy-gauge materials, we turn underutilized balconies, terraces, and commercial spaces into pristine, year-round sanctuaries.
+          </p>
         </div>
       </section>
 
@@ -215,7 +221,7 @@ export default function About() {
       <section className="py-32 px-6 bg-slate-900 text-white relative rounded-t-[3rem] overflow-hidden">
         {/* Background Overlay or Image */}
         <div className="absolute inset-0 z-0 opacity-20">
-          <img 
+          <img loading="lazy" 
             src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80" 
             alt="Office Glass" 
             className="w-full h-full object-cover"
@@ -224,13 +230,13 @@ export default function About() {
         </div>
         
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-6">Our Vision</p>
-          <h2 className="text-4xl md:text-6xl font-serif italic mb-8 leading-tight">Engineering the Future of<br/>Living Spaces</h2>
+          <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-6">Let's Connect</p>
+          <h2 className="text-4xl md:text-6xl font-serif mb-8 leading-tight">Ready to Transform Your Space?</h2>
           <p className="text-white/70 font-light text-lg md:text-xl leading-relaxed mb-12 max-w-3xl mx-auto">
-            We are on a mission to redefine the boundary between our living spaces and outdoors. An open, airy transition into the surrounding environment protected entirely by a hybrid, intelligent glass engineering.
+            Our experts are ready to assist you in designing the perfect frameless glass solution.
           </p>
           <button className="bg-luxury-gold text-white px-10 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-black transition-colors shadow-lg shadow-black/10">
-            Explore Products
+            Consult With Our Experts
           </button>
         </div>
       </section>

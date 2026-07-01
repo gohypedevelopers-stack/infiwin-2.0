@@ -90,7 +90,7 @@ export const CostEstimatorSection = () => {
             </div>
             <div>
               <p className="text-[10px] uppercase tracking-widest text-white/60 mb-2">Your Approximate Cost:</p>
-              <h4 className="text-5xl font-serif text-luxury-gold italic font-light">₹{totalCost.toLocaleString()}</h4>
+              <h4 className="text-5xl font-serif text-luxury-gold font-light">₹{totalCost.toLocaleString()}</h4>
               <p className="text-[8px] text-white/30 mt-4 leading-relaxed">
                 Logistics Disclaimer Note: Installation Charges, 18% GST and extra structural extrusions required over basic 10 ft physical height averages.
               </p>

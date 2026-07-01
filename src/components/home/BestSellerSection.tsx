@@ -1,0 +1,102 @@
+import { useState } from "react";
+import { ArrowRight, Calculator } from "lucide-react";
+import { Link } from "react-router-dom";
+
+export const BestSellerSection = () => {
+  const [activeVariant, setActiveVariant] = useState<"full" | "half">("full");
+
+  return (
+    <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Content Column */}
+          <div>
+            <div className="mb-4 inline-block">
+              <span className="bg-luxury-gold text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1 rounded-sm">
+                Most Popular - Infi S&T
+              </span>
+            </div>
+            
+            <p className="text-white/50 text-[10px] uppercase tracking-[0.3em] font-bold mb-2">
+              BALCONY ENCLOSURE CATEGORY
+            </p>
+            <h3 className="text-4xl md:text-5xl font-serif mb-6">Slide & Turn System</h3>
+            
+            <p className="text-white/70 font-light text-lg mb-10 leading-relaxed max-w-xl">
+              Our iconic signature slide and turn glides on ultra-smooth tracks, allowing individual sheets of toughened glass to fully stack to either extreme corner. Offers 100% opening potential when desired, making it absolute king of balcony utility layout concepts.
+            </p>
+
+            {/* Interactive Variant UI */}
+            <div className="bg-white/5 border border-white/10 p-6 rounded-lg mb-10">
+              <p className="text-sm font-medium mb-4 text-white/90">Interactive Variant Check:</p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <button 
+                  onClick={() => setActiveVariant("full")}
+                  className={`flex-1 py-3 px-4 text-sm font-medium transition-all rounded-sm border ${
+                    activeVariant === "full" 
+                      ? "bg-white text-slate-900 border-white" 
+                      : "bg-transparent text-white/70 border-white/20 hover:border-white/50"
+                  }`}
+                >
+                  Full Length Option
+                </button>
+                <button 
+                  onClick={() => setActiveVariant("half")}
+                  className={`flex-1 py-3 px-4 text-sm font-medium transition-all rounded-sm border ${
+                    activeVariant === "half" 
+                      ? "bg-white text-slate-900 border-white" 
+                      : "bg-transparent text-white/70 border-white/20 hover:border-white/50"
+                  }`}
+                >
+                  Half Length Option
+                </button>
+              </div>
+              <div className="mt-4 text-white/60 text-sm font-light">
+                {activeVariant === "full" 
+                  ? "From floor to ceiling coverage structure providing maximum visual span."
+                  : (
+                    <div className="flex flex-col gap-2">
+                      <p>• From railing top to ceiling (use as window).</p>
+                      <p>• Keep fixed glass as railing & Slide/Turn from fixed top to ceiling (or vice versa).</p>
+                    </div>
+                  )}
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link 
+                to="/products"
+                className="flex items-center justify-center gap-2 bg-luxury-gold hover:bg-yellow-600 text-white px-6 py-4 rounded-sm transition-all font-medium text-sm tracking-wide"
+              >
+                Inspect Custom Variants
+                <ArrowRight size={16} />
+              </Link>
+              <Link 
+                to="#estimator"
+                className="flex items-center justify-center gap-2 bg-transparent border border-white/30 hover:border-white hover:bg-white/10 text-white px-6 py-4 rounded-sm transition-all font-medium text-sm tracking-wide"
+              >
+                Calculate Approximate Quote
+                <Calculator size={16} />
+              </Link>
+            </div>
+          </div>
+
+          {/* Visual Presentation (Placeholder for actual interactive viewer/image) */}
+          <div className="relative h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-800">
+             <div 
+              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "full" ? 'opacity-100' : 'opacity-0'}`}
+              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80')" }}
+             />
+             <div 
+              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "half" ? 'opacity-100' : 'opacity-0'}`}
+              style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600607688969-a5bfcd64bd40?auto=format&fit=crop&q=80')" }}
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent pointer-events-none"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

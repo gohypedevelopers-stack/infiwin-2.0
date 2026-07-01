@@ -19,7 +19,7 @@ export const ProductFeatureSection = () => {
               viewport={{ once: true }}
               className="col-span-1 rounded-sm overflow-hidden relative shadow-none border border-black/5 h-[280px]"
             >
-              <img 
+              <img loading="lazy" 
                 src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&q=80" 
                 alt="Interior" 
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
@@ -37,7 +37,7 @@ export const ProductFeatureSection = () => {
               transition={{ delay: 0.1 }}
               className="col-span-1 rounded-sm overflow-hidden shadow-none border border-black/5 h-[280px]"
             >
-              <img 
+              <img loading="lazy" 
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80" 
                 alt="Living Space" 
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
@@ -52,7 +52,7 @@ export const ProductFeatureSection = () => {
               transition={{ delay: 0.2 }}
               className="col-span-2 rounded-sm overflow-hidden shadow-none border border-black/5 h-[304px]"
             >
-              <img 
+              <img loading="lazy" 
                 src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80" 
                 alt="Balcony View" 
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
@@ -74,7 +74,7 @@ export const ProductFeatureSection = () => {
               </span>
             </div>
             
-            <h2 className="text-5xl md:text-6xl font-serif text-slate-900 mb-6 font-light italic">Slide & Turn System</h2>
+            <h2 className="text-5xl md:text-6xl font-serif text-slate-900 mb-6 font-light">Slide & Turn System</h2>
             
             <p className="text-slate-500 font-light text-[15px] leading-loose mb-10">
               Our iconic signature slide and turn glides on ultra-smooth tracks, allowing individual sheets of toughened glass to fully stack to either extreme corner. Offers 100% opening potential when desired, making it absolute king of balcony utility layout concepts.

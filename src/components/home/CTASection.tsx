@@ -11,7 +11,7 @@ export const CTASection = () => {
         transition={{ duration: 10, ease: "easeOut" }}
         className="absolute inset-0 z-0"
       >
-        <img
+        <img loading="lazy"
           src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80"
           alt="Modern luxury home"
           className="w-full h-full object-cover"
@@ -32,7 +32,7 @@ export const CTASection = () => {
           </span>
           <h2 className="text-5xl md:text-7xl font-serif text-white mb-8 font-light leading-tight">
             Ready to elevate your <br />
-            <span className="italic">architectural space?</span>
+            <span>architectural space?</span>
           </h2>
           <p className="text-white/60 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto mb-12">
             Speak directly with our engineering and design experts to find the perfect frameless glass system for your balcony, terrace, or interior partition.

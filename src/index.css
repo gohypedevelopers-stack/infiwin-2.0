@@ -12,7 +12,16 @@
 
 @layer base {
   body {
-    @apply bg-[var(--color-luxury-bg)] text-slate-900 font-sans antialiased;
+    @apply bg-[var(--color-luxury-bg)] text-slate-900 font-sans font-light antialiased text-base md:text-lg leading-relaxed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+
+  /* Accessibility focus states */
+  a, button, input, textarea, select {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-luxury-gold focus-visible:ring-offset-2;
   }
 }
 

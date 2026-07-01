@@ -15,9 +15,9 @@ export default function Contact() {
       <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24">
         {/* Background Image */}
         <div className="absolute inset-0 z-[-1] pointer-events-none">
-          <img 
+          <img loading="lazy" 
             src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80" 
-            alt="Background" 
+            alt="Contact Background" 
             className="w-full h-full object-cover opacity-30 mix-blend-overlay"
             referrerPolicy="no-referrer"
           />
@@ -25,8 +25,10 @@ export default function Contact() {
         
         <div className="text-center text-white px-6">
           <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Get In Touch</p>
-          <h1 className="text-6xl md:text-8xl font-serif italic mb-2">START YOUR</h1>
-          <h1 className="text-6xl md:text-8xl font-serif text-luxury-gold italic">project</h1>
+          <h1 className="text-5xl md:text-7xl font-serif mb-4">Start Your Project</h1>
+          <p className="mt-8 text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            Reach out to our architectural specialists to discuss requirements and receive a comprehensive proposal.
+          </p>
         </div>
       </section>
 
@@ -87,7 +89,7 @@ export default function Contact() {
 
             {/* Inquiry Form */}
             <div className="bg-[#fafafa] p-10 rounded-sm">
-              <h3 className="text-2xl font-serif italic text-slate-900 mb-8">INQUIRY FORM</h3>
+              <h3 className="text-2xl font-serif text-slate-900 mb-8">INQUIRY FORM</h3>
               <form className="flex flex-col gap-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
@@ -128,7 +130,7 @@ export default function Contact() {
             {/* Cost Estimator */}
             <div className="bg-[#0a0a0a] text-white p-10 md:p-14 rounded-sm shadow-2xl shadow-black/10">
               <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-6">Immediate Tool</p>
-              <h3 className="text-3xl font-serif italic mb-4">Cost Estimator</h3>
+              <h3 className="text-3xl font-serif mb-4">Cost Estimator</h3>
               <p className="text-white/60 font-light text-sm leading-relaxed mb-10 max-w-sm">
                 Get a quick, approximate cost for your project based on standard rates of ₹1800/sqft.
               </p>

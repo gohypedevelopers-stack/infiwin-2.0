@@ -52,7 +52,7 @@ export const ReviewsSection = () => {
               </div>
               
               <div className="pt-6 border-t border-slate-100 flex items-center gap-4">
-                <img 
+                <img loading="lazy" 
                   src={review.avatar} 
                   alt={review.author} 
                   className="w-12 h-12 rounded-full object-cover"
