@@ -16,6 +16,10 @@ import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import ThankYou from "./pages/ThankYou";
 import GalleryDetail from "./pages/GalleryDetail";
+import Concepts from "./pages/Concepts";
+import Facade from "./pages/concepts/Facade";
+import Restaurant from "./pages/concepts/Restaurant";
+import PoolSideBar from "./pages/concepts/PoolSideBar";
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -51,6 +55,10 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
             <Route path="/applications" element={<Applications />} />
+            <Route path="/concepts" element={<Concepts />} />
+            <Route path="/concepts/facade" element={<Facade />} />
+            <Route path="/concepts/restaurant" element={<Restaurant />} />
+            <Route path="/concepts/pool-side-bar" element={<PoolSideBar />} />
             <Route path="/about" element={<About />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />

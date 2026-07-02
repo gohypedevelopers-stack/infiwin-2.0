@@ -54,7 +54,7 @@ export default function Applications() {
   ];
 
   return (
-    <div className="pt-24 min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24">
         {/* Background Image */}

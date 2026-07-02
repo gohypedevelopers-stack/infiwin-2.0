@@ -57,7 +57,7 @@ export const LeadFormSection = () => {
 
   return (
     <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-slate-100 relative h-full">
-      <div className="flex flex-col justify-between h-full gap-6">
+      <div className="flex flex-col justify-center h-full gap-6">
         {/* Header Block at Top */}
         <div>
           <h3 className="text-3xl font-serif text-slate-900 mb-2">Lock-In Your Deal Price</h3>

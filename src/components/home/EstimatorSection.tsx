@@ -21,7 +21,7 @@ export const EstimatorSection = () => {
         <div>
           <p className="text-luxury-gold text-[10px] uppercase tracking-[0.3em] font-bold mb-4">Instant Pricing Guide</p>
           <h2 className="text-3xl md:text-4xl font-serif mb-4">On-Page System Cost Estimator</h2>
-          <p className="text-white/60 font-light text-sm mb-8 max-w-md">
+          <p className="text-slate-300 font-light text-sm mb-8 max-w-md">
             Enter your customized window/balcony dimensions below. Our system instantly runs the correct calculations using the official formula matrix.
           </p>
 
@@ -42,7 +42,7 @@ export const EstimatorSection = () => {
                 onChange={(e) => setLength(Number(e.target.value))}
                 className="w-full h-1 bg-white/20 rounded-lg appearance-none cursor-pointer accent-luxury-gold"
               />
-              <div className="flex justify-between text-[10px] text-white/40 mt-2 font-medium uppercase tracking-wider">
+              <div className="flex justify-between text-[10px] text-slate-400 mt-2 font-medium uppercase tracking-wider">
                 <span>Min: 4 ft</span>
                 <span>Max: 50 ft</span>
               </div>
@@ -63,7 +63,7 @@ export const EstimatorSection = () => {
                 onChange={(e) => setHeight(Number(e.target.value))}
                 className="w-full h-1 bg-white/20 rounded-lg appearance-none cursor-pointer accent-luxury-gold"
               />
-              <div className="flex justify-between text-[10px] text-white/40 mt-2 font-medium uppercase tracking-wider">
+              <div className="flex justify-between text-[10px] text-slate-400 mt-2 font-medium uppercase tracking-wider">
                 <span>Min: 3 ft</span>
                 <span>Max: 15 ft</span>
               </div>
@@ -75,11 +75,11 @@ export const EstimatorSection = () => {
         <div className="bg-white/5 border border-white/10 rounded-xl p-6">
           <div className="grid grid-cols-2 gap-4 mb-6 border-b border-white/10 pb-6">
             <div>
-              <p className="text-[10px] uppercase tracking-widest text-white/50 mb-1">Calculated Area</p>
+              <p className="text-[10px] uppercase tracking-widest text-slate-400 mb-1">Calculated Area</p>
               <p className="text-xl font-medium">{area} sq.ft</p>
             </div>
             <div>
-              <p className="text-[10px] uppercase tracking-widest text-white/50 mb-1">Base Unit Price</p>
+              <p className="text-[10px] uppercase tracking-widest text-slate-400 mb-1">Base Unit Price</p>
               <p className="text-xl font-medium">₹1,800 / sq.ft</p>
             </div>
           </div>
@@ -87,9 +87,9 @@ export const EstimatorSection = () => {
           <div>
             <p className="text-[10px] uppercase tracking-widest text-luxury-gold mb-2 font-bold">Your Approximate Cost:</p>
             <p className="text-4xl md:text-5xl font-display font-light tracking-tight text-white mb-2 flex items-baseline gap-2">
-              ₹{estimate.toLocaleString('en-IN')} <span className="text-sm font-medium text-white/70">+ Installation Charges.</span>
+              ₹{estimate.toLocaleString('en-IN')} <span className="text-sm font-medium text-slate-300"><span className="mr-1 text-slate-400">+</span> Installation Charges.</span>
             </p>
-            <p className="text-xs text-white/50 leading-relaxed">
+            <p className="text-xs text-slate-400 leading-relaxed">
               all prices are excluding taxes & freight charges.
             </p>
           </div>

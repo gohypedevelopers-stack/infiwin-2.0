@@ -29,7 +29,8 @@ export default function Products() {
   };
 
   const products = [
-    { title: "Guillotine Glass System", category: "Balcony", img: getProductImg("Guillotine Glass System", "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2002_50_39%20PM.png") },
+    { title: "Slide & Turn", category: "Balcony System", img: getProductImg("Slide & Turn", "/slide_turn.png") },
+    { title: "Guillotine Glass System", category: "Balcony System", img: getProductImg("Guillotine Glass System", "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2002_50_39%20PM.png") },
     { title: "Telescopic Sliders", category: "Internal Partition", img: getProductImg("Telescopic Sliders", "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2012_15_29%20PM.png") },
     { title: "Synchronized Systems", category: "Internal Partition", img: getProductImg("Synchronized Systems", "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2002_29_01%20PM.png") },
     { title: "Top Hang Bi Fold", category: "Internal Partition", img: getProductImg("Top Hang Bi Fold", "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2012_27_22%20PM.png") },
@@ -38,15 +39,15 @@ export default function Products() {
     { title: "Foldable Doors (Bi Fold)", category: "Doors & Windows", img: getProductImg("Foldable Doors (Bi Fold)", "/foldable_doors.png") },
     { title: "90 Degree Encloser", category: "Bathroom", img: getProductImg("90 Degree Encloser", "/ninety_degree.png") },
     { title: "Sliding Enclouser", category: "Bathroom", img: getProductImg("Sliding Enclouser", "/sliding_enclosure.png") },
-    { title: "Terrace Lounge System", category: "Terrace", img: getProductImg("Terrace Lounge System", "https://images.unsplash.com/photo-1600607687931-cebf66711469?auto=format&fit=crop&q=80") },
-    { title: "Slide & Turn", category: "Balcony", img: getProductImg("Slide & Turn", "/slide_turn.png") }
+    { title: "Openable Door", category: "Bathroom", img: getProductImg("Openable Door", "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80") },
+    { title: "Fixed Partition", category: "Bathroom", img: getProductImg("Fixed Partition", "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80") }
   ];
 
-  const categories = ["All", "Balcony", "Terrace", "Internal Partition", "Doors & Windows", "Bathroom"];
+  const categories = ["All", "Balcony System", "Internal Partition", "Doors & Windows", "Bathroom"];
   const filteredProducts = activeFilter === "All" ? products : products.filter(p => p.category === activeFilter);
 
   return (
-    <div className="pt-24 min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 pointer-events-none">
