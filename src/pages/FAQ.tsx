@@ -145,9 +145,9 @@ export default function FAQ() {
         {/* Background Image */}
         <div className="absolute inset-0 z-[-1] pointer-events-none">
           <img loading="lazy" 
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80" 
-            alt="Concepts Background" 
-            className="w-full h-full object-cover opacity-30 mix-blend-overlay"
+            src="/arch-sketch.png" 
+            alt="FAQ Background" 
+            className="w-full h-full object-cover opacity-20 mix-blend-overlay"
             referrerPolicy="no-referrer"
           />
         </div>

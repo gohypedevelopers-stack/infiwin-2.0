@@ -427,9 +427,9 @@ export default function Contact() {
         <div className="absolute inset-0 z-[-1] pointer-events-none">
           <img
             loading="lazy"
-            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80"
+            src="/farmhouse_hero.jpg"
             alt="Contact Background"
-            className="w-full h-full object-cover opacity-30 mix-blend-overlay"
+            className="w-full h-full object-cover opacity-35 mix-blend-overlay"
             referrerPolicy="no-referrer"
           />
         </div>

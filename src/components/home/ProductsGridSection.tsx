@@ -85,7 +85,7 @@ export const ProductsGridSection = () => {
                   <Link to={`/products`} className="text-xs font-semibold uppercase tracking-wider text-slate-600 hover:text-black transition-colors flex items-center gap-1">
                     Variants
                   </Link>
-                  <Link to="#estimator" className="text-xs font-semibold uppercase tracking-wider bg-black text-white px-5 py-2 rounded-sm hover:bg-slate-800 transition-colors flex items-center gap-2">
+                  <Link to="/#estimator" className="text-xs font-semibold uppercase tracking-wider bg-black text-white px-5 py-2 rounded-sm hover:bg-slate-800 transition-colors flex items-center gap-2">
                     Get Price <ArrowRight size={14} />
                   </Link>
                 </div>

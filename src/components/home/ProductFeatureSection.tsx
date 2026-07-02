@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { ArrowRight, Star } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -119,12 +120,12 @@ export const ProductFeatureSection = () => {
             </div>
 
             <div className="flex flex-wrap items-center gap-4">
-              <button className="bg-transparent text-slate-900 border border-slate-900 px-8 py-5 rounded-sm uppercase tracking-[0.2em] text-[10px] hover:bg-slate-900 hover:text-white transition-colors flex items-center gap-3">
+              <Link to="/products" className="bg-transparent text-slate-900 border border-slate-900 px-8 py-5 rounded-sm uppercase tracking-[0.2em] text-[10px] hover:bg-slate-900 hover:text-white transition-colors flex items-center justify-center gap-3">
                 Inspect Custom Variants <ArrowRight size={14} />
-              </button>
-              <button className="bg-white text-slate-500 border border-slate-200 px-8 py-5 rounded-sm uppercase tracking-[0.2em] text-[10px] hover:border-luxury-gold hover:text-luxury-gold transition-colors">
+              </Link>
+              <Link to="/#estimator" className="bg-white text-slate-500 border border-slate-200 px-8 py-5 rounded-sm uppercase tracking-[0.2em] text-[10px] hover:border-luxury-gold hover:text-luxury-gold transition-colors flex items-center justify-center">
                 Calculate Approximate Quote
-              </button>
+              </Link>
             </div>
           </motion.div>
 

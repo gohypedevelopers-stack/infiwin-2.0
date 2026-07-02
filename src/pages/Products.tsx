@@ -52,9 +52,9 @@ export default function Products() {
         {/* Background Image */}
         <div className="absolute inset-0 pointer-events-none">
           <img loading="lazy"
-            src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&q=80"
+            src="/st_hero.png"
             alt="Products Background"
-            className="w-full h-full object-cover opacity-30 mix-blend-overlay"
+            className="w-full h-full object-cover opacity-25 mix-blend-overlay"
             referrerPolicy="no-referrer"
           />
         </div>

@@ -8,9 +8,7 @@ import {
   Play,
   Volume2,
   VolumeX,
-  Maximize2,
   CheckCircle,
-  HelpCircle,
 } from "lucide-react";
 
 interface ConceptItem {
@@ -104,170 +102,173 @@ export default function Concepts() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white overflow-hidden">
+    <div className="min-h-screen bg-white text-slate-900 overflow-hidden">
       {/* ── HERO SECTION ──────────────────────────────────────────────── */}
       <section className="relative w-full h-[600px] flex items-center justify-center bg-black/80 pt-24 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
             loading="lazy"
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80"
+            src="/bioclimatic.png"
             alt="Concepts Background"
             className="w-full h-full object-cover opacity-20 mix-blend-overlay scale-105"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/80 to-[#0a0a0a]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/80 to-black/95" />
         </div>
 
         <div className="relative z-10 text-center px-6 max-w-4xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-luxury-gold/30 bg-luxury-gold/5 text-luxury-gold text-[9px] uppercase tracking-[0.25em] mb-6">
             <Sparkles size={10} /> Design Visions
           </div>
-          <h1 className="text-5xl md:text-7xl font-serif mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-serif text-white mb-6 leading-tight">
             Animated Architectural Concepts
           </h1>
-          <p className="text-base md:text-lg font-light text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Witness our high-end glass systems come to life. Discover how our luxury glazing merges structural boundaries, custom-fit for world-class design planners.
           </p>
         </div>
       </section>
 
       {/* ── SHOWCASE SECTION ────────────────────────────────────────── */}
-      <section className="px-6 py-12 max-w-7xl mx-auto space-y-32">
+      <section className="w-full">
         {CONCEPTS.map((concept, idx) => {
           const isMuted = mutedStates[concept.id];
           const isEven = idx % 2 === 0;
 
+          // Apply contrasting background (Restaurant gets light gray, others get white)
+          const rowBg = idx === 1 ? "bg-[#fafafa]" : "bg-white";
+
           return (
-            <div
-              key={concept.id}
-              className={`flex flex-col lg:flex-row gap-12 lg:gap-20 items-center ${
-                isEven ? "" : "lg:flex-row-reverse"
-              }`}
-            >
-              {/* Video Player Side */}
-              <div className="w-full lg:w-1/2 relative shrink-0">
-                <motion.div
-                  initial={{ opacity: 0, x: isEven ? -40 : 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="w-full aspect-video bg-black/60 rounded-sm border border-white/10 overflow-hidden relative shadow-[0_0_40px_rgba(212,175,55,0.08)] group flex flex-col justify-center items-center"
-                >
-                  <video
-                    src={concept.video}
-                    autoPlay
-                    loop
-                    muted={isMuted}
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover z-0 group-hover:scale-[1.01] transition-transform duration-700"
-                    onError={(e) => {
-                      // Hides element if video fails/does not exist yet, showing fallback poster
-                      (e.target as HTMLVideoElement).style.display = "none";
-                    }}
-                  />
-
-                  {/* Glass Backdrop Poster & Fallback Frame */}
-                  <div className="absolute inset-0 z-[-1] pointer-events-none">
-                    <img
-                      src={concept.img}
-                      alt={concept.title}
-                      className="w-full h-full object-cover filter brightness-[0.35]"
+            <div key={concept.id} className={`${rowBg} py-24 border-b border-slate-100 last:border-0`}>
+              <div
+                className={`max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center ${
+                  isEven ? "" : "lg:flex-row-reverse"
+                }`}
+              >
+                {/* Video Player Side */}
+                <div className="w-full lg:w-1/2 relative shrink-0">
+                  <motion.div
+                    initial={{ opacity: 0, x: isEven ? -40 : 40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="w-full aspect-video bg-black/60 rounded-sm border border-slate-200/60 overflow-hidden relative shadow-lg group flex flex-col justify-center items-center"
+                  >
+                    <video
+                      src={concept.video}
+                      autoPlay
+                      loop
+                      muted={isMuted}
+                      playsInline
+                      className="absolute inset-0 w-full h-full object-cover z-0 group-hover:scale-[1.01] transition-transform duration-700"
+                      onError={(e) => {
+                        (e.target as HTMLVideoElement).style.display = "none";
+                      }}
                     />
-                  </div>
 
-                  {/* Fallback Overlay if Video file isn't loaded */}
-                  <div className="video-fallback absolute inset-0 z-0 bg-[#0a0a0a]/40 backdrop-blur-sm pointer-events-none flex flex-col items-center justify-center text-center p-6 opacity-0 group-has-[[style*='display: none']]:opacity-100 transition-opacity duration-300">
-                    <div className="w-16 h-16 rounded-full border-2 border-luxury-gold/50 flex items-center justify-center mb-4 bg-luxury-gold/15 animate-pulse">
-                      <Play className="w-8 h-8 text-luxury-gold translate-x-0.5" />
+                    {/* Glass Backdrop Poster & Fallback Frame */}
+                    <div className="absolute inset-0 z-[-1] pointer-events-none">
+                      <img
+                        src={concept.img}
+                        alt={concept.title}
+                        className="w-full h-full object-cover filter brightness-[0.35]"
+                      />
                     </div>
-                    <span className="text-[10px] font-bold text-luxury-gold/80 uppercase tracking-widest">
-                      Showcase Video Coming Soon
-                    </span>
-                    <span className="text-[9px] text-white/30 tracking-wider mt-1">
-                      (Place your mp4 file in public/concepts_videos/{concept.id}.mp4)
-                    </span>
-                  </div>
 
-                  {/* Gradient overlays */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none z-10" />
-
-                  {/* Interactive Controls Overlay */}
-                  <div className="absolute top-4 right-4 flex items-center gap-2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {/* Mute Button */}
-                    <button
-                      onClick={() => toggleMute(concept.id)}
-                      className="w-9 h-9 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center border border-white/10 hover:border-luxury-gold/50 transition-colors cursor-pointer"
-                      title={isMuted ? "Unmute" : "Mute"}
-                    >
-                      {isMuted ? <VolumeX size={14} /> : <Volume2 size={14} />}
-                    </button>
-                  </div>
-
-                  <div className="absolute bottom-4 left-4 z-20">
-                    <span className="bg-black/75 backdrop-blur-sm text-[9px] font-bold text-luxury-gold uppercase tracking-[0.2em] px-3.5 py-1.5 rounded-sm border border-white/5 shadow-md">
-                      {concept.subtitle}
-                    </span>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Description & Technical highlights Side */}
-              <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.8 }}
-                >
-                  <span className="text-[9px] uppercase tracking-[0.25em] text-luxury-gold font-bold mb-3 block">
-                    {concept.tagline}
-                  </span>
-                  <h2 className="text-4xl md:text-5xl font-serif uppercase text-white mb-6 leading-tight">
-                    {concept.title}
-                  </h2>
-                  <p className="text-slate-400 font-light leading-relaxed mb-8 text-sm md:text-base">
-                    {concept.desc}
-                  </p>
-
-                  {/* Stats Bar */}
-                  <div className="grid grid-cols-3 gap-4 border-y border-white/5 py-6 mb-8">
-                    {concept.stats.map((stat, sIdx) => (
-                      <div key={sIdx} className="text-left">
-                        <p className="text-xl font-bold text-luxury-gold">{stat.value}</p>
-                        <p className="text-[9px] uppercase tracking-wider text-slate-500 mt-1">
-                          {stat.label}
-                        </p>
+                    {/* Fallback Overlay if Video file isn't loaded */}
+                    <div className="video-fallback absolute inset-0 z-0 bg-[#0a0a0a]/40 backdrop-blur-sm pointer-events-none flex flex-col items-center justify-center text-center p-6 opacity-0 group-has-[[style*='display: none']]:opacity-100 transition-opacity duration-300">
+                      <div className="w-16 h-16 rounded-full border-2 border-luxury-gold/50 flex items-center justify-center mb-4 bg-luxury-gold/15 animate-pulse">
+                        <Play className="w-8 h-8 text-luxury-gold translate-x-0.5" />
                       </div>
-                    ))}
-                  </div>
+                      <span className="text-[10px] font-bold text-luxury-gold/80 uppercase tracking-widest">
+                        Showcase Video Coming Soon
+                      </span>
+                      <span className="text-[9px] text-white/30 tracking-wider mt-1">
+                        (Place your mp4 file in public/concepts_videos/{concept.id}.mp4)
+                      </span>
+                    </div>
 
-                  {/* Checklist Highlights */}
-                  <div className="space-y-3 mb-8">
-                    {concept.highlights.map((highlight, hIdx) => (
-                      <div key={hIdx} className="flex items-center gap-3">
-                        <CheckCircle size={14} className="text-luxury-gold shrink-0" />
-                        <span className="text-xs text-slate-300 font-light">{highlight}</span>
-                      </div>
-                    ))}
-                  </div>
+                    {/* Gradient overlays */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none z-10" />
 
-                  {/* Buttons */}
-                  <div className="flex flex-wrap items-center gap-4">
-                    <Link
-                      to="/contact"
-                      className="bg-luxury-gold text-white text-[10px] font-bold uppercase tracking-[0.2em] px-8 py-4 rounded-sm hover:bg-yellow-600 transition-colors shadow-lg shadow-luxury-gold/5 flex items-center gap-2 group"
-                    >
-                      Enquire about {concept.title}
-                      <ArrowRight size={12} className="transform group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                    <Link
-                      to={concept.href}
-                      className="border border-white/10 hover:border-luxury-gold text-white text-[10px] font-bold uppercase tracking-[0.2em] px-8 py-4 rounded-sm transition-all"
-                    >
-                      Full Details
-                    </Link>
-                  </div>
-                </motion.div>
+                    {/* Interactive Controls Overlay */}
+                    <div className="absolute top-4 right-4 flex items-center gap-2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {/* Mute Button */}
+                      <button
+                        onClick={() => toggleMute(concept.id)}
+                        className="w-9 h-9 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center border border-white/10 hover:border-luxury-gold/50 transition-colors cursor-pointer"
+                        title={isMuted ? "Unmute" : "Mute"}
+                      >
+                        {isMuted ? <VolumeX size={14} /> : <Volume2 size={14} />}
+                      </button>
+                    </div>
+
+                    <div className="absolute bottom-4 left-4 z-20">
+                      <span className="bg-black/75 backdrop-blur-sm text-[9px] font-bold text-luxury-gold uppercase tracking-[0.2em] px-3.5 py-1.5 rounded-sm border border-white/5 shadow-md">
+                        {concept.subtitle}
+                      </span>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Description & Technical highlights Side */}
+                <div className="w-full lg:w-1/2 flex flex-col justify-center">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8 }}
+                  >
+                    <span className="text-[9px] uppercase tracking-[0.25em] text-luxury-gold font-bold mb-3 block">
+                      {concept.tagline}
+                    </span>
+                    <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6 leading-tight">
+                      {concept.title}
+                    </h2>
+                    <p className="text-slate-600 font-light leading-relaxed mb-8 text-sm md:text-base">
+                      {concept.desc}
+                    </p>
+
+                    {/* Stats Bar */}
+                    <div className="grid grid-cols-3 gap-4 border-y border-slate-200/60 py-6 mb-8">
+                      {concept.stats.map((stat, sIdx) => (
+                        <div key={sIdx} className="text-left">
+                          <p className="text-xl font-bold text-luxury-gold">{stat.value}</p>
+                          <p className="text-[9px] uppercase tracking-wider text-slate-500 mt-1">
+                            {stat.label}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Checklist Highlights */}
+                    <div className="space-y-3 mb-8">
+                      {concept.highlights.map((highlight, hIdx) => (
+                        <div key={hIdx} className="flex items-center gap-3">
+                          <CheckCircle size={14} className="text-luxury-gold shrink-0" />
+                          <span className="text-xs text-slate-600 font-light">{highlight}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Buttons */}
+                    <div className="flex flex-wrap items-center gap-4">
+                      <Link
+                        to="/contact"
+                        className="bg-luxury-gold text-white text-[10px] font-bold uppercase tracking-[0.2em] px-8 py-4 rounded-sm hover:bg-yellow-600 transition-colors shadow-lg shadow-luxury-gold/5 flex items-center gap-2 group"
+                      >
+                        Enquire about {concept.title}
+                        <ArrowRight size={12} className="transform group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                      <Link
+                        to={concept.href}
+                        className="border border-slate-200 text-slate-700 hover:border-black hover:text-black hover:bg-slate-50 text-[10px] font-bold uppercase tracking-[0.2em] px-8 py-4 rounded-sm transition-all"
+                      >
+                        Full Details
+                      </Link>
+                    </div>
+                  </motion.div>
+                </div>
               </div>
             </div>
           );
@@ -275,11 +276,11 @@ export default function Concepts() {
       </section>
 
       {/* ── BOTTOM CTA SECTION ────────────────────────────────────────── */}
-      <section className="px-6 py-24 bg-white/5 border-t border-white/5">
+      <section className="px-6 py-24 bg-[#fafafa] border-t border-slate-100">
         <div className="max-w-4xl mx-auto text-center">
           <Layers className="text-luxury-gold mx-auto mb-6 w-12 h-12 opacity-80" strokeWidth={1} />
-          <h4 className="text-3xl md:text-4xl font-serif mb-6">Explore Custom Visuals</h4>
-          <p className="text-slate-400 font-light mb-8 max-w-xl mx-auto leading-relaxed text-sm">
+          <h4 className="text-3xl md:text-4xl font-serif text-slate-900 mb-6">Explore Custom Visuals</h4>
+          <p className="text-slate-600 font-light mb-8 max-w-xl mx-auto leading-relaxed text-sm">
             We work alongside elite architects and hospitality groups to create custom visual layouts.
             Get in touch to receive technical CAD drawings and customized quote estimates for your projects.
           </p>

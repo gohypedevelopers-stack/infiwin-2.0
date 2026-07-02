@@ -87,7 +87,7 @@ export const BestSellerSection = () => {
                 <ArrowRight size={16} />
               </Link>
               <Link 
-                to="#estimator"
+                to="/#estimator"
                 className="flex items-center justify-center gap-2 bg-transparent border border-white/30 hover:border-white hover:bg-white/10 text-white px-6 py-4 rounded-sm transition-all font-medium text-sm tracking-wide"
               >
                 Calculate Approximate Quote

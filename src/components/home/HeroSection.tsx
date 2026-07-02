@@ -143,7 +143,7 @@ export const HeroSection = () => {
             className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 justify-start mt-2 w-full sm:w-auto"
           >
             <Link
-              to="#estimator"
+              to="/#estimator"
               className="bg-luxury-gold hover:bg-white hover:text-slate-900 text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-full transition-all duration-300 shadow-[0_0_30px_rgba(212,175,55,0.2)] hover:shadow-[0_0_50px_rgba(255,255,255,0.4)] font-bold text-[10px] sm:text-xs uppercase tracking-widest flex items-center gap-3 w-full sm:w-auto justify-center sm:justify-start"
             >
               <Calculator size={14} className="sm:w-4 sm:h-4" />

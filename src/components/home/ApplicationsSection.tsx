@@ -73,7 +73,7 @@ export const ApplicationsSection = () => {
 
         <div className="flex justify-center">
           <Link 
-            to="#estimator"
+            to="/#estimator"
             className="group flex items-center justify-center gap-3 bg-black hover:bg-slate-800 text-white px-10 py-5 rounded-sm transition-all shadow-lg font-medium tracking-wider uppercase text-sm"
           >
             Get Custom Enclosure Quote For Your Space
