@@ -1,6 +1,10 @@
-import { Eye, CloudRain, Lock } from "lucide-react";
+import { Eye, CloudRain, Lock, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
 
 export const BenefitsSection = () => {
+  const [activeIdx, setActiveIdx] = useState(0);
+
   const benefits = [
     {
       icon: <Eye className="text-luxury-gold" size={32} />,
@@ -19,8 +23,24 @@ export const BenefitsSection = () => {
     },
   ];
 
+  // Auto-play effect: changes slide every 5 seconds, resets when activeIdx changes manually
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIdx((prev) => (prev + 1) % benefits.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [activeIdx, benefits.length]);
+
+  const nextSlide = () => {
+    setActiveIdx((prev) => (prev + 1) % benefits.length);
+  };
+
+  const prevSlide = () => {
+    setActiveIdx((prev) => (prev - 1 + benefits.length) % benefits.length);
+  };
+
   return (
-    <section className="py-24 bg-white relative">
+    <section className="pt-8 pb-16 lg:py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-luxury-gold text-[10px] uppercase tracking-[0.3em] font-bold mb-4">Core Advantages</p>
@@ -30,7 +50,8 @@ export const BenefitsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Desktop View */}
+        <div className="hidden lg:grid grid-cols-3 gap-8">
           {benefits.map((benefit, idx) => (
             <div 
               key={idx}
@@ -45,6 +66,63 @@ export const BenefitsSection = () => {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Mobile & Tablet View - Carousel */}
+        <div className="lg:hidden flex flex-col items-center w-full max-w-md mx-auto">
+          <div className="relative w-full overflow-hidden bg-slate-50 border border-slate-100 px-12 py-8 sm:px-16 sm:py-10 min-h-[300px] flex flex-col justify-between">
+            
+            {/* Left navigation arrow */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-2.5 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white text-slate-700 p-2 rounded-full border border-slate-200 shadow-md transition-colors cursor-pointer z-10"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft size={16} />
+            </button>
+
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeIdx}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.2 }}
+                className="flex flex-col items-start w-full h-full"
+              >
+                <div className="bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-sm mb-6">
+                  {benefits[activeIdx].icon}
+                </div>
+                <h3 className="text-lg sm:text-xl font-medium text-slate-900 mb-3">{benefits[activeIdx].title}</h3>
+                <p className="text-slate-500 font-light text-sm sm:text-base leading-relaxed">
+                  {benefits[activeIdx].description}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Right navigation arrow */}
+            <button
+              onClick={nextSlide}
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white text-slate-700 p-2 rounded-full border border-slate-200 shadow-md transition-colors cursor-pointer z-10"
+              aria-label="Next slide"
+            >
+              <ChevronRight size={16} />
+            </button>
+          </div>
+
+          {/* Dots Indicator */}
+          <div className="flex gap-2 mt-6">
+            {benefits.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setActiveIdx(idx)}
+                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  activeIdx === idx ? "w-6 bg-luxury-gold" : "w-1.5 bg-slate-300"
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

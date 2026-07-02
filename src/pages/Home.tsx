@@ -24,7 +24,7 @@ export default function Home() {
       <section className="py-24 bg-slate-50 relative overflow-hidden border-t border-slate-200">
         <div className="absolute top-0 left-0 w-full h-full bg-grid-slate-100/[0.2] bg-[size:20px_20px]"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 lg:gap-8 items-start">
+          <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 lg:gap-8">
             <EstimatorSection />
             <LeadFormSection />
           </div>

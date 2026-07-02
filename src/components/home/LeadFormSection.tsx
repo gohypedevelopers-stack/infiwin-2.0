@@ -56,66 +56,68 @@ export const LeadFormSection = () => {
   };
 
   return (
-    <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-slate-100 relative">
-      <div>
-        <h3 className="text-3xl font-serif text-slate-900 mb-2">Lock-In Your Deal Price</h3>
-        <p className="text-slate-500 font-light text-sm mb-10">
-          Fill out this quick 3-field layout to request our premium catalog along with architectural assistance.
-        </p>
+    <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-slate-100 relative h-full">
+      <div className="flex flex-col justify-between h-full gap-8">
+        <div>
+          <h3 className="text-3xl font-serif text-slate-900 mb-2">Lock-In Your Deal Price</h3>
+          <p className="text-slate-500 font-light text-sm mb-6">
+            Fill out this quick 3-field layout to request our premium catalog along with architectural assistance.
+          </p>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Field 1: Name */}
-          <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Full Name</label>
-            <input
-              type="text"
-              placeholder="eg. Rajesh Sharma"
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className={`w-full px-4 py-3 rounded-lg border bg-slate-50 focus:bg-white transition-colors outline-none focus:ring-2 ${errors.name ? 'border-red-300 focus:ring-red-100' : 'border-slate-200 focus:ring-luxury-gold/20 focus:border-luxury-gold'}`}
-            />
-            {errors.name && <p className="text-red-500 text-xs mt-2 font-medium">{errors.name}</p>}
-          </div>
-
-          {/* Field 2: Phone */}
-          <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Phone Number</label>
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                <span className="text-slate-400 font-medium">+91</span>
-              </div>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Field 1: Name */}
+            <div>
+              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Full Name</label>
               <input
-                type="tel"
-                inputMode="numeric"
-                placeholder="73370 74370"
-                value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value.replace(/\D/g, '') })}
-                className={`w-full pl-12 pr-4 py-3 rounded-lg border bg-slate-50 focus:bg-white transition-colors outline-none focus:ring-2 ${errors.phone ? 'border-red-300 focus:ring-red-100' : 'border-slate-200 focus:ring-luxury-gold/20 focus:border-luxury-gold'}`}
+                type="text"
+                placeholder="eg. Rajesh Sharma"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                className={`w-full px-4 py-3 rounded-lg border bg-slate-50 focus:bg-white transition-colors outline-none focus:ring-2 ${errors.name ? 'border-red-300 focus:ring-red-100' : 'border-slate-200 focus:ring-luxury-gold/20 focus:border-luxury-gold'}`}
               />
+              {errors.name && <p className="text-red-500 text-xs mt-2 font-medium">{errors.name}</p>}
             </div>
-            {errors.phone && <p className="text-red-500 text-xs mt-2 font-medium">{errors.phone}</p>}
-          </div>
 
-          {/* Field 3: City */}
-          <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Your Location City</label>
-            <input
-              type="text"
-              placeholder="eg. Noida, Delhi, Gurgaon"
-              value={formData.city}
-              onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-              className={`w-full px-4 py-3 rounded-lg border bg-slate-50 focus:bg-white transition-colors outline-none focus:ring-2 ${errors.city ? 'border-red-300 focus:ring-red-100' : 'border-slate-200 focus:ring-luxury-gold/20 focus:border-luxury-gold'}`}
-            />
-            {errors.city && <p className="text-red-500 text-xs mt-2 font-medium">{errors.city}</p>}
-          </div>
+            {/* Field 2: Phone */}
+            <div>
+              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Phone Number</label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <span className="text-slate-400 font-medium">+91</span>
+                </div>
+                <input
+                  type="tel"
+                  inputMode="numeric"
+                  placeholder="73370 74370"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value.replace(/\D/g, '') })}
+                  className={`w-full pl-12 pr-4 py-3 rounded-lg border bg-slate-50 focus:bg-white transition-colors outline-none focus:ring-2 ${errors.phone ? 'border-red-300 focus:ring-red-100' : 'border-slate-200 focus:ring-luxury-gold/20 focus:border-luxury-gold'}`}
+                />
+              </div>
+              {errors.phone && <p className="text-red-500 text-xs mt-2 font-medium">{errors.phone}</p>}
+            </div>
 
-          <button
-            type="submit"
-            className="w-full bg-black hover:bg-slate-800 text-white py-4 rounded-lg flex items-center justify-center gap-2 font-bold tracking-wider uppercase text-sm transition-colors shadow-lg mt-4"
-          >
-            <Rocket size={18} /> Request Quote & Call Back
-          </button>
-        </form>
+            {/* Field 3: City */}
+            <div>
+              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Your Location City</label>
+              <input
+                type="text"
+                placeholder="eg. Noida, Delhi, Gurgaon"
+                value={formData.city}
+                onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                className={`w-full px-4 py-3 rounded-lg border bg-slate-50 focus:bg-white transition-colors outline-none focus:ring-2 ${errors.city ? 'border-red-300 focus:ring-red-100' : 'border-slate-200 focus:ring-luxury-gold/20 focus:border-luxury-gold'}`}
+              />
+              {errors.city && <p className="text-red-500 text-xs mt-2 font-medium">{errors.city}</p>}
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-black hover:bg-slate-800 text-white py-4 rounded-lg flex items-center justify-center gap-2 font-bold tracking-wider uppercase text-sm transition-colors shadow-lg mt-4"
+            >
+              <Rocket size={18} /> Request Quote & Call Back
+            </button>
+          </form>
+        </div>
 
         <div className="mt-8 pt-8 border-t border-slate-100 text-center">
           <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-slate-400 mb-6 relative">

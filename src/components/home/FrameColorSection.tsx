@@ -3,10 +3,10 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 
 const frameColors = [
-  { id: "white", name: "Arctic White", hex: "#f1f1f1", img: "https://i.postimg.cc/QMxh5fFS/Chat-GPT-Image-Jun-16-2026-05-44-44-PM-removebg-preview.png", desc: "A timeless, clean finish that brightens any balcony. Arctic White pairs effortlessly with modern minimalist interiors and light-toned exteriors." },
-  { id: "rose", name: "Rose Bronze", hex: "#cfa89f", img: "https://i.postimg.cc/tJRMvcjg/Chat-GPT-Image-Jun-17-2026-11-41-14-AM-(3).png", desc: "A warm, sophisticated tone that adds a touch of subtle luxury and contemporary elegance to your living space." },
-  { id: "gold", name: "Champagne Gold", hex: "#cfb57a", img: "https://i.postimg.cc/QtC76gz8/Chat-GPT-Image-Jun-17-2026-11-41-14-AM-(2).pnghttps://i.postimg.cc/QMxh5fFS/Chat-GPT-Image-Jun-16-2026-05-44-44-PM-removebg-preview.png", desc: "A premium brushed finish that exudes opulence. Perfect for high-end architectural integrations." },
-  { id: "dark", name: "Charcoal Grey", hex: "#5a5a5a", img: "https://i.postimg.cc/15wvcP6g/Chat-GPT-Image-Jun-17-2026-11-41-13-AM-(1).png", desc: "A bold, industrial look that provides striking contrast and matches perfectly with modern concrete or dark-wood aesthetics." }
+  { id: "white", name: "Arctic White", hex: "#f1f1f1", img: "/arctic_white_clean.png", desc: "A timeless, clean finish that brightens any balcony. Arctic White pairs effortlessly with modern minimalist interiors and light-toned exteriors." },
+  { id: "rose", name: "Rose Bronze", hex: "#cfa89f", img: "/rose_bronze_clean.png", desc: "A warm, sophisticated tone that adds a touch of subtle luxury and contemporary elegance to your living space." },
+  { id: "gold", name: "Champagne Gold", hex: "#cfb57a", img: "/champagne_gold_clean.png", desc: "A premium brushed finish that exudes opulence. Perfect for high-end architectural integrations." },
+  { id: "dark", name: "Charcoal Grey", hex: "#5a5a5a", img: "/charcoal_grey_clean.png", desc: "A bold, industrial look that provides striking contrast and matches perfectly with modern concrete or dark-wood aesthetics." }
 ];
 
 const badges = [
@@ -20,17 +20,12 @@ export const FrameColorSection = () => {
   const [selectedColor, setSelectedColor] = useState(frameColors[0]);
 
   return (
-    <section className="py-32 bg-white px-6">
+    <section className="py-20 bg-white px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Left Side - Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col"
-          >
+          <div className="flex flex-col">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-[1px] bg-luxury-gold"></div>
               <span className="text-[10px] uppercase tracking-[0.3em] text-luxury-gold">
@@ -51,6 +46,29 @@ export const FrameColorSection = () => {
                   <span className="text-[9px] uppercase tracking-[0.2em] text-slate-500">{badge}</span>
                 </div>
               ))}
+            </div>
+
+            {/* Mobile Image Gallery */}
+            <div className="flex flex-col items-center lg:hidden w-full mb-8">
+              <div className="w-full relative bg-[#fafafa] rounded-sm p-12 mb-6 border border-black/5 min-h-[300px] xs:min-h-[400px] flex items-center justify-center">
+                <motion.img
+                  key={selectedColor.id}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4 }}
+                  src={selectedColor.img}
+                  alt={`${selectedColor.name} Frame`}
+                  className="w-full h-auto object-contain rounded-sm shadow-none mix-blend-multiply absolute inset-4 max-w-[calc(100%-2rem)] max-h-[calc(100%-2rem)]"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+
+              {/* Dots */}
+              <div className="flex gap-2">
+                <div className="w-6 h-2 rounded-full bg-slate-300"></div>
+                <div className="w-2 h-2 rounded-full bg-slate-200"></div>
+                <div className="w-2 h-2 rounded-full bg-slate-200"></div>
+              </div>
             </div>
 
             <div className="mb-10">
@@ -94,15 +112,10 @@ export const FrameColorSection = () => {
                 Get A Quote
               </button>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Side - Image Gallery */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col items-center"
-          >
+          <div className="hidden lg:flex flex-col items-center">
             <div className="w-full relative bg-[#fafafa] rounded-sm p-12 mb-6 border border-black/5 min-h-[400px] flex items-center justify-center">
               <motion.img
                 key={selectedColor.id}
@@ -111,7 +124,7 @@ export const FrameColorSection = () => {
                 transition={{ duration: 0.4 }}
                 src={selectedColor.img}
                 alt={`${selectedColor.name} Frame`}
-                className="w-full h-auto object-cover rounded-sm shadow-none mix-blend-multiply border border-black/5 absolute inset-4 max-w-[calc(100%-2rem)] max-h-[calc(100%-2rem)]"
+                className="w-full h-auto object-contain rounded-sm shadow-none mix-blend-multiply absolute inset-4 max-w-[calc(100%-2rem)] max-h-[calc(100%-2rem)]"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -122,7 +135,7 @@ export const FrameColorSection = () => {
               <div className="w-2 h-2 rounded-full bg-slate-200"></div>
               <div className="w-2 h-2 rounded-full bg-slate-200"></div>
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>

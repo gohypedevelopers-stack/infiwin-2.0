@@ -27,6 +27,19 @@ export const BestSellerSection = () => {
               Our iconic signature slide and turn glides on ultra-smooth tracks, allowing individual sheets of toughened glass to fully stack to either extreme corner. Offers 100% opening potential when desired, making it absolute king of balcony utility layout concepts.
             </p>
 
+            {/* Mobile Visual Presentation */}
+            <div className="lg:hidden relative h-[400px] sm:h-[500px] w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-800 mb-10">
+               <div 
+                className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "full" ? 'opacity-100' : 'opacity-0'}`}
+                style={{ backgroundImage: "url('https://i.postimg.cc/R05g4PxJ/IMG-20250119-WA0011.jpg')" }}
+               />
+               <div 
+                className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "half" ? 'opacity-100' : 'opacity-0'}`}
+                style={{ backgroundImage: "url('https://i.postimg.cc/x10dhQcV/Chat-GPT-Image-Jun-4-2026-03-02-04-PM.png')" }}
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent pointer-events-none"></div>
+            </div>
+
             {/* Interactive Variant UI */}
             <div className="bg-white/5 border border-white/10 p-6 rounded-lg mb-10">
               <p className="text-sm font-medium mb-4 text-white/90">Interactive Variant Check:</p>
@@ -83,8 +96,8 @@ export const BestSellerSection = () => {
             </div>
           </div>
 
-          {/* Visual Presentation (Placeholder for actual interactive viewer/image) */}
-          <div className="relative h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-800">
+          {/* Visual Presentation */}
+          <div className="hidden lg:block relative h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-800">
              <div 
               className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "full" ? 'opacity-100' : 'opacity-0'}`}
               style={{ backgroundImage: "url('https://i.postimg.cc/R05g4PxJ/IMG-20250119-WA0011.jpg')" }}

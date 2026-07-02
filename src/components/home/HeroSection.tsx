@@ -4,11 +4,65 @@ import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
 
 const CAROUSEL_IMAGES = [
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=100&w=2400",
-  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=100&w=2400",
-  "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=100&w=2400",
-  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=100&w=2400"
+  "/st_hero.png",
+  "/office_hero.jpg",
+  "/farmhouse_hero.png"
 ];
+
+interface AnimatedNumberProps {
+  value: number;
+  duration?: number;
+  prefix?: string;
+  suffix?: string;
+  delay?: number;
+}
+
+function AnimatedNumber({ value, duration = 2500, prefix = "", suffix = "", delay = 1200 }: AnimatedNumberProps) {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const end = value;
+    if (start === end) return;
+
+    let timeoutId: number;
+    let animationFrameId: number;
+
+    const startAnimation = () => {
+      const startTime = performance.now();
+
+      const updateNumber = (now: number) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const easeProgress = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+        
+        setCurrent(Math.floor(easeProgress * (end - start) + start));
+
+        if (progress < 1) {
+          animationFrameId = requestAnimationFrame(updateNumber);
+        }
+      };
+
+      animationFrameId = requestAnimationFrame(updateNumber);
+    };
+
+    timeoutId = window.setTimeout(startAnimation, delay);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+      window.cancelAnimationFrame(animationFrameId);
+    };
+  }, [value, duration, delay]);
+
+  const formatted = current.toLocaleString("en-IN");
+
+  return (
+    <>
+      {prefix}
+      {formatted}
+      {suffix}
+    </>
+  );
+}
 
 export const HeroSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -21,32 +75,28 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Dynamic Carousel Background */}
-      <div className="absolute inset-0 z-0 bg-slate-900 overflow-hidden">
+    <section className="relative h-auto lg:h-screen min-h-auto lg:min-h-[650px] lg:max-h-[820px] bg-slate-950 flex flex-col justify-between pt-24 pb-6 lg:pt-32 lg:pb-16 overflow-hidden">
+      {/* Background Carousel */}
+      <div className="absolute inset-0 z-0">
         <AnimatePresence>
           <motion.div
             key={currentImageIndex}
-            initial={{ opacity: 0, scale: 1.0 }}
-            animate={{ opacity: 1, scale: 1.1 }}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
-            transition={{
-              opacity: { duration: 1.5, ease: "easeInOut" },
-              scale: { duration: 15, ease: "linear" }
-            }}
-            className="absolute inset-0 w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: `url('${CAROUSEL_IMAGES[currentImageIndex]}')` }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${CAROUSEL_IMAGES[currentImageIndex]})` }}
           />
         </AnimatePresence>
       </div>
 
-      <div className="absolute inset-0 z-0 bg-slate-900/30"></div>
       {/* Soft luxury gradient overlay */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-r from-slate-900/70 via-slate-900/30 to-transparent"></div>
+      <div className="absolute inset-0 z-0 bg-slate-950/50 lg:bg-transparent lg:bg-gradient-to-r lg:from-slate-950/85 lg:via-slate-900/50 lg:to-transparent"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full py-20 flex flex-col items-center text-center">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full flex flex-col items-start text-left mt-8 mb-8 lg:my-auto">
         <motion.div 
-          className="max-w-5xl flex flex-col items-center"
+          className="max-w-3xl flex flex-col items-start w-full"
           initial="hidden"
           animate="visible"
           variants={{
@@ -61,11 +111,11 @@ export const HeroSection = () => {
           {/* Pre-Header Badge */}
           <motion.div 
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
-            className="flex flex-col items-center gap-3 mb-8"
+            className="flex items-center gap-3 mb-6 md:mb-8"
           >
             {/* Small decorative circle */}
             <div className="w-1.5 h-1.5 rounded-full border border-luxury-gold animate-pulse"></div>
-            <span className="text-xs uppercase tracking-[0.35em] text-luxury-gold font-medium">
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-luxury-gold font-medium">
               Frameless Glazing Redefined
             </span>
           </motion.div>
@@ -73,61 +123,102 @@ export const HeroSection = () => {
           {/* Primary Foundational Heading */}
           <motion.h1 
             variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } } }}
-            className="text-5xl md:text-7xl font-serif text-white leading-tight mb-12 drop-shadow-2xl flex flex-col items-center"
+            className="text-xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight mb-4 md:mb-6 drop-shadow-2xl flex flex-col"
           >
-            <span className="uppercase tracking-widest mb-2 font-light">Breathtaking Views,</span>
-            <span className="text-luxury-gold italic font-normal tracking-wide">Uncompromised Protection</span>
+            <span className="uppercase tracking-widest mb-1 font-light whitespace-nowrap">Breathtaking Views,</span>
+            <span className="text-luxury-gold italic font-normal tracking-wide whitespace-nowrap">Uncompromised Protection</span>
           </motion.h1>
+
+          {/* Description Paragraph */}
+          <motion.p
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
+            className="text-slate-100 font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] text-xs sm:text-sm md:text-base max-w-2xl leading-relaxed mb-6 md:mb-8"
+          >
+            Infiwin manufactures premier Slide & Turn frameless glass balcony enclosures. Extend your home space with architectural glass walls.
+          </motion.p>
 
           {/* Primary Call-to-Action Buttons */}
           <motion.div 
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
-            className="flex flex-col sm:flex-row items-center gap-8 md:gap-12 justify-center mt-4"
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 justify-start mt-2 w-full sm:w-auto"
           >
             <Link
               to="#estimator"
-              className="bg-luxury-gold hover:bg-white hover:text-slate-900 text-white px-10 py-4 rounded-full transition-all duration-300 shadow-[0_0_40px_rgba(212,175,55,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] font-bold text-xs uppercase tracking-widest flex items-center gap-3"
+              className="bg-luxury-gold hover:bg-white hover:text-slate-900 text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-full transition-all duration-300 shadow-[0_0_30px_rgba(212,175,55,0.2)] hover:shadow-[0_0_50px_rgba(255,255,255,0.4)] font-bold text-[10px] sm:text-xs uppercase tracking-widest flex items-center gap-3 w-full sm:w-auto justify-center sm:justify-start"
             >
-              <Calculator size={16} />
+              <Calculator size={14} className="sm:w-4 sm:h-4" />
               Calculate Cost Instantly
             </Link>
             <Link
               to="/products"
-              className="text-white hover:text-luxury-gold transition-colors duration-300 font-bold text-xs uppercase tracking-widest border-b border-transparent hover:border-luxury-gold pb-1 flex items-center gap-2 group"
+              className="text-white hover:text-luxury-gold transition-colors duration-300 font-bold text-[10px] sm:text-xs uppercase tracking-widest border-b border-transparent hover:border-luxury-gold pb-1 flex items-center gap-2 group w-full sm:w-auto justify-center sm:justify-start"
             >
               Explore Products
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform sm:w-3.5 sm:h-3.5" />
             </Link>
           </motion.div>
 
         </motion.div>
       </div>
 
-      {/* Trust Indicators / Live Proof Statistics (Bottom Anchored Glass Cards) */}
+      {/* Trust Stats & Slide Previews - Bottom Row */}
       <motion.div 
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 1, ease: "easeOut" }}
-        className="absolute bottom-12 left-0 w-full z-10 px-6 flex justify-center"
+        className="max-w-7xl mx-auto w-full z-30 px-6 border-t border-white/10 pt-6 mt-6 lg:mt-8 mb-4 lg:mb-0"
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
+        <div className="flex flex-col-reverse lg:flex-row justify-between items-start lg:items-center gap-6 lg:gap-8">
           
-          {/* Stat 1 */}
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 hover:border-luxury-gold/50 transition-colors duration-500 rounded-2xl p-6 flex flex-col items-center text-center group">
-            <p className="text-white/50 text-[10px] uppercase tracking-[0.2em] mb-2 font-semibold group-hover:text-luxury-gold transition-colors">Starting Price / Sq.ft</p>
-            <p className="text-3xl font-display font-light text-white tracking-wide">₹1,800</p>
+          {/* Stats - Left aligned in desktop, bottom in mobile */}
+          <div className="flex flex-row flex-nowrap gap-4 sm:gap-12 lg:gap-16 text-left w-full lg:w-auto overflow-x-auto scrollbar-none pb-2 lg:pb-0">
+            {/* Stat 1 */}
+            <div className="flex flex-col items-start min-w-[100px] sm:min-w-0">
+              <span className="text-white text-[9px] sm:text-[10px] uppercase tracking-[0.2em] mb-1 font-semibold">Starting Price</span>
+              <span className="text-lg sm:text-2xl md:text-3xl font-display font-light text-white tracking-wide whitespace-nowrap">
+                <AnimatedNumber value={1800} prefix="₹" /> <span className="text-[10px] text-white">/ Sq.ft</span>
+              </span>
+            </div>
+            {/* Stat 2 */}
+            <div className="flex flex-col items-start min-w-[100px] sm:min-w-0">
+              <span className="text-white text-[9px] sm:text-[10px] uppercase tracking-[0.2em] mb-1 font-semibold">Rain & Wind</span>
+              <span className="text-lg sm:text-2xl md:text-3xl font-display font-light text-white tracking-wide whitespace-nowrap">
+                <AnimatedNumber value={100} suffix="%" /> Tight
+              </span>
+            </div>
+            {/* Stat 3 */}
+            <div className="flex flex-col items-start min-w-[100px] sm:min-w-0">
+              <span className="text-white text-[9px] sm:text-[10px] uppercase tracking-[0.2em] mb-1 font-semibold">Warranty</span>
+              <span className="text-lg sm:text-2xl md:text-3xl font-display font-light text-white tracking-wide whitespace-nowrap">
+                <AnimatedNumber value={10} suffix="+" /> Yrs
+              </span>
+            </div>
           </div>
 
-          {/* Stat 2 */}
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 hover:border-luxury-gold/50 transition-colors duration-500 rounded-2xl p-6 flex flex-col items-center text-center group">
-            <p className="text-white/50 text-[10px] uppercase tracking-[0.2em] mb-2 font-semibold group-hover:text-luxury-gold transition-colors">Rain & Wind Tight</p>
-            <p className="text-3xl font-display font-light text-white tracking-wide">100%</p>
-          </div>
-
-          {/* Stat 3 */}
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 hover:border-luxury-gold/50 transition-colors duration-500 rounded-2xl p-6 flex flex-col items-center text-center group">
-            <p className="text-white/50 text-[10px] uppercase tracking-[0.2em] mb-2 font-semibold group-hover:text-luxury-gold transition-colors">Warranty Covered</p>
-            <p className="text-3xl font-display font-light text-white tracking-wide">10+ Yrs</p>
+          {/* Slide Previews - Right aligned in desktop, top in mobile */}
+          <div className="flex gap-2 sm:gap-3 self-end lg:self-auto w-full lg:w-auto justify-end">
+            {CAROUSEL_IMAGES.map((img, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentImageIndex(idx)}
+                className={`relative w-16 h-12 sm:w-20 sm:h-14 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+                  currentImageIndex === idx 
+                    ? "border-luxury-gold scale-105 shadow-lg" 
+                    : "border-white/20 hover:border-white/50 hover:scale-102"
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              >
+                <img 
+                  src={img} 
+                  alt={`Slide ${idx + 1} Preview`} 
+                  className="w-full h-full object-cover"
+                />
+                {/* Overlay to dim inactive thumbnails */}
+                {currentImageIndex !== idx && (
+                  <div className="absolute inset-0 bg-black/40 hover:bg-black/20 transition-colors"></div>
+                )}
+              </button>
+            ))}
           </div>
 
         </div>
@@ -141,7 +232,7 @@ export const HeroSection = () => {
           className="flex whitespace-nowrap shrink-0"
         >
           {[...Array(20)].map((_, i) => (
-            <span key={i} className="mx-8">
+            <span key={i} className="mx-8 text-white font-bold tracking-wider">
               Transform your home with premium India-built glass systems starting from ₹1,800/sq.ft!
             </span>
           ))}
