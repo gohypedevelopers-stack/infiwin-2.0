@@ -124,26 +124,28 @@ export const Navbar = () => {
       </nav>
 
       {/* Sticky Bottom Mobile CTA Bar (High-Visibility Viewport Lock) */}
-      <div className="md:hidden fixed bottom-4 left-4 right-4 z-50 bg-white rounded-full overflow-hidden flex shadow-2xl pointer-events-auto border border-slate-100">
+      <div className="md:hidden fixed bottom-4 left-4 right-4 z-50 bg-white border border-slate-100 rounded-full p-2 flex items-center justify-between shadow-2xl pointer-events-auto">
         <a
           href="tel:+917337074370"
-          className="flex-[0.8] flex justify-center items-center gap-2 h-14 text-xs font-semibold text-slate-700 border-r border-slate-100 active:bg-slate-50"
+          className="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center active:bg-slate-800 shrink-0"
+          aria-label="Call Us"
         >
-          <Phone size={16} />
+          <Phone size={18} />
         </a>
         <a
           href="https://wa.me/917337074370"
           target="_blank"
           rel="noreferrer"
-          className="flex-[0.8] flex justify-center items-center gap-2 h-14 text-xs font-semibold text-green-600 active:bg-slate-50"
+          className="w-12 h-12 rounded-full bg-[#25D366] text-white flex items-center justify-center active:bg-green-600 shrink-0 mx-2"
+          aria-label="Chat on WhatsApp"
         >
-          <MessageCircle size={16} />
+          <MessageCircle size={18} className="fill-white/10" />
         </a>
         <a
           href="#quote"
-          className="flex-[1.5] flex justify-center items-center gap-2 h-14 text-[10px] font-bold bg-black text-white uppercase tracking-widest"
+          className="flex-grow h-12 rounded-full bg-luxury-gold text-white font-bold text-[10px] sm:text-xs uppercase tracking-widest flex items-center justify-center gap-2 active:bg-yellow-700"
         >
-          Get Quote <ArrowRight size={14} />
+          Get Quote <ArrowRight size={12} />
         </a>
       </div>
     </header>

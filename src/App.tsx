@@ -12,7 +12,6 @@ import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Applications from "./pages/Applications";
 import About from "./pages/About";
-import Concepts from "./pages/Concepts";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import ThankYou from "./pages/ThankYou";
@@ -53,7 +52,6 @@ export default function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/applications" element={<Applications />} />
             <Route path="/about" element={<About />} />
-            <Route path="/concepts" element={<Concepts />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/thank-you" element={<ThankYou />} />
@@ -67,7 +65,7 @@ export default function App() {
           href="https://wa.me/917337074370"
           target="_blank"
           rel="noreferrer"
-          className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center"
+          className="hidden md:flex fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 items-center justify-center"
           aria-label="Chat on WhatsApp"
         >
           <MessageCircle size={28} />

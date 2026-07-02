@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const FAQSection = () => {
   const faqs = [
@@ -38,7 +39,7 @@ export const FAQSection = () => {
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4 animate-on-scroll">
           {faqs.map((faq, idx) => (
             <div 
               key={idx}
@@ -66,6 +67,17 @@ export const FAQSection = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Redirect to full FAQ page */}
+        <div className="text-center mt-12">
+          <Link 
+            to="/faq" 
+            className="inline-flex items-center gap-2 bg-black hover:bg-luxury-gold text-white px-8 py-4 rounded-none font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+          >
+            View All FAQs
+            <ArrowRight size={14} />
+          </Link>
         </div>
       </div>
     </section>

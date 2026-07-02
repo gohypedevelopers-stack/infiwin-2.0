@@ -57,14 +57,18 @@ export const LeadFormSection = () => {
 
   return (
     <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-slate-100 relative h-full">
-      <div className="flex flex-col justify-between h-full gap-8">
+      <div className="flex flex-col justify-between h-full gap-6">
+        {/* Header Block at Top */}
         <div>
           <h3 className="text-3xl font-serif text-slate-900 mb-2">Lock-In Your Deal Price</h3>
-          <p className="text-slate-500 font-light text-sm mb-6">
+          <p className="text-slate-500 font-light text-sm mb-0">
             Fill out this quick 3-field layout to request our premium catalog along with architectural assistance.
           </p>
+        </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Inputs and Buttons Grouped at Bottom */}
+        <div className="flex flex-col">
+          <form onSubmit={handleSubmit} className="space-y-4">
             {/* Field 1: Name */}
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Full Name</label>
@@ -112,27 +116,28 @@ export const LeadFormSection = () => {
 
             <button
               type="submit"
-              className="w-full bg-black hover:bg-slate-800 text-white py-4 rounded-lg flex items-center justify-center gap-2 font-bold tracking-wider uppercase text-sm transition-colors shadow-lg mt-4"
+              className="w-full bg-black hover:bg-slate-800 text-white py-4 rounded-lg flex items-center justify-center gap-2 font-bold tracking-wider uppercase text-sm transition-colors shadow-lg mt-2"
             >
               <Rocket size={18} /> Request Quote & Call Back
             </button>
           </form>
-        </div>
 
-        <div className="mt-8 pt-8 border-t border-slate-100 text-center">
-          <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-slate-400 mb-6 relative">
-            <span className="bg-white px-4 relative z-10">OR CHAT DIRECTLY</span>
-            <span className="absolute top-1/2 left-0 w-full h-px bg-slate-100 -z-0"></span>
-          </p>
+          {/* Divider and WhatsApp Button */}
+          <div className="mt-6 pt-6 border-t border-slate-100 text-center">
+            <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-slate-400 mb-4 relative">
+              <span className="bg-white px-4 relative z-10">OR CHAT DIRECTLY</span>
+              <span className="absolute top-1/2 left-0 w-full h-px bg-slate-100 -z-0"></span>
+            </p>
 
-          <a
-            href="https://wa.me/917337074370?text=Hi Infiwin, I am interested in getting a Slide & Turn Balcony System. Please share your product catalog!"
-            target="_blank"
-            rel="noreferrer"
-            className="w-full bg-green-500 hover:bg-green-600 text-white py-4 rounded-lg flex items-center justify-center gap-2 font-bold tracking-wider uppercase text-sm transition-colors shadow-lg"
-          >
-            <MessageCircle size={18} /> Get Instant Price via WhatsApp
-          </a>
+            <a
+              href="https://wa.me/917337074370?text=Hi Infiwin, I am interested in getting a Slide & Turn Balcony System. Please share your product catalog!"
+              target="_blank"
+              rel="noreferrer"
+              className="w-full bg-green-500 hover:bg-green-600 text-white py-4 rounded-lg flex items-center justify-center gap-2 font-bold tracking-wider uppercase text-sm transition-colors shadow-lg"
+            >
+              <MessageCircle size={18} /> Get Instant Price via WhatsApp
+            </a>
+          </div>
         </div>
       </div>
     </div>
