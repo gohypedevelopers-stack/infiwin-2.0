@@ -104,26 +104,15 @@ export default function Concepts() {
   return (
     <div className="min-h-screen bg-white text-slate-900 overflow-hidden">
       {/* ── HERO SECTION ──────────────────────────────────────────────── */}
-      <section className="relative w-full h-[600px] flex items-center justify-center bg-black/80 pt-24 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <img
-            loading="lazy"
-            src="/bioclimatic.png"
-            alt="Concepts Background"
-            className="w-full h-full object-cover opacity-20 mix-blend-overlay scale-105"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/80 to-black/95" />
-        </div>
-
-        <div className="relative z-10 text-center px-6 max-w-4xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-luxury-gold/30 bg-luxury-gold/5 text-luxury-gold text-[9px] uppercase tracking-[0.25em] mb-6">
-            <Sparkles size={10} /> Design Visions
-          </div>
-          <h1 className="text-5xl md:text-7xl font-serif text-white mb-6 leading-tight">
+      <section className="relative w-full h-[500px] flex items-center justify-center bg-[#232325] pt-24 overflow-hidden">
+        <div className="text-center text-white px-6">
+          <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">
+            Design Visions
+          </p>
+          <h1 className="text-5xl md:text-7xl font-serif mb-4">
             Animated Architectural Concepts
           </h1>
-          <p className="text-base md:text-lg font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-8 text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Witness our high-end glass systems come to life. Discover how our luxury glazing merges structural boundaries, custom-fit for world-class design planners.
           </p>
         </div>
