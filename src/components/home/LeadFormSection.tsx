@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import { Rocket, MessageCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -40,7 +40,7 @@ export const LeadFormSection = () => {
     return isValid;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (validate()) {
       // Track conversion (simulated)

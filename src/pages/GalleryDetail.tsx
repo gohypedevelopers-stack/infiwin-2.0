@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, MouseEvent } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft, ChevronLeft, ChevronRight, X } from 'lucide-react';
@@ -10,14 +10,14 @@ export default function GalleryDetail() {
   const data = id ? galleryData[id] : null;
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
-  const handleNext = (e: React.MouseEvent) => {
+  const handleNext = (e: MouseEvent) => {
     e.stopPropagation();
     if (data && selectedImageIndex !== null) {
       setSelectedImageIndex((selectedImageIndex + 1) % data.images.length);
     }
   };
 
-  const handlePrev = (e: React.MouseEvent) => {
+  const handlePrev = (e: MouseEvent) => {
     e.stopPropagation();
     if (data && selectedImageIndex !== null) {
       setSelectedImageIndex((selectedImageIndex - 1 + data.images.length) % data.images.length);
