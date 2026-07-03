@@ -35,7 +35,7 @@ export default function About() {
         
         <div className="relative z-10 text-center text-white px-6">
           <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">The Infiwin Story</p>
-          <h1 className="text-5xl md:text-7xl font-serif mb-4">Redefining Views</h1>
+          <h1 className="text-4xl md:text-7xl font-serif mb-4">Redefining Views</h1>
           <p className="mt-8 text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Crafting India's Premier Frameless Glass Solutions Aligned with Global Standards of Architectural Excellence.
           </p>
@@ -49,7 +49,7 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col"
+            className="flex flex-col items-center text-center lg:items-start lg:text-left"
           >
             <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">About Us</p>
             <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-8">Our Story</h2>
@@ -120,7 +120,7 @@ export default function About() {
                     </motion.div>
 
                     {/* Content Half */}
-                    <div className={`w-full md:w-1/2 flex flex-col justify-center pl-16 md:pl-0 ${isEven ? 'md:pr-24 md:items-end md:text-right' : 'md:pl-24 md:items-start md:text-left'} relative`}>
+                    <div className={`w-full md:w-1/2 flex flex-col justify-center pl-12 md:pl-0 ${isEven ? 'md:pr-24 md:items-end md:text-right' : 'md:pl-24 md:items-start md:text-left'} relative`}>
                       <motion.div 
                         variants={{
                           hidden: { opacity: 0, y: 30 },
@@ -132,7 +132,7 @@ export default function About() {
                           <span className="text-luxury-gold text-lg font-bold tracking-widest">{m.year}</span>
                           <span className="hidden md:block w-12 h-[1px] bg-luxury-gold/50"></span>
                         </div>
-                        <h3 className="text-3xl md:text-4xl font-serif text-slate-900 mb-6">{m.title}</h3>
+                        <h3 className="text-2xl md:text-4xl font-serif text-slate-900 mb-6">{m.title}</h3>
                         <p className="text-slate-500 font-light leading-relaxed text-sm md:text-base max-w-md">{m.desc}</p>
                       </motion.div>
                     </div>
@@ -234,7 +234,7 @@ export default function About() {
           <p className="text-white/70 font-light text-lg md:text-xl leading-relaxed mb-12 max-w-3xl mx-auto">
             Our experts are ready to assist you in designing the perfect frameless glass solution.
           </p>
-          <button className="bg-luxury-gold text-white px-10 py-4 rounded-full font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-black transition-colors shadow-lg shadow-black/10">
+          <button className="bg-luxury-gold text-white px-8 py-3 rounded-lg font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-black transition-colors shadow-lg shadow-black/10">
             Consult With Our Experts
           </button>
         </div>

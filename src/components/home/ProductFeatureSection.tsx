@@ -68,18 +68,19 @@ export const ProductFeatureSection = () => {
             viewport={{ once: true }}
             className="flex flex-col"
           >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-[1px] bg-luxury-gold"></div>
-              <span className="text-[10px] uppercase tracking-[0.3em] text-luxury-gold">
-                Balcony Enclosure Category
-              </span>
+            {/* Header — centered on mobile, left on desktop */}
+            <div className="text-center lg:text-left">
+              <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
+                <div className="w-8 h-[1px] bg-luxury-gold"></div>
+                <span className="text-[10px] uppercase tracking-[0.3em] text-luxury-gold">
+                  Balcony Enclosure Category
+                </span>
+              </div>
+              <h2 className="text-5xl md:text-6xl font-serif text-slate-900 mb-6 font-light">Slide & Turn System</h2>
+              <p className="text-slate-500 font-light text-[15px] leading-loose mb-10">
+                Our iconic signature slide and turn glides on ultra-smooth tracks, allowing individual sheets of toughened glass to fully stack to either extreme corner. Offers 100% opening potential when desired, making it absolute king of balcony utility layout concepts.
+              </p>
             </div>
-            
-            <h2 className="text-5xl md:text-6xl font-serif text-slate-900 mb-6 font-light">Slide & Turn System</h2>
-            
-            <p className="text-slate-500 font-light text-[15px] leading-loose mb-10">
-              Our iconic signature slide and turn glides on ultra-smooth tracks, allowing individual sheets of toughened glass to fully stack to either extreme corner. Offers 100% opening potential when desired, making it absolute king of balcony utility layout concepts.
-            </p>
 
             {/* Interactive Variant Box */}
             <div className="bg-[#fafafa] rounded-sm p-8 border border-black/5 mb-10 shadow-none">
@@ -119,11 +120,11 @@ export const ProductFeatureSection = () => {
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-4">
-              <Link to="/products" className="bg-transparent text-slate-900 border border-slate-900 px-8 py-5 rounded-sm uppercase tracking-[0.2em] text-[10px] hover:bg-slate-900 hover:text-white transition-colors flex items-center justify-center gap-3">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+              <Link to="/products" className="bg-transparent text-slate-900 border border-slate-900 px-8 py-3 rounded-lg uppercase tracking-[0.2em] text-[10px] hover:bg-slate-900 hover:text-white transition-colors flex items-center justify-center gap-3">
                 Inspect Custom Variants <ArrowRight size={14} />
               </Link>
-              <Link to="/#estimator" className="bg-white text-slate-500 border border-slate-200 px-8 py-5 rounded-sm uppercase tracking-[0.2em] text-[10px] hover:border-luxury-gold hover:text-luxury-gold transition-colors flex items-center justify-center">
+              <Link to="/#estimator" className="bg-white text-slate-500 border border-slate-200 px-8 py-3 rounded-lg uppercase tracking-[0.2em] text-[10px] hover:border-luxury-gold hover:text-luxury-gold transition-colors flex items-center justify-center">
                 Calculate Approximate Quote
               </Link>
             </div>

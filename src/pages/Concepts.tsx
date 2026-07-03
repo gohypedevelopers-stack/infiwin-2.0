@@ -244,14 +244,14 @@ export default function Concepts() {
                     <div className="flex flex-wrap items-center gap-4">
                       <Link
                         to="/contact"
-                        className="bg-luxury-gold text-white text-[10px] font-bold uppercase tracking-[0.2em] px-8 py-4 rounded-sm hover:bg-yellow-600 transition-colors shadow-lg shadow-luxury-gold/5 flex items-center gap-2 group"
+                        className="bg-luxury-gold text-white text-[10px] font-bold uppercase tracking-[0.2em] px-8 py-3 rounded-lg hover:bg-yellow-600 transition-colors shadow-lg shadow-luxury-gold/5 flex items-center gap-2 group"
                       >
                         Enquire about {concept.title}
                         <ArrowRight size={12} className="transform group-hover:translate-x-1 transition-transform" />
                       </Link>
                       <Link
                         to={concept.href}
-                        className="border border-slate-200 text-slate-700 hover:border-black hover:text-black hover:bg-slate-50 text-[10px] font-bold uppercase tracking-[0.2em] px-8 py-4 rounded-sm transition-all"
+                        className="border border-slate-200 text-slate-700 hover:border-black hover:text-black hover:bg-slate-50 text-[10px] font-bold uppercase tracking-[0.2em] px-8 py-3 rounded-lg transition-all"
                       >
                         Full Details
                       </Link>
@@ -275,7 +275,7 @@ export default function Concepts() {
           </p>
           <Link
             to="/contact"
-            className="inline-block bg-luxury-gold text-white px-10 py-4 font-bold uppercase tracking-widest text-xs rounded-sm hover:bg-yellow-600 transition-colors"
+            className="inline-block bg-luxury-gold hover:bg-slate-950 text-white px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs transition-colors shadow-md border-none cursor-pointer"
           >
             Request CAD & Price Sheet
           </Link>

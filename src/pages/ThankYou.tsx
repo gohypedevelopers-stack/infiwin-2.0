@@ -20,13 +20,13 @@ export default function ThankYou() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link 
             to="/"
-            className="w-full sm:w-auto bg-black text-white px-8 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-slate-800 transition-colors flex items-center justify-center"
+            className="w-full sm:w-auto bg-black text-white px-8 py-3 rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-slate-800 transition-colors flex items-center justify-center"
           >
             Return to Homepage
           </Link>
           <Link 
             to="/products"
-            className="w-full sm:w-auto bg-slate-100 text-slate-700 px-8 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-slate-200 transition-colors flex items-center justify-center gap-2"
+            className="w-full sm:w-auto bg-slate-100 text-slate-700 px-8 py-3 rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-slate-200 transition-colors flex items-center justify-center gap-2"
           >
             Explore Catalog <ArrowRight size={14} />
           </Link>

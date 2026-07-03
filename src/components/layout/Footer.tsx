@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <footer className="bg-slate-900 border-t border-white/10 pt-20 pb-10 px-6">
+    <footer className="bg-slate-900 border-t border-white/10 pt-20 pb-20 md:pb-10 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20 text-center md:text-left">
-          <div className="col-span-1 md:col-span-1 flex flex-col items-center md:items-start text-left">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-10 text-left">
+          <div className="col-span-2 md:col-span-1 flex flex-col items-start text-left">
             <Link to="/" className="font-display text-2xl font-bold tracking-tighter text-white block mb-6">INFIWIN</Link>
             <p className="text-white/40 text-sm font-light leading-relaxed max-w-xs">
               Premium architectural glass and slide & turn frameless balcony structures designed for Indian climatic conditions.
             </p>
           </div>
 
-          <div className="text-left">
+          <div className="col-span-1 md:col-span-1 text-left">
             <h5 className="text-[10px] uppercase tracking-[0.3em] text-white font-bold mb-8">6 Product Lines</h5>
             <ul className="space-y-4 text-white/60 text-sm">
               <li><Link to="/products#folding" className="hover:text-white transition-colors">Slide & Turn System</Link></li>
@@ -25,7 +25,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div className="text-left">
+          <div className="col-span-1 md:col-span-1 text-left">
             <h5 className="text-[10px] uppercase tracking-[0.3em] text-white font-bold mb-8">Space Usages</h5>
             <ul className="space-y-4 text-white/60 text-sm">
               <li><Link to="/applications#balcony" className="hover:text-white transition-colors">Balcony Glass</Link></li>
@@ -35,7 +35,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div className="text-left">
+          <div className="col-span-2 md:col-span-1 text-left">
             <h5 className="text-[10px] uppercase tracking-[0.3em] text-white font-bold mb-8">Contact Info</h5>
             <ul className="space-y-4 text-white/60 text-sm font-light">
               <li>Corporate Office: <br />H 195, Sector 63, Noida, UP - 201309</li>
@@ -45,9 +45,9 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center border-t border-white/5 pt-10 text-[10px] uppercase tracking-widest text-white/30 font-medium">
+        <div className="flex flex-row flex-wrap justify-between items-center border-t border-white/5 pt-10 gap-y-4 text-[9px] uppercase tracking-widest text-white/30 font-medium">
           <p>© 2026 Infiwin Glazing Inc. All rights reserved.</p>
-          <div className="flex gap-8 mt-4 md:mt-0">
+          <div className="flex gap-4">
             <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="#" className="hover:text-white transition-colors">Terms of Service</Link>
             <Link to="#" className="hover:text-white transition-colors">Cookie Policy</Link>

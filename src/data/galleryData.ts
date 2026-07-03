@@ -181,14 +181,14 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Farm House",
     "description": "Seamlessly connect beautiful country landscaping with spacious interiors. Our farmhouse glass installations provide expansive, uninterrupted views of nature while maintaining excellent thermal efficiency, keeping your country home cozy and fully integrated with the outdoors.",
     "images": [
-      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/FARMHOUSEHERO.png",
-      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4395.JPG",
-      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4402.JPG",
-      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4403.JPG",
-      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4408.JPG",
-      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/WhatsApp%20Image%202021-01-28%20at%2016.33.08.jpeg",
-      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/WhatsApp%20Image%202021-01-28%20at%2016.34.38%20(4).jpeg",
-      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/WhatsApp%20Image%202021-02-20%20at%205.28.31%20PM.jpeg"
+      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/FARMHOUSEHERO.jpg",
+      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4395.jpg",
+      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4402.jpg",
+      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4403.jpg",
+      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4408.jpg",
+      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/WhatsApp%20Image%202021-01-28%20at%2016.33.08.jpg",
+      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/WhatsApp%20Image%202021-01-28%20at%2016.34.38%20(4).jpg",
+      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/WhatsApp%20Image%202021-02-20%20at%205.28.31%20PM.jpg"
     ]
   },
   "terrace": {
@@ -239,6 +239,21 @@ export const galleryData: Record<string, GalleryItem> = {
       "/Website-20260518T071514Z-3-001/Website/Images/S&T/Hotel%20Penensula/IMG-20230416-WA0016.jpg",
       "/Website-20260518T071514Z-3-001/Website/Images/S&T/Hotel%20Penensula/IMG-20230416-WA0019.jpg",
       "/Website-20260518T071514Z-3-001/Website/Images/S&T/Hotel%20Penensula/IMG-20230417-WA0008.jpg"
+    ]
+  },
+  "garden": {
+    "title": "Garden",
+    "description": "Enhance your outdoor living spaces with glass enclosures that blend beauty with functionality, perfect for garden houses, patios, and gazebos. Create a modern glass oasis that keeps you connected to your garden throughout the seasons.",
+    "images": [
+      "/bifold_glass.png",
+      "/roof.png",
+      "/wind%20breaker.png",
+      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/WhatsApp%20Image%202021-02-20%20at%205.28.31%20PM.jpg",
+      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/FARMHOUSEHERO.jpg",
+      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4395.jpg",
+      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4402.jpg",
+      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4403.jpg",
+      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4408.jpg"
     ]
   }
 };

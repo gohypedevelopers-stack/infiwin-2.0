@@ -1,7 +1,7 @@
 import { useState, MouseEvent } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowLeft, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight, X, Eye } from 'lucide-react';
 import { galleryData } from '../data/galleryData';
 
 export default function GalleryDetail() {
@@ -11,20 +11,35 @@ export default function GalleryDetail() {
   // Normalize the id to handle minor typos or URL formatting differences (e.g., 'farm hou-e', 'farmhouse')
   let normalizedId = id;
   if (id) {
-    const cleanId = id.toLowerCase().replace(/[\s\-_]+/g, '');
+    const cleanId = id.toLowerCase().replace(/[\s\-_()]+/g, '');
     if (cleanId === 'farmhouse' || cleanId === 'farmhoue') {
       normalizedId = 'farm-house';
-    } else if (cleanId === 'slideturn') {
+    } else if (cleanId === 'slideturn' || cleanId === 'balcony' || cleanId === 'guillotineglasssystem' || cleanId === 'openablewindowsdoors' || cleanId === 'foldabledoorsbifold') {
       normalizedId = 'slide-turn';
-    } else if (cleanId === 'officespace') {
+    } else if (cleanId === 'officespace' || cleanId === 'fixedpartition' || cleanId === 'officepace') {
       normalizedId = 'office-space';
-    } else if (cleanId === 'telescopicsliders') {
+    } else if (cleanId === 'telescopicsliders' || cleanId === 'intpartition' || cleanId === 'interiorpartition' || cleanId === 'synchronizedsystems' || cleanId === 'tophangbifold' || cleanId === 'slidingwindowsdoors') {
       normalizedId = 'telescopic-sliders';
+    } else if (cleanId === '90degreeencloser' || cleanId === 'slidingenclouser' || cleanId === 'openabledoor') {
+      normalizedId = 'terrace';
     }
   }
 
   const data = normalizedId ? galleryData[normalizedId] : null;
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+
+  const isApplication = id && [
+    'balcony',
+    'int-partition',
+    'interior-partition',
+    'commercial',
+    'exterior',
+    'terrace',
+    'farm-house',
+    'farm hou-e',
+    'office-space',
+    'garden'
+  ].includes(id.toLowerCase().trim());
 
   const handleNext = (e: MouseEvent) => {
     e.stopPropagation();
@@ -50,9 +65,9 @@ export default function GalleryDetail() {
   }
 
   return (
-    <div className="pt-24 min-h-screen bg-slate-50 flex flex-col">
+    <div className="pt-20 md:pt-24 min-h-screen bg-slate-50 flex flex-col">
       {/* Hero Section - Split Layout */}
-      <section className="w-full max-w-7xl mx-auto px-6 py-12 md:py-20 flex flex-col md:flex-row items-center gap-12">
+      <section className="w-full max-w-7xl mx-auto px-6 pt-2 pb-12 md:py-20 flex flex-col-reverse md:flex-row items-center gap-12">
         <div className="w-full md:w-1/2">
           {data.images.length > 0 ? (
             <div className="aspect-[4/3] rounded-sm overflow-hidden shadow-2xl">
@@ -69,12 +84,12 @@ export default function GalleryDetail() {
           )}
         </div>
         
-        <div className="w-full md:w-1/2 flex flex-col items-start text-left">
-          <button onClick={() => navigate(-1)} className="inline-flex items-center text-luxury-gold hover:text-slate-900 transition-colors mb-6 text-sm uppercase tracking-widest cursor-pointer bg-transparent border-none">
-            <ArrowLeft size={16} className="mr-2" /> Back to Products
+        <div className="w-full md:w-1/2 flex flex-col items-center text-center md:items-start md:text-left">
+          <button onClick={() => navigate(-1)} className="inline-flex items-center text-luxury-gold hover:text-slate-900 transition-colors mb-6 text-sm uppercase tracking-widest cursor-pointer bg-transparent border-none self-start md:self-auto">
+            <ArrowLeft size={16} className="mr-2" /> Back to {isApplication ? 'Applications' : 'Products'}
           </button>
-          <h1 className="text-5xl md:text-6xl font-serif text-slate-900 mb-6">{data.title}</h1>
-          <p className="text-lg font-light text-slate-600 leading-relaxed max-w-xl">
+          <h1 className="text-4xl md:text-6xl font-serif text-slate-900 mb-6">{data.title}</h1>
+          <p className="text-lg font-light text-slate-600 leading-relaxed max-w-xl text-center md:text-left">
             {data.description}
           </p>
         </div>
@@ -83,14 +98,25 @@ export default function GalleryDetail() {
       {/* Gallery Section */}
       <section className="px-6 py-16 bg-white border-y border-slate-100 flex-grow">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
-            <h3 className="text-sm font-medium text-slate-400 uppercase tracking-[0.3em] mb-2">Project Showcase</h3>
-            <h2 className="text-3xl font-serif text-slate-900">Explore {data.title} Installations</h2>
+          <div className="mb-12 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+            <div className="text-center sm:text-left w-full sm:w-auto">
+              <h3 className="text-sm font-medium text-slate-400 uppercase tracking-[0.3em] mb-2">Project Showcase</h3>
+              <h2 className="text-3xl font-serif text-slate-900">Explore {data.title} Installations</h2>
+            </div>
+            {data.images.length > 0 && (
+              <button 
+                onClick={() => setSelectedImageIndex(0)} 
+                className="bg-luxury-gold hover:bg-slate-950 text-white px-5 py-2.5 rounded-lg font-medium uppercase tracking-wider text-xs transition-colors shadow flex items-center gap-2 cursor-pointer border-none self-center sm:self-auto"
+              >
+                <Eye size={14} />
+                View All Images
+              </button>
+            )}
           </div>
           {data.images.length === 0 ? (
             <div className="text-center text-slate-500 py-12">No images found for this category.</div>
           ) : (
-            <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:flex lg:flex-row lg:flex-wrap gap-6 justify-start">
               {data.images.map((img, idx) => (
                 <motion.div
                   key={idx}
@@ -98,10 +124,15 @@ export default function GalleryDetail() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: (idx % 5) * 0.1 }}
-                  className="break-inside-avoid overflow-hidden rounded-sm shadow-md hover:shadow-xl transition-shadow cursor-pointer"
+                  className="overflow-hidden rounded-xl border border-slate-200/50 shadow-md hover:shadow-xl transition-shadow cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-[300px] lg:flex-grow"
                   onClick={() => setSelectedImageIndex(idx)}
                 >
-                  <img loading="lazy" src={img} alt={`${data.title} ${idx + 1}`} className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
+                  <img 
+                    loading="lazy" 
+                    src={img} 
+                    alt={`${data.title} ${idx + 1}`} 
+                    className="w-full h-full object-cover lg:h-full lg:w-auto lg:min-w-full hover:scale-105 transition-transform duration-700" 
+                  />
                 </motion.div>
               ))}
             </div>
@@ -116,7 +147,7 @@ export default function GalleryDetail() {
           <p className="text-slate-300 font-light mb-10 text-lg">
             Contact our engineering experts today to discuss how our {data.title} systems can elevate your next architectural project.
           </p>
-          <button className="bg-luxury-gold text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-slate-900 transition-colors shadow-lg">
+          <button className="bg-luxury-gold hover:bg-slate-950 text-white px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs transition-colors shadow-md border-none cursor-pointer">
             Request a Consultation
           </button>
         </div>

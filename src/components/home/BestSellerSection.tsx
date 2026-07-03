@@ -11,7 +11,7 @@ export const BestSellerSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
           {/* Content Column */}
-          <div>
+          <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
             <div className="mb-4 inline-block">
               <span className="bg-luxury-gold text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1 rounded-sm">
                 Most Popular - Infi S&T
@@ -23,7 +23,7 @@ export const BestSellerSection = () => {
             </p>
             <h3 className="text-4xl md:text-5xl font-serif mb-6">Slide & Turn System</h3>
             
-            <p className="text-white/70 font-light text-lg mb-10 leading-relaxed max-w-xl">
+            <p className="text-white/70 font-light text-lg mb-10 leading-relaxed max-w-xl text-center lg:text-left">
               Our iconic signature slide and turn glides on ultra-smooth tracks, allowing individual sheets of toughened glass to fully stack to either extreme corner. Offers 100% opening potential when desired, making it absolute king of balcony utility layout concepts.
             </p>
 
@@ -78,20 +78,20 @@ export const BestSellerSection = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center lg:justify-start">
               <Link 
                 to="/products"
-                className="flex items-center justify-center gap-2 bg-luxury-gold hover:bg-yellow-600 text-white px-6 py-4 rounded-sm transition-all font-medium text-sm tracking-wide"
+                className="flex items-center justify-center gap-2 bg-luxury-gold hover:bg-yellow-600 text-white px-6 py-3 rounded-lg transition-all font-medium text-xs uppercase tracking-wider cursor-pointer border-none"
               >
                 Inspect Custom Variants
-                <ArrowRight size={16} />
+                <ArrowRight size={14} />
               </Link>
               <Link 
                 to="/#estimator"
-                className="flex items-center justify-center gap-2 bg-transparent border border-white/30 hover:border-white hover:bg-white/10 text-white px-6 py-4 rounded-sm transition-all font-medium text-sm tracking-wide"
+                className="flex items-center justify-center gap-2 bg-transparent border border-white/30 hover:border-white hover:bg-white/10 text-white px-6 py-3 rounded-lg transition-all font-medium text-xs uppercase tracking-wider cursor-pointer"
               >
                 Calculate Approximate Quote
-                <Calculator size={16} />
+                <Calculator size={14} />
               </Link>
             </div>
           </div>

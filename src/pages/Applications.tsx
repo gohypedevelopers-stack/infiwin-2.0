@@ -69,7 +69,7 @@ export default function Applications() {
         
         <div className="text-center text-white px-6">
           <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Architectural Harmony</p>
-          <h1 className="text-5xl md:text-7xl font-serif mb-4">Spatial Fluidity</h1>
+          <h1 className="text-4xl md:text-7xl font-serif mb-4">Spatial Fluidity</h1>
           <p className="mt-8 text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Explore how INFIWIN systems integrate into diverse environments, creating seamless transitions between nature and architecture.
           </p>
@@ -83,7 +83,7 @@ export default function Applications() {
             <p className="text-slate-400 text-sm font-medium uppercase tracking-[0.3em] mb-4">Explore Scenarios</p>
             <h3 className="text-4xl md:text-5xl font-serif text-slate-900">Application Areas</h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {featuredApps.map((app, idx) => (
               <motion.div
                 key={idx}
@@ -92,7 +92,7 @@ export default function Applications() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
               >
-                <Link to={`/gallery/${app.title.toLowerCase().replace(/[\\s&.]+/g, '-')}`} className="group cursor-pointer block">
+                <Link to={`/gallery/${app.title.toLowerCase().replace(/[\s&.]+/g, '-')}`} className="group cursor-pointer block">
                   <div className="aspect-[16/10] overflow-hidden rounded-sm mb-6 relative shadow-md transition-shadow hover:shadow-xl">
                     <img loading="lazy"
                     src={app.img}
@@ -158,7 +158,7 @@ export default function Applications() {
                   desc: "This design features frameless glass panels that meet at a corner, creating a seamless and visually striking effect. It can be a great choice for spaces that require an open and airy feel." 
                 }
               ].map((item, idx) => (
-                <div key={idx} className="p-6 bg-white border border-slate-100 rounded-sm hover:border-luxury-gold transition-colors">
+                <div key={idx} className="p-6 bg-white border border-slate-100 rounded-sm hover:border-luxury-gold transition-colors text-center lg:text-left">
                   <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-3">{item.label}</p>
                   <p className="text-xl font-serif mb-1 text-slate-900">{item.title}</p>
                   <p className="text-xs text-slate-500 font-light">{item.desc}</p>
@@ -188,9 +188,9 @@ export default function Applications() {
           <p className="text-slate-600 font-light mb-10 leading-relaxed text-lg">
             From luxury residential balconies to expansive commercial storefronts, discover how our frameless systems adapt perfectly to any architectural requirement. Explore our curated gallery of real-world applications.
           </p>
-          <button className="bg-black text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-luxury-gold transition-colors shadow-lg flex items-center gap-3 mx-auto">
+          <Link to="/gallery/balcony" className="bg-black text-white px-8 py-3 rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-luxury-gold transition-colors shadow-lg inline-flex items-center gap-3 mx-auto">
             <span>Explore Application Gallery</span>
-          </button>
+          </Link>
         </div>
       </section>
 

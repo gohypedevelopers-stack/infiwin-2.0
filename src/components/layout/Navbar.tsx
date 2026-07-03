@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, MessageCircle, ArrowRight, ChevronDown } from "lucide-react";
+import { Menu, X, Phone, ArrowRight, ChevronDown } from "lucide-react";
+import { WhatsAppIcon } from "../icons/WhatsAppIcon";
 import { motion, AnimatePresence } from "motion/react";
 
 export const Navbar = () => {
@@ -77,7 +78,7 @@ export const Navbar = () => {
           <div className="flex justify-end items-center gap-8">
             <Link
               to="/contact"
-              className={`hidden md:flex items-center justify-center px-8 py-3.5 rounded-none uppercase tracking-[0.2em] text-[10px] font-bold transition-all duration-300 ${buttonClass}`}
+              className={`hidden md:flex items-center justify-center px-8 py-3.5 rounded-lg uppercase tracking-wider text-[10px] font-medium transition-all duration-300 ${buttonClass}`}
             >
               REQUEST QUOTE
             </Link>
@@ -119,12 +120,12 @@ export const Navbar = () => {
                 <div className="flex flex-col gap-3 mt-2 pt-4 border-t border-slate-100">
                   <Link
                     to="/contact"
-                    className="bg-black text-white px-5 h-12 rounded-sm uppercase tracking-widest text-xs font-bold w-full flex items-center justify-center"
+                    className="bg-black text-white px-5 h-11 rounded-lg uppercase tracking-widest text-xs font-bold w-full flex items-center justify-center"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Request Design Quote
                   </Link>
-                  <a href="tel:+917337074370" className="border border-slate-200 text-slate-800 px-5 h-12 rounded-sm uppercase tracking-widest text-xs font-bold w-full flex items-center justify-center">
+                  <a href="tel:+917337074370" className="border border-slate-200 text-slate-800 px-5 h-11 rounded-lg uppercase tracking-widest text-xs font-bold w-full flex items-center justify-center">
                     Call
                   </a>
                 </div>
@@ -134,11 +135,11 @@ export const Navbar = () => {
         </AnimatePresence>
       </nav>
 
-      {/* Sticky Bottom Mobile CTA Bar (High-Visibility Viewport Lock) */}
-      <div className="md:hidden fixed bottom-4 left-4 right-4 z-50 bg-white border border-slate-100 rounded-full p-2 flex items-center justify-between shadow-2xl pointer-events-auto">
+      {/* Sticky Bottom Mobile CTA Bar */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-100 rounded-t-2xl px-3 pt-3 pb-2 flex items-center justify-between shadow-2xl pointer-events-auto">
         <a
           href="tel:+917337074370"
-          className="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center active:bg-slate-800 shrink-0"
+          className="w-12 h-12 rounded-lg bg-slate-900 text-white flex items-center justify-center active:bg-slate-800 shrink-0"
           aria-label="Call Us"
         >
           <Phone size={18} />
@@ -147,14 +148,14 @@ export const Navbar = () => {
           href="https://wa.me/917337074370"
           target="_blank"
           rel="noreferrer"
-          className="w-12 h-12 rounded-full bg-[#25D366] text-white flex items-center justify-center active:bg-green-600 shrink-0 mx-2"
+          className="w-12 h-12 rounded-lg bg-[#25D366] text-white flex items-center justify-center active:bg-green-600 shrink-0 mx-2"
           aria-label="Chat on WhatsApp"
         >
-          <MessageCircle size={18} className="fill-white/10" />
+          <WhatsAppIcon size={18} />
         </a>
         <Link
           to="/contact"
-          className="flex-grow h-12 rounded-full bg-luxury-gold text-white font-bold text-[10px] sm:text-xs uppercase tracking-widest flex items-center justify-center gap-2 active:bg-yellow-700"
+          className="flex-grow h-12 rounded-lg bg-luxury-gold text-white font-medium text-[10px] sm:text-xs uppercase tracking-wider flex items-center justify-center gap-2 active:bg-yellow-700"
         >
           Get Quote <ArrowRight size={12} />
         </Link>

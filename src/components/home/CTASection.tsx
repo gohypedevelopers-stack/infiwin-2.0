@@ -39,10 +39,10 @@ export const CTASection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <button className="w-full sm:w-auto bg-luxury-gold text-black px-10 py-5 rounded-sm font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-white transition-colors flex items-center justify-center gap-3">
+            <button className="w-full sm:w-auto bg-luxury-gold hover:bg-white text-black px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs transition-colors shadow-md flex items-center justify-center gap-3 border-none cursor-pointer">
               Request Free Consultation <ArrowRight size={14} />
             </button>
-            <button className="w-full sm:w-auto bg-transparent border border-white/30 text-white px-10 py-5 rounded-sm font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-white/10 transition-colors flex items-center justify-center gap-3">
+            <button className="w-full sm:w-auto bg-transparent border border-white/30 text-white px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs hover:bg-white/10 transition-colors flex items-center justify-center gap-3 cursor-pointer">
               <Phone size={14} /> +91 98765 43210
             </button>
           </div>

@@ -52,19 +52,19 @@ export const ApplicationsSection = () => {
             <button
               key={app.id}
               onClick={() => setActiveFilter(app.id)}
-              className={`p-6 text-left border rounded-xl transition-all duration-300 ${
+              className={`p-6 text-center flex flex-col items-center justify-start border rounded-xl transition-all duration-300 ${
                 activeFilter === app.id 
                   ? "border-luxury-gold bg-yellow-50/50 shadow-md transform -translate-y-1" 
                   : "border-slate-100 bg-white hover:border-luxury-gold/50 hover:shadow-sm"
               }`}
             >
-              <div className="mb-4 text-slate-400">
+              <div className="mb-4 text-slate-400 flex justify-center">
                 <app.icon size={36} strokeWidth={1.5} className={activeFilter === app.id ? "text-luxury-gold" : ""} />
               </div>
-              <h3 className={`text-lg font-medium mb-2 ${activeFilter === app.id ? "text-luxury-gold" : "text-slate-900"}`}>
+              <h3 className={`text-lg font-medium mb-2 w-full ${activeFilter === app.id ? "text-luxury-gold" : "text-slate-900"}`}>
                 {app.title}
               </h3>
-              <p className="text-slate-500 text-xs font-light leading-relaxed line-clamp-2">
+              <p className="text-slate-500 text-xs font-light leading-relaxed line-clamp-2 w-full">
                 {app.description}
               </p>
             </button>
@@ -74,10 +74,10 @@ export const ApplicationsSection = () => {
         <div className="flex justify-center">
           <Link 
             to="/#estimator"
-            className="group flex items-center justify-center gap-3 bg-black hover:bg-slate-800 text-white px-10 py-5 rounded-sm transition-all shadow-lg font-medium tracking-wider uppercase text-sm"
+            className="group flex items-center justify-center gap-3 bg-black hover:bg-slate-800 text-white px-6 py-3 rounded-lg transition-all shadow-lg font-medium tracking-wider uppercase text-xs cursor-pointer border-none"
           >
             Get Custom Enclosure Quote For Your Space
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </div>

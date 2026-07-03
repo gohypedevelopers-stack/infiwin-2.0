@@ -613,7 +613,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-black text-white py-5 flex items-center justify-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-slate-800 transition-all mt-4 disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full bg-black text-white py-4 rounded-lg flex items-center justify-center gap-3 text-xs font-medium uppercase tracking-wider hover:bg-slate-800 transition-all mt-4 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer border-none"
                 >
                   {loading ? (
                     <>
@@ -681,7 +681,7 @@ export default function Contact() {
 
               <button
                 onClick={() => setEstimate(length * height * 1800)}
-                className="w-full bg-luxury-gold text-white py-4 text-[10px] font-bold uppercase tracking-[0.2em] rounded-sm hover:bg-yellow-600 transition-colors"
+                className="w-full bg-luxury-gold text-white py-3 text-[10px] font-bold uppercase tracking-[0.2em] rounded-lg hover:bg-yellow-600 transition-colors"
               >
                 Calculate Estimate
               </button>

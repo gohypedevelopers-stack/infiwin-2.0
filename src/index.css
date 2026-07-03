@@ -30,3 +30,10 @@
     @apply backdrop-blur-md bg-white/70 border border-white/20;
   }
 }
+
+/* Mobile centering — bypasses Tailwind v4 JIT issues */
+@media (max-width: 767px) {
+  .estimator-header {
+    text-align: center;
+  }
+}

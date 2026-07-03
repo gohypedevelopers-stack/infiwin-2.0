@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Plus, Minus, Search, MessageSquare, ChevronRight, MessageCircle } from "lucide-react";
+import { Plus, Minus, Search, MessageSquare, ChevronRight } from "lucide-react";
+import { WhatsAppIcon } from "../components/icons/WhatsAppIcon";
 
 interface FAQItem {
   question: string;
@@ -215,9 +216,9 @@ export default function FAQ() {
               href="https://wa.me/917337074370"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-black px-8 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-[#25D366] hover:text-white transition-all flex items-center gap-2 group shadow-md hover:shadow-lg"
+              className="bg-white text-black px-8 py-3 rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-[#25D366] hover:text-white transition-all flex items-center gap-2 group shadow-md hover:shadow-lg"
             >
-              <MessageCircle size={16} className="text-[#25D366] group-hover:text-white transition-colors" />
+              <WhatsAppIcon size={16} className="text-[#25D366] group-hover:text-white transition-colors" />
               Chat on WhatsApp
             </a>
           </div>

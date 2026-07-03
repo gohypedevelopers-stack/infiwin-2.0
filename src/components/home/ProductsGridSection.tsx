@@ -8,37 +8,37 @@ export const ProductsGridSection = () => {
       subtitle: "Balcony Enclosure",
       description: "Perfect view maximization with foldaway tracking system layout.",
       tag: "Best Seller",
-      image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80",
+      image: "/slide_turn.png",
     },
     {
       title: "Telescopic Slider System",
       subtitle: "Super Smooth Gliding",
       description: "Overlapping glazed sheets for continuous uninterrupted tracks.",
-      image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80",
+      image: "/telescopic_slider.png",
     },
     {
       title: "Centre Open System",
       subtitle: "Split-fold Symmetrical",
       description: "Panels partition left and right symmetrically to retain optimal balances.",
-      image: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&q=80",
+      image: "/centre_open.png",
     },
     {
       title: "Bi-fold Glass System",
       subtitle: "Premium Partition",
       description: "Sleek folding structure for rapid internal partition transition zones.",
-      image: "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&q=80",
+      image: "/bifold_glass.png",
     },
     {
       title: "2 Track Slider",
       subtitle: "Doors & Windows",
       description: "Classic, cost-effective structural system layout with premium hardware profiles.",
-      image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80",
+      image: "/two_track_slider.png",
     },
     {
       title: "3 Track Slider",
       subtitle: "Doors & Windows",
       description: "Wider spans of clear structural views integrating bug mesh slider capability.",
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80",
+      image: "/three_track_slider.png",
     },
   ];
 
@@ -72,7 +72,7 @@ export const ProductsGridSection = () => {
               </div>
               
               {/* Content Container */}
-              <div className="p-8 flex flex-col flex-grow">
+              <div className="p-8 flex flex-col flex-grow text-center md:text-left">
                 <p className="text-luxury-gold text-[10px] uppercase tracking-[0.2em] font-bold mb-2">{product.subtitle}</p>
                 <h3 className="text-xl font-medium text-slate-900 mb-4">{product.title}</h3>
                 
@@ -85,7 +85,7 @@ export const ProductsGridSection = () => {
                   <Link to={`/products`} className="text-xs font-semibold uppercase tracking-wider text-slate-600 hover:text-black transition-colors flex items-center gap-1">
                     Variants
                   </Link>
-                  <Link to="/#estimator" className="text-xs font-semibold uppercase tracking-wider bg-black text-white px-5 py-2 rounded-sm hover:bg-slate-800 transition-colors flex items-center gap-2">
+                  <Link to="/#estimator" className="text-xs font-semibold uppercase tracking-wider bg-black text-white px-5 py-2 rounded-lg hover:bg-slate-800 transition-colors flex items-center gap-2">
                     Get Price <ArrowRight size={14} />
                   </Link>
                 </div>

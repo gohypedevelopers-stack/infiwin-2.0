@@ -153,7 +153,7 @@ export default function ConceptDetailPage({ data }: ConceptDetailPageProps) {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-3 bg-luxury-gold text-white text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-sm hover:bg-white hover:text-black transition-all duration-300 group"
+              className="inline-flex items-center gap-3 bg-luxury-gold text-white text-xs font-bold uppercase tracking-widest px-8 py-3 rounded-lg hover:bg-white hover:text-black transition-all duration-300 group"
             >
               Enquire Now
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -439,14 +439,14 @@ export default function ConceptDetailPage({ data }: ConceptDetailPageProps) {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-3 bg-luxury-gold text-white text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-sm hover:bg-white hover:text-black transition-all duration-300 group"
+                className="inline-flex items-center justify-center gap-3 bg-luxury-gold text-white text-xs font-bold uppercase tracking-widest px-8 py-3 rounded-lg hover:bg-white hover:text-black transition-all duration-300 group"
               >
                 Start a Project
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 to="/products"
-                className="inline-flex items-center justify-center gap-3 border border-white/20 text-white text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300"
+                className="inline-flex items-center justify-center gap-3 border border-white/20 text-white text-xs font-bold uppercase tracking-widest px-8 py-3 rounded-lg hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300"
               >
                 View Products
               </Link>

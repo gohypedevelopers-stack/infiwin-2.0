@@ -88,7 +88,7 @@ export const BenefitsSection = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.2 }}
-                className="flex flex-col items-start w-full h-full"
+                className="flex flex-col items-center text-center w-full h-full"
               >
                 <div className="bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-sm mb-6">
                   {benefits[activeIdx].icon}

@@ -39,6 +39,21 @@ const data = {
     title: "Exterior",
     description: "Built for resilience, our rigid wind resistance profile constructs are ideal for high-rise elevations. These exterior glass systems are engineered to withstand extreme weather conditions, ensuring maximum safety, acoustic insulation, and a striking, modern architectural facade.",
     images: []
+  },
+  "garden": {
+    title: "Garden",
+    description: "Enhance your outdoor living spaces with glass enclosures that blend beauty with functionality, perfect for garden houses, patios, and gazebos. Create a modern glass oasis that keeps you connected to your garden throughout the seasons.",
+    images: [
+      "/bifold_glass.png",
+      "/roof.png",
+      "/wind%20breaker.png",
+      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/WhatsApp%20Image%202021-02-20%20at%205.28.31%20PM.jpg",
+      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/FARMHOUSEHERO.jpg",
+      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4395.jpg",
+      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4402.jpg",
+      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4403.jpg",
+      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4408.jpg"
+    ]
   }
 };
 

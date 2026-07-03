@@ -18,21 +18,21 @@ export const EstimatorSection = () => {
   return (
     <div className="bg-slate-900 rounded-2xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden h-full" id="estimator">
       <div className="relative z-10 flex flex-col justify-between h-full gap-8">
-        <div>
+        <div className="text-center md:text-left flex flex-col items-center md:items-start">
           <p className="text-luxury-gold text-[10px] uppercase tracking-[0.3em] font-bold mb-4">Instant Pricing Guide</p>
           <h2 className="text-3xl md:text-4xl font-serif mb-4">On-Page System Cost Estimator</h2>
-          <p className="text-slate-300 font-light text-sm mb-8 max-w-md">
+          <p className="text-slate-300 font-light text-sm mb-8 max-w-md mx-auto md:mx-0">
             Enter your customized window/balcony dimensions below. Our system instantly runs the correct calculations using the official formula matrix.
           </p>
 
           {/* Sliders */}
           <div className="space-y-6">
             <div>
-              <div className="flex justify-between items-end mb-4">
-                <label className="text-sm font-medium flex items-center gap-2">
+              <div className="flex justify-between items-center mb-4 gap-2">
+                <label className="text-xs sm:text-sm font-medium flex items-center gap-1.5 min-w-0 leading-tight">
                   📏 Length of Balcony / Window (ft)
                 </label>
-                <span className="text-xl font-display font-light text-luxury-gold">{length} ft</span>
+                <span className="text-lg sm:text-xl font-display font-light text-luxury-gold shrink-0 whitespace-nowrap">{length} ft</span>
               </div>
               <input 
                 type="range" 
@@ -49,11 +49,11 @@ export const EstimatorSection = () => {
             </div>
 
             <div>
-              <div className="flex justify-between items-end mb-4">
-                <label className="text-sm font-medium flex items-center gap-2">
+              <div className="flex justify-between items-center mb-4 gap-2">
+                <label className="text-xs sm:text-sm font-medium flex items-center gap-1.5 min-w-0 leading-tight">
                   📐 Height of Balcony / Window (ft)
                 </label>
-                <span className="text-xl font-display font-light text-luxury-gold">{height} ft</span>
+                <span className="text-lg sm:text-xl font-display font-light text-luxury-gold shrink-0 whitespace-nowrap">{height} ft</span>
               </div>
               <input 
                 type="range" 
@@ -75,19 +75,19 @@ export const EstimatorSection = () => {
         <div className="bg-white/5 border border-white/10 rounded-xl p-6">
           <div className="grid grid-cols-2 gap-4 mb-6 border-b border-white/10 pb-6">
             <div>
-              <p className="text-[10px] uppercase tracking-widest text-slate-400 mb-1">Calculated Area</p>
-              <p className="text-xl font-medium">{area} sq.ft</p>
+              <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-400 mb-1">Calculated Area</p>
+              <p className="text-base sm:text-xl font-medium whitespace-nowrap">{area} sq.ft</p>
             </div>
             <div>
-              <p className="text-[10px] uppercase tracking-widest text-slate-400 mb-1">Base Unit Price</p>
-              <p className="text-xl font-medium">₹1,800 / sq.ft</p>
+              <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-400 mb-1">Base Unit Price</p>
+              <p className="text-base sm:text-xl font-medium whitespace-nowrap">₹1,800 / sq.ft</p>
             </div>
           </div>
           
           <div>
             <p className="text-[10px] uppercase tracking-widest text-luxury-gold mb-2 font-bold">Your Approximate Cost:</p>
-            <p className="text-4xl md:text-5xl font-display font-light tracking-tight text-white mb-2 flex items-baseline gap-2">
-              ₹{estimate.toLocaleString('en-IN')} <span className="text-sm font-medium text-slate-300"><span className="mr-1 text-slate-400">+</span> Installation Charges.</span>
+            <p className="text-3xl sm:text-4xl md:text-5xl font-display font-light tracking-tight text-white mb-2 flex flex-wrap items-baseline gap-x-2 gap-y-1">
+              ₹{estimate.toLocaleString('en-IN')} <span className="text-xs sm:text-sm font-medium text-slate-300 whitespace-nowrap"><span className="mr-1 text-slate-400">+</span> Installation Charges.</span>
             </p>
             <p className="text-xs text-slate-400 leading-relaxed">
               all prices are excluding taxes & freight charges.

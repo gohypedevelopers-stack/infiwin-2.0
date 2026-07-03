@@ -61,7 +61,7 @@ export default function Products() {
 
         <div className="relative z-10 text-center text-white px-6">
           <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Structural Excellence</p>
-          <h1 className="text-5xl md:text-7xl font-serif mb-4">Precision Engineered</h1>
+          <h1 className="text-4xl md:text-7xl font-serif mb-4">Precision Engineered</h1>
           <p className="mt-8 text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Experience the pinnacle of precision-engineered glass systems. Our collection defines the boundaries of transparency and structural innovation.
           </p>
@@ -72,17 +72,17 @@ export default function Products() {
       <section className="px-6 py-24">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
-            <div>
+            <div className="text-center md:text-left">
               <h3 className="text-sm font-medium text-slate-400 uppercase tracking-[0.3em] mb-4">Signature Range</h3>
-              <h4 className="text-4xl font-serif text-slate-900">Highly Engineered Systems</h4>
+              <h4 className="text-3xl md:text-4xl font-serif text-slate-900">Highly Engineered Systems</h4>
             </div>
 
-            <div className="flex flex-wrap gap-4 items-center">
+            <div className="flex flex-wrap gap-2 md:gap-4 items-center justify-center md:justify-start">
               {categories.map((cat, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveFilter(cat)}
-                  className={`px-6 py-2 rounded-sm text-sm tracking-wide transition-all duration-300 ${activeFilter === cat
+                  className={`px-3 py-1.5 md:px-6 md:py-2 rounded-sm text-xs md:text-sm tracking-wide transition-all duration-300 ${activeFilter === cat
                     ? "bg-luxury-gold text-white font-medium shadow-md"
                     : "bg-slate-100 text-slate-500 hover:bg-slate-200"
                     }`}
@@ -102,7 +102,7 @@ export default function Products() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ delay: idx * 0.1, duration: 0.4 }}
               >
-                <Link to={`/gallery/${p.title.toLowerCase().replace(/[\\s&.]+/g, '-')}`} className="group cursor-pointer block">
+                <Link to={`/gallery/${p.title.toLowerCase().replace(/[\s&.]+/g, '-')}`} className="group cursor-pointer block">
                   <div className="aspect-[16/10] overflow-hidden rounded-sm mb-6 shadow-md transition-shadow hover:shadow-xl relative">
                     <img loading="lazy"
                       src={p.img}
@@ -131,9 +131,9 @@ export default function Products() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-stretch">
             <div>
-              <div className="mb-12">
+              <div className="mb-12 text-center lg:text-left">
                 <h3 className="text-sm font-medium text-slate-400 uppercase tracking-[0.3em] mb-4">Technical Data</h3>
-                <h4 className="text-5xl font-serif text-slate-900">Engineering Specifications</h4>
+                <h4 className="text-3xl md:text-5xl font-serif text-slate-900">Engineering Specifications</h4>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -147,7 +147,7 @@ export default function Products() {
                   { label: "Mechanism", value: "Slide and Turn", desc: "Smooth Operation" },
                   { label: "Profile", value: "Aluminium", desc: "Durable Frame" }
                 ].map((stat, i) => (
-                  <div key={i} className="p-6 border border-slate-100 rounded-sm hover:border-luxury-gold transition-colors">
+                  <div key={i} className="p-6 border border-slate-100 rounded-sm hover:border-luxury-gold transition-colors text-center sm:text-left">
                     <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-3">{stat.label}</p>
                     <p className="text-xl font-serif mb-1 text-slate-900">{stat.value}</p>
                     <p className="text-xs text-slate-500 font-light">{stat.desc}</p>
@@ -181,7 +181,7 @@ export default function Products() {
           <p className="text-slate-600 font-light mb-10 leading-relaxed">
             Our consultants are ready to provide a detailed technical assessment and quote for your project.
           </p>
-          <button className="bg-black text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-slate-800 transition-colors">
+          <button className="bg-black hover:bg-slate-800 text-white px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs transition-colors shadow-md border-none cursor-pointer">
             Request a Technical Quote
           </button>
         </div>

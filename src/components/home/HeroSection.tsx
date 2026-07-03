@@ -94,9 +94,9 @@ export const HeroSection = () => {
       {/* Soft luxury gradient overlay */}
       <div className="absolute inset-0 z-0 bg-slate-950/50 lg:bg-transparent lg:bg-gradient-to-r lg:from-slate-950/85 lg:via-slate-900/50 lg:to-transparent"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full flex flex-col items-start text-left mt-8 mb-8 lg:my-auto">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full flex flex-col items-center text-center lg:items-start lg:text-left mt-8 mb-8 lg:my-auto">
         <motion.div 
-          className="max-w-3xl flex flex-col items-start w-full"
+          className="max-w-3xl flex flex-col items-center lg:items-start w-full"
           initial="hidden"
           animate="visible"
           variants={{
@@ -111,7 +111,7 @@ export const HeroSection = () => {
           {/* Pre-Header Badge */}
           <motion.div 
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
-            className="flex items-center gap-3 mb-6 md:mb-8"
+            className="flex items-center justify-center lg:justify-start gap-3 mb-6 md:mb-8"
           >
             {/* Small decorative circle */}
             <div className="w-1.5 h-1.5 rounded-full border border-luxury-gold animate-pulse"></div>
@@ -123,7 +123,7 @@ export const HeroSection = () => {
           {/* Primary Foundational Heading */}
           <motion.h1 
             variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } } }}
-            className="text-xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight mb-4 md:mb-6 drop-shadow-2xl flex flex-col"
+            className="text-xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight mb-4 md:mb-6 drop-shadow-2xl flex flex-col items-center lg:items-start"
           >
             <span className="uppercase tracking-widest mb-1 font-light whitespace-nowrap">Breathtaking Views,</span>
             <span className="text-luxury-gold italic font-normal tracking-wide whitespace-nowrap">Uncompromised Protection</span>
@@ -140,13 +140,13 @@ export const HeroSection = () => {
           {/* Primary Call-to-Action Buttons */}
           <motion.div 
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 justify-start mt-2 w-full sm:w-auto"
+            className="flex flex-col sm:flex-row items-center lg:items-start gap-4 sm:gap-6 justify-center lg:justify-start mt-2 w-full sm:w-auto"
           >
             <Link
               to="/#estimator"
-              className="bg-luxury-gold hover:bg-white hover:text-slate-900 text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-full transition-all duration-300 shadow-[0_0_30px_rgba(212,175,55,0.2)] hover:shadow-[0_0_50px_rgba(255,255,255,0.4)] font-bold text-[10px] sm:text-xs uppercase tracking-widest flex items-center gap-3 w-full sm:w-auto justify-center sm:justify-start"
+              className="bg-luxury-gold hover:bg-white hover:text-slate-900 text-white px-5 py-2.5 rounded-lg transition-all duration-300 shadow-md font-medium text-xs uppercase tracking-wider flex items-center gap-3 w-full sm:w-auto justify-center sm:justify-start"
             >
-              <Calculator size={14} className="sm:w-4 sm:h-4" />
+              <Calculator size={14} />
               Calculate Cost Instantly
             </Link>
             <Link

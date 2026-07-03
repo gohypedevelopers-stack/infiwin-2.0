@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import { useEffect } from "react";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
-import { MessageCircle } from "lucide-react";
+import { WhatsAppIcon } from "./components/icons/WhatsAppIcon";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Applications from "./pages/Applications";
@@ -86,7 +86,7 @@ export default function App() {
           className="hidden md:flex fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 items-center justify-center"
           aria-label="Chat on WhatsApp"
         >
-          <MessageCircle size={28} />
+          <WhatsAppIcon size={28} />
         </a>
       </div>
     </Router>

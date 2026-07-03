@@ -53,10 +53,10 @@ export const TestimonialsSection = () => {
 
         <div className="max-w-4xl mx-auto">
           <div className="relative bg-white rounded-2xl shadow-xl p-8 md:p-16 border border-slate-100">
-            <Quote size={48} className="text-luxury-gold/20 absolute top-8 left-8" />
+            <Quote size={48} className="text-luxury-gold/20 mx-auto mb-6 block lg:absolute lg:top-8 lg:left-8 lg:mb-0" />
             
             <div className="relative z-10 text-center px-4">
-              <p className="text-xl md:text-2xl font-light text-slate-700 leading-relaxed mb-10">
+              <p className="text-[15px] sm:text-lg md:text-2xl font-light text-slate-700 leading-relaxed mb-10">
                 "{testimonials[currentIndex].review}"
               </p>
               

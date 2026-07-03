@@ -1,5 +1,6 @@
 import { useState, FormEvent } from "react";
-import { Rocket, MessageCircle } from "lucide-react";
+import { Rocket } from "lucide-react";
+import { WhatsAppIcon } from "../icons/WhatsAppIcon";
 import { useNavigate } from "react-router-dom";
 
 export const LeadFormSection = () => {
@@ -59,7 +60,7 @@ export const LeadFormSection = () => {
     <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-slate-100 relative h-full">
       <div className="flex flex-col justify-center h-full gap-6">
         {/* Header Block at Top */}
-        <div>
+        <div className="text-center md:text-left">
           <h3 className="text-3xl font-serif text-slate-900 mb-2">Lock-In Your Deal Price</h3>
           <p className="text-slate-500 font-light text-sm mb-0">
             Fill out this quick 3-field layout to request our premium catalog along with architectural assistance.
@@ -116,9 +117,9 @@ export const LeadFormSection = () => {
 
             <button
               type="submit"
-              className="w-full bg-black hover:bg-slate-800 text-white py-4 rounded-lg flex items-center justify-center gap-2 font-bold tracking-wider uppercase text-sm transition-colors shadow-lg mt-2"
+              className="w-full bg-black hover:bg-slate-800 text-white py-4 rounded-lg flex items-center justify-center gap-2 font-semibold sm:font-bold tracking-wide sm:tracking-wider uppercase text-[11px] sm:text-sm transition-colors shadow-lg mt-2 cursor-pointer border-none"
             >
-              <Rocket size={18} /> Request Quote & Call Back
+              <Rocket size={16} /> Request Quote & Call Back
             </button>
           </form>
 
@@ -133,9 +134,9 @@ export const LeadFormSection = () => {
               href="https://wa.me/917337074370?text=Hi Infiwin, I am interested in getting a Slide & Turn Balcony System. Please share your product catalog!"
               target="_blank"
               rel="noreferrer"
-              className="w-full bg-green-500 hover:bg-green-600 text-white py-4 rounded-lg flex items-center justify-center gap-2 font-bold tracking-wider uppercase text-sm transition-colors shadow-lg"
+              className="w-full bg-green-500 hover:bg-green-600 text-white py-4 rounded-lg flex items-center justify-center gap-2 font-semibold sm:font-bold tracking-wide sm:tracking-wider uppercase text-[11px] sm:text-sm transition-colors shadow-lg"
             >
-              <MessageCircle size={18} /> Get Instant Price via WhatsApp
+              <WhatsAppIcon size={16} /> Get Instant Price via WhatsApp
             </a>
           </div>
         </div>
