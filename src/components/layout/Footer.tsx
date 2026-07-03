@@ -7,7 +7,7 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-10 text-left">
           <div className="col-span-2 md:col-span-1 flex flex-col items-start text-left">
-            <Link to="/" className="block mb-6">
+            <Link to="/" className="block -ml-3 mb-3">
               <img
                 src="https://i.postimg.cc/0Q7DD7KK/H-Logo-V-BG.png"
                 alt="INFIWIN"
