@@ -7,7 +7,23 @@ import { galleryData } from '../data/galleryData';
 export default function GalleryDetail() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const data = id ? galleryData[id] : null;
+  
+  // Normalize the id to handle minor typos or URL formatting differences (e.g., 'farm hou-e', 'farmhouse')
+  let normalizedId = id;
+  if (id) {
+    const cleanId = id.toLowerCase().replace(/[\s\-_]+/g, '');
+    if (cleanId === 'farmhouse' || cleanId === 'farmhoue') {
+      normalizedId = 'farm-house';
+    } else if (cleanId === 'slideturn') {
+      normalizedId = 'slide-turn';
+    } else if (cleanId === 'officespace') {
+      normalizedId = 'office-space';
+    } else if (cleanId === 'telescopicsliders') {
+      normalizedId = 'telescopic-sliders';
+    }
+  }
+
+  const data = normalizedId ? galleryData[normalizedId] : null;
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   const handleNext = (e: MouseEvent) => {

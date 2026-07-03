@@ -8,9 +8,10 @@ import {
 
 export default function About() {
   const milestones = [
-    { year: "01", num: "1", title: "Scorching Heat", desc: "Summer heatwaves frequently exceeding 45 degrees lock homeowners indoors. Traditional open balconies become completely unusable for months." },
-    { year: "02", num: "2", title: "Intense Monsoons", desc: "Heavy downpours and high-altitude wind pressures destroy unprotected outdoor furniture, making it impossible to maintain a premium lounge setup outside." },
-    { year: "03", num: "3", title: "Urban Pollution", desc: "High levels of urban noise pollution and heavy dust layers render open spaces hostile, forcing residents to keep their sliding doors permanently shut." }
+    { year: "01", num: "1", title: "The Beginning", desc: "Started as a small architectural hardware supplier, laying the foundation for excellence." },
+    { year: "02", num: "2", title: "Pioneering S&T", desc: "Introduced our signature Slide & Turn frameless balcony systems to the domestic market." },
+    { year: "03", num: "3", title: "Commercial Expansion", desc: "Expanded operations to cover large-scale commercial facades and hotel projects." },
+    { year: "04", num: "4", title: "Automated Luxury", desc: "Launched motorized guillotine systems and bioclimatic pergolas." }
   ];
 
   const timelineRef = useRef<HTMLDivElement>(null);
@@ -81,10 +82,10 @@ export default function About() {
       <section className="py-32 px-6 bg-slate-50 text-slate-900 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 relative z-10">
-            <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Conquering the Elements</p>
+            <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Milestones of growth</p>
             <h2 className="text-4xl md:text-6xl font-serif text-slate-900 mb-6">Journey</h2>
             <p className="text-slate-600 font-light leading-relaxed max-w-3xl mx-auto text-lg">
-              Our journey has always been about conquering the extreme Indian climate to reclaim your outdoor spaces.
+              Our journey from architectural hardware suppliers to pioneers of automated luxury frameless glazing solutions in India.
             </p>
           </div>
           
@@ -120,8 +121,6 @@ export default function About() {
 
                     {/* Content Half */}
                     <div className={`w-full md:w-1/2 flex flex-col justify-center pl-16 md:pl-0 ${isEven ? 'md:pr-24 md:items-end md:text-right' : 'md:pl-24 md:items-start md:text-left'} relative`}>
-
-                      
                       <motion.div 
                         variants={{
                           hidden: { opacity: 0, y: 30 },

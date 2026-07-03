@@ -75,7 +75,7 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative h-auto lg:h-screen min-h-auto lg:min-h-[650px] lg:max-h-[820px] bg-slate-950 flex flex-col justify-between pt-24 pb-6 lg:pt-32 lg:pb-16 overflow-hidden">
+    <section className="relative h-auto lg:h-screen min-h-auto lg:min-h-[650px] bg-slate-950 flex flex-col justify-between pt-24 pb-6 lg:pt-32 lg:pb-16 overflow-hidden">
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence>
