@@ -11,7 +11,7 @@ export const Footer = () => {
               <img
                 src="https://i.postimg.cc/0Q7DD7KK/H-Logo-V-BG.png"
                 alt="INFIWIN"
-                className="h-10 md:h-12 w-auto object-contain brightness-0 invert"
+                className="h-14 md:h-18 w-auto object-contain brightness-0 invert"
                 referrerPolicy="no-referrer"
               />
             </Link>
