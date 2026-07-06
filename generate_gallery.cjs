@@ -94,6 +94,26 @@ const data = {
     title: "Top Hang Bi Fold",
     description: "Top-hung bi-fold systems for internal partition dividers. Keeps flooring unobstructed without bottom guide rails while providing flexible room dividing setups.",
     images: []
+  },
+  "balcony": {
+    title: "Balcony",
+    description: "Unobstructed frameless premium safety glazing barriers. Perfectly designed for balconies and terraces, offering panoramic views, superior weather protection, and effortless sliding mechanisms that redefine modern open-concept living spaces.",
+    images: []
+  },
+  "int-partition": {
+    title: "Interior Partition",
+    description: "Sleek separation zones for functional multi-use spaces. Internal glass partitions offer privacy without compromising on natural light or open design aesthetics.",
+    images: []
+  },
+  "guillotine-glass-system": {
+    title: "Guillotine Glass System",
+    description: "Experience modern automated vertical sliding glass systems. Designed for balconies and cafes, offering motorized operation, wind protection, and seamless integration.",
+    images: []
+  },
+  "fixed-partition": {
+    title: "Fixed Partition",
+    description: "Elegant fixed glass partition systems for modern bathrooms and interiors, offering clean lines, structural stability, and minimalist aesthetics.",
+    images: []
   }
 };
 
@@ -156,6 +176,11 @@ getImagesFromPublic('Sliding Encloser', 'sliding-encloser');
 getImagesFromPublic('Sliding Windows & Doors', 'sliding-windows-doors');
 getImagesFromPublic('Synchronized Systems', 'synchronized-systems');
 getImagesFromPublic('Top Hang Bi Fold', 'top-hang-bi-fold');
+
+getImages('S&T', 'balcony');
+getImages('Telescopic', 'int-partition');
+getImages('S&T', 'guillotine-glass-system');
+getImagesFromPublic('Sliding Encloser', 'fixed-partition');
 
 const tsContent = `export interface GalleryItem {
   title: string;

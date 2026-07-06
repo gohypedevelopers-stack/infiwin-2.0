@@ -73,6 +73,8 @@ export default function App() {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/gallery/product/:id" element={<GalleryDetail type="product" />} />
+            <Route path="/gallery/application/:id" element={<GalleryDetail type="application" />} />
             <Route path="/gallery/:id" element={<GalleryDetail />} />
           </Routes>
         </main>

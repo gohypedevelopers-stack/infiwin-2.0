@@ -102,7 +102,7 @@ export default function Products() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ delay: idx * 0.1, duration: 0.4 }}
               >
-                <Link to={`/gallery/${p.title.toLowerCase().replace(/[\s&.]+/g, '-')}`} className="group cursor-pointer block">
+                <Link to={`/gallery/product/${p.title.toLowerCase().replace(/[\s&.]+/g, '-')}`} className="group cursor-pointer block">
                   <div className="aspect-[16/10] overflow-hidden rounded-sm mb-6 shadow-md transition-shadow hover:shadow-xl relative">
                     <img loading="lazy"
                       src={p.img}

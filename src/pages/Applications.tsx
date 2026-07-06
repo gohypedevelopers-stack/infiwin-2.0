@@ -92,7 +92,7 @@ export default function Applications() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
               >
-                <Link to={`/gallery/${app.title.toLowerCase().replace(/[\s&.]+/g, '-')}`} className="group cursor-pointer block">
+                <Link to={`/gallery/application/${app.title.toLowerCase().replace(/[\s&.]+/g, '-')}`} className="group cursor-pointer block">
                   <div className="aspect-[16/10] overflow-hidden rounded-sm mb-6 relative shadow-md transition-shadow hover:shadow-xl">
                     <img loading="lazy"
                     src={app.img}
@@ -188,7 +188,7 @@ export default function Applications() {
           <p className="text-slate-600 font-light mb-10 leading-relaxed text-lg">
             From luxury residential balconies to expansive commercial storefronts, discover how our frameless systems adapt perfectly to any architectural requirement. Explore our curated gallery of real-world applications.
           </p>
-          <Link to="/gallery/balcony" className="bg-black text-white px-8 py-3 rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-luxury-gold transition-colors shadow-lg inline-flex items-center gap-3 mx-auto">
+          <Link to="/gallery/application/balcony" className="bg-black text-white px-8 py-3 rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-luxury-gold transition-colors shadow-lg inline-flex items-center gap-3 mx-auto">
             <span>Explore Application Gallery</span>
           </Link>
         </div>

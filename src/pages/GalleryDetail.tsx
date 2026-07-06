@@ -1,13 +1,22 @@
 import { useState, MouseEvent } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft, ChevronLeft, ChevronRight, X, Eye } from 'lucide-react';
 import { galleryData } from '../data/galleryData';
 
-export default function GalleryDetail() {
+interface GalleryDetailProps {
+  type?: 'product' | 'application';
+}
+
+export default function GalleryDetail({ type }: GalleryDetailProps) {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const location = useLocation();
   
+  // Determine if application based on prop or fallback url parsing
+  const resolvedType = type || (location.pathname.includes('/application/') ? 'application' : 'product');
+  const isApplication = resolvedType === 'application';
+
   // Normalize the id to handle minor typos or URL formatting differences (e.g., 'farm hou-e', 'farmhouse')
   let normalizedId = id;
   if (id) {
@@ -15,15 +24,25 @@ export default function GalleryDetail() {
     if (cleanId === 'farmhouse' || cleanId === 'farmhoue') {
       normalizedId = 'farm-house';
     } else if (cleanId === 'slideturn' || cleanId === 'balcony' || cleanId === 'guillotineglasssystem') {
-      normalizedId = 'slide-turn';
+      if (isApplication && (cleanId === 'balcony' || cleanId === 'slideturn')) {
+        normalizedId = 'balcony';
+      } else if (cleanId === 'guillotineglasssystem') {
+        normalizedId = 'guillotine-glass-system';
+      } else {
+        normalizedId = 'slide-turn';
+      }
     } else if (cleanId === 'officespace' || cleanId === 'fixedpartition' || cleanId === 'officepace') {
-      normalizedId = 'office-space';
+      if (cleanId === 'fixedpartition') {
+        normalizedId = 'fixed-partition';
+      } else {
+        normalizedId = 'office-space';
+      }
     } else if (cleanId === 'telescopicsliders' || cleanId === 'intpartition' || cleanId === 'interiorpartition') {
-      normalizedId = 'telescopic-sliders';
-    } else if (cleanId === 'openablewindowsdoors') {
-      normalizedId = 'openable-windows-doors';
-    } else if (cleanId === 'foldabledoorsbifold') {
-      normalizedId = 'foldable-doors-(bi-fold)';
+      if (isApplication && (cleanId === 'intpartition' || cleanId === 'interiorpartition' || cleanId === 'telescopicsliders')) {
+        normalizedId = 'int-partition';
+      } else {
+        normalizedId = 'telescopic-sliders';
+      }
     } else if (cleanId === 'synchronizedsystems') {
       normalizedId = 'synchronized-systems';
     } else if (cleanId === 'tophangbifold') {
@@ -36,24 +55,15 @@ export default function GalleryDetail() {
       normalizedId = 'sliding-encloser';
     } else if (cleanId === 'openabledoor') {
       normalizedId = 'openable-door';
+    } else if (cleanId === 'openablewindowsdoors') {
+      normalizedId = 'openable-windows-doors';
+    } else if (cleanId === 'foldabledoorsbifold') {
+      normalizedId = 'foldable-doors-(bi-fold)';
     }
   }
 
   const data = normalizedId ? galleryData[normalizedId] : null;
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
-
-  const isApplication = id && [
-    'balcony',
-    'int-partition',
-    'interior-partition',
-    'commercial',
-    'exterior',
-    'terrace',
-    'farm-house',
-    'farm hou-e',
-    'office-space',
-    'garden'
-  ].includes(id.toLowerCase().trim());
 
   const handleNext = (e: MouseEvent) => {
     e.stopPropagation();

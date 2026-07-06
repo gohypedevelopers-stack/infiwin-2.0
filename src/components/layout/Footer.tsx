@@ -23,22 +23,22 @@ export const Footer = () => {
           <div className="col-span-1 md:col-span-1 text-left">
             <h5 className="text-[10px] uppercase tracking-[0.3em] text-white font-bold mb-8">6 Product Lines</h5>
             <ul className="space-y-4 text-white/60 text-sm">
-              <li><Link to="/gallery/slide-turn" className="hover:text-white transition-colors">Slide & Turn System</Link></li>
-              <li><Link to="/gallery/telescopic-sliders" className="hover:text-white transition-colors">Telescopic Slider</Link></li>
+              <li><Link to="/gallery/product/slide-turn" className="hover:text-white transition-colors">Slide & Turn System</Link></li>
+              <li><Link to="/gallery/product/telescopic-sliders" className="hover:text-white transition-colors">Telescopic Slider</Link></li>
               <li><Link to="/products" className="hover:text-white transition-colors">Centre Open System</Link></li>
-              <li><Link to="/gallery/foldable-doors-bi-fold" className="hover:text-white transition-colors">Bi-fold Enclosures</Link></li>
-              <li><Link to="/gallery/sliding-windows-doors" className="hover:text-white transition-colors">2 Track Slider</Link></li>
-              <li><Link to="/gallery/sliding-windows-doors" className="hover:text-white transition-colors">3 Track Slider</Link></li>
+              <li><Link to="/gallery/product/foldable-doors-(bi-fold)" className="hover:text-white transition-colors">Bi-fold Enclosures</Link></li>
+              <li><Link to="/gallery/product/sliding-windows-doors" className="hover:text-white transition-colors">2 Track Slider</Link></li>
+              <li><Link to="/gallery/product/sliding-windows-doors" className="hover:text-white transition-colors">3 Track Slider</Link></li>
             </ul>
           </div>
 
           <div className="col-span-1 md:col-span-1 text-left">
             <h5 className="text-[10px] uppercase tracking-[0.3em] text-white font-bold mb-8">Space Usages</h5>
             <ul className="space-y-4 text-white/60 text-sm">
-              <li><Link to="/gallery/balcony" className="hover:text-white transition-colors">Balcony Glass</Link></li>
-              <li><Link to="/gallery/office-space" className="hover:text-white transition-colors">Office Glass Partitions</Link></li>
-              <li><Link to="/gallery/commercial" className="hover:text-white transition-colors">Commercial Facades</Link></li>
-              <li><Link to="/gallery/terrace" className="hover:text-white transition-colors">Terrace & Gardens</Link></li>
+              <li><Link to="/gallery/application/balcony" className="hover:text-white transition-colors">Balcony Glass</Link></li>
+              <li><Link to="/gallery/application/office-space" className="hover:text-white transition-colors">Office Glass Partitions</Link></li>
+              <li><Link to="/gallery/application/commercial" className="hover:text-white transition-colors">Commercial Facades</Link></li>
+              <li><Link to="/gallery/application/terrace" className="hover:text-white transition-colors">Terrace & Gardens</Link></li>
             </ul>
           </div>
 
