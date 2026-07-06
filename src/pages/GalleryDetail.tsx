@@ -14,14 +14,28 @@ export default function GalleryDetail() {
     const cleanId = id.toLowerCase().replace(/[\s\-_()]+/g, '');
     if (cleanId === 'farmhouse' || cleanId === 'farmhoue') {
       normalizedId = 'farm-house';
-    } else if (cleanId === 'slideturn' || cleanId === 'balcony' || cleanId === 'guillotineglasssystem' || cleanId === 'openablewindowsdoors' || cleanId === 'foldabledoorsbifold') {
+    } else if (cleanId === 'slideturn' || cleanId === 'balcony' || cleanId === 'guillotineglasssystem') {
       normalizedId = 'slide-turn';
     } else if (cleanId === 'officespace' || cleanId === 'fixedpartition' || cleanId === 'officepace') {
       normalizedId = 'office-space';
-    } else if (cleanId === 'telescopicsliders' || cleanId === 'intpartition' || cleanId === 'interiorpartition' || cleanId === 'synchronizedsystems' || cleanId === 'tophangbifold' || cleanId === 'slidingwindowsdoors') {
+    } else if (cleanId === 'telescopicsliders' || cleanId === 'intpartition' || cleanId === 'interiorpartition') {
       normalizedId = 'telescopic-sliders';
-    } else if (cleanId === '90degreeencloser' || cleanId === 'slidingenclouser' || cleanId === 'openabledoor') {
-      normalizedId = 'terrace';
+    } else if (cleanId === 'openablewindowsdoors') {
+      normalizedId = 'openable-windows-doors';
+    } else if (cleanId === 'foldabledoorsbifold') {
+      normalizedId = 'foldable-doors-(bi-fold)';
+    } else if (cleanId === 'synchronizedsystems') {
+      normalizedId = 'synchronized-systems';
+    } else if (cleanId === 'tophangbifold') {
+      normalizedId = 'top-hang-bi-fold';
+    } else if (cleanId === 'slidingwindowsdoors') {
+      normalizedId = 'sliding-windows-doors';
+    } else if (cleanId === '90degreeencloser') {
+      normalizedId = '90-degree-encloser';
+    } else if (cleanId === 'slidingenclouser' || cleanId === 'slidingencloser') {
+      normalizedId = 'sliding-encloser';
+    } else if (cleanId === 'openabledoor') {
+      normalizedId = 'openable-door';
     }
   }
 

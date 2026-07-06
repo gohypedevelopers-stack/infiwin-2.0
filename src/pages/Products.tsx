@@ -38,7 +38,7 @@ export default function Products() {
     { title: "Openable Windows & Doors", category: "Doors & Windows", img: getProductImg("Openable Windows & Doors", "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2002_30_38%20PM.png") },
     { title: "Foldable Doors (Bi Fold)", category: "Doors & Windows", img: getProductImg("Foldable Doors (Bi Fold)", "/foldable_doors.png") },
     { title: "90 Degree Encloser", category: "Bathroom", img: getProductImg("90 Degree Encloser", "/ninety_degree.png") },
-    { title: "Sliding Enclouser", category: "Bathroom", img: getProductImg("Sliding Enclouser", "/sliding_enclosure.png") },
+    { title: "Sliding Encloser", category: "Bathroom", img: getProductImg("Sliding Encloser", "/sliding_enclosure.png") },
     { title: "Openable Door", category: "Bathroom", img: getProductImg("Openable Door", "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80") },
     { title: "Fixed Partition", category: "Bathroom", img: getProductImg("Fixed Partition", "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80") }
   ];

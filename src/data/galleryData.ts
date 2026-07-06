@@ -255,5 +255,85 @@ export const galleryData: Record<string, GalleryItem> = {
       "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4403.jpg",
       "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4408.jpg"
     ]
+  },
+  "90-degree-encloser": {
+    "title": "90 Degree Encloser",
+    "description": "Premium frameless 90-degree glass enclosures designed to elevate modern bathrooms. Features watertight performance, solid brass hardware, and custom configurations that make efficient use of corner space.",
+    "images": [
+      "/90%20Degree%20Encloser/90%20Degree%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_06_18%20PM.png",
+      "/90%20Degree%20Encloser/90%20Degree%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_08_43%20PM.png",
+      "/90%20Degree%20Encloser/90%20Degree%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_11_32%20PM.png",
+      "/90%20Degree%20Encloser/90%20Degree%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_13_16%20PM.png"
+    ]
+  },
+  "foldable-doors-(bi-fold)": {
+    "title": "Foldable Doors (Bi Fold)",
+    "description": "Redefine boundaries with our luxurious bi-fold folding door systems. Offering elegant folding paths, high thermal performance, and expansive opening areas that bring the outdoors inside.",
+    "images": [
+      "/Foldable%20Doors%20(Bi%20Fold)/Foldable%20Doors%20(Bi%20Fold)/ChatGPT%20Image%20Jul%206,%202026,%2001_00_26%20PM.png",
+      "/Foldable%20Doors%20(Bi%20Fold)/Foldable%20Doors%20(Bi%20Fold)/ChatGPT%20Image%20Jul%206,%202026,%2001_01_34%20PM.png",
+      "/Foldable%20Doors%20(Bi%20Fold)/Foldable%20Doors%20(Bi%20Fold)/ChatGPT%20Image%20Jul%206,%202026,%2001_02_51%20PM.png",
+      "/Foldable%20Doors%20(Bi%20Fold)/Foldable%20Doors%20(Bi%20Fold)/ChatGPT%20Image%20Jul%206,%202026,%2012_54_50%20PM.png"
+    ]
+  },
+  "openable-door": {
+    "title": "Openable Door",
+    "description": "Durable, high-performance openable door systems for modern bathrooms, offering complete watertightness, modern profiles, and smooth swing dynamics.",
+    "images": [
+      "/Openable%20Door%20(Bathroom)/Openable%20Door%20(Bathroom)/ChatGPT%20Image%20Jul%206,%202026,%2001_24_02%20PM.png",
+      "/Openable%20Door%20(Bathroom)/Openable%20Door%20(Bathroom)/ChatGPT%20Image%20Jul%206,%202026,%2001_24_55%20PM.png",
+      "/Openable%20Door%20(Bathroom)/Openable%20Door%20(Bathroom)/ChatGPT%20Image%20Jul%206,%202026,%2001_26_26%20PM.png",
+      "/Openable%20Door%20(Bathroom)/Openable%20Door%20(Bathroom)/ChatGPT%20Image%20Jul%206,%202026,%2001_27_52%20PM.png"
+    ]
+  },
+  "openable-windows-doors": {
+    "title": "Openable Windows & Doors",
+    "description": "Premium openable swing windows and doors featuring superior acoustic insulation, complete weather proofing, and elegant modern profiles.",
+    "images": [
+      "/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_45_48%20PM.png",
+      "/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_46_55%20PM.png",
+      "/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_49_00%20PM.png",
+      "/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_50_09%20PM.png"
+    ]
+  },
+  "sliding-encloser": {
+    "title": "Sliding Encloser",
+    "description": "Sophisticated sliding glass enclosure systems for modern bathrooms. Smooth-gliding sliding tracks, high durability hardware, and space-saving frameless glass panels.",
+    "images": [
+      "/Sliding%20Encloser/Sliding%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_17_00%20PM.png",
+      "/Sliding%20Encloser/Sliding%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_19_57%20PM.png",
+      "/Sliding%20Encloser/Sliding%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_21_03%20PM.png",
+      "/Sliding%20Encloser/Sliding%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_22_04%20PM.png"
+    ]
+  },
+  "sliding-windows-doors": {
+    "title": "Sliding Windows & Doors",
+    "description": "Multi-track sliding windows and doors offering expansive views, premium hardware, and effortless gliding operation for large external openings.",
+    "images": [
+      "/Sliding%20Windows%20&%20Doors/Sliding%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_35_48%20PM.png",
+      "/Sliding%20Windows%20&%20Doors/Sliding%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_38_40%20PM.png",
+      "/Sliding%20Windows%20&%20Doors/Sliding%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_41_19%20PM.png",
+      "/Sliding%20Windows%20&%20Doors/Sliding%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_43_41%20PM.png"
+    ]
+  },
+  "synchronized-systems": {
+    "title": "Synchronized Systems",
+    "description": "Synchronized multi-panel sliding systems for interior spaces. Quiet operation, sleek hardware, and automated-feeling movement that slides multiple panels simultaneously.",
+    "images": [
+      "/Synchronized%20Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%206,%202026,%2012_09_00%20PM%20(1).png",
+      "/Synchronized%20Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%206,%202026,%2012_13_17%20PM.png",
+      "/Synchronized%20Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%206,%202026,%2012_14_09%20PM.png",
+      "/Synchronized%20Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%206,%202026,%2012_14_38%20PM.png"
+    ]
+  },
+  "top-hang-bi-fold": {
+    "title": "Top Hang Bi Fold",
+    "description": "Top-hung bi-fold systems for internal partition dividers. Keeps flooring unobstructed without bottom guide rails while providing flexible room dividing setups.",
+    "images": [
+      "/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold/ChatGPT%20Image%20Jul%206,%202026,%2012_21_13%20PM.png",
+      "/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold/ChatGPT%20Image%20Jul%206,%202026,%2012_30_28%20PM.png",
+      "/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold/ChatGPT%20Image%20Jul%206,%202026,%2012_32_07%20PM%20(1).png",
+      "/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold/ChatGPT%20Image%20Jul%206,%202026,%2012_32_44%20PM.png"
+    ]
   }
 };

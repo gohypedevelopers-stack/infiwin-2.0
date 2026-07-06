@@ -54,6 +54,46 @@ const data = {
       "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4403.jpg",
       "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4408.jpg"
     ]
+  },
+  "90-degree-encloser": {
+    title: "90 Degree Encloser",
+    description: "Premium frameless 90-degree glass enclosures designed to elevate modern bathrooms. Features watertight performance, solid brass hardware, and custom configurations that make efficient use of corner space.",
+    images: []
+  },
+  "foldable-doors-(bi-fold)": {
+    title: "Foldable Doors (Bi Fold)",
+    description: "Redefine boundaries with our luxurious bi-fold folding door systems. Offering elegant folding paths, high thermal performance, and expansive opening areas that bring the outdoors inside.",
+    images: []
+  },
+  "openable-door": {
+    title: "Openable Door",
+    description: "Durable, high-performance openable door systems for modern bathrooms, offering complete watertightness, modern profiles, and smooth swing dynamics.",
+    images: []
+  },
+  "openable-windows-doors": {
+    title: "Openable Windows & Doors",
+    description: "Premium openable swing windows and doors featuring superior acoustic insulation, complete weather proofing, and elegant modern profiles.",
+    images: []
+  },
+  "sliding-encloser": {
+    title: "Sliding Encloser",
+    description: "Sophisticated sliding glass enclosure systems for modern bathrooms. Smooth-gliding sliding tracks, high durability hardware, and space-saving frameless glass panels.",
+    images: []
+  },
+  "sliding-windows-doors": {
+    title: "Sliding Windows & Doors",
+    description: "Multi-track sliding windows and doors offering expansive views, premium hardware, and effortless gliding operation for large external openings.",
+    images: []
+  },
+  "synchronized-systems": {
+    title: "Synchronized Systems",
+    description: "Synchronized multi-panel sliding systems for interior spaces. Quiet operation, sleek hardware, and automated-feeling movement that slides multiple panels simultaneously.",
+    images: []
+  },
+  "top-hang-bi-fold": {
+    title: "Top Hang Bi Fold",
+    description: "Top-hung bi-fold systems for internal partition dividers. Keeps flooring unobstructed without bottom guide rails while providing flexible room dividing setups.",
+    images: []
   }
 };
 
@@ -78,6 +118,27 @@ function getImages(subpaths, key) {
   });
 }
 
+function getImagesFromPublic(subdir, key) {
+  let dirPath = path.join(__dirname, 'public', subdir, subdir);
+  let webPathPrefix = `/${subdir}/${subdir}`;
+  
+  if (!fs.existsSync(dirPath)) {
+    dirPath = path.join(__dirname, 'public', subdir);
+    webPathPrefix = `/${subdir}`;
+  }
+
+  if (fs.existsSync(dirPath)) {
+    const files = fs.readdirSync(dirPath);
+    files.forEach(file => {
+      if (file.toLowerCase().endsWith('.jpg') || file.toLowerCase().endsWith('.png') || file.toLowerCase().endsWith('.jpeg')) {
+        const rawPath = `${webPathPrefix}/${file}`.replace(/\\/g, '/');
+        const encodedPath = encodeURI(rawPath);
+        data[key].images.push(encodedPath);
+      }
+    });
+  }
+}
+
 // Map the keys exactly to what `toLowerCase().replace(/[\s&.]+/g, '-')` produces
 getImages('S&T', 'slide-turn');
 getImages(['S&T/JCB', 'S&T/Open Tap'], 'commercial');
@@ -86,6 +147,15 @@ getImages('S&T/Farmhouse', 'farm-house');
 getImages('Offics/Terrece', 'terrace');
 getImages('Telescopic', 'telescopic-sliders');
 getImages('S&T/Hotel Penensula', 'exterior');
+
+getImagesFromPublic('90 Degree Encloser', '90-degree-encloser');
+getImagesFromPublic('Foldable Doors (Bi Fold)', 'foldable-doors-(bi-fold)');
+getImagesFromPublic('Openable Door (Bathroom)', 'openable-door');
+getImagesFromPublic('Openable Windows & Doors', 'openable-windows-doors');
+getImagesFromPublic('Sliding Encloser', 'sliding-encloser');
+getImagesFromPublic('Sliding Windows & Doors', 'sliding-windows-doors');
+getImagesFromPublic('Synchronized Systems', 'synchronized-systems');
+getImagesFromPublic('Top Hang Bi Fold', 'top-hang-bi-fold');
 
 const tsContent = `export interface GalleryItem {
   title: string;
