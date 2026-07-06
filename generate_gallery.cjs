@@ -8,7 +8,7 @@ const data = {
   "slide-turn": {
     title: "Slide & Turn",
     description: "Experience the ultimate freedom with our unobstructed frameless premium safety glazing barriers. Perfectly designed for balconies and terraces, offering panoramic views, superior weather protection, and effortless sliding mechanisms that redefine modern open-concept living spaces.",
-    images: []
+    images: ["/slide_turn_banner.jpg"]
   },
   "commercial": {
     title: "Commercial",
@@ -33,7 +33,7 @@ const data = {
   "telescopic-sliders": {
     title: "Telescopic Sliders",
     description: "Create sleek separation zones for functional multi-use spaces. Telescopic sliding systems offer ultra-smooth operation and space-saving efficiency, effortlessly gliding away to merge rooms or sliding shut to create private enclosures in both residential and commercial settings.",
-    images: []
+    images: ["/telescopic_banner.jpg"]
   },
   "exterior": {
     title: "Exterior",
@@ -58,42 +58,42 @@ const data = {
   "90-degree-encloser": {
     title: "90 Degree Encloser",
     description: "Premium frameless 90-degree glass enclosures designed to elevate modern bathrooms. Features watertight performance, solid brass hardware, and custom configurations that make efficient use of corner space.",
-    images: []
+    images: ["/ninety_degree_banner.jpg"]
   },
   "foldable-doors-(bi-fold)": {
     title: "Foldable Doors (Bi Fold)",
     description: "Redefine boundaries with our luxurious bi-fold folding door systems. Offering elegant folding paths, high thermal performance, and expansive opening areas that bring the outdoors inside.",
-    images: []
+    images: ["/bifold_banner.jpg"]
   },
   "openable-door": {
     title: "Openable Door",
     description: "Durable, high-performance openable door systems for modern bathrooms, offering complete watertightness, modern profiles, and smooth swing dynamics.",
-    images: []
+    images: ["/openable_door_banner.jpg"]
   },
   "openable-windows-doors": {
     title: "Openable Windows & Doors",
     description: "Premium openable swing windows and doors featuring superior acoustic insulation, complete weather proofing, and elegant modern profiles.",
-    images: []
+    images: ["/openable_banner.jpg"]
   },
   "sliding-encloser": {
     title: "Sliding Encloser",
     description: "Sophisticated sliding glass enclosure systems for modern bathrooms. Smooth-gliding sliding tracks, high durability hardware, and space-saving frameless glass panels.",
-    images: []
+    images: ["/sliding_enclosure_banner.jpg"]
   },
   "sliding-windows-doors": {
     title: "Sliding Windows & Doors",
     description: "Multi-track sliding windows and doors offering expansive views, premium hardware, and effortless gliding operation for large external openings.",
-    images: []
+    images: ["/sliding_windows_banner.jpg"]
   },
   "synchronized-systems": {
     title: "Synchronized Systems",
     description: "Synchronized multi-panel sliding systems for interior spaces. Quiet operation, sleek hardware, and automated-feeling movement that slides multiple panels simultaneously.",
-    images: []
+    images: ["/synchronized_banner.jpg"]
   },
   "top-hang-bi-fold": {
     title: "Top Hang Bi Fold",
     description: "Top-hung bi-fold systems for internal partition dividers. Keeps flooring unobstructed without bottom guide rails while providing flexible room dividing setups.",
-    images: []
+    images: ["/tophang_banner.jpg"]
   },
   "balcony": {
     title: "Balcony",
@@ -108,12 +108,12 @@ const data = {
   "guillotine-glass-system": {
     title: "Guillotine Glass System",
     description: "Experience modern automated vertical sliding glass systems. Designed for balconies and cafes, offering motorized operation, wind protection, and seamless integration.",
-    images: []
+    images: ["/guillotine_banner.jpg"]
   },
   "fixed-partition": {
     title: "Fixed Partition",
     description: "Elegant fixed glass partition systems for modern bathrooms and interiors, offering clean lines, structural stability, and minimalist aesthetics.",
-    images: []
+    images: ["/fixed_partition_banner.jpg"]
   }
 };
 

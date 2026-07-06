@@ -104,8 +104,17 @@ export default function Concepts() {
   return (
     <div className="min-h-screen bg-white text-slate-900 overflow-hidden">
       {/* ── HERO SECTION ──────────────────────────────────────────────── */}
-      <section className="relative w-full h-[500px] flex items-center justify-center bg-[#232325] pt-24 overflow-hidden">
-        <div className="text-center text-white px-6">
+      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          <img loading="lazy"
+            src="/bifold_banner.jpg"
+            alt="Concepts Background"
+            className="w-full h-full object-cover opacity-55"
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+        <div className="relative z-10 text-center text-white px-6">
           <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">
             Design Visions
           </p>

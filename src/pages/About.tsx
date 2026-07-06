@@ -24,13 +24,13 @@ export default function About() {
     <div className="min-h-screen bg-white">
       <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24 overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img loading="lazy" 
-            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80" 
+            src="/synchronized_banner.jpg" 
             alt="About Infiwin Background" 
-            className="w-full h-full object-cover opacity-30 mix-blend-overlay"
-            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover opacity-55"
           />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
         
         <div className="relative z-10 text-center text-white px-6">

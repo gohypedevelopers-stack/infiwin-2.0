@@ -58,16 +58,16 @@ export default function Applications() {
       {/* Hero Section */}
       <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24">
         {/* Background Image */}
-        <div className="absolute inset-0 z-[-1] pointer-events-none">
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img loading="lazy" 
-            src="https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&q=80&w=800" 
+            src="/guillotine_banner.jpg" 
             alt="Applications Background" 
-            className="w-full h-full object-cover opacity-30 mix-blend-overlay"
-            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover opacity-55"
           />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
         
-        <div className="text-center text-white px-6">
+        <div className="relative z-10 text-center text-white px-6">
           <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Architectural Harmony</p>
           <h1 className="text-4xl md:text-7xl font-serif mb-4">Spatial Fluidity</h1>
           <p className="mt-8 text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">

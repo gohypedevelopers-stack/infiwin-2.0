@@ -9,6 +9,7 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Slide & Turn",
     "description": "Experience the ultimate freedom with our unobstructed frameless premium safety glazing barriers. Perfectly designed for balconies and terraces, offering panoramic views, superior weather protection, and effortless sliding mechanisms that redefine modern open-concept living spaces.",
     "images": [
+      "/slide_turn_banner.jpg",
       "/Website-20260518T071514Z-3-001/Website/Images/S&T/IMG-20220103-WA0049.jpg",
       "/Website-20260518T071514Z-3-001/Website/Images/S&T/IMG-20220227-WA0001.jpg",
       "/Website-20260518T071514Z-3-001/Website/Images/S&T/IMG-20220227-WA0002.jpg",
@@ -219,6 +220,7 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Telescopic Sliders",
     "description": "Create sleek separation zones for functional multi-use spaces. Telescopic sliding systems offer ultra-smooth operation and space-saving efficiency, effortlessly gliding away to merge rooms or sliding shut to create private enclosures in both residential and commercial settings.",
     "images": [
+      "/telescopic_banner.jpg",
       "/Website-20260518T071514Z-3-001/Website/Images/Telescopic/IMG-20230722-WA0025.jpg",
       "/Website-20260518T071514Z-3-001/Website/Images/Telescopic/IMG-20240802-WA0046.jpg",
       "/Website-20260518T071514Z-3-001/Website/Images/Telescopic/IMG-20240802-WA0047.jpg",
@@ -260,6 +262,7 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "90 Degree Encloser",
     "description": "Premium frameless 90-degree glass enclosures designed to elevate modern bathrooms. Features watertight performance, solid brass hardware, and custom configurations that make efficient use of corner space.",
     "images": [
+      "/ninety_degree_banner.jpg",
       "/90%20Degree%20Encloser/90%20Degree%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_06_18%20PM.png",
       "/90%20Degree%20Encloser/90%20Degree%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_08_43%20PM.png",
       "/90%20Degree%20Encloser/90%20Degree%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_11_32%20PM.png",
@@ -270,6 +273,7 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Foldable Doors (Bi Fold)",
     "description": "Redefine boundaries with our luxurious bi-fold folding door systems. Offering elegant folding paths, high thermal performance, and expansive opening areas that bring the outdoors inside.",
     "images": [
+      "/bifold_banner.jpg",
       "/Foldable%20Doors%20(Bi%20Fold)/Foldable%20Doors%20(Bi%20Fold)/ChatGPT%20Image%20Jul%206,%202026,%2001_00_26%20PM.png",
       "/Foldable%20Doors%20(Bi%20Fold)/Foldable%20Doors%20(Bi%20Fold)/ChatGPT%20Image%20Jul%206,%202026,%2001_01_34%20PM.png",
       "/Foldable%20Doors%20(Bi%20Fold)/Foldable%20Doors%20(Bi%20Fold)/ChatGPT%20Image%20Jul%206,%202026,%2001_02_51%20PM.png",
@@ -280,6 +284,7 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Openable Door",
     "description": "Durable, high-performance openable door systems for modern bathrooms, offering complete watertightness, modern profiles, and smooth swing dynamics.",
     "images": [
+      "/openable_door_banner.jpg",
       "/Openable%20Door%20(Bathroom)/Openable%20Door%20(Bathroom)/ChatGPT%20Image%20Jul%206,%202026,%2001_24_02%20PM.png",
       "/Openable%20Door%20(Bathroom)/Openable%20Door%20(Bathroom)/ChatGPT%20Image%20Jul%206,%202026,%2001_24_55%20PM.png",
       "/Openable%20Door%20(Bathroom)/Openable%20Door%20(Bathroom)/ChatGPT%20Image%20Jul%206,%202026,%2001_26_26%20PM.png",
@@ -290,6 +295,7 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Openable Windows & Doors",
     "description": "Premium openable swing windows and doors featuring superior acoustic insulation, complete weather proofing, and elegant modern profiles.",
     "images": [
+      "/openable_banner.jpg",
       "/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_45_48%20PM.png",
       "/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_46_55%20PM.png",
       "/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_49_00%20PM.png",
@@ -300,6 +306,7 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Sliding Encloser",
     "description": "Sophisticated sliding glass enclosure systems for modern bathrooms. Smooth-gliding sliding tracks, high durability hardware, and space-saving frameless glass panels.",
     "images": [
+      "/sliding_enclosure_banner.jpg",
       "/Sliding%20Encloser/Sliding%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_17_00%20PM.png",
       "/Sliding%20Encloser/Sliding%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_19_57%20PM.png",
       "/Sliding%20Encloser/Sliding%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_21_03%20PM.png",
@@ -310,6 +317,7 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Sliding Windows & Doors",
     "description": "Multi-track sliding windows and doors offering expansive views, premium hardware, and effortless gliding operation for large external openings.",
     "images": [
+      "/sliding_windows_banner.jpg",
       "/Sliding%20Windows%20&%20Doors/Sliding%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_35_48%20PM.png",
       "/Sliding%20Windows%20&%20Doors/Sliding%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_38_40%20PM.png",
       "/Sliding%20Windows%20&%20Doors/Sliding%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_41_19%20PM.png",
@@ -320,6 +328,7 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Synchronized Systems",
     "description": "Synchronized multi-panel sliding systems for interior spaces. Quiet operation, sleek hardware, and automated-feeling movement that slides multiple panels simultaneously.",
     "images": [
+      "/synchronized_banner.jpg",
       "/Synchronized%20Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%206,%202026,%2012_09_00%20PM%20(1).png",
       "/Synchronized%20Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%206,%202026,%2012_13_17%20PM.png",
       "/Synchronized%20Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%206,%202026,%2012_14_09%20PM.png",
@@ -330,6 +339,7 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Top Hang Bi Fold",
     "description": "Top-hung bi-fold systems for internal partition dividers. Keeps flooring unobstructed without bottom guide rails while providing flexible room dividing setups.",
     "images": [
+      "/tophang_banner.jpg",
       "/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold/ChatGPT%20Image%20Jul%206,%202026,%2012_21_13%20PM.png",
       "/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold/ChatGPT%20Image%20Jul%206,%202026,%2012_30_28%20PM.png",
       "/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold/ChatGPT%20Image%20Jul%206,%202026,%2012_32_07%20PM%20(1).png",
@@ -487,6 +497,7 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Guillotine Glass System",
     "description": "Experience modern automated vertical sliding glass systems. Designed for balconies and cafes, offering motorized operation, wind protection, and seamless integration.",
     "images": [
+      "/guillotine_banner.jpg",
       "/Website-20260518T071514Z-3-001/Website/Images/S&T/IMG-20220103-WA0049.jpg",
       "/Website-20260518T071514Z-3-001/Website/Images/S&T/IMG-20220227-WA0001.jpg",
       "/Website-20260518T071514Z-3-001/Website/Images/S&T/IMG-20220227-WA0002.jpg",
@@ -621,6 +632,7 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Fixed Partition",
     "description": "Elegant fixed glass partition systems for modern bathrooms and interiors, offering clean lines, structural stability, and minimalist aesthetics.",
     "images": [
+      "/fixed_partition_banner.jpg",
       "/Sliding%20Encloser/Sliding%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_17_00%20PM.png",
       "/Sliding%20Encloser/Sliding%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_19_57%20PM.png",
       "/Sliding%20Encloser/Sliding%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_21_03%20PM.png",

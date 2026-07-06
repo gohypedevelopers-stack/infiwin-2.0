@@ -29,18 +29,18 @@ export default function Products() {
   };
 
   const products = [
-    { title: "Slide & Turn", category: "Balcony System", img: getProductImg("Slide & Turn", "/slide_turn.png") },
-    { title: "Guillotine Glass System", category: "Balcony System", img: getProductImg("Guillotine Glass System", "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2002_50_39%20PM.png") },
-    { title: "Telescopic Sliders", category: "Internal Partition", img: getProductImg("Telescopic Sliders", "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2012_15_29%20PM.png") },
-    { title: "Synchronized Systems", category: "Internal Partition", img: getProductImg("Synchronized Systems", "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2002_29_01%20PM.png") },
-    { title: "Top Hang Bi Fold", category: "Internal Partition", img: getProductImg("Top Hang Bi Fold", "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2012_27_22%20PM.png") },
-    { title: "Sliding Windows & Doors", category: "Doors & Windows", img: getProductImg("Sliding Windows & Doors", "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2003_25_52%20PM.png") },
-    { title: "Openable Windows & Doors", category: "Doors & Windows", img: getProductImg("Openable Windows & Doors", "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2002_30_38%20PM.png") },
-    { title: "Foldable Doors (Bi Fold)", category: "Doors & Windows", img: getProductImg("Foldable Doors (Bi Fold)", "/foldable_doors.png") },
-    { title: "90 Degree Encloser", category: "Bathroom", img: getProductImg("90 Degree Encloser", "/ninety_degree.png") },
-    { title: "Sliding Encloser", category: "Bathroom", img: getProductImg("Sliding Encloser", "/sliding_enclosure.png") },
-    { title: "Openable Door", category: "Bathroom", img: getProductImg("Openable Door", "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80") },
-    { title: "Fixed Partition", category: "Bathroom", img: getProductImg("Fixed Partition", "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&q=80") }
+    { title: "Slide & Turn", category: "Balcony System", img: getProductImg("Slide & Turn", "/slide_turn_banner.jpg") },
+    { title: "Guillotine Glass System", category: "Balcony System", img: getProductImg("Guillotine Glass System", "/guillotine_banner.jpg") },
+    { title: "Telescopic Sliders", category: "Internal Partition", img: getProductImg("Telescopic Sliders", "/telescopic_banner.jpg") },
+    { title: "Synchronized Systems", category: "Internal Partition", img: getProductImg("Synchronized Systems", "/synchronized_banner.jpg") },
+    { title: "Top Hang Bi Fold", category: "Internal Partition", img: getProductImg("Top Hang Bi Fold", "/tophang_banner.jpg") },
+    { title: "Sliding Windows & Doors", category: "Doors & Windows", img: getProductImg("Sliding Windows & Doors", "/sliding_windows_banner.jpg") },
+    { title: "Openable Windows & Doors", category: "Doors & Windows", img: getProductImg("Openable Windows & Doors", "/openable_banner.jpg") },
+    { title: "Foldable Doors (Bi Fold)", category: "Doors & Windows", img: getProductImg("Foldable Doors (Bi Fold)", "/bifold_banner.jpg") },
+    { title: "90 Degree Encloser", category: "Bathroom", img: getProductImg("90 Degree Encloser", "/ninety_degree_banner.jpg") },
+    { title: "Sliding Encloser", category: "Bathroom", img: getProductImg("Sliding Encloser", "/sliding_enclosure_banner.jpg") },
+    { title: "Openable Door", category: "Bathroom", img: getProductImg("Openable Door", "/openable_door_banner.jpg") },
+    { title: "Fixed Partition", category: "Bathroom", img: getProductImg("Fixed Partition", "/fixed_partition_banner.jpg") }
   ];
 
   const categories = ["All", "Balcony System", "Internal Partition", "Doors & Windows", "Bathroom"];
@@ -50,13 +50,13 @@ export default function Products() {
     <div className="min-h-screen bg-white">
       <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24 overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img loading="lazy"
-            src="/st_hero.png"
+            src="/telescopic_banner.jpg"
             alt="Products Background"
-            className="w-full h-full object-cover opacity-25 mix-blend-overlay"
-            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover opacity-55"
           />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
 
         <div className="relative z-10 text-center text-white px-6">
