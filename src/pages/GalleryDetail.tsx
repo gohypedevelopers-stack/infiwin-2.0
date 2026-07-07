@@ -1,8 +1,91 @@
 import { useState, MouseEvent } from 'react';
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import { useParams, useNavigate, useLocation, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft, ChevronLeft, ChevronRight, X, Eye } from 'lucide-react';
 import { galleryData } from '../data/galleryData';
+import { WhatsAppIcon } from '../components/icons/WhatsAppIcon';
+
+const PRODUCT_BADGES: Record<string, string[]> = {
+  "slide-turn": [
+    "100% OPENING POTENTIAL",
+    "TOUGHENED SAFETY GLASS",
+    "ULTRA-SMOOTH TRACKS",
+    "NO VERTICAL FRAMES"
+  ],
+  "guillotine-glass-system": [
+    "MOTORIZED OPERATION",
+    "WIND & WEATHER BARRIER",
+    "THERMALLY EFFICIENT",
+    "SMART HOME INTEGRATION"
+  ],
+  "telescopic-sliders": [
+    "SPACE SAVING PATH",
+    "TELESCOPIC MOVEMENT",
+    "ULTRA-SLIM PROFILES",
+    "CUSTOM TRACK LAYOUTS"
+  ],
+  "synchronized-systems": [
+    "SIMULTANEOUS SLIDING",
+    "SOFT CLOSE SYSTEM",
+    "NO UNDER-FLOOR GUIDE",
+    "PRECISE DYNAMICS"
+  ],
+  "top-hang-bi-fold": [
+    "TOP-HUNG MECHANISM",
+    "NO THRESHOLD LAYOUT",
+    "SEAMLESS ROOM DIVIDER",
+    "HEAVY-DUTY WHEELS"
+  ],
+  "sliding-windows-doors": [
+    "MULTI-TRACK OPTIONS",
+    "BUG MESH COMPATIBLE",
+    "DOUBLE GLAZED OPTIONS",
+    "SOUND REDUCTION"
+  ],
+  "openable-windows-doors": [
+    "WEATHER TIGHT SEAL",
+    "MULTI-LOCK SECURITY",
+    "THERMAL BREAK OPTION",
+    "SOUND PROOFING"
+  ],
+  "foldable-doors-(bi-fold)": [
+    "EXPANSIVE OPENABLE SPAN",
+    "WEATHER INSULATION",
+    "STAINLESS STEEL TRACKS",
+    "SECURE LOCKING"
+  ],
+  "90-degree-encloser": [
+    "90 DEGREE CORNER FIT",
+    "WATERPROOF SEALS",
+    "SOLID BRASS FITTINGS",
+    "FRAMELESS AESTHETIC"
+  ],
+  "sliding-encloser": [
+    "SPACE-SAVING SLIDER",
+    "TEMPERED SAFETY GLASS",
+    "ANTI-CALCIUM GLASS",
+    "SMOOTH ROLLERS"
+  ],
+  "openable-door": [
+    "TEMPERED SAFETY GLASS",
+    "HEAVY DUTY HINGES",
+    "WATERTIGHT SHOWER DOOR",
+    "MINIMAL PROFILE"
+  ],
+  "fixed-partition": [
+    "MINIMAL DESIGN",
+    "SOLID U-CHANNEL FIT",
+    "TEMPERED SAFETY GLASS",
+    "HIGH STABILITY"
+  ]
+};
+
+const DEFAULT_BADGES = [
+  "PREMIUM AESTHETICS",
+  "STRUCTURAL INTEGRITY",
+  "WEATHER RESISTANT",
+  "EXPERT INSTALLATION"
+];
 
 interface GalleryDetailProps {
   type?: 'product' | 'application';
@@ -116,6 +199,34 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
           <p className="text-lg font-light text-slate-600 leading-relaxed max-w-xl text-center md:text-left">
             {data.description}
           </p>
+          
+          {/* Key Product Badges */}
+          <div className="flex flex-wrap justify-center md:justify-start gap-3 mt-8 mb-8">
+            {(PRODUCT_BADGES[normalizedId || ""] || DEFAULT_BADGES).map((badge, idx) => (
+              <div key={idx} className="bg-white border border-slate-200 px-3 py-1.5 rounded-sm flex items-center gap-2 shadow-sm">
+                <div className="w-1.5 h-1.5 rounded-full bg-luxury-gold"></div>
+                <span className="text-[9px] uppercase tracking-[0.2em] font-semibold text-slate-600">{badge}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <Link
+              to="/contact"
+              className="bg-black hover:bg-slate-800 text-white px-6 py-3.5 rounded-lg font-semibold uppercase tracking-widest text-[10px] sm:text-xs transition-colors shadow-md text-center inline-flex items-center justify-center cursor-pointer border-none"
+            >
+              Request a Quote
+            </Link>
+            <a
+              href={`https://wa.me/917337074370?text=Hi Infiwin, I am interested in getting the ${data.title} system. Please share more details and a quote.`}
+              target="_blank"
+              rel="noreferrer"
+              className="bg-green-500 hover:bg-green-600 text-white px-6 py-3.5 rounded-lg font-semibold uppercase tracking-widest text-[10px] sm:text-xs transition-colors shadow-md text-center inline-flex items-center justify-center gap-2"
+            >
+              <WhatsAppIcon size={16} /> Chat via WhatsApp
+            </a>
+          </div>
         </div>
       </section>
 
