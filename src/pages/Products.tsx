@@ -29,7 +29,7 @@ export default function Products() {
   };
 
   const products = [
-    { title: "Slide & Turn", category: "Balcony System", img: getProductImg("Slide & Turn", "/slide_turn_banner.jpg") },
+    { title: "Slide & Turn", category: "Balcony System", img: getProductImg("Slide & Turn", "/slide_turn_banner.png") },
     { title: "Guillotine Glass System", category: "Balcony System", img: getProductImg("Guillotine Glass System", "/guillotine_banner.jpg") },
     { title: "Telescopic Sliders", category: "Internal Partition", img: getProductImg("Telescopic Sliders", "/telescopic_banner.jpg") },
     { title: "Synchronized Systems", category: "Internal Partition", img: getProductImg("Synchronized Systems", "/synchronized_banner.jpg") },

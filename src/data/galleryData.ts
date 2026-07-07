@@ -9,7 +9,7 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Slide & Turn",
     "description": "Experience the ultimate freedom with our unobstructed frameless premium safety glazing barriers. Perfectly designed for balconies and terraces, offering panoramic views, superior weather protection, and effortless sliding mechanisms that redefine modern open-concept living spaces.",
     "images": [
-      "/slide_turn_banner.jpg",
+      "/slide_turn_banner.png",
       "/Website-20260518T071514Z-3-001/Website/Images/S&T/IMG-20220103-WA0049.jpg",
       "/Website-20260518T071514Z-3-001/Website/Images/S&T/IMG-20220227-WA0001.jpg",
       "/Website-20260518T071514Z-3-001/Website/Images/S&T/IMG-20220227-WA0002.jpg",

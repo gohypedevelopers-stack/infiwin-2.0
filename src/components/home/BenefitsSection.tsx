@@ -7,17 +7,17 @@ export const BenefitsSection = () => {
 
   const benefits = [
     {
-      icon: <Eye className="text-luxury-gold" size={32} />,
+      icon: <Eye className="text-luxury-gold w-[18px] h-[18px]" />,
       title: "Unobstructed Panoramic Views",
       description: "No vertical frames between glass structures ensures completely transparent viewports, expanding visual horizons and natural luxury lighting levels instantly.",
     },
     {
-      icon: <CloudRain className="text-luxury-gold" size={32} />,
-      title: "100% Weather Shield Protection",
+      icon: <CloudRain className="text-luxury-gold w-[18px] h-[18px]" />,
+      title: "100%  Weather Shield Protection",
       description: "Blocks dust, windstorms, flying debris, and intense monsoon rains. Fully customized rubber profiles keep balconies immaculate through extreme climates.",
     },
     {
-      icon: <Lock className="text-luxury-gold" size={32} />,
+      icon: <Lock className="text-luxury-gold w-[18px] h-[18px]" />,
       title: "Noise Dampening Isolation",
       description: "Attenuate high-decibel street noises significantly. Convert chaotic urban balconies into tranquil spaces suited for deep focus and reading.",
     },
@@ -55,22 +55,26 @@ export const BenefitsSection = () => {
           {benefits.map((benefit, idx) => (
             <div 
               key={idx}
-              className="bg-slate-50 border border-slate-100 p-10 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+              className="bg-slate-50 border border-slate-100 p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
             >
-              <div className="bg-white w-16 h-16 rounded-full flex items-center justify-center shadow-sm mb-8 group-hover:scale-110 transition-transform duration-300">
-                {benefit.icon}
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="bg-white w-9 h-9 rounded-full flex items-center justify-center shadow-sm shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    {benefit.icon}
+                  </div>
+                  <h3 className="text-sm font-semibold text-slate-900 leading-snug lg:whitespace-nowrap">{benefit.title}</h3>
+                </div>
+                <p className="text-slate-500 font-light leading-relaxed text-sm">
+                  {benefit.description}
+                </p>
               </div>
-              <h3 className="text-xl font-medium text-slate-900 mb-4">{benefit.title}</h3>
-              <p className="text-slate-500 font-light leading-relaxed">
-                {benefit.description}
-              </p>
             </div>
           ))}
         </div>
 
         {/* Mobile & Tablet View - Carousel */}
         <div className="lg:hidden flex flex-col items-center w-full max-w-md mx-auto">
-          <div className="relative w-full overflow-hidden bg-slate-50 border border-slate-100 px-12 py-8 sm:px-16 sm:py-10 min-h-[300px] flex flex-col justify-between">
+          <div className="relative w-full overflow-hidden bg-slate-50 border border-slate-100 px-10 py-8 sm:px-12 sm:py-10 min-h-[280px] flex flex-col justify-between">
             
             {/* Left navigation arrow */}
             <button
@@ -80,7 +84,7 @@ export const BenefitsSection = () => {
             >
               <ChevronLeft size={16} />
             </button>
-
+ 
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIdx}
@@ -88,13 +92,15 @@ export const BenefitsSection = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.2 }}
-                className="flex flex-col items-center text-center w-full h-full"
+                className="flex flex-col items-start text-left w-full h-full"
               >
-                <div className="bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-sm mb-6">
-                  {benefits[activeIdx].icon}
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="bg-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm shrink-0">
+                    {benefits[activeIdx].icon}
+                  </div>
+                  <h3 className="text-sm font-semibold text-slate-900 leading-snug">{benefits[activeIdx].title}</h3>
                 </div>
-                <h3 className="text-lg sm:text-xl font-medium text-slate-900 mb-3">{benefits[activeIdx].title}</h3>
-                <p className="text-slate-500 font-light text-sm sm:text-base leading-relaxed">
+                <p className="text-slate-500 font-light text-xs sm:text-sm leading-relaxed pl-1">
                   {benefits[activeIdx].description}
                 </p>
               </motion.div>

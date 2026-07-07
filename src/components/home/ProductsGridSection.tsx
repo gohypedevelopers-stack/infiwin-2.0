@@ -9,7 +9,7 @@ export const ProductsGridSection = () => {
       subtitle: "Balcony Enclosure",
       description: "Perfect view maximization with foldaway tracking system layout.",
       tag: "Best Seller",
-      image: "/slide_turn_banner.jpg",
+      image: "/slide_turn_banner.png",
     },
     {
       title: "Telescopic Slider System",
