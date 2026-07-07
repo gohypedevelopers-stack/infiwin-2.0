@@ -35,7 +35,7 @@ export const BestSellerSection = () => {
                />
                <div 
                 className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "half" ? 'opacity-100' : 'opacity-0'}`}
-                style={{ backgroundImage: "url('https://i.postimg.cc/x10dhQcV/Chat-GPT-Image-Jun-4-2026-03-02-04-PM.png')" }}
+                style={{ backgroundImage: "url('https://i.postimg.cc/R05g4PxJ/IMG-20250119-WA0011.jpg')" }}
                />
                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent pointer-events-none"></div>
             </div>
@@ -104,7 +104,7 @@ export const BestSellerSection = () => {
              />
              <div 
               className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "half" ? 'opacity-100' : 'opacity-0'}`}
-              style={{ backgroundImage: "url('https://i.postimg.cc/x10dhQcV/Chat-GPT-Image-Jun-4-2026-03-02-04-PM.png')" }}
+              style={{ backgroundImage: "url('https://i.postimg.cc/R05g4PxJ/IMG-20250119-WA0011.jpg')" }}
              />
              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent pointer-events-none"></div>
           </div>
