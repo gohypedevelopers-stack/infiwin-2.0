@@ -140,7 +140,7 @@ export const HeroSection = () => {
           {/* Primary Call-to-Action Buttons */}
           <motion.div 
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
-            className="flex flex-col sm:flex-row items-center lg:items-start gap-4 sm:gap-6 justify-center lg:justify-start mt-2 w-full sm:w-auto"
+            className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 justify-center lg:justify-start mt-2 w-full sm:w-auto"
           >
             <Link
               to="/#estimator"
