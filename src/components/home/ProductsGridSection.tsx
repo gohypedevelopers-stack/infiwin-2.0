@@ -1,7 +1,8 @@
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const ProductsGridSection = () => {
+  const navigate = useNavigate();
   const products = [
     {
       title: "Slide & Turn System",
@@ -54,7 +55,11 @@ export const ProductsGridSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, idx) => (
-            <Link key={idx} to="/products" className="group bg-white rounded-xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+            <div 
+              key={idx} 
+              onClick={() => navigate("/products")} 
+              className="group bg-white rounded-xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col h-full cursor-pointer"
+            >
               {/* Image Container */}
               <div className="relative aspect-[4/5] overflow-hidden bg-slate-100">
                 <img 
@@ -85,12 +90,16 @@ export const ProductsGridSection = () => {
                   <span className="text-xs font-semibold uppercase tracking-wider text-slate-600 flex items-center gap-1">
                     Variants
                   </span>
-                  <span className="text-xs font-semibold uppercase tracking-wider bg-black text-white px-5 py-2 rounded-lg flex items-center gap-2">
+                  <Link 
+                    to="/#estimator" 
+                    onClick={(e) => e.stopPropagation()} 
+                    className="text-xs font-semibold uppercase tracking-wider bg-black text-white px-5 py-2 rounded-lg flex items-center gap-2 hover:bg-slate-800 transition-colors"
+                  >
                     Get Price <ArrowRight size={14} />
-                  </span>
+                  </Link>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
