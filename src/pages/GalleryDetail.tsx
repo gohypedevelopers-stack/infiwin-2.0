@@ -201,11 +201,11 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
           </p>
           
           {/* Key Product Badges */}
-          <div className="flex flex-wrap justify-center md:justify-start gap-3 mt-8 mb-8">
+          <div className="grid grid-cols-2 md:flex md:flex-wrap gap-3 mt-8 mb-8 w-full max-w-md md:max-w-none">
             {(PRODUCT_BADGES[normalizedId || ""] || DEFAULT_BADGES).map((badge, idx) => (
-              <div key={idx} className="bg-white border border-slate-200 px-3 py-1.5 rounded-sm flex items-center gap-2 shadow-sm">
-                <div className="w-1.5 h-1.5 rounded-full bg-luxury-gold"></div>
-                <span className="text-[9px] uppercase tracking-[0.2em] font-semibold text-slate-600">{badge}</span>
+              <div key={idx} className="bg-white border border-slate-200 px-2 py-1.5 rounded-sm flex items-center gap-2 shadow-sm w-full md:w-auto justify-center md:justify-start">
+                <div className="w-1.5 h-1.5 rounded-full bg-luxury-gold shrink-0"></div>
+                <span className="text-[8px] sm:text-[9px] uppercase tracking-[0.15em] sm:tracking-[0.2em] font-semibold text-slate-600 text-center md:text-left">{badge}</span>
               </div>
             ))}
           </div>

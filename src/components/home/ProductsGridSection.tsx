@@ -15,7 +15,7 @@ export const ProductsGridSection = () => {
       title: "Telescopic Slider System",
       subtitle: "Super Smooth Gliding",
       description: "Overlapping glazed sheets for continuous uninterrupted tracks.",
-      image: "/telescopic_slider.png",
+      image: "/Telescopic Sliders/ChatGPT Image Jul 6, 2026, 11_51_55 AM.png",
     },
     {
       title: "Centre Open System",

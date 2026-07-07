@@ -220,14 +220,10 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Telescopic Sliders",
     "description": "Create sleek separation zones for functional multi-use spaces. Telescopic sliding systems offer ultra-smooth operation and space-saving efficiency, effortlessly gliding away to merge rooms or sliding shut to create private enclosures in both residential and commercial settings.",
     "images": [
-      "/telescopic_banner.jpg",
-      "/Website-20260518T071514Z-3-001/Website/Images/Telescopic/IMG-20230722-WA0025.jpg",
-      "/Website-20260518T071514Z-3-001/Website/Images/Telescopic/IMG-20240802-WA0046.jpg",
-      "/Website-20260518T071514Z-3-001/Website/Images/Telescopic/IMG-20240802-WA0047.jpg",
-      "/Website-20260518T071514Z-3-001/Website/Images/Telescopic/IMG-20240809-WA0015.jpg",
-      "/Website-20260518T071514Z-3-001/Website/Images/Telescopic/IMG-20240815-WA0004.jpg",
-      "/Website-20260518T071514Z-3-001/Website/Images/Telescopic/IMG-20240815-WA0005.jpg",
-      "/Website-20260518T071514Z-3-001/Website/Images/Telescopic/IMG-20240909-WA0002.jpg"
+      "/Telescopic Sliders/ChatGPT Image Jul 6, 2026, 11_51_55 AM.png",
+      "/Telescopic Sliders/ChatGPT Image Jul 6, 2026, 11_55_09 AM.png",
+      "/Telescopic Sliders/ChatGPT Image Jul 6, 2026, 11_58_38 AM.png",
+      "/Telescopic Sliders/ChatGPT Image Jul 6, 2026, 12_06_10 PM.png"
     ]
   },
   "exterior": {
