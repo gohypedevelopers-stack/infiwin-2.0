@@ -423,17 +423,19 @@ export default function Contact() {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24">
-        <div className="absolute inset-0 z-[-1] pointer-events-none">
+      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img
             loading="lazy"
             src="/farmhouse_hero.jpg"
             alt="Contact Background"
-            className="w-full h-full object-cover opacity-35 mix-blend-overlay"
+            className="w-full h-full object-cover opacity-35"
             referrerPolicy="no-referrer"
           />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
-        <div className="text-center text-white px-6">
+        <div className="relative z-10 text-center text-white px-6">
           <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">
             Get In Touch
           </p>
