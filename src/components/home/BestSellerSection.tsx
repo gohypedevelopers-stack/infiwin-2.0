@@ -81,6 +81,7 @@ export const BestSellerSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center lg:justify-start">
               <Link 
                 to="/products"
+                state={{ filter: "Balcony System" }}
                 className="flex items-center justify-center gap-2 bg-luxury-gold hover:bg-yellow-600 text-white px-6 py-3 rounded-lg transition-all font-medium text-xs uppercase tracking-wider cursor-pointer border-none"
               >
                 Inspect Custom Variants

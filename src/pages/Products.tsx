@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { motion } from "motion/react";
 import { galleryData } from "../data/galleryData";
 import {
@@ -18,7 +18,14 @@ import {
 } from "lucide-react";
 
 export default function Products() {
+  const location = useLocation();
   const [activeFilter, setActiveFilter] = useState("All");
+
+  useEffect(() => {
+    if (location.state && typeof location.state === "object" && "filter" in location.state) {
+      setActiveFilter(location.state.filter as string);
+    }
+  }, [location.state]);
 
   const getProductImg = (title: string, fallbackImg: string) => {
     const id = title.toLowerCase().replace(/[\\s&.]+/g, '-');

@@ -5,6 +5,8 @@ export const ProductsGridSection = () => {
   const navigate = useNavigate();
   const products = [
     {
+      id: "slide-turn",
+      category: "Balcony System",
       title: "Slide & Turn System",
       subtitle: "Balcony Enclosure",
       description: "Perfect view maximization with foldaway tracking system layout.",
@@ -12,30 +14,40 @@ export const ProductsGridSection = () => {
       image: "/slide_turn_banner.png",
     },
     {
+      id: "telescopic-sliders",
+      category: "Internal Partition",
       title: "Telescopic Slider System",
       subtitle: "Super Smooth Gliding",
       description: "Overlapping glazed sheets for continuous uninterrupted tracks.",
       image: "/Telescopic Sliders/ChatGPT Image Jul 6, 2026, 11_51_55 AM.png",
     },
     {
+      id: "synchronized-systems",
+      category: "Internal Partition",
       title: "Centre Open System",
       subtitle: "Split-fold Symmetrical",
       description: "Panels partition left and right symmetrically to retain optimal balances.",
       image: "/centre_open.png",
     },
     {
+      id: "top-hang-bi-fold",
+      category: "Internal Partition",
       title: "Bi-fold Glass System",
       subtitle: "Premium Partition",
       description: "Sleek folding structure for rapid internal partition transition zones.",
       image: "/bifold_glass.png",
     },
     {
+      id: "sliding-windows-doors",
+      category: "Doors & Windows",
       title: "2 Track Slider",
       subtitle: "Doors & Windows",
       description: "Classic, cost-effective structural system layout with premium hardware profiles.",
       image: "/two_track_slider.png",
     },
     {
+      id: "sliding-windows-doors",
+      category: "Doors & Windows",
       title: "3 Track Slider",
       subtitle: "Doors & Windows",
       description: "Wider spans of clear structural views integrating bug mesh slider capability.",
@@ -57,7 +69,7 @@ export const ProductsGridSection = () => {
           {products.map((product, idx) => (
             <div 
               key={idx} 
-              onClick={() => navigate("/products")} 
+              onClick={() => navigate(`/gallery/product/${product.id}`)} 
               className="group bg-white rounded-xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col h-full cursor-pointer"
             >
               {/* Image Container */}
@@ -87,9 +99,14 @@ export const ProductsGridSection = () => {
                 </p>
                 
                 <div className="flex items-center justify-between border-t border-slate-100 pt-6 mt-auto">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-600 flex items-center gap-1">
+                  <Link 
+                    to="/products"
+                    state={{ filter: product.category }}
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-xs font-semibold uppercase tracking-wider text-slate-600 flex items-center gap-1 hover:text-luxury-gold transition-colors cursor-pointer"
+                  >
                     Variants
-                  </span>
+                  </Link>
                   <Link 
                     to="/#estimator" 
                     onClick={(e) => e.stopPropagation()} 

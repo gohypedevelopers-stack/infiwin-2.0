@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 
 const frameColors = [
   { id: "white", name: "Arctic White", hex: "#f1f1f1", img: "/arctic_white_clean.png", desc: "A timeless, clean finish that brightens any balcony. Arctic White pairs effortlessly with modern minimalist interiors and light-toned exteriors." },
@@ -115,12 +116,18 @@ export const FrameColorSection = () => {
             </div>
 
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-              <button className="bg-transparent text-slate-900 border border-slate-900 px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs hover:bg-slate-900 hover:text-white transition-colors flex items-center gap-2 cursor-pointer">
+              <Link 
+                to="/gallery/product/slide-turn"
+                className="bg-transparent text-slate-900 border border-slate-900 px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs hover:bg-slate-900 hover:text-white transition-colors flex items-center gap-2 cursor-pointer text-center"
+              >
                 Explore All Finishes <ArrowRight size={14} />
-              </button>
-              <button className="bg-white text-slate-500 border border-slate-200 px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs hover:border-luxury-gold hover:text-luxury-gold transition-colors cursor-pointer">
+              </Link>
+              <Link 
+                to="/contact"
+                className="bg-white text-slate-500 border border-slate-200 px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs hover:border-luxury-gold hover:text-luxury-gold transition-colors cursor-pointer text-center"
+              >
                 Get A Quote
-              </button>
+              </Link>
             </div>
           </div>
 
