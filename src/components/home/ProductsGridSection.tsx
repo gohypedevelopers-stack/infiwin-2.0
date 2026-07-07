@@ -54,7 +54,7 @@ export const ProductsGridSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, idx) => (
-            <div key={idx} className="group bg-white rounded-xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
+            <Link key={idx} to="/products" className="group bg-white rounded-xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col h-full">
               {/* Image Container */}
               <div className="relative aspect-[4/5] overflow-hidden bg-slate-100">
                 <img 
@@ -82,15 +82,15 @@ export const ProductsGridSection = () => {
                 </p>
                 
                 <div className="flex items-center justify-between border-t border-slate-100 pt-6 mt-auto">
-                  <Link to={`/products`} className="text-xs font-semibold uppercase tracking-wider text-slate-600 hover:text-black transition-colors flex items-center gap-1">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-600 flex items-center gap-1">
                     Variants
-                  </Link>
-                  <Link to="/#estimator" className="text-xs font-semibold uppercase tracking-wider bg-black text-white px-5 py-2 rounded-lg hover:bg-slate-800 transition-colors flex items-center gap-2">
+                  </span>
+                  <span className="text-xs font-semibold uppercase tracking-wider bg-black text-white px-5 py-2 rounded-lg flex items-center gap-2">
                     Get Price <ArrowRight size={14} />
-                  </Link>
+                  </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
