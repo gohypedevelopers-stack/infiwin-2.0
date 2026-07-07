@@ -134,7 +134,7 @@ export const HeroSection = () => {
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
             className="text-slate-100 font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] text-xs sm:text-sm md:text-base max-w-2xl leading-relaxed mb-6 md:mb-8"
           >
-            Infiwin manufactures premier Slide & Turn frameless glass balcony enclosures. Extend your home space with architectural glass walls.
+            Infiwin manufactures premier Slide & Turn frameless glass balcony enclosures.<br />Extend your home space with architectural glass walls.
           </motion.p>
 
           {/* Primary Call-to-Action Buttons */}
@@ -151,7 +151,7 @@ export const HeroSection = () => {
             </Link>
             <Link
               to="/products"
-              className="text-white hover:text-luxury-gold transition-colors duration-300 font-bold text-[10px] sm:text-xs uppercase tracking-widest border-b border-transparent hover:border-luxury-gold pb-1 flex items-center gap-2 group w-full sm:w-auto justify-center sm:justify-start"
+              className="bg-transparent border border-white/30 hover:border-white hover:bg-white/10 text-white px-5 py-2.5 rounded-lg transition-all duration-300 font-medium text-xs uppercase tracking-wider flex items-center gap-2 group w-full sm:w-auto justify-center sm:justify-start"
             >
               Explore Products
               <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform sm:w-3.5 sm:h-3.5" />

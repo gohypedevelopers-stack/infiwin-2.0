@@ -42,10 +42,10 @@ export const BenefitsSection = () => {
   return (
     <section className="pt-8 pb-16 lg:py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="text-luxury-gold text-[10px] uppercase tracking-[0.3em] font-bold mb-4">Core Advantages</p>
-          <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">The Premium 'Slide & Turn' Edge</h2>
-          <p className="text-slate-500 font-light text-lg">
+          <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6 whitespace-nowrap md:whitespace-normal lg:whitespace-nowrap">The Premium 'Slide & Turn' Edge</h2>
+          <p className="text-slate-500 font-light text-lg max-w-2xl mx-auto">
             Discover why modern homeowners and commercial spaces are replacing conventional iron grills with custom frameless folding structures.
           </p>
         </div>
