@@ -735,6 +735,19 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      {/* Full Width Map Section */}
+      <section className="w-full h-[400px] border-t border-slate-100">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.080819071319!2d77.37780917613706!3d28.627339784315406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef3e8827a2b7%3A0x4e26c22a34fd6e52!2sInfiWindow!5e0!3m2!1sen!2sin!4v1783504063318!5m2!1sen!2sin" 
+          width="100%" 
+          height="100%" 
+          style={{ border: 0 }} 
+          allowFullScreen 
+          loading="lazy" 
+          referrerPolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </section>
     </div>
   );
 }
