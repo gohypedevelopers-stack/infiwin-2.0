@@ -34,7 +34,7 @@ function AnimatedNumber({ value, duration = 2500, prefix = "", suffix = "", dela
       const updateNumber = (now: number) => {
         const progress = Math.min((now - startTime) / duration, 1);
         const easeProgress = 1 - Math.pow(1 - progress, 3); // easeOutCubic
-        
+
         setCurrent(Math.floor(easeProgress * (end - start) + start));
 
         if (progress < 1) {
@@ -95,7 +95,7 @@ export const HeroSection = () => {
       <div className="absolute inset-0 z-0 bg-slate-950/50 lg:bg-transparent lg:bg-gradient-to-r lg:from-slate-950/85 lg:via-slate-900/50 lg:to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full flex flex-col items-center text-center lg:items-start lg:text-left my-auto">
-        <motion.div 
+        <motion.div
           className="max-w-3xl flex flex-col items-center lg:items-start w-full"
           initial="hidden"
           animate="visible"
@@ -107,9 +107,9 @@ export const HeroSection = () => {
             }
           }}
         >
-          
+
           {/* Pre-Header Badge */}
-          <motion.div 
+          <motion.div
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
             className="flex items-center justify-center lg:justify-start gap-3 mb-6 md:mb-8"
           >
@@ -121,7 +121,7 @@ export const HeroSection = () => {
           </motion.div>
 
           {/* Primary Foundational Heading */}
-          <motion.h1 
+          <motion.h1
             variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } } }}
             className="text-xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight mb-4 md:mb-6 drop-shadow-2xl flex flex-col items-center lg:items-start"
           >
@@ -138,7 +138,7 @@ export const HeroSection = () => {
           </motion.p>
 
           {/* Primary Call-to-Action Buttons */}
-          <motion.div 
+          <motion.div
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
             className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 justify-center lg:justify-start mt-2 w-full sm:w-auto"
           >
@@ -162,14 +162,14 @@ export const HeroSection = () => {
       </div>
 
       {/* Trust Stats & Slide Previews - Bottom Row */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 1, ease: "easeOut" }}
         className="max-w-7xl mx-auto w-full z-30 px-6 border-t border-white/10 pt-6 mt-6 lg:mt-8 mb-4 lg:mb-0"
       >
         <div className="flex flex-col-reverse lg:flex-row justify-between items-start lg:items-center gap-6 lg:gap-8">
-          
+
           {/* Stats - Left aligned in desktop, bottom in mobile */}
           <div className="flex flex-row flex-nowrap gap-4 sm:gap-12 lg:gap-16 text-left w-full lg:w-auto overflow-x-auto scrollbar-none pb-2 lg:pb-0">
             {/* Stat 1 */}
@@ -201,16 +201,15 @@ export const HeroSection = () => {
               <button
                 key={idx}
                 onClick={() => setCurrentImageIndex(idx)}
-                className={`relative w-16 h-12 sm:w-20 sm:h-14 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
-                  currentImageIndex === idx 
-                    ? "border-luxury-gold scale-105 shadow-lg" 
+                className={`relative w-16 h-12 sm:w-20 sm:h-14 rounded-lg overflow-hidden border-2 transition-all duration-300 ${currentImageIndex === idx
+                    ? "border-luxury-gold scale-105 shadow-lg"
                     : "border-white/20 hover:border-white/50 hover:scale-102"
-                }`}
+                  }`}
                 aria-label={`Go to slide ${idx + 1}`}
               >
-                <img 
-                  src={img} 
-                  alt={`Slide ${idx + 1} Preview`} 
+                <img
+                  src={img}
+                  alt={`Slide ${idx + 1} Preview`}
                   className="w-full h-full object-cover"
                 />
                 {/* Overlay to dim inactive thumbnails */}
