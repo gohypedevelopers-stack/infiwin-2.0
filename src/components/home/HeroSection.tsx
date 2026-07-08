@@ -75,7 +75,7 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative h-auto lg:h-screen min-h-auto lg:min-h-[650px] bg-slate-950 flex flex-col justify-between pt-24 pb-6 lg:pt-32 lg:pb-16 overflow-hidden">
+    <section className="relative min-h-[100dvh] lg:h-screen lg:min-h-[650px] bg-slate-950 flex flex-col justify-between pt-24 pb-12 lg:pt-32 lg:pb-16 overflow-hidden">
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence>
@@ -94,7 +94,7 @@ export const HeroSection = () => {
       {/* Soft luxury gradient overlay */}
       <div className="absolute inset-0 z-0 bg-slate-950/50 lg:bg-transparent lg:bg-gradient-to-r lg:from-slate-950/85 lg:via-slate-900/50 lg:to-transparent"></div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full flex flex-col items-center text-center lg:items-start lg:text-left mt-8 mb-8 lg:my-auto">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full flex flex-col items-center text-center lg:items-start lg:text-left my-auto">
         <motion.div 
           className="max-w-3xl flex flex-col items-center lg:items-start w-full"
           initial="hidden"

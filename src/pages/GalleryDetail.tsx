@@ -145,7 +145,8 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
     }
   }
 
-  const data = normalizedId ? galleryData[normalizedId] : null;
+  const rawData = normalizedId ? galleryData[normalizedId] : null;
+  const data = rawData ? { ...rawData, images: rawData.images.slice(0, 6) } : null;
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   const handleNext = (e: MouseEvent) => {

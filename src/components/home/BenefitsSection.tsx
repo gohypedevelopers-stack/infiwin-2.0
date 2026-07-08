@@ -19,7 +19,7 @@ export const BenefitsSection = () => {
     {
       icon: <Lock className="text-luxury-gold w-[18px] h-[18px]" />,
       title: "Noise Dampening Isolation",
-      description: "Attenuate high-decibel street noises significantly. Convert chaotic urban balconies into tranquil spaces suited for deep focus and reading.",
+      description: "Attenuate high-decibel street noises by up to 15DB to 20DB . Convert chaotic urban balconies into tranquil spaces suited for deep focus and reading",
     },
   ];
 
@@ -44,7 +44,7 @@ export const BenefitsSection = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="text-luxury-gold text-[10px] uppercase tracking-[0.3em] font-bold mb-4">Core Advantages</p>
-          <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6 whitespace-nowrap md:whitespace-normal lg:whitespace-nowrap">The Premium 'Slide & Turn' Edge</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-slate-900 mb-6 leading-tight">The Premium 'Slide & Turn' Edge</h2>
           <p className="text-slate-500 font-light text-lg max-w-2xl mx-auto">
             Discover why modern homeowners and commercial spaces are replacing conventional iron grills with custom frameless folding structures.
           </p>
@@ -53,7 +53,7 @@ export const BenefitsSection = () => {
         {/* Desktop View */}
         <div className="hidden lg:grid grid-cols-3 gap-8">
           {benefits.map((benefit, idx) => (
-            <div 
+            <div
               key={idx}
               className="bg-slate-50 border border-slate-100 p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
             >
@@ -75,7 +75,7 @@ export const BenefitsSection = () => {
         {/* Mobile & Tablet View - Carousel */}
         <div className="lg:hidden flex flex-col items-center w-full max-w-md mx-auto">
           <div className="relative w-full overflow-hidden bg-slate-50 border border-slate-100 px-10 py-8 sm:px-12 sm:py-10 min-h-[280px] flex flex-col justify-between">
-            
+
             {/* Left navigation arrow */}
             <button
               onClick={prevSlide}
@@ -84,7 +84,7 @@ export const BenefitsSection = () => {
             >
               <ChevronLeft size={16} />
             </button>
- 
+
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIdx}
@@ -122,9 +122,8 @@ export const BenefitsSection = () => {
               <button
                 key={idx}
                 onClick={() => setActiveIdx(idx)}
-                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  activeIdx === idx ? "w-6 bg-luxury-gold" : "w-1.5 bg-slate-300"
-                }`}
+                className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${activeIdx === idx ? "w-6 bg-luxury-gold" : "w-1.5 bg-slate-300"
+                  }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
             ))}

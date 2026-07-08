@@ -36,7 +36,6 @@ export const Navbar = () => {
     { name: "Concepts", href: "/concepts" },
     { name: "About Us", href: "/about" },
     { name: "FAQs", href: "/faq" },
-    { name: "Contact", href: "/contact" },
   ];
 
   const isHome = location.pathname === "/";
