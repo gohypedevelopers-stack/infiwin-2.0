@@ -346,7 +346,7 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Balcony",
     "description": "Unobstructed frameless premium safety glazing barriers. Perfectly designed for balconies and terraces, offering panoramic views, superior weather protection, and effortless sliding mechanisms that redefine modern open-concept living spaces.",
     "images": [
-      "/gallery/Applications/Balcony/IMG-20220103-WA0049.jpg",
+      "/gallery/Applications/Balcony/balcony_banner.png",
       "/gallery/Applications/Balcony/IMG-20220227-WA0001.jpg",
       "/gallery/Applications/Balcony/IMG-20220227-WA0002.jpg",
       "/gallery/Applications/Balcony/IMG-20220312-WA0021.jpg",
