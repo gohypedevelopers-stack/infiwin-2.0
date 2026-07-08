@@ -1,14 +1,47 @@
 const fs = require('fs');
 const path = require('path');
 
-const baseDir = path.join(__dirname, 'public/Website-20260518T071514Z-3-001/Website/Images');
-const basePathForWeb = '/Website-20260518T071514Z-3-001/Website/Images';
+const targetGalleryDir = path.join(__dirname, 'public/gallery');
+
+const folderNames = {
+  "slide-turn": "Slide & Turn",
+  "commercial": "Commercial",
+  "office-space": "Office Space",
+  "farm-house": "Farm House",
+  "terrace": "Terrace",
+  "telescopic-sliders": "Telescopic Sliders",
+  "exterior": "Exterior",
+  "garden": "Garden",
+  "90-degree-encloser": "90 Degree Encloser",
+  "foldable-doors-(bi-fold)": "Foldable Doors (Bi Fold)",
+  "openable-door": "Openable Door",
+  "openable-windows-doors": "Openable Windows & Doors",
+  "sliding-encloser": "Sliding Encloser",
+  "sliding-windows-doors": "Sliding Windows & Doors",
+  "synchronized-systems": "Synchronized Systems",
+  "top-hang-bi-fold": "Top Hang Bi Fold",
+  "balcony": "Balcony",
+  "int-partition": "Int. Partition",
+  "guillotine-glass-system": "Guillotine Glass System",
+  "fixed-partition": "Fixed Partition"
+};
+
+const applications = [
+  "balcony",
+  "int-partition",
+  "commercial",
+  "exterior",
+  "terrace",
+  "farm-house",
+  "office-space",
+  "garden"
+];
 
 const data = {
   "slide-turn": {
     title: "Slide & Turn",
     description: "Experience the ultimate freedom with our unobstructed frameless premium safety glazing barriers. Perfectly designed for balconies and terraces, offering panoramic views, superior weather protection, and effortless sliding mechanisms that redefine modern open-concept living spaces.",
-    images: ["/slide_turn_banner.jpg"]
+    images: []
   },
   "commercial": {
     title: "Commercial",
@@ -33,7 +66,7 @@ const data = {
   "telescopic-sliders": {
     title: "Telescopic Sliders",
     description: "Create sleek separation zones for functional multi-use spaces. Telescopic sliding systems offer ultra-smooth operation and space-saving efficiency, effortlessly gliding away to merge rooms or sliding shut to create private enclosures in both residential and commercial settings.",
-    images: ["/telescopic_banner.jpg"]
+    images: []
   },
   "exterior": {
     title: "Exterior",
@@ -43,57 +76,47 @@ const data = {
   "garden": {
     title: "Garden",
     description: "Enhance your outdoor living spaces with glass enclosures that blend beauty with functionality, perfect for garden houses, patios, and gazebos. Create a modern glass oasis that keeps you connected to your garden throughout the seasons.",
-    images: [
-      "/bifold_glass.png",
-      "/roof.png",
-      "/wind%20breaker.png",
-      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/WhatsApp%20Image%202021-02-20%20at%205.28.31%20PM.jpg",
-      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/FARMHOUSEHERO.jpg",
-      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4395.jpg",
-      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4402.jpg",
-      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4403.jpg",
-      "/Website-20260518T071514Z-3-001/Website/Images/S&T/Farmhouse/IMG_4408.jpg"
-    ]
+    images: []
   },
   "90-degree-encloser": {
     title: "90 Degree Encloser",
     description: "Premium frameless 90-degree glass enclosures designed to elevate modern bathrooms. Features watertight performance, solid brass hardware, and custom configurations that make efficient use of corner space.",
-    images: ["/ninety_degree_banner.jpg"]
+    images: []
   },
   "foldable-doors-(bi-fold)": {
     title: "Foldable Doors (Bi Fold)",
     description: "Redefine boundaries with our luxurious bi-fold folding door systems. Offering elegant folding paths, high thermal performance, and expansive opening areas that bring the outdoors inside.",
-    images: ["/bifold_banner.jpg"]
+    images: []
   },
   "openable-door": {
     title: "Openable Door",
     description: "Durable, high-performance openable door systems for modern bathrooms, offering complete watertightness, modern profiles, and smooth swing dynamics.",
-    images: ["/openable_door_banner.jpg"]
+    images: []
   },
   "openable-windows-doors": {
     title: "Openable Windows & Doors",
     description: "Premium openable swing windows and doors featuring superior acoustic insulation, complete weather proofing, and elegant modern profiles.",
-    images: ["/openable_banner.jpg"]
+    images: []
   },
   "sliding-encloser": {
     title: "Sliding Encloser",
     description: "Sophisticated sliding glass enclosure systems for modern bathrooms. Smooth-gliding sliding tracks, high durability hardware, and space-saving frameless glass panels.",
-    images: ["/sliding_enclosure_banner.jpg"]
+    images: []
   },
   "sliding-windows-doors": {
     title: "Sliding Windows & Doors",
     description: "Multi-track sliding windows and doors offering expansive views, premium hardware, and effortless gliding operation for large external openings.",
-    images: ["/sliding_windows_banner.jpg"]
+    images: []
   },
   "synchronized-systems": {
     title: "Synchronized Systems",
     description: "Synchronized multi-panel sliding systems for interior spaces. Quiet operation, sleek hardware, and automated-feeling movement that slides multiple panels simultaneously.",
-    images: ["/synchronized_banner.jpg"]
+    images: []
   },
   "top-hang-bi-fold": {
     title: "Top Hang Bi Fold",
     description: "Top-hung bi-fold systems for internal partition dividers. Keeps flooring unobstructed without bottom guide rails while providing flexible room dividing setups.",
-    images: ["/tophang_banner.jpg"]
+    images: []
   },
   "balcony": {
     title: "Balcony",
@@ -108,79 +131,46 @@ const data = {
   "guillotine-glass-system": {
     title: "Guillotine Glass System",
     description: "Experience modern automated vertical sliding glass systems. Designed for balconies and cafes, offering motorized operation, wind protection, and seamless integration.",
-    images: ["/guillotine_banner.jpg"]
+    images: []
   },
   "fixed-partition": {
     title: "Fixed Partition",
     description: "Elegant fixed glass partition systems for modern bathrooms and interiors, offering clean lines, structural stability, and minimalist aesthetics.",
-    images: ["/fixed_partition_banner.jpg"]
+    images: []
   }
 };
 
-function getImages(subpaths, key) {
-  if (!Array.isArray(subpaths)) {
-    subpaths = [subpaths];
-  }
-
-  subpaths.forEach(subpath => {
-    const dirPath = path.join(baseDir, subpath);
-    if (fs.existsSync(dirPath)) {
-      const files = fs.readdirSync(dirPath);
-      files.forEach(file => {
-        if (file.toLowerCase().endsWith('.jpg') || file.toLowerCase().endsWith('.png') || file.toLowerCase().endsWith('.jpeg')) {
-          // encodeURI handles spaces but leaves / and & intact, which is correct for Vite
-          const rawPath = `${basePathForWeb}/${subpath}/${file}`.replace(/\\/g, '/');
-          const encodedPath = encodeURI(rawPath);
-          data[key].images.push(encodedPath);
-        }
-      });
-    }
-  });
-}
-
-function getImagesFromPublic(subdir, key) {
-  let dirPath = path.join(__dirname, 'public', subdir, subdir);
-  let webPathPrefix = `/${subdir}/${subdir}`;
+// Scan public/gallery/<subfolder>/<folderName> for each key to populate images dynamically
+Object.keys(data).forEach(key => {
+  const folderName = folderNames[key] || data[key].title;
+  const isApp = applications.includes(key);
+  const subfolder = isApp ? 'Applications' : 'Systems';
+  const dirPath = path.join(targetGalleryDir, subfolder, folderName);
   
-  if (!fs.existsSync(dirPath)) {
-    dirPath = path.join(__dirname, 'public', subdir);
-    webPathPrefix = `/${subdir}`;
-  }
-
   if (fs.existsSync(dirPath)) {
     const files = fs.readdirSync(dirPath);
+    
+    // Sort files to put banners/heroes first so they act as thumbnails/covers
+    files.sort((a, b) => {
+      const aLower = a.toLowerCase();
+      const bLower = b.toLowerCase();
+      const isABanner = aLower.includes('banner') || aLower.includes('hero');
+      const isBBanner = bLower.includes('banner') || bLower.includes('hero');
+      if (isABanner && !isBBanner) return -1;
+      if (!isABanner && isBBanner) return 1;
+      return a.localeCompare(b);
+    });
+
     files.forEach(file => {
       if (file.toLowerCase().endsWith('.jpg') || file.toLowerCase().endsWith('.png') || file.toLowerCase().endsWith('.jpeg')) {
-        const rawPath = `${webPathPrefix}/${file}`.replace(/\\/g, '/');
+        // Construct the raw URL path and use encodeURI to preserve commas, ampersands, and parentheses
+        const rawPath = `/gallery/${subfolder}/${folderName}/${file}`.replace(/\\/g, '/');
         const encodedPath = encodeURI(rawPath);
         data[key].images.push(encodedPath);
       }
     });
   }
-}
-
-// Map the keys exactly to what `toLowerCase().replace(/[\s&.]+/g, '-')` produces
-getImages('S&T', 'slide-turn');
-getImages(['S&T/JCB', 'S&T/Open Tap'], 'commercial');
-getImages('Offics', 'office-space');
-getImages('S&T/Farmhouse', 'farm-house');
-getImages('Offics/Terrece', 'terrace');
-getImages('Telescopic', 'telescopic-sliders');
-getImages('S&T/Hotel Penensula', 'exterior');
-
-getImagesFromPublic('90 Degree Encloser', '90-degree-encloser');
-getImagesFromPublic('Foldable Doors (Bi Fold)', 'foldable-doors-(bi-fold)');
-getImagesFromPublic('Openable Door (Bathroom)', 'openable-door');
-getImagesFromPublic('Openable Windows & Doors', 'openable-windows-doors');
-getImagesFromPublic('Sliding Encloser', 'sliding-encloser');
-getImagesFromPublic('Sliding Windows & Doors', 'sliding-windows-doors');
-getImagesFromPublic('Synchronized Systems', 'synchronized-systems');
-getImagesFromPublic('Top Hang Bi Fold', 'top-hang-bi-fold');
-
-getImages('S&T', 'balcony');
-getImages('Telescopic', 'int-partition');
-getImages('S&T', 'guillotine-glass-system');
-getImagesFromPublic('Sliding Encloser', 'fixed-partition');
+});
 
 const tsContent = `export interface GalleryItem {
   title: string;
@@ -197,4 +187,4 @@ if (!fs.existsSync(destDir)) {
 }
 
 fs.writeFileSync(path.join(destDir, 'galleryData.ts'), tsContent);
-console.log("Gallery data generated with updated mappings!");
+console.log("Gallery data generated with updated mappings from Applications/ and Systems/ folders using encodeURI!");
