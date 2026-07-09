@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Plus, Minus, Search, MessageSquare, ChevronRight } from "lucide-react";
+import { Plus, Dash, ChatSquareText, ChevronRight, BoxSeam, Tools, ShieldCheck, Envelope } from "react-bootstrap-icons";
 import { WhatsAppIcon } from "../components/icons/WhatsAppIcon";
 
 interface FAQItem {
@@ -10,7 +10,7 @@ interface FAQItem {
 
 interface FAQSection {
   title: string;
-  icon: string;
+  icon: React.ReactNode;
   items: FAQItem[];
 }
 
@@ -23,11 +23,11 @@ const FAQAccordian = ({ item }: { item: FAQItem; key?: any }) => {
         className="w-full py-6 flex justify-between items-center text-left transition-all"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className={`text-lg font-medium transition-colors ${isOpen ? 'text-luxury-gold' : 'text-slate-900 group-hover:text-luxury-gold'}`}>
+        <span className={`text-xl font-serif transition-colors ${isOpen ? 'text-luxury-gold' : 'text-slate-900 group-hover:text-luxury-gold'}`}>
           {item.question}
         </span>
         <div className={`flex-shrink-0 ml-4 w-8 h-8 rounded-full border flex items-center justify-center transition-all ${isOpen ? 'bg-luxury-gold border-luxury-gold text-white' : 'border-slate-200 text-slate-400 group-hover:border-luxury-gold group-hover:text-luxury-gold'}`}>
-          {isOpen ? <Minus size={16} /> : <Plus size={16} />}
+          {isOpen ? <Dash size={16} /> : <Plus size={16} />}
         </div>
       </button>
       <AnimatePresence>
@@ -50,12 +50,10 @@ const FAQAccordian = ({ item }: { item: FAQItem; key?: any }) => {
 };
 
 export default function FAQ() {
-  const [searchQuery, setSearchQuery] = useState("");
-
   const sections: FAQSection[] = [
     {
       title: "Product & Systems",
-      icon: "📦",
+      icon: <BoxSeam />,
       items: [
         {
           question: "What defines the INFIWIN 2 Track Slider system?",
@@ -85,7 +83,7 @@ export default function FAQ() {
     },
     {
       title: "Installation",
-      icon: "🛠️",
+      icon: <Tools />,
       items: [
         {
           question: "What does 'White-Glove' installation include?",
@@ -99,7 +97,7 @@ export default function FAQ() {
     },
     {
       title: "Technical & Safety",
-      icon: "🛡️",
+      icon: <ShieldCheck />,
       items: [
         {
           question: "Are the systems certified for high-wind areas?",
@@ -117,7 +115,7 @@ export default function FAQ() {
     },
     {
       title: "Maintenance & Warranty",
-      icon: "✉️",
+      icon: <Envelope />,
       items: [
         {
           question: "What is the warranty period for INFIWIN systems?",
@@ -130,14 +128,6 @@ export default function FAQ() {
       ]
     }
   ];
-
-  const filteredSections = sections.map(section => ({
-    ...section,
-    items: section.items.filter(item =>
-      item.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.answer.toLowerCase().includes(searchQuery.toLowerCase())
-    )
-  })).filter(section => section.items.length > 0);
 
   return (
     <div className="min-h-screen bg-white">
@@ -159,45 +149,27 @@ export default function FAQ() {
           <p className="mt-4 text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed mb-6">
             Explore our comprehensive guide to architectural glass systems, structural integrity, and premium installation standards.
           </p>
-
-          {/* Search Bar */}
-          <div className="relative max-w-lg mx-auto">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-300" size={20} />
-            <input
-              type="text"
-              placeholder="Search technical topics..."
-              className="w-full pl-12 pr-4 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder-slate-300 outline-none focus:border-luxury-gold transition-colors text-sm font-light"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </div>
         </div>
       </section>
 
       {/* FAQ Content */}
       <section className="px-6 py-24">
         <div className="max-w-4xl mx-auto">
-          {filteredSections.length > 0 ? (
-            <div className="space-y-20">
-              {filteredSections.map((section, idx) => (
-                <div key={idx} id={section.title.toLowerCase().replace(/\s+/g, '-')}>
-                  <div className="flex items-center gap-3 mb-8">
-                    <span className="text-2xl">{section.icon}</span>
-                    <h3 className="text-2xl font-serif text-slate-900 border-b border-luxury-gold/20 pb-2 flex-grow">{section.title}</h3>
-                  </div>
-                  <div className="space-y-2">
-                    {section.items.map((item, i) => (
-                      <FAQAccordian key={i} item={item} />
-                    ))}
-                  </div>
+          <div className="space-y-20">
+            {sections.map((section, idx) => (
+              <div key={idx} id={section.title.toLowerCase().replace(/\s+/g, '-')}>
+                <div className="flex items-center gap-3 mb-8">
+                  <span className="text-2xl text-luxury-gold">{section.icon}</span>
+                  <h3 className="text-3xl font-serif text-slate-900 border-b border-luxury-gold/20 pb-2 flex-grow">{section.title}</h3>
                 </div>
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-20">
-              <p className="text-slate-400 font-serif text-2xl">No topics matching your search.</p>
-            </div>
-          )}
+                <div className="space-y-2">
+                  {section.items.map((item, i) => (
+                    <FAQAccordian key={i} item={item} />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -205,7 +177,7 @@ export default function FAQ() {
       <section className="px-6 py-20 bg-slate-900 text-white rounded-t-[3rem] mt-20">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
           <div className="w-16 h-16 rounded-full bg-luxury-gold flex items-center justify-center mb-8">
-            <MessageSquare className="text-white" size={32} />
+            <ChatSquareText className="text-white" size={32} />
           </div>
           <h4 className="text-3xl font-serif mb-6">Still have questions?</h4>
           <p className="text-white/50 font-light mb-10 leading-relaxed">
