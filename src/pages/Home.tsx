@@ -19,7 +19,7 @@ export default function Home() {
       <ProductsGridSection />
       <ApplicationsSection />
       <TestimonialsSection />
-      
+
       {/* Sections 9 & 10: Estimator & Lead Form */}
       <section className="py-24 bg-slate-50 relative overflow-hidden border-t border-slate-200">
         <div className="absolute top-0 left-0 w-full h-full bg-grid-slate-100/[0.2] bg-[size:20px_20px]"></div>

@@ -76,9 +76,17 @@ export const FrameColorSection = () => {
 
               {/* Dots */}
               <div className="flex gap-2">
-                <div className="w-6 h-2 rounded-full bg-slate-300"></div>
-                <div className="w-2 h-2 rounded-full bg-slate-200"></div>
-                <div className="w-2 h-2 rounded-full bg-slate-200"></div>
+                {frameColors.map((color) => (
+                  <button
+                    key={color.id}
+                    onClick={() => setSelectedColor(color)}
+                    className={`h-2.5 rounded-full transition-all duration-300 border border-black/10 shadow-sm ${
+                      selectedColor.id === color.id ? "w-8" : "w-2.5 opacity-60 hover:opacity-100 hover:w-4"
+                    }`}
+                    style={{ backgroundColor: color.hex }}
+                    aria-label={`View ${color.name} image`}
+                  />
+                ))}
               </div>
             </div>
 
@@ -148,9 +156,17 @@ export const FrameColorSection = () => {
 
             {/* Dots */}
             <div className="flex gap-2">
-              <div className="w-6 h-2 rounded-full bg-slate-300"></div>
-              <div className="w-2 h-2 rounded-full bg-slate-200"></div>
-              <div className="w-2 h-2 rounded-full bg-slate-200"></div>
+              {frameColors.map((color) => (
+                <button
+                  key={color.id}
+                  onClick={() => setSelectedColor(color)}
+                  className={`h-2.5 rounded-full transition-all duration-300 border border-black/10 shadow-sm ${
+                    selectedColor.id === color.id ? "w-8" : "w-2.5 opacity-60 hover:opacity-100 hover:w-4"
+                  }`}
+                  style={{ backgroundColor: color.hex }}
+                  aria-label={`View ${color.name} image`}
+                />
+              ))}
             </div>
           </div>
 

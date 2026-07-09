@@ -493,11 +493,11 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Guillotine Glass System",
     "description": "Experience modern automated vertical sliding glass systems. Designed for balconies and cafes, offering motorized operation, wind protection, and seamless integration.",
     "images": [
-      "/gallery/Systems/Guillotine%20Glass%20System/guillotine_banner.jpg",
       "/gallery/Systems/Guillotine%20Glass%20System/ChatGPT%20Image%20Jul%206,%202026,%2011_45_40%20AM.png",
+      "/gallery/Systems/Guillotine%20Glass%20System/guillotine_banner.jpg",
       "/gallery/Systems/Guillotine%20Glass%20System/ChatGPT%20Image%20Jul%206,%202026,%2011_46_52%20AM.png",
       "/gallery/Systems/Guillotine%20Glass%20System/ChatGPT%20Image%20Jul%206,%202026,%2011_47_57%20AM.png",
-      "/gallery/Systems/Guillotine%20Glass%20System/ChatGPT%20Image%20Jul%206,%202026,%2011_49_39%20AM.png"
+      // "/gallery/Systems/Guillotine%20Glass%20System/ChatGPT%20Image%20Jul%206,%202026,%2011_49_39%20AM.png"
     ]
   },
   "fixed-partition": {

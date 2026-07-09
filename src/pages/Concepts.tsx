@@ -32,7 +32,7 @@ const CONCEPTS: ConceptItem[] = [
     tagline: "High-Performance Curtain Walls",
     desc: "Our Façade concept reimagines the exterior envelope of modern buildings as a dynamic interplay of glass, light, and structure. From panoramic curtain walls to bespoke cladding solutions, every panel is engineered for maximum thermal efficiency, acoustic performance, and visual drama.",
     img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2001_10_02%20PM.png",
-    video: "/concepts_videos/facade.mp4",
+    video: "/Concepts/Facade.mp4",
     stats: [
       { value: "40%", label: "Energy Savings" },
       { value: "54dB", label: "Noise Reduction" },
@@ -47,12 +47,12 @@ const CONCEPTS: ConceptItem[] = [
   },
   {
     id: "restaurant",
-    title: "Restaurant",
+    title: "Restaurant Terrace",
     subtitle: "Hospitality Concept",
     tagline: "Adaptable Dining Environments",
     desc: "Our Restaurant concept harnesses the power of movable glass walls to create infinitely adaptable dining spaces. During mild weather, fold back entire walls to create an alfresco atmosphere. As conditions change, close them in seconds without losing the panoramic view.",
     img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2002_16_49%20PM.png",
-    video: "/concepts_videos/restaurant.mp4",
+    video: "/Concepts/Terrece Large.mp4",
     stats: [
       { value: "360°", label: "Panoramic Views" },
       { value: "8s", label: "Full Retraction" },
@@ -72,7 +72,7 @@ const CONCEPTS: ConceptItem[] = [
     tagline: "Marine-Grade Leisure Glazing",
     desc: "The Pool Side Bar concept blends luxurious outdoor living with the practicality of weather-protected glass enclosures. Our systems are engineered for salt-air coastal environments, UV-resistant throughout, and designed to complement infinity pools, rooftop lounges, and resort decks.",
     img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2003_20_57%20PM.png",
-    video: "/concepts_videos/pool-side-bar.mp4",
+    video: "/Concepts/Pool.mp4",
     stats: [
       { value: "5★", label: "Resort Grade" },
       { value: "IP67", label: "Water Protection" },
@@ -85,6 +85,46 @@ const CONCEPTS: ConceptItem[] = [
     ],
     href: "/concepts/pool-side-bar",
   },
+  {
+    id: "glass-slab",
+    title: "Structural Glass",
+    subtitle: "Material Concept",
+    tagline: "Unmatched Structural Integrity",
+    desc: "Witness the sheer strength of our structural glass slabs. Engineered to support massive loads while maintaining perfect optical clarity, these slabs form the foundation of our premium walkable skylights, glass floors, and heavy-duty structural elements.",
+    img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2001_10_02%20PM.png",
+    video: "/Concepts/glass slab animation.mp4",
+    stats: [
+      { value: "5x", label: "Stronger" },
+      { value: "99%", label: "Clarity" },
+      { value: "ISO", label: "Certified" },
+    ],
+    highlights: [
+      "Multi-layered laminated safety glass",
+      "Scratch-resistant top surface",
+      "Engineered for extreme structural loads",
+    ],
+    href: "/concepts",
+  },
+  {
+    id: "shatter-animation",
+    title: "Safety Glazing",
+    subtitle: "Safety Concept",
+    tagline: "Advanced Impact Resistance",
+    desc: "Safety is our absolute priority. This shatter animation demonstrates how our advanced laminated glazing systems react to extreme impact—holding together to prevent dangerous shards and maintaining a secure barrier even under immense stress.",
+    img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2002_16_49%20PM.png",
+    video: "/Concepts/infiwin shatter animation.mp4",
+    stats: [
+      { value: "100%", label: "Shatterproof" },
+      { value: "SGCC", label: "Approved" },
+      { value: "Zero", label: "Spalling" },
+    ],
+    highlights: [
+      "Advanced PVB and SGP interlayers",
+      "Maintains barrier integrity even when broken",
+      "Protects against severe weather and impact",
+    ],
+    href: "/concepts",
+  }
 ];
 
 export default function Concepts() {
@@ -92,6 +132,8 @@ export default function Concepts() {
     facade: true,
     restaurant: true,
     "pool-side-bar": true,
+    "glass-slab": true,
+    "shatter-animation": true,
   });
 
   const toggleMute = (id: string) => {
@@ -139,7 +181,7 @@ export default function Concepts() {
           return (
             <div key={concept.id} className={`${rowBg} py-24 border-b border-slate-100 last:border-0`}>
               <div
-                className={`max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center ${
+                className={`max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-12 lg:gap-20 items-start ${
                   isEven ? "" : "lg:flex-row-reverse"
                 }`}
               >
@@ -210,7 +252,7 @@ export default function Concepts() {
                 </div>
 
                 {/* Description & Technical highlights Side */}
-                <div className="w-full lg:w-1/2 flex flex-col justify-center">
+                <div className="w-full lg:w-1/2 flex flex-col justify-start pt-2">
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -257,12 +299,6 @@ export default function Concepts() {
                       >
                         Enquire about {concept.title}
                         <ArrowRight size={12} className="transform group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                      <Link
-                        to={concept.href}
-                        className="border border-slate-200 text-slate-700 hover:border-black hover:text-black hover:bg-slate-50 text-[10px] font-bold uppercase tracking-[0.2em] px-8 py-3 rounded-lg transition-all"
-                      >
-                        Full Details
                       </Link>
                     </div>
                   </motion.div>

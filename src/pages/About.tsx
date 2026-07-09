@@ -69,7 +69,7 @@ export default function About() {
             className="relative rounded-3xl overflow-hidden shadow-2xl aspect-square lg:aspect-auto lg:h-[600px]"
           >
             <img loading="lazy" 
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80" 
+              src="https://i.postimg.cc/zB29WQw6/Chat-GPT-Image-Jul-8-2026-05-39-21-PM.png" 
               alt="Balcony View" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"

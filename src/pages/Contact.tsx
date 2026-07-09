@@ -708,28 +708,24 @@ export default function Contact() {
             </div>
 
             {/* Global Presence */}
-            <div className="bg-[#fafafa] p-10 rounded-sm flex flex-col h-full justify-between">
-              <div className="flex-1 flex items-center justify-center py-10">
-                <div className="relative w-48 h-48 rounded-full bg-slate-50 flex items-center justify-center overflow-hidden border border-slate-200 shadow-xl shadow-luxury-gold/5">
-                  <div className="absolute w-full h-full border border-slate-200 rounded-full scale-110" />
-                  <div className="absolute w-full h-full border border-slate-200 rounded-full scale-150" />
-                  <div className="w-24 h-24 rounded-full bg-luxury-gold/10 absolute blur-xl" />
-                  <Globe className="text-luxury-gold w-20 h-20 opacity-40" strokeWidth={1} />
-                  <div className="absolute top-[30%] left-[20%] w-2 h-2 bg-luxury-gold rounded-full shadow-[0_0_10px_rgba(212,175,55,0.6)]" />
-                  <div className="absolute top-[60%] right-[30%] w-2 h-2 bg-luxury-gold rounded-full shadow-[0_0_10px_rgba(212,175,55,0.6)]" />
-                  <div className="absolute top-[40%] right-[20%] w-2 h-2 bg-luxury-gold rounded-full shadow-[0_0_10px_rgba(212,175,55,0.6)]" />
-                  <div className="absolute bottom-[20%] left-[45%] w-8 h-8 bg-luxury-gold rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(212,175,55,0.6)]">
-                    <MapPin size={14} className="text-white" />
-                  </div>
+            <div className="rounded-sm flex flex-col h-full justify-end overflow-hidden relative min-h-[400px] shadow-xl shadow-black/5">
+              <img 
+                src="/premium_global_presence.png" 
+                alt="Premium Global Presence" 
+                className="absolute inset-0 w-full h-full object-cover z-0"
+              />
+              {/* Subtle dark gradient at the bottom so the text card pops nicely */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent z-0 pointer-events-none" />
+              
+              <div className="p-8 lg:p-10 relative z-10 w-full mt-auto">
+                <div className="bg-white/95 backdrop-blur-md p-6 rounded-sm border border-white/20 shadow-2xl">
+                  <h4 className="text-[10px] font-bold text-slate-900 uppercase tracking-widest mb-2">
+                    Global Presence
+                  </h4>
+                  <p className="text-slate-600 text-sm font-light">
+                    Serving clients across GCC, India, and Southeast Asia.
+                  </p>
                 </div>
-              </div>
-              <div className="bg-white p-6 rounded-sm border border-black/5 mt-auto">
-                <h4 className="text-[10px] font-bold text-slate-900 uppercase tracking-widest mb-2">
-                  Global Presence
-                </h4>
-                <p className="text-slate-500 text-sm font-light">
-                  Serving clients across GCC, India, and Southeast Asia.
-                </p>
               </div>
             </div>
           </div>

@@ -26,7 +26,7 @@ export const EstimatorSection = () => {
           </p>
 
           {/* Sliders */}
-          <div className="space-y-6">
+          <div className="space-y-6 w-full mt-4">
             <div>
               <div className="flex justify-between items-center mb-4 gap-2">
                 <label className="text-xs sm:text-sm font-medium flex items-center gap-1.5 min-w-0 leading-tight">

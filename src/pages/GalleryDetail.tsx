@@ -1,8 +1,9 @@
 import { useState, MouseEvent } from 'react';
 import { useParams, useNavigate, useLocation, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowLeft, ChevronLeft, ChevronRight, X, Eye } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight, X, Eye, ArrowRight } from 'lucide-react';
 import { galleryData } from '../data/galleryData';
+import { productsList } from '../data/productData';
 import { WhatsAppIcon } from '../components/icons/WhatsAppIcon';
 
 const PRODUCT_BADGES: Record<string, string[]> = {
@@ -95,7 +96,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   // Determine if application based on prop or fallback url parsing
   const resolvedType = type || (location.pathname.includes('/application/') ? 'application' : 'product');
   const isApplication = resolvedType === 'application';
@@ -148,6 +149,12 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
   const rawData = normalizedId ? galleryData[normalizedId] : null;
   const data = rawData ? { ...rawData, images: rawData.images.slice(0, 6) } : null;
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+
+  // Compute related products
+  const currentProduct = productsList.find(p => p.title.toLowerCase().replace(/[\s&.]+/g, '-') === normalizedId);
+  const sameCategoryProducts = productsList.filter(p => p.category === currentProduct?.category && p.title !== currentProduct?.title);
+  const otherProducts = productsList.filter(p => p.title !== currentProduct?.title && !sameCategoryProducts.includes(p));
+  const relatedProducts = [...sameCategoryProducts, ...otherProducts].slice(0, 4);
 
   const handleNext = (e: MouseEvent) => {
     e.stopPropagation();
@@ -240,8 +247,8 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
               <h2 className="text-3xl font-serif text-slate-900">Explore {data.title} Installations</h2>
             </div>
             {data.images.length > 0 && (
-              <button 
-                onClick={() => setSelectedImageIndex(0)} 
+              <button
+                onClick={() => setSelectedImageIndex(0)}
                 className="bg-luxury-gold hover:bg-slate-950 text-white px-5 py-2.5 rounded-lg font-medium uppercase tracking-wider text-xs transition-colors shadow flex items-center gap-2 cursor-pointer border-none self-center sm:self-auto"
               >
                 <Eye size={14} />
@@ -263,11 +270,11 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                   className="overflow-hidden rounded-xl border border-slate-200/50 shadow-md hover:shadow-xl transition-shadow cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-[300px] lg:flex-grow"
                   onClick={() => setSelectedImageIndex(idx)}
                 >
-                  <img 
-                    loading="lazy" 
-                    src={img} 
-                    alt={`${data.title} ${idx + 1}`} 
-                    className="w-full h-full object-cover lg:h-full lg:w-auto lg:min-w-full hover:scale-105 transition-transform duration-700" 
+                  <img
+                    loading="lazy"
+                    src={img}
+                    alt={`${data.title} ${idx + 1}`}
+                    className="w-full h-full object-cover lg:h-full lg:w-auto lg:min-w-full hover:scale-105 transition-transform duration-700"
                   />
                 </motion.div>
               ))}
@@ -275,6 +282,48 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
           )}
         </div>
       </section>
+
+      {/* You Might Also Like */}
+      {relatedProducts.length > 0 && (
+        <section className="px-6 py-20 bg-slate-50 border-t border-slate-200">
+          <div className="max-w-7xl mx-auto">
+            <div className="mb-12 text-center md:text-left">
+              <h3 className="text-sm font-medium text-slate-400 uppercase tracking-[0.3em] mb-3">Related Systems</h3>
+              <h2 className="text-3xl font-serif text-slate-900">You Might Also Like</h2>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {relatedProducts.map((p, idx) => (
+                <motion.div
+                  key={`${p.title}-${idx}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1, duration: 0.4 }}
+                >
+                  <Link to={`/gallery/product/${p.title.toLowerCase().replace(/[\s&.]+/g, '-')}`} className="group cursor-pointer block">
+                    <div className="aspect-[4/3] overflow-hidden rounded-sm mb-4 shadow-md transition-shadow hover:shadow-xl relative">
+                      <img loading="lazy"
+                        src={p.img}
+                        alt={p.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-sm text-white text-[9px] uppercase tracking-widest px-2.5 py-1 rounded-sm">
+                        {p.category}
+                      </div>
+                    </div>
+                    <div className="flex justify-between items-center mt-4 px-1">
+                      <h5 className="text-lg font-serif group-hover:text-luxury-gold transition-colors">{p.title}</h5>
+                      <ArrowRight size={16} className="text-slate-300 group-hover:text-luxury-gold transform translate-x-0 group-hover:translate-x-1 transition-all" />
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Call to Action */}
       <section className="px-6 py-20 bg-slate-900 text-white text-center">
@@ -305,7 +354,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
             >
               <X size={32} />
             </button>
-            
+
             <button
               onClick={handlePrev}
               className="absolute left-4 md:left-10 text-white/70 hover:text-white transition-colors p-2 bg-black/50 rounded-full hover:bg-black/80"
