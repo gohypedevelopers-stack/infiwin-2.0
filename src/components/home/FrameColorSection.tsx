@@ -4,10 +4,12 @@ import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 
 const frameColors = [
-  { id: "white", name: "Arctic White", hex: "#f1f1f1", img: "/arctic_white_clean.png", desc: "A timeless, clean finish that brightens any balcony. Arctic White pairs effortlessly with modern minimalist interiors and light-toned exteriors." },
-  { id: "rose", name: "Rose Bronze", hex: "#cfa89f", img: "/rose_bronze_clean.png", desc: "A warm, sophisticated tone that adds a touch of subtle luxury and contemporary elegance to your living space." },
-  { id: "gold", name: "Champagne Gold", hex: "#cfb57a", img: "/champagne_gold_clean.png", desc: "A premium brushed finish that exudes opulence. Perfect for high-end architectural integrations." },
-  { id: "dark", name: "Charcoal Grey", hex: "#5a5a5a", img: "/charcoal_grey_clean.png", desc: "A bold, industrial look that provides striking contrast and matches perfectly with modern concrete or dark-wood aesthetics." }
+  { id: "white", name: "White", hex: "#e8e9e4", img: "/frame/white.png", desc: "A clean, bright finish that pairs effortlessly with modern and minimalist interiors." },
+  { id: "black", name: "Black", hex: "#18181a", img: "/frame/black.png", desc: "A timeless, bold look that provides striking contrast and modern sophistication." },
+  { id: "anodic-brown", name: "Anodic Brown", hex: "#463a35", img: "/frame/anadic%20brown.png", desc: "A rich, dark earthy tone offering a subtle architectural elegance." },
+  { id: "soft-silver", name: "Soft Silver", hex: "#b6b6b5", img: "/frame/soft%20silver.png", desc: "A sleek metallic finish providing a contemporary, high-end feel." },
+  { id: "sucho-grey", name: "Sucho Grey", hex: "#374140", img: "/frame/sucho%20grey.png", desc: "A versatile slate tone that bridges the gap between bold darks and lighter neutrals." },
+  { id: "champaign-brown", name: "Champaign Brown", hex: "#8d7966", img: "/frame/champaign%20brown.png", desc: "A warm, sophisticated tone that adds a touch of subtle luxury to your living space." }
 ];
 
 const badges = [
@@ -61,7 +63,7 @@ export const FrameColorSection = () => {
 
             {/* Mobile Image Gallery */}
             <div className="flex flex-col items-center lg:hidden w-full mb-8">
-              <div className="w-full relative bg-[#fafafa] rounded-sm p-12 mb-6 border border-black/5 min-h-[300px] xs:min-h-[400px] flex items-center justify-center">
+              <div className="w-full relative bg-[#fafafa] rounded-sm p-2 mb-6 border border-black/5 h-[300px] xs:h-[400px] flex items-center justify-center overflow-hidden">
                 <motion.img
                   key={selectedColor.id}
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -69,7 +71,7 @@ export const FrameColorSection = () => {
                   transition={{ duration: 0.4 }}
                   src={selectedColor.img}
                   alt={`${selectedColor.name} Frame`}
-                  className="w-full h-auto object-contain rounded-sm shadow-none mix-blend-multiply absolute inset-4 max-w-[calc(100%-2rem)] max-h-[calc(100%-2rem)]"
+                  className="w-full h-full object-contain rounded-sm shadow-none mix-blend-multiply"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -141,7 +143,7 @@ export const FrameColorSection = () => {
 
           {/* Right Side - Image Gallery */}
           <div className="hidden lg:flex flex-col items-center">
-            <div className="w-full relative bg-[#fafafa] rounded-sm p-12 mb-6 border border-black/5 min-h-[400px] flex items-center justify-center">
+            <div className="w-full relative bg-[#fafafa] rounded-sm p-2 mb-6 border border-black/5 h-[400px] xl:h-[500px] flex items-center justify-center overflow-hidden">
               <motion.img
                 key={selectedColor.id}
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -149,7 +151,7 @@ export const FrameColorSection = () => {
                 transition={{ duration: 0.4 }}
                 src={selectedColor.img}
                 alt={`${selectedColor.name} Frame`}
-                className="w-full h-auto object-contain rounded-sm shadow-none mix-blend-multiply absolute inset-4 max-w-[calc(100%-2rem)] max-h-[calc(100%-2rem)]"
+                className="w-full h-full object-contain rounded-sm shadow-none mix-blend-multiply"
                 referrerPolicy="no-referrer"
               />
             </div>

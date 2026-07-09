@@ -335,11 +335,12 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Top Hang Bi Fold",
     "description": "Top-hung bi-fold systems for internal partition dividers. Keeps flooring unobstructed without bottom guide rails while providing flexible room dividing setups.",
     "images": [
-      "/gallery/Systems/Top%20Hang%20Bi%20Fold/tophang_banner.jpg",
-      "/gallery/Systems/Top%20Hang%20Bi%20Fold/ChatGPT%20Image%20Jul%206,%202026,%2012_21_13%20PM.png",
-      "/gallery/Systems/Top%20Hang%20Bi%20Fold/ChatGPT%20Image%20Jul%206,%202026,%2012_30_28%20PM.png",
-      "/gallery/Systems/Top%20Hang%20Bi%20Fold/ChatGPT%20Image%20Jul%206,%202026,%2012_32_07%20PM%20(1).png",
-      "/gallery/Systems/Top%20Hang%20Bi%20Fold/ChatGPT%20Image%20Jul%206,%202026,%2012_32_44%20PM.png"
+      "/gallery/Systems/Top%20Hang%20Bi%20Fold/image_highres_1.png",
+      "/gallery/Systems/Top%20Hang%20Bi%20Fold/image_highres_2.png",
+      "/gallery/Systems/Top%20Hang%20Bi%20Fold/image_highres_3.png",
+      "/gallery/Systems/Top%20Hang%20Bi%20Fold/image_highres_4.png",
+      "/gallery/Systems/Top%20Hang%20Bi%20Fold/image_highres_5.png",
+      "/gallery/Systems/Top%20Hang%20Bi%20Fold/image_highres_6.png"
     ]
   },
   "balcony": {
