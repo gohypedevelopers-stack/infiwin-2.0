@@ -5,6 +5,8 @@ import { ArrowLeft, ChevronLeft, ChevronRight, X, Eye, ArrowRight } from 'lucide
 import { galleryData } from '../data/galleryData';
 import { productsList } from '../data/productData';
 import { WhatsAppIcon } from '../components/icons/WhatsAppIcon';
+import { BestSellerSection } from '../components/home/BestSellerSection';
+import { FrameColorSection } from '../components/home/FrameColorSection';
 
 const PRODUCT_BADGES: Record<string, string[]> = {
   "slide-turn": [
@@ -282,6 +284,14 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
           )}
         </div>
       </section>
+
+      {/* Slide & Turn Specific Sections */}
+      {normalizedId === 'slide-turn' && (
+        <>
+          <BestSellerSection />
+          <FrameColorSection />
+        </>
+      )}
 
       {/* You Might Also Like */}
       {relatedProducts.length > 0 && (

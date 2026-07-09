@@ -43,7 +43,7 @@ export const ProductsGridSection = () => {
       image: "/gallery/Systems/Telescopic%20Sliders/ChatGPT%20Image%20Jul%206,%202026,%2011_51_55%20AM.png",
     },
     {
-      id: "synchronized-systems",
+      id: "openable-windows-doors",
       category: "Internal Partition",
       title: "Centre Open System",
       subtitle: "Split-fold Symmetrical",
@@ -67,7 +67,7 @@ export const ProductsGridSection = () => {
       image: "/two_track_slider.png",
     },
     {
-      id: "sliding-windows-doors-3",
+      id: "sliding-windows-doors",
       category: "Doors & Windows",
       title: "3 Track Slider",
       subtitle: "Doors & Windows",

@@ -27,12 +27,12 @@ export const ApplicationsSection = () => {
 
   const handleAppClick = (app: typeof applications[0]) => {
     setActiveFilter(app.title);
-    
+
     // Dispatch event to highlight products and show banner in ProductsGridSection
-    window.dispatchEvent(new CustomEvent("highlight-products", { 
-      detail: { filterName: app.title, productIds: app.recommendedProductIds } 
+    window.dispatchEvent(new CustomEvent("highlight-products", {
+      detail: { filterName: app.title, productIds: app.recommendedProductIds }
     }));
-    
+
     // Smooth scroll to the products grid
     const productsGrid = document.getElementById("products-grid");
     if (productsGrid) {
@@ -58,11 +58,10 @@ export const ApplicationsSection = () => {
             <button
               key={app.id}
               onClick={() => handleAppClick(app)}
-              className={`p-6 text-center flex flex-col items-center justify-start border bg-white rounded-xl transition-all duration-300 group cursor-pointer ${
-                activeFilter === app.title 
-                  ? "border-luxury-gold shadow-md" 
+              className={`p-6 text-center flex flex-col items-center justify-start border bg-white rounded-xl transition-all duration-300 group cursor-pointer ${activeFilter === app.title
+                  ? "border-luxury-gold shadow-md"
                   : "border-slate-100 hover:border-luxury-gold/50 hover:shadow-sm"
-              }`}
+                }`}
             >
               <div className="mb-4 flex justify-center">
                 <app.icon size={36} strokeWidth={1.5} className={`transition-colors ${activeFilter === app.title ? "text-luxury-gold" : "text-slate-400 group-hover:text-luxury-gold"}`} />
@@ -78,7 +77,7 @@ export const ApplicationsSection = () => {
         </div>
 
         <div className="flex justify-center">
-          <Link 
+          <Link
             to="/#estimator"
             className="group flex items-center justify-center gap-3 bg-black hover:bg-slate-800 text-white px-6 py-3 rounded-lg transition-all shadow-lg font-medium tracking-wider uppercase text-xs cursor-pointer border-none"
           >
