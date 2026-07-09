@@ -1,5 +1,5 @@
 import { useState, MouseEvent } from 'react';
-import { useParams, useNavigate, useLocation, Link } from 'react-router-dom';
+import { useParams, useNavigate, useLocation, Link, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft, ChevronLeft, ChevronRight, X, Eye, ArrowRight } from 'lucide-react';
 import { galleryData } from '../data/galleryData';
@@ -98,6 +98,8 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const location = useLocation();
+  const [searchParams] = useSearchParams();
+  const variant = searchParams.get('variant');
 
   // Determine if application based on prop or fallback url parsing
   const resolvedType = type || (location.pathname.includes('/application/') ? 'application' : 'product');
@@ -149,7 +151,15 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
   }
 
   const rawData = normalizedId ? galleryData[normalizedId] : null;
-  const data = rawData ? { ...rawData, images: rawData.images.slice(0, 6) } : null;
+  
+  let filteredImages = rawData?.images || [];
+  if (normalizedId === 'sliding-windows-doors' && variant === '2-track') {
+    filteredImages = filteredImages.filter(img => img.includes('2_track'));
+  } else if (normalizedId === 'sliding-windows-doors' && variant === '3-track') {
+    filteredImages = filteredImages.filter(img => img.includes('3_track'));
+  }
+  
+  const data = rawData ? { ...rawData, images: filteredImages } : null;
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   // Compute related products

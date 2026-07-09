@@ -191,11 +191,13 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Sliding Windows & Doors",
     "description": "Multi-track sliding windows and doors offering expansive views, premium hardware, and effortless gliding operation for large external openings.",
     "images": [
-      "/gallery/Systems/Sliding%20Windows%20&%20Doors/sliding_windows_banner.jpg",
-      "/gallery/Systems/Sliding%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_35_48%20PM.png",
-      "/gallery/Systems/Sliding%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_38_40%20PM.png",
-      "/gallery/Systems/Sliding%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_41_19%20PM.png",
-      "/gallery/Systems/Sliding%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_43_41%20PM.png"
+      "/gallery/Systems/Sliding%20Windows%20&%20Doors/2_track_slider_door_2_1783583929100.png",
+      "/gallery/Systems/Sliding%20Windows%20&%20Doors/2_track_slider_door_3_1783585468460.png",
+      "/gallery/Systems/Sliding%20Windows%20&%20Doors/2_track_slider_door_4_1783585490617.png",
+      "/gallery/Systems/Sliding%20Windows%20&%20Doors/2_track_slider_door_5_1783585821723.png",
+      "/gallery/Systems/Sliding%20Windows%20&%20Doors/3_track_slider_door_4_1783585629355.png",
+      "/gallery/Systems/Sliding%20Windows%20&%20Doors/3_track_slider_door_5_1783585650997.png",
+      "/gallery/Systems/Sliding%20Windows%20&%20Doors/3_track_slider_door_6_1783585841802.png"
     ]
   },
   "synchronized-systems": {

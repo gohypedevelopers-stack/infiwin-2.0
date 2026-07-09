@@ -64,7 +64,7 @@ export const ProductsGridSection = () => {
       title: "2 Track Slider",
       subtitle: "Doors & Windows",
       description: "Classic, cost-effective structural system layout with premium hardware profiles.",
-      image: "/two_track_slider.png",
+      image: "/gallery/Systems/Sliding%20Windows%20&%20Doors/2_track_slider_door_2_1783583929100.png",
     },
     {
       id: "sliding-windows-doors",
@@ -72,7 +72,7 @@ export const ProductsGridSection = () => {
       title: "3 Track Slider",
       subtitle: "Doors & Windows",
       description: "Wider spans of clear structural views integrating bug mesh slider capability.",
-      image: "/three_track_slider.png",
+      image: "/gallery/Systems/Sliding%20Windows%20&%20Doors/3_track_slider_door_4_1783585629355.png",
     },
   ];
 
@@ -107,7 +107,12 @@ export const ProductsGridSection = () => {
             return (
               <div 
                 key={idx} 
-                onClick={() => navigate(`/gallery/product/${product.id}`)} 
+                onClick={() => {
+                  let url = `/gallery/product/${product.id}`;
+                  if (product.title === "2 Track Slider") url += "?variant=2-track";
+                  else if (product.title === "3 Track Slider") url += "?variant=3-track";
+                  navigate(url);
+                }} 
                 className={`group bg-white rounded-xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full cursor-pointer ${
                   isDimmed ? "opacity-40 grayscale scale-[0.98]" : "opacity-100 grayscale-0 scale-100"
                 }`}
