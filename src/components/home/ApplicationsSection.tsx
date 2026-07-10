@@ -17,12 +17,12 @@ export const ApplicationsSection = () => {
   const applications = [
     { id: "balcony", title: "Balcony", description: "Unobstructed frameless premium safety glazing barriers.", icon: LayoutTemplate, recommendedProductIds: ["slide-turn"] },
     { id: "int-partition", title: "Int. Partition", description: "Sleek separation zones for functional multi-use spaces.", icon: LayoutDashboard, recommendedProductIds: ["telescopic-sliders"] },
-    { id: "commercial", title: "Commercial", description: "High durability storefront facades & internal partition grids.", icon: Building2, recommendedProductIds: ["slide-turn", "guillotine-glass"] },
-    { id: "exterior", title: "Exterior", description: "Rigid wind resistance profile constructs for elevations.", icon: PanelTop, recommendedProductIds: ["slide-turn", "sliding-windows-doors", "sliding-windows-doors-3"] },
-    { id: "terrace", title: "Terrace", description: "Convert open terraces into delightful year-round glass lounges.", icon: Box, recommendedProductIds: ["slide-turn"] },
-    { id: "farm-house", title: "Farm House", description: "Connect beautiful country landscaping with spacious interiors.", icon: Warehouse, recommendedProductIds: ["sliding-windows-doors", "sliding-windows-doors-3"] },
-    { id: "office-space", title: "Office Space", description: "Acoustically isolated conference cubes & manager cabins.", icon: Briefcase, recommendedProductIds: ["telescopic-sliders", "synchronized-systems"] },
-    { id: "garden", title: "Garden", description: "Sleek verandas merging beautiful greenery with indoor thermal comfort.", icon: Trees, recommendedProductIds: ["slide-turn"] },
+    { id: "commercial", title: "Commercial", description: "High durability storefront facades & internal partition grids.", icon: Building2, recommendedProductIds: ["openable-windows-doors"] },
+    { id: "exterior", title: "Exterior", description: "Rigid wind resistance profile constructs for elevations.", icon: PanelTop, recommendedProductIds: ["openable-windows-doors", "slide-turn"] },
+    { id: "terrace", title: "Terrace", description: "Convert open terraces into delightful year-round glass lounges.", icon: Box, recommendedProductIds: ["foldable-doors-(bi-fold)"] },
+    { id: "farm-house", title: "Farm House", description: "Connect beautiful country landscaping with spacious interiors.", icon: Warehouse, recommendedProductIds: ["foldable-doors-(bi-fold)", "slide-turn"] },
+    { id: "office-space", title: "Office Space", description: "Acoustically isolated conference cubes & manager cabins.", icon: Briefcase, recommendedProductIds: ["telescopic-sliders"] },
+    { id: "garden", title: "Garden", description: "Sleek verandas merging beautiful greenery with indoor thermal comfort.", icon: Trees, recommendedProductIds: ["foldable-doors-(bi-fold)"] },
   ];
 
   const handleAppClick = (app: typeof applications[0]) => {
@@ -33,12 +33,24 @@ export const ApplicationsSection = () => {
       detail: { filterName: app.title, productIds: app.recommendedProductIds }
     }));
 
-    // Smooth scroll to the products grid
-    const productsGrid = document.getElementById("products-grid");
-    if (productsGrid) {
-      const y = productsGrid.getBoundingClientRect().top + window.scrollY - 100; // offset for header
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
+    // Smooth scroll to the first highlighted product
+    setTimeout(() => {
+      const firstProductId = app.recommendedProductIds[0];
+      const productElement = document.querySelector(`[data-product-id="${firstProductId}"]`);
+      
+      if (productElement) {
+        // Scroll to the product with an offset for the fixed header
+        const y = productElement.getBoundingClientRect().top + window.scrollY - 150; 
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      } else {
+        // Fallback to scrolling to the top of the grid
+        const productsGrid = document.getElementById("products-grid");
+        if (productsGrid) {
+          const y = productsGrid.getBoundingClientRect().top + window.scrollY - 100;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }
+    }, 50);
   };
 
   return (

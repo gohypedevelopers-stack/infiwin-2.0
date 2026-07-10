@@ -76,6 +76,27 @@ export const ProductsGridSection = () => {
     },
   ];
 
+  const firstHighlightedIndex = highlightedIds 
+    ? products.findIndex(p => highlightedIds.includes(p.id))
+    : -1;
+
+  const showTopMessage = filterName && firstHighlightedIndex < 3;
+  const showBottomMessage = filterName && firstHighlightedIndex >= 3;
+
+  const filterMessage = (
+    <div className={`flex flex-col sm:flex-row items-center justify-between bg-white p-6 rounded-xl border border-slate-200 shadow-sm ${showTopMessage ? 'mb-10' : 'mt-10'}`}>
+      <p className="text-slate-700 font-medium text-sm mb-4 sm:mb-0">
+        Displaying product recommendations suitable for: <span className="text-luxury-gold font-bold">{filterName}</span>
+      </p>
+      <button 
+        onClick={handleReset}
+        className="text-xs uppercase tracking-wider font-semibold text-slate-500 hover:text-slate-900 transition-colors border border-slate-300 rounded-lg px-4 py-2 bg-slate-50 hover:bg-slate-100"
+      >
+        Show all systems
+      </button>
+    </div>
+  );
+
   return (
     <section id="products-grid" className="py-24 bg-luxury-bg relative transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-6">
@@ -87,19 +108,7 @@ export const ProductsGridSection = () => {
         </div>
 
         {/* Active Interactive Filter Status Messages */}
-        {filterName && (
-          <div className="flex flex-col sm:flex-row items-center justify-between bg-white p-6 rounded-xl border border-slate-200 mb-10 shadow-sm">
-            <p className="text-slate-700 font-medium text-sm mb-4 sm:mb-0">
-              Displaying product recommendations suitable for: <span className="text-luxury-gold font-bold">{filterName}</span>
-            </p>
-            <button 
-              onClick={handleReset}
-              className="text-xs uppercase tracking-wider font-semibold text-slate-500 hover:text-slate-900 transition-colors border border-slate-300 rounded-lg px-4 py-2 bg-slate-50 hover:bg-slate-100"
-            >
-              Show all systems
-            </button>
-          </div>
-        )}
+        {showTopMessage && filterMessage}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, idx) => {
@@ -107,6 +116,7 @@ export const ProductsGridSection = () => {
             return (
               <div 
                 key={idx} 
+                data-product-id={product.id}
                 onClick={() => {
                   let url = `/gallery/product/${product.id}`;
                   if (product.title === "2 Track Slider") url += "?variant=2-track";
@@ -165,6 +175,8 @@ export const ProductsGridSection = () => {
             );
           })}
         </div>
+        
+        {showBottomMessage && filterMessage}
       </div>
     </section>
   );
