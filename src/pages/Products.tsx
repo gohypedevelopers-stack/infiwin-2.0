@@ -39,7 +39,7 @@ export default function Products() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img loading="lazy"
-            src="/gallery/Systems/Telescopic%20Sliders/ChatGPT%20Image%20Jul%206,%202026,%2011_51_55%20AM.png"
+            src="/st_hero.png"
             alt="Products Background"
             className="w-full h-full object-cover opacity-55"
           />

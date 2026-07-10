@@ -40,7 +40,7 @@ export const ProductsGridSection = () => {
       title: "Telescopic Slider System",
       subtitle: "Super Smooth Gliding",
       description: "Overlapping glazed sheets for continuous uninterrupted tracks.",
-      image: "/gallery/Systems/Telescopic%20Sliders/ChatGPT%20Image%20Jul%206,%202026,%2011_51_55%20AM.png",
+      image: "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_1.png",
     },
     {
       id: "openable-windows-doors",
@@ -51,8 +51,8 @@ export const ProductsGridSection = () => {
       image: "/centre_open.png",
     },
     {
-      id: "top-hang-bi-fold",
-      category: "Internal Partition",
+      id: "foldable-doors-(bi-fold)",
+      category: "Doors & Windows",
       title: "Bi-fold Glass System",
       subtitle: "Premium Partition",
       description: "Sleek folding structure for rapid internal partition transition zones.",
@@ -145,8 +145,8 @@ export const ProductsGridSection = () => {
                   
                   <div className="flex items-center justify-between border-t border-slate-100 pt-6 mt-auto">
                     <Link 
-                      to="/products"
-                      state={{ filter: product.category }}
+                      to={product.id === "slide-turn" ? "/gallery/product/slide-turn#variants" : "/products"}
+                      state={product.id === "slide-turn" ? undefined : { filter: product.category }}
                       onClick={(e) => e.stopPropagation()}
                       className="text-xs font-semibold uppercase tracking-wider text-slate-600 flex items-center gap-1 hover:text-luxury-gold transition-colors cursor-pointer"
                     >

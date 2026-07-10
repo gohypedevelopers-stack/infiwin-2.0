@@ -59,8 +59,8 @@ export const ApplicationsSection = () => {
               key={app.id}
               onClick={() => handleAppClick(app)}
               className={`p-6 text-center flex flex-col items-center justify-start border bg-white rounded-xl transition-all duration-300 group cursor-pointer ${activeFilter === app.title
-                  ? "border-luxury-gold shadow-md"
-                  : "border-slate-100 hover:border-luxury-gold/50 hover:shadow-sm"
+                ? "border-luxury-gold shadow-md"
+                : "border-slate-100 hover:border-luxury-gold/50 hover:shadow-sm"
                 }`}
             >
               <div className="mb-4 flex justify-center">

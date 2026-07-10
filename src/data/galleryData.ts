@@ -14,8 +14,7 @@ export const galleryData: Record<string, GalleryItem> = {
       "/gallery/Systems/Slide%20&%20Turn/Slide & Turn (2).jpg.jpeg",
       "/gallery/Systems/Slide%20&%20Turn/Slide & Turn (3).jpg.jpeg",
       "/gallery/Systems/Slide%20&%20Turn/Slide & Turn (4).jpg.jpeg",
-      "/gallery/Systems/Slide%20&%20Turn/Slide & Turn (5).jpg.jpeg",
-      "/gallery/Systems/Slide%20&%20Turn/Slide & Turn (6).jpg.jpeg",
+      "/gallery/Systems/Slide%20&%20Turn/Slide & Turn (5).jpg.jpeg"
     ]
   },
   "commercial": {
@@ -98,10 +97,12 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Telescopic Sliders",
     "description": "Create sleek separation zones for functional multi-use spaces. Telescopic sliding systems offer ultra-smooth operation and space-saving efficiency, effortlessly gliding away to merge rooms or sliding shut to create private enclosures in both residential and commercial settings.",
     "images": [
-      "/gallery/Systems/Telescopic%20Sliders/ChatGPT%20Image%20Jul%206,%202026,%2011_51_55%20AM.png",
-      "/gallery/Systems/Telescopic%20Sliders/ChatGPT%20Image%20Jul%206,%202026,%2011_55_09%20AM.png",
-      "/gallery/Systems/Telescopic%20Sliders/ChatGPT%20Image%20Jul%206,%202026,%2011_58_38%20AM.png",
-      "/gallery/Systems/Telescopic%20Sliders/ChatGPT%20Image%20Jul%206,%202026,%2012_06_10%20PM.png"
+      "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_1.png",
+      "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_2.png",
+      "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_4.png",
+      "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_5.png",
+      "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_6.png",
+      "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_7.png"
     ]
   },
   "exterior": {
@@ -148,10 +149,10 @@ export const galleryData: Record<string, GalleryItem> = {
     "description": "Redefine boundaries with our luxurious bi-fold folding door systems. Offering elegant folding paths, high thermal performance, and expansive opening areas that bring the outdoors inside.",
     "images": [
       "/gallery/Systems/Foldable%20Doors%20(Bi%20Fold)/bifold_banner.jpg",
-      "/gallery/Systems/Foldable%20Doors%20(Bi%20Fold)/ChatGPT%20Image%20Jul%206,%202026,%2001_00_26%20PM.png",
       "/gallery/Systems/Foldable%20Doors%20(Bi%20Fold)/ChatGPT%20Image%20Jul%206,%202026,%2001_01_34%20PM.png",
-      "/gallery/Systems/Foldable%20Doors%20(Bi%20Fold)/ChatGPT%20Image%20Jul%206,%202026,%2001_02_51%20PM.png",
-      "/gallery/Systems/Foldable%20Doors%20(Bi%20Fold)/ChatGPT%20Image%20Jul%206,%202026,%2012_54_50%20PM.png"
+      "/gallery/Systems/Foldable%20Doors%20(Bi%20Fold)/ChatGPT%20Image%20Jul%209,%202026,%2004_28_55%20PM.png",
+      "/gallery/Systems/Foldable%20Doors%20(Bi%20Fold)/ChatGPT%20Image%20Jul%209,%202026,%2004_29_00%20PM.png",
+      "/gallery/Systems/Foldable%20Doors%20(Bi%20Fold)/Gemini_Generated_Image_qopljbqopljbqopl.png"
     ]
   },
   "openable-door": {
@@ -169,11 +170,11 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Openable Windows & Doors",
     "description": "Premium openable swing windows and doors featuring superior acoustic insulation, complete weather proofing, and elegant modern profiles.",
     "images": [
-      "/gallery/Systems/Openable%20Windows%20&%20Doors/openable_banner.jpg",
-      "/gallery/Systems/Openable%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_45_48%20PM.png",
-      "/gallery/Systems/Openable%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_46_55%20PM.png",
-      "/gallery/Systems/Openable%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_49_00%20PM.png",
-      "/gallery/Systems/Openable%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%206,%202026,%2012_50_09%20PM.png"
+      "/gallery/Systems/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors.pdf.png",
+      "/gallery/Systems/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors.pdf%20(1).png",
+      "/gallery/Systems/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors.pdf%20(2).png",
+      "/gallery/Systems/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors.pdf%20(3).png",
+      "/gallery/Systems/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors.pdf%20(4).png"
     ]
   },
   "sliding-encloser": {

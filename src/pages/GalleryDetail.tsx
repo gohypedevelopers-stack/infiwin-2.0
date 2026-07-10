@@ -1,4 +1,4 @@
-import { useState, MouseEvent } from 'react';
+import { useState, MouseEvent, useEffect } from 'react';
 import { useParams, useNavigate, useLocation, Link, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft, ChevronLeft, ChevronRight, X, Eye, ArrowRight } from 'lucide-react';
@@ -100,6 +100,19 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
   const location = useLocation();
   const [searchParams] = useSearchParams();
   const variant = searchParams.get('variant');
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.slice(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
 
   // Determine if application based on prop or fallback url parsing
   const resolvedType = type || (location.pathname.includes('/application/') ? 'application' : 'product');
