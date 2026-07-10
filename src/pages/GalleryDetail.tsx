@@ -207,7 +207,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
   return (
     <div className="pt-20 md:pt-24 min-h-screen bg-slate-50 flex flex-col">
       {/* Hero Section - Split Layout */}
-      <section className="w-full max-w-7xl mx-auto px-6 pt-2 pb-12 md:py-20 flex flex-col-reverse md:flex-row items-center gap-12">
+      <section className="w-full max-w-7xl mx-auto px-6 pt-2 pb-12 md:py-20 flex flex-col md:flex-row items-center gap-12">
         <div className="w-full md:w-1/2">
           {data.images.length > 0 ? (
             <div className="aspect-[4/3] rounded-sm overflow-hidden shadow-2xl">
@@ -225,7 +225,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
         </div>
         
         <div className="w-full md:w-1/2 flex flex-col items-center text-center md:items-start md:text-left">
-          <button onClick={() => navigate(-1)} className="inline-flex items-center text-luxury-gold hover:text-slate-900 transition-colors mb-6 text-sm uppercase tracking-widest cursor-pointer bg-transparent border-none self-start md:self-auto">
+          <button onClick={() => navigate(-1)} className="hidden md:inline-flex items-center text-luxury-gold hover:text-slate-900 transition-colors mb-6 text-sm uppercase tracking-widest cursor-pointer bg-transparent border-none self-start md:self-auto">
             <ArrowLeft size={16} className="mr-2" /> Back to {isApplication ? 'Applications' : 'Products'}
           </button>
           <h1 className="text-4xl md:text-6xl font-serif text-slate-900 mb-6">{data.title}</h1>
@@ -244,7 +244,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-8">
             <Link
               to="/contact"
               className="bg-black hover:bg-slate-800 text-white px-6 py-3.5 rounded-lg font-semibold uppercase tracking-widest text-[10px] sm:text-xs transition-colors shadow-md text-center inline-flex items-center justify-center cursor-pointer border-none"
@@ -260,6 +260,10 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
               <WhatsAppIcon size={16} /> Chat via WhatsApp
             </a>
           </div>
+
+          <button onClick={() => navigate(-1)} className="inline-flex md:hidden items-center text-luxury-gold hover:text-slate-900 transition-colors text-sm uppercase tracking-widest cursor-pointer bg-transparent border-none">
+            <ArrowLeft size={16} className="mr-2" /> Back to {isApplication ? 'Applications' : 'Products'}
+          </button>
         </div>
       </section>
 
