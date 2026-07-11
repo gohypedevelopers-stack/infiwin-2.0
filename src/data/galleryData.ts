@@ -35,7 +35,8 @@ export const galleryData: Record<string, GalleryItem> = {
       "/gallery/Applications/Office%20Space/4%20banner%20image.png",
       "/gallery/Applications/Office%20Space/5.png",
       "/gallery/Applications/Office%20Space/6.png",
-      "/gallery/Applications/Office%20Space/7.png"
+      "/gallery/Applications/Office%20Space/7.png",
+      "/gallery/Applications/Office%20Space/1.png"
     ]
   },
   "farm-house": {
