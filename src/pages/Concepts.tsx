@@ -208,8 +208,7 @@ export default function Concepts() {
 
                     {/* Glass Backdrop Poster & Fallback Frame */}
                     <div className="absolute inset-0 z-[-1] pointer-events-none">
-                      <img
-                        src={concept.img}
+                      <img loading="lazy" src={concept.img}
                         alt={concept.title}
                         className="w-full h-full object-cover filter brightness-[0.35]"
                       />

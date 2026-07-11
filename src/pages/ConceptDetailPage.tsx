@@ -59,8 +59,7 @@ export default function ConceptDetailPage({ data }: ConceptDetailPageProps) {
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="relative h-[85vh] min-h-[500px] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
-            src={data.heroImg}
+          <img loading="lazy" src={data.heroImg}
             alt={data.title}
             className="w-full h-full object-cover scale-105"
             style={{ filter: "brightness(0.35)" }}
@@ -314,8 +313,7 @@ export default function ConceptDetailPage({ data }: ConceptDetailPageProps) {
                   transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                   className="aspect-[16/9] rounded-sm overflow-hidden border border-white/10 shadow-2xl relative"
                 >
-                  <img
-                    src={data.gallery[activeGalleryIdx].img}
+                  <img loading="lazy" src={data.gallery[activeGalleryIdx].img}
                     alt={data.gallery[activeGalleryIdx].caption}
                     className="w-full h-full object-cover"
                   />
@@ -352,7 +350,7 @@ export default function ConceptDetailPage({ data }: ConceptDetailPageProps) {
                       : "border-white/15 opacity-50 hover:opacity-80"
                   }`}
                 >
-                  <img src={item.img} alt={item.caption} className="w-full h-full object-cover" />
+                  <img loading="lazy" src={item.img} alt={item.caption} className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>
@@ -395,8 +393,7 @@ export default function ConceptDetailPage({ data }: ConceptDetailPageProps) {
                 >
                   <Link to={rel.href} className="group block">
                     <div className="relative aspect-video rounded-sm overflow-hidden border border-white/10 mb-5">
-                      <img
-                        src={rel.img}
+                      <img loading="lazy" src={rel.img}
                         alt={rel.title}
                         className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                       />

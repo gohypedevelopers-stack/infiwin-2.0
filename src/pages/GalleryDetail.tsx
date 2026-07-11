@@ -323,8 +323,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                   className="overflow-hidden rounded-xl border border-slate-200/50 shadow-md hover:shadow-xl transition-shadow cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-[300px] lg:flex-grow"
                   onClick={() => setSelectedImageIndex(idx)}
                 >
-                  <img
-                    loading="lazy"
+                  <img loading="lazy"  loading="lazy"
                     src={img}
                     alt={`${data.title} ${idx + 1}`}
                     className="w-full h-full object-cover lg:h-full lg:w-auto lg:min-w-full hover:scale-105 transition-transform duration-700"

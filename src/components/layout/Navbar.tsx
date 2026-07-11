@@ -52,8 +52,7 @@ export const Navbar = () => {
         <div className="w-full max-w-7xl mx-auto px-6 flex justify-between items-center text-sm relative py-1.5 md:py-2">
           <div>
             <Link to="/" className="flex items-center gap-2 inline-flex group">
-              <img
-                src="https://i.postimg.cc/0Q7DD7KK/H-Logo-V-BG.png"
+              <img loading="lazy" src="https://i.postimg.cc/0Q7DD7KK/H-Logo-V-BG.png"
                 alt="INFIWIN"
                 className={`h-12 md:h-16 w-auto object-contain transition-all duration-300 origin-left scale-100 group-hover:opacity-80 ${(!isScrolled && isHome) ? "brightness-0 invert" : ""}`}
                 referrerPolicy="no-referrer"

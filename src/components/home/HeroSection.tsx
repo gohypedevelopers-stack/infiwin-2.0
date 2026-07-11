@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
 
 const CAROUSEL_IMAGES = [
-  "/st_hero.png",
   "/office_hero.jpg",
   "/farmhouse_hero.png",
   "/hero/ChatGPT%20Image%20Jul%2010,%202026,%2004_36_52%20PM.png",
@@ -171,26 +170,26 @@ export const HeroSection = () => {
         transition={{ delay: 1.2, duration: 1, ease: "easeOut" }}
         className="max-w-7xl mx-auto w-full z-30 px-6 border-t border-white/10 pt-6 mt-6 lg:mt-8 mb-4 lg:mb-0"
       >
-        <div className="flex flex-col-reverse lg:flex-row justify-between items-start lg:items-center gap-6 lg:gap-8">
+        <div className="flex flex-col-reverse lg:flex-row justify-between items-center gap-6 lg:gap-8">
 
-          {/* Stats - Left aligned in desktop, bottom in mobile */}
-          <div className="flex flex-row flex-nowrap gap-4 sm:gap-12 lg:gap-16 text-left w-full lg:w-auto overflow-x-auto scrollbar-none pb-2 lg:pb-0">
+          {/* Stats - Centered in mobile, Left aligned in desktop */}
+          <div className="flex flex-row flex-nowrap justify-center lg:justify-start gap-4 sm:gap-12 lg:gap-16 text-center lg:text-left w-full lg:w-auto overflow-x-auto scrollbar-none pb-2 lg:pb-0">
             {/* Stat 1 */}
-            <div className="flex flex-col items-start min-w-[100px] sm:min-w-0">
+            <div className="flex flex-col items-center lg:items-start min-w-[100px] sm:min-w-0">
               <span className="text-white text-[9px] sm:text-[10px] uppercase tracking-[0.2em] mb-1 font-semibold">Starting Price</span>
               <span className="text-lg sm:text-2xl md:text-3xl font-display font-light text-white tracking-wide whitespace-nowrap">
                 <AnimatedNumber value={1800} prefix="₹" /> <span className="text-[10px] text-white">/ Sq.ft</span>
               </span>
             </div>
             {/* Stat 2 */}
-            <div className="flex flex-col items-start min-w-[100px] sm:min-w-0">
+            <div className="flex flex-col items-center lg:items-start min-w-[100px] sm:min-w-0">
               <span className="text-white text-[9px] sm:text-[10px] uppercase tracking-[0.2em] mb-1 font-semibold">Rain & Wind</span>
               <span className="text-lg sm:text-2xl md:text-3xl font-display font-light text-white tracking-wide whitespace-nowrap">
                 <AnimatedNumber value={100} suffix="%" /> Tight
               </span>
             </div>
             {/* Stat 3 */}
-            <div className="flex flex-col items-start min-w-[100px] sm:min-w-0">
+            <div className="flex flex-col items-center lg:items-start min-w-[100px] sm:min-w-0">
               <span className="text-white text-[9px] sm:text-[10px] uppercase tracking-[0.2em] mb-1 font-semibold">Warranty</span>
               <span className="text-lg sm:text-2xl md:text-3xl font-display font-light text-white tracking-wide whitespace-nowrap">
                 <AnimatedNumber value={10} suffix="+" /> Yrs
@@ -198,8 +197,8 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Slide Previews - Right aligned in desktop, top in mobile */}
-          <div className="flex gap-2 sm:gap-3 self-end lg:self-auto w-full lg:w-auto justify-end">
+          {/* Slide Previews - Centered in mobile, Right aligned in desktop */}
+          <div className="flex justify-center lg:justify-end gap-2 sm:gap-3 w-full lg:w-auto">
             {CAROUSEL_IMAGES.map((img, idx) => (
               <button
                 key={idx}
@@ -210,8 +209,7 @@ export const HeroSection = () => {
                   }`}
                 aria-label={`Go to slide ${idx + 1}`}
               >
-                <img
-                  src={img}
+                <img loading="lazy" src={img}
                   alt={`Slide ${idx + 1} Preview`}
                   className="w-full h-full object-cover"
                 />

@@ -106,7 +106,7 @@ export default function About() {
                     key={i}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: false, margin: "-40% 0px -40% 0px" }}
+                    viewport={{ once: false, margin: "2000px 0px -40% 0px" }}
                     className={`relative flex items-center ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} flex-row md:h-[400px]`}
                   >
                     {/* Timeline Dot */}

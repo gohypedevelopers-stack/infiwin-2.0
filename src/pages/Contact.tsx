@@ -426,8 +426,7 @@ export default function Contact() {
       <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-          <img
-            loading="lazy"
+          <img loading="lazy"  loading="lazy"
             src="/farmhouse_hero.jpg"
             alt="Contact Background"
             className="w-full h-full object-cover opacity-35"
@@ -709,8 +708,7 @@ export default function Contact() {
 
             {/* Global Presence */}
             <div className="rounded-sm flex flex-col h-full justify-end overflow-hidden relative min-h-[400px] shadow-xl shadow-black/5">
-              <img 
-                src="/premium_global_presence.png" 
+              <img loading="lazy" src="/premium_global_presence.png" 
                 alt="Premium Global Presence" 
                 className="absolute inset-0 w-full h-full object-cover z-0"
               />
