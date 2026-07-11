@@ -45,14 +45,10 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Office Space",
     "description": "Transform your workplace with our acoustically isolated conference cubes and elegant manager cabins. Designed to foster productivity and collaboration, these glass partitions offer privacy without compromising on natural light or the open-office aesthetic you desire.",
     "images": [
-      "/gallery/Applications/Office%20Space/IMG-20210309-WA0018.jpg",
-      "/gallery/Applications/Office%20Space/IMG-20210310-WA0001.jpg",
-      "/gallery/Applications/Office%20Space/IMG-20210310-WA0002.jpg",
-      "/gallery/Applications/Office%20Space/IMG-20211203-WA0003.jpg",
-      "/gallery/Applications/Office%20Space/IMG-20211203-WA0005.jpg",
-      "/gallery/Applications/Office%20Space/IMG-20260112-WA0007.jpg",
-      "/gallery/Applications/Office%20Space/IMG-20260112-WA0008.jpg",
-      "/gallery/Applications/Office%20Space/IMG-20260112-WA0009.jpg"
+      "/gallery/Applications/Office%20Space/4%20banner%20image.png",
+      "/gallery/Applications/Office%20Space/5.png",
+      "/gallery/Applications/Office%20Space/6.png",
+      "/gallery/Applications/Office%20Space/7.png"
     ]
   },
   "farm-house": {
@@ -73,24 +69,11 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Terrace",
     "description": "Convert open terraces into delightful, year-round glass lounges. Our weather-resistant enclosures protect against rain and wind while letting you enjoy the skyline. Enhance your rooftop or terrace into a luxurious, functional space for entertaining in any season.",
     "images": [
-      "/gallery/Applications/Terrace/IMG-20210328-WA0000.jpg",
-      "/gallery/Applications/Terrace/IMG-20210328-WA0001.jpg",
-      "/gallery/Applications/Terrace/IMG-20210328-WA0002.jpg",
-      "/gallery/Applications/Terrace/IMG-20210328-WA0003.jpg",
-      "/gallery/Applications/Terrace/IMG-20211126-WA0001.jpg",
-      "/gallery/Applications/Terrace/IMG-20211126-WA0004.jpg",
-      "/gallery/Applications/Terrace/IMG-20211126-WA0005.jpg",
-      "/gallery/Applications/Terrace/IMG-20211126-WA0006.jpg",
-      "/gallery/Applications/Terrace/IMG-20211126-WA0007.jpg",
-      "/gallery/Applications/Terrace/IMG-20211227-WA0005.jpg",
-      "/gallery/Applications/Terrace/IMG-20211227-WA0006.jpg",
-      "/gallery/Applications/Terrace/IMG-20211227-WA0007.jpg",
-      "/gallery/Applications/Terrace/IMG-20240605-WA0011.jpg",
-      "/gallery/Applications/Terrace/IMG-20240605-WA0013.jpg",
-      "/gallery/Applications/Terrace/IMG-20240605-WA0015.jpg",
-      "/gallery/Applications/Terrace/IMG-20240605-WA0017.jpg",
-      "/gallery/Applications/Terrace/IMG-20250312-WA0028.jpg",
-      "/gallery/Applications/Terrace/IMG-20250312-WA0029.jpg"
+
+      "/gallery/Applications/Terrace/2.png",
+      "/gallery/Applications/Terrace/4.png",
+      "/gallery/Applications/Terrace/6.png",
+      "/gallery/Applications/Terrace/7.png"
     ]
   },
   "telescopic-sliders": {
@@ -133,15 +116,18 @@ export const galleryData: Record<string, GalleryItem> = {
       "/gallery/Applications/Garden/wind%20breaker.png"
     ]
   },
-  "90-degree-encloser": {
-    "title": "90 Degree Encloser",
-    "description": "Premium frameless 90-degree glass enclosures designed to elevate modern bathrooms. Features watertight performance, solid brass hardware, and custom configurations that make efficient use of corner space.",
+  "bathroom-encloser": {
+    "title": "Bathroom Encloser",
+    "description": "Premium frameless glass enclosures designed to elevate modern bathrooms. Features watertight performance, solid brass hardware, and custom configurations that make efficient use of space.",
     "images": [
-      "/gallery/Systems/90%20Degree%20Encloser/ninety_degree_banner.jpg",
-      "/gallery/Systems/90%20Degree%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_06_18%20PM.png",
-      "/gallery/Systems/90%20Degree%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_08_43%20PM.png",
-      "/gallery/Systems/90%20Degree%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_11_32%20PM.png",
-      "/gallery/Systems/90%20Degree%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_13_16%20PM.png"
+      "/gallery/Systems/Bathroom%20Encloser/84c12053-03ab-4416-952d-1716819d7009.jpg",
+      "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%2010,%202026,%2002_24_21%20PM%20(2).png",
+      "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%2010,%202026,%2002_24_40%20PM%20(2).png",
+      "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%2010,%202026,%2002_24_49%20PM%20(3).png",
+      "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%2010,%202026,%2002_56_49%20PM.png",
+      "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_06_18%20PM.png",
+      "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_08_43%20PM.png",
+      "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_24_02%20PM.png"
     ]
   },
   "foldable-doors-(bi-fold)": {
@@ -198,7 +184,8 @@ export const galleryData: Record<string, GalleryItem> = {
       "/gallery/Systems/Sliding%20Windows%20&%20Doors/2_track_slider_door_5_1783585821723.png",
       "/gallery/Systems/Sliding%20Windows%20&%20Doors/3_track_slider_door_4_1783585629355.png",
       "/gallery/Systems/Sliding%20Windows%20&%20Doors/3_track_slider_door_5_1783585650997.png",
-      "/gallery/Systems/Sliding%20Windows%20&%20Doors/3_track_slider_door_6_1783585841802.png"
+      "/gallery/Systems/Sliding%20Windows%20&%20Doors/3_track_slider_door_6_1783585841802.png",
+      "/gallery/Systems/Sliding%20Windows%20&%20Doors/3_track_slider_new_1783753835013.png"
     ]
   },
   "synchronized-systems": {

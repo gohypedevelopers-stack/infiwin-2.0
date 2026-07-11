@@ -57,8 +57,8 @@ const PRODUCT_BADGES: Record<string, string[]> = {
     "STAINLESS STEEL TRACKS",
     "SECURE LOCKING"
   ],
-  "90-degree-encloser": [
-    "90 DEGREE CORNER FIT",
+  "bathroom-encloser": [
+    "CUSTOM FIT",
     "WATERPROOF SEALS",
     "SOLID BRASS FITTINGS",
     "FRAMELESS AESTHETIC"
@@ -98,7 +98,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const location = useLocation();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const variant = searchParams.get('variant');
 
   useEffect(() => {
@@ -112,7 +112,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
     } else {
       window.scrollTo(0, 0);
     }
-  }, [location]);
+  }, [location.pathname, location.hash]);
 
   // Determine if application based on prop or fallback url parsing
   const resolvedType = type || (location.pathname.includes('/application/') ? 'application' : 'product');
@@ -150,8 +150,8 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
       normalizedId = 'top-hang-bi-fold';
     } else if (cleanId === 'slidingwindowsdoors') {
       normalizedId = 'sliding-windows-doors';
-    } else if (cleanId === '90degreeencloser') {
-      normalizedId = '90-degree-encloser';
+    } else if (cleanId === 'bathroomencloser' || cleanId === '90degreeencloser') {
+      normalizedId = 'bathroom-encloser';
     } else if (cleanId === 'slidingenclouser' || cleanId === 'slidingencloser') {
       normalizedId = 'sliding-encloser';
     } else if (cleanId === 'openabledoor') {
@@ -285,6 +285,30 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
               </button>
             )}
           </div>
+          
+          {normalizedId === 'sliding-windows-doors' && (
+            <div className="flex flex-wrap justify-center sm:justify-start gap-4 mb-8">
+              <button
+                onClick={() => setSearchParams({})}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${!variant ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+              >
+                All
+              </button>
+              <button
+                onClick={() => setSearchParams({ variant: '2-track' })}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${variant === '2-track' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+              >
+                2 Track Slider
+              </button>
+              <button
+                onClick={() => setSearchParams({ variant: '3-track' })}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${variant === '3-track' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+              >
+                3 Track Slider
+              </button>
+            </div>
+          )}
+
           {data.images.length === 0 ? (
             <div className="text-center text-slate-500 py-12">No images found for this category.</div>
           ) : (
