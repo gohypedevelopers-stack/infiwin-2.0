@@ -84,36 +84,44 @@ export default function Applications() {
             <h3 className="text-4xl md:text-5xl font-serif text-slate-900">Application Areas</h3>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {featuredApps.map((app, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-              >
-                <Link to={`/gallery/application/${app.title.toLowerCase().replace(/[\s&.]+/g, '-')}`} className="group cursor-pointer block">
-                  <div className="aspect-[16/10] overflow-hidden rounded-sm mb-6 relative shadow-md transition-shadow hover:shadow-xl">
-                    <img loading="lazy"
-                    src={app.img}
-                    alt={app.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
-                  />
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-white/95 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center p-6 text-center">
-                    <app.icon size={32} strokeWidth={1.5} className="text-luxury-gold mb-4" />
-                    <h4 className="text-xl font-serif text-slate-900 mb-2">{app.title}</h4>
-                    <p className="text-slate-500 text-sm font-light leading-relaxed">{app.description}</p>
-                  </div>
-                </div>
-                  <div className="flex justify-between items-center px-1">
-                    <h5 className="text-2xl font-serif group-hover:text-luxury-gold transition-colors">{app.title}</h5>
-                    <ArrowRight size={20} className="text-slate-300 group-hover:text-luxury-gold transform translate-x-0 group-hover:translate-x-2 transition-all" />
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
+            {featuredApps.map((app, idx) => {
+              const isUnapproved = app.title === "Exterior" || app.title === "Garden" || app.title === "Int. Partition";
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                >
+                  <Link to={`/gallery/application/${app.title.toLowerCase().replace(/[\s&.]+/g, '-')}`} className="group cursor-pointer block relative">
+                    <div className="aspect-[16/10] overflow-hidden rounded-sm mb-6 relative shadow-md transition-shadow hover:shadow-xl">
+                      <img loading="lazy"
+                        src={app.img}
+                        alt={app.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        referrerPolicy="no-referrer"
+                      />
+                      {isUnapproved && (
+                        <div className="absolute top-4 right-4 bg-red-600/90 backdrop-blur-sm text-white text-[9px] uppercase font-bold tracking-widest px-3 py-1 rounded-sm shadow-md z-10">
+                          Not Approved Yet
+                        </div>
+                      )}
+                      {/* Hover Overlay */}
+                      <div className="absolute inset-0 bg-white/95 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center p-6 text-center z-0">
+                        <app.icon size={32} strokeWidth={1.5} className="text-luxury-gold mb-4" />
+                        <h4 className="text-xl font-serif text-slate-900 mb-2">{app.title}</h4>
+                        <p className="text-slate-500 text-sm font-light leading-relaxed">{app.description}</p>
+                      </div>
+                    </div>
+                    <div className="flex justify-between items-center px-1">
+                      <h5 className="text-2xl font-serif group-hover:text-luxury-gold transition-colors">{app.title}</h5>
+                      <ArrowRight size={20} className="text-slate-300 group-hover:text-luxury-gold transform translate-x-0 group-hover:translate-x-2 transition-all" />
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

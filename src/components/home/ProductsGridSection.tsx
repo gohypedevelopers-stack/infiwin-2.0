@@ -131,7 +131,6 @@ export const ProductsGridSection = () => {
                 <div className="relative aspect-[4/5] overflow-hidden bg-slate-100">
                   <img loading="lazy" src={product.image} 
                     alt={product.title}
-                    loading="lazy"
                     className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
                   {product.tag && (

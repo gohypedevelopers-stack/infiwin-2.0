@@ -195,11 +195,30 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
     }
   };
 
+  const isUnapproved = isApplication && (normalizedId === 'exterior' || normalizedId === 'garden' || normalizedId === 'int-partition');
+
+  if (isUnapproved) {
+    return (
+      <div className="pt-40 pb-20 px-6 min-h-screen bg-slate-50 flex flex-col items-center justify-center text-center">
+        <div className="bg-white p-12 rounded-xl shadow-lg border border-red-100 max-w-lg w-full">
+          <div className="w-16 h-16 bg-red-100 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
+            <X size={32} />
+          </div>
+          <h1 className="text-3xl font-serif text-slate-900 mb-4">Not Approved Yet</h1>
+          <p className="text-slate-500 font-light mb-8">The images and details for this application area have not been approved for public display.</p>
+          <button onClick={() => navigate(-1)} className="text-luxury-gold hover:text-slate-900 transition-colors uppercase tracking-widest text-sm font-semibold flex items-center justify-center gap-2 mx-auto cursor-pointer border-none bg-transparent">
+            <ArrowLeft size={16} /> Go Back
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   if (!data) {
     return (
       <div className="pt-40 pb-20 px-6 min-h-screen bg-white flex flex-col items-center justify-center">
         <h1 className="text-4xl font-serif text-slate-900 mb-4">Gallery Not Found</h1>
-        <button onClick={() => navigate(-1)} className="text-luxury-gold hover:underline">Return to Previous Page</button>
+        <button onClick={() => navigate(-1)} className="text-luxury-gold hover:underline bg-transparent border-none cursor-pointer">Return to Previous Page</button>
       </div>
     );
   }
@@ -323,7 +342,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                   className="overflow-hidden rounded-xl border border-slate-200/50 shadow-md hover:shadow-xl transition-shadow cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-[300px] lg:flex-grow"
                   onClick={() => setSelectedImageIndex(idx)}
                 >
-                  <img loading="lazy"  loading="lazy"
+                  <img loading="lazy"
                     src={img}
                     alt={`${data.title} ${idx + 1}`}
                     className="w-full h-full object-cover lg:h-full lg:w-auto lg:min-w-full hover:scale-105 transition-transform duration-700"
