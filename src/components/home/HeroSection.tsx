@@ -6,7 +6,10 @@ import { useState, useEffect } from "react";
 const CAROUSEL_IMAGES = [
   "/st_hero.png",
   "/office_hero.jpg",
-  "/farmhouse_hero.png"
+  "/farmhouse_hero.png",
+  "/hero/ChatGPT%20Image%20Jul%2010,%202026,%2004_36_52%20PM.png",
+  "/hero/ChatGPT%20Image%20Jul%2010,%202026,%2004_47_11%20PM.png",
+  "/hero/ChatGPT%20Image%20Jul%2011,%202026,%2011_12_59%20AM.png"
 ];
 
 interface AnimatedNumberProps {

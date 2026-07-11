@@ -27,14 +27,14 @@ export default function Applications() {
   };
 
   const featuredApps = [
-    { title: "Balcony", description: "Unobstructed frameless premium safety glazing barriers.", icon: LayoutTemplate, img: getAppImg("Balcony", "https://i.postimg.cc/1tm1yGXW/Chat-GPT-Image-Jun-29-2026-12-04-16-PM.png") },
-    { title: "Int. Partition", description: "Sleek separation zones for functional multi-use spaces.", icon: LayoutDashboard, img: getAppImg("Int. Partition", "https://i.postimg.cc/QxWwG4S3/Chat-GPT-Image-Jun-29-2026-12-06-24-PM.png") },
-    { title: "Commercial", description: "High durability storefront facades & internal partition grids.", icon: Building2, img: getAppImg("Commercial", "https://i.postimg.cc/YS8yfJ2Q/Chat-GPT-Image-Jun-29-2026-12-07-47-PM.png") },
-    { title: "Exterior", description: "Rigid wind resistance profile constructs for elevations.", icon: PanelTop, img: getAppImg("Exterior", "https://i.postimg.cc/59Hbympn/Chat-GPT-Image-Jun-29-2026-12-11-13-PM.png") },
-    { title: "Terrace", description: "Convert open terraces into delightful year-round glass lounges.", icon: Box, img: getAppImg("Terrace", "https://i.postimg.cc/DwhTC3Fn/Chat-GPT-Image-Jun-29-2026-12-12-32-PM.png") },
-    { title: "Farm House", description: "Connect beautiful country landscaping with spacious interiors.", icon: Warehouse, img: getAppImg("Farm House", "https://i.postimg.cc/4ycD5BSR/Chat-GPT-Image-Jun-29-2026-12-17-17-PM.png") },
-    { title: "Office Space", description: "Acoustically isolated conference cubes & manager cabins.", icon: Briefcase, img: getAppImg("Office Space", "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80") },
-    { title: "Garden", description: "Sleek verandas merging beautiful greenery with indoor thermal comfort.", icon: Trees, img: getAppImg("Garden", "https://i.postimg.cc/g2sfNwN0/Chat-GPT-Image-Jun-29-2026-12-23-17-PM.png") }
+    { title: "Balcony", description: "Unobstructed frameless premium safety glazing barriers.", icon: LayoutTemplate, img: galleryData["balcony"]?.images[0] || "https://i.postimg.cc/1tm1yGXW/Chat-GPT-Image-Jun-29-2026-12-04-16-PM.png" },
+    { title: "Int. Partition", description: "Sleek separation zones for functional multi-use spaces.", icon: LayoutDashboard, img: galleryData["int-partition"]?.images[0] || "https://i.postimg.cc/QxWwG4S3/Chat-GPT-Image-Jun-29-2026-12-06-24-PM.png" },
+    { title: "Commercial", description: "High durability storefront facades & internal partition grids.", icon: Building2, img: galleryData["commercial"]?.images[0] || "https://i.postimg.cc/YS8yfJ2Q/Chat-GPT-Image-Jun-29-2026-12-07-47-PM.png" },
+    { title: "Exterior", description: "Rigid wind resistance profile constructs for elevations.", icon: PanelTop, img: galleryData["exterior"]?.images[0] || "https://i.postimg.cc/59Hbympn/Chat-GPT-Image-Jun-29-2026-12-11-13-PM.png" },
+    { title: "Terrace", description: "Convert open terraces into delightful year-round glass lounges.", icon: Box, img: galleryData["terrace"]?.images[0] || "https://i.postimg.cc/DwhTC3Fn/Chat-GPT-Image-Jun-29-2026-12-12-32-PM.png" },
+    { title: "Farm House", description: "Connect beautiful country landscaping with spacious interiors.", icon: Warehouse, img: galleryData["farm-house"]?.images[0] || "https://i.postimg.cc/4ycD5BSR/Chat-GPT-Image-Jun-29-2026-12-17-17-PM.png" },
+    { title: "Office Space", description: "Acoustically isolated conference cubes & manager cabins.", icon: Briefcase, img: galleryData["office-space"]?.images[0] || "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80" },
+    { title: "Garden", description: "Sleek verandas merging beautiful greenery with indoor thermal comfort.", icon: Trees, img: galleryData["garden"]?.images[0] || "https://i.postimg.cc/g2sfNwN0/Chat-GPT-Image-Jun-29-2026-12-23-17-PM.png" }
   ];
 
   const usageAreas = [

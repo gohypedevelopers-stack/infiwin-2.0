@@ -21,24 +21,11 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Commercial",
     "description": "Elevate your business environment with high durability storefront facades and versatile internal partition grids. Our commercial glass systems combine structural integrity with sophisticated aesthetics to create professional, light-filled, and highly secure commercial spaces.",
     "images": [
-      "/gallery/Applications/Commercial/IMG-20220913-WA0021.jpg",
-      "/gallery/Applications/Commercial/IMG-20220913-WA0022.jpg",
-      "/gallery/Applications/Commercial/IMG-20220913-WA0029.jpg",
-      "/gallery/Applications/Commercial/IMG-20220913-WA0030.jpg",
-      "/gallery/Applications/Commercial/IMG-20230304-WA0004.jpg",
-      "/gallery/Applications/Commercial/IMG-20230304-WA0005.jpg",
-      "/gallery/Applications/Commercial/IMG-20230304-WA0006.jpg",
-      "/gallery/Applications/Commercial/IMG-20230305-WA0000.jpg",
-      "/gallery/Applications/Commercial/IMG-20230305-WA0001.jpg",
-      "/gallery/Applications/Commercial/IMG-20230305-WA0002.jpg",
-      "/gallery/Applications/Commercial/IMG-20230314-WA0031.jpg",
-      "/gallery/Applications/Commercial/IMG-20230314-WA0032.jpg",
-      "/gallery/Applications/Commercial/IMG-20231009-WA0004.jpg",
-      "/gallery/Applications/Commercial/IMG-20231009-WA0007.jpg",
-      "/gallery/Applications/Commercial/IMG-20231009-WA0008.jpg",
-      "/gallery/Applications/Commercial/IMG-20231009-WA0009.jpg",
-      "/gallery/Applications/Commercial/IMG-20231009-WA0010.jpg",
-      "/gallery/Applications/Commercial/IMG-20231009-WA0011.jpg"
+      "/gallery/Applications/Commercial/2.png",
+      "/gallery/Applications/Commercial/3.png",
+      "/gallery/Applications/Commercial/ChatGPT%20Image%20Jul%2011,%202026,%2002_29_15%20PM.png",
+      "/gallery/Applications/Commercial/ChatGPT%20Image%20Jul%2011,%202026,%2002_31_28%20PM.png",
+      "/gallery/Applications/Commercial/ChatGPT%20Image%20Jul%2011,%202026,%2011_22_18%20AM.png"
     ]
   },
   "office-space": {
@@ -186,11 +173,7 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Synchronized Systems",
     "description": "Synchronized multi-panel sliding systems for interior spaces. Quiet operation, sleek hardware, and automated-feeling movement that slides multiple panels simultaneously.",
     "images": [
-      "/gallery/Systems/Synchronized%20Systems/synchronized_banner.jpg",
-      "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%206,%202026,%2012_09_00%20PM%20(1).png",
-      "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%206,%202026,%2012_13_17%20PM.png",
-      "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%206,%202026,%2012_14_09%20PM.png",
-      "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%206,%202026,%2012_14_38%20PM.png"
+      "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2010,%202026,%2003_20_35%20PM%20(2).png"
     ]
   },
   "top-hang-bi-fold": {
