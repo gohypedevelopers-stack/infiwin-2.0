@@ -55,14 +55,8 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Farm House",
     "description": "Seamlessly connect beautiful country landscaping with spacious interiors. Our farmhouse glass installations provide expansive, uninterrupted views of nature while maintaining excellent thermal efficiency, keeping your country home cozy and fully integrated with the outdoors.",
     "images": [
-      "/gallery/Applications/Farm%20House/FARMHOUSEHERO.jpg",
-      "/gallery/Applications/Farm%20House/IMG_4395.jpg",
-      "/gallery/Applications/Farm%20House/IMG_4402.jpg",
-      "/gallery/Applications/Farm%20House/IMG_4403.jpg",
-      "/gallery/Applications/Farm%20House/IMG_4408.jpg",
-      "/gallery/Applications/Farm%20House/WhatsApp%20Image%202021-01-28%20at%2016.33.08.jpg",
-      "/gallery/Applications/Farm%20House/WhatsApp%20Image%202021-01-28%20at%2016.34.38%20(4).jpg",
-      "/gallery/Applications/Farm%20House/WhatsApp%20Image%202021-02-20%20at%205.28.31%20PM.jpg"
+      "/gallery/Applications/Farm%20House/7%20banner.png",
+      "/gallery/Applications/Farm%20House/4%20last.png"
     ]
   },
   "terrace": {
