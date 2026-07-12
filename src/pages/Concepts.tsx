@@ -127,21 +127,30 @@ const CONCEPTS: ConceptItem[] = [
   }
 ];
 
-export default function Concepts() {
-  const [mutedStates, setMutedStates] = useState<Record<string, boolean>>({
-    facade: true,
-    restaurant: true,
-    "pool-side-bar": true,
-    "glass-slab": true,
-    "shatter-animation": true,
-  });
+const VolumeControl = ({ videoId }: { videoId: string }) => {
+  const [isMuted, setIsMuted] = useState(true);
 
-  const toggleMute = (id: string) => {
-    setMutedStates((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
-  };
+  return (
+    <button
+      onClick={() => {
+        const vid = document.getElementById(videoId) as HTMLVideoElement;
+        if (vid) {
+          const newMutedState = !vid.muted;
+          vid.muted = newMutedState;
+          vid.play().catch(() => {});
+          setIsMuted(newMutedState);
+        }
+      }}
+      className="w-9 h-9 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center border border-white/10 hover:border-luxury-gold/50 transition-colors cursor-pointer"
+      title={isMuted ? "Unmute" : "Mute"}
+    >
+      {isMuted ? <VolumeX size={14} /> : <Volume2 size={14} />}
+    </button>
+  );
+};
+
+export default function Concepts() {
+
 
   return (
     <div className="min-h-screen bg-white text-slate-900 overflow-hidden">
@@ -172,7 +181,6 @@ export default function Concepts() {
       {/* ── SHOWCASE SECTION ────────────────────────────────────────── */}
       <section className="w-full">
         {CONCEPTS.map((concept, idx) => {
-          const isMuted = mutedStates[concept.id];
           const isEven = idx % 2 === 0;
 
           // Apply contrasting background (Restaurant gets light gray, others get white)
@@ -199,7 +207,7 @@ export default function Concepts() {
                       src={concept.video}
                       autoPlay
                       loop
-                      defaultMuted
+                      muted
                       playsInline
                       className="absolute inset-0 w-full h-full object-cover z-0 group-hover:scale-[1.01] transition-transform duration-700"
                       onError={(e) => {
@@ -234,20 +242,7 @@ export default function Concepts() {
                     {/* Interactive Controls Overlay */}
                     <div className="absolute top-4 right-4 flex items-center gap-2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       {/* Mute Button */}
-                      <button
-                        onClick={() => {
-                          const vid = document.getElementById(`video-${concept.id}`) as HTMLVideoElement;
-                          if (vid) {
-                            vid.muted = !isMuted;
-                            vid.play().catch(() => {}); // forcefully play to prevent pausing
-                          }
-                          toggleMute(concept.id);
-                        }}
-                        className="w-9 h-9 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center border border-white/10 hover:border-luxury-gold/50 transition-colors cursor-pointer"
-                        title={isMuted ? "Unmute" : "Mute"}
-                      >
-                        {isMuted ? <VolumeX size={14} /> : <Volume2 size={14} />}
-                      </button>
+                      <VolumeControl videoId={`video-${concept.id}`} />
                     </div>
 
                     <div className="absolute bottom-4 left-4 z-20">
