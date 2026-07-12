@@ -195,6 +195,7 @@ export default function Concepts() {
                     className="w-full aspect-video bg-black/60 rounded-sm border border-slate-200/60 overflow-hidden relative shadow-lg group flex flex-col justify-center items-center"
                   >
                     <video
+                      id={`video-${concept.id}`}
                       src={concept.video}
                       autoPlay
                       loop
@@ -203,6 +204,11 @@ export default function Concepts() {
                       className="absolute inset-0 w-full h-full object-cover z-0 group-hover:scale-[1.01] transition-transform duration-700"
                       onError={(e) => {
                         (e.target as HTMLVideoElement).style.display = "none";
+                      }}
+                      onPause={(e) => {
+                        // If it paused due to unmuting (browser policy), try to play it again
+                        const vid = e.target as HTMLVideoElement;
+                        vid.play().catch(() => {});
                       }}
                     />
 
@@ -234,7 +240,14 @@ export default function Concepts() {
                     <div className="absolute top-4 right-4 flex items-center gap-2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       {/* Mute Button */}
                       <button
-                        onClick={() => toggleMute(concept.id)}
+                        onClick={() => {
+                          const vid = document.getElementById(`video-${concept.id}`) as HTMLVideoElement;
+                          if (vid) {
+                            vid.muted = !isMuted;
+                            vid.play().catch(() => {}); // forcefully play to prevent pausing
+                          }
+                          toggleMute(concept.id);
+                        }}
                         className="w-9 h-9 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center border border-white/10 hover:border-luxury-gold/50 transition-colors cursor-pointer"
                         title={isMuted ? "Unmute" : "Mute"}
                       >
