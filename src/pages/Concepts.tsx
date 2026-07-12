@@ -52,7 +52,7 @@ const CONCEPTS: ConceptItem[] = [
     tagline: "Adaptable Dining Environments",
     desc: "Our Restaurant concept harnesses the power of movable glass walls to create infinitely adaptable dining spaces. During mild weather, fold back entire walls to create an alfresco atmosphere. As conditions change, close them in seconds without losing the panoramic view.",
     img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2002_16_49%20PM.png",
-    video: "/Concepts/Terrece Large.mp4",
+    video: "/Concepts/Terrece%20Large.mp4",
     stats: [
       { value: "360°", label: "Panoramic Views" },
       { value: "8s", label: "Full Retraction" },
@@ -92,7 +92,7 @@ const CONCEPTS: ConceptItem[] = [
     tagline: "Unmatched Structural Integrity",
     desc: "Witness the sheer strength of our structural glass slabs. Engineered to support massive loads while maintaining perfect optical clarity, these slabs form the foundation of our premium walkable skylights, glass floors, and heavy-duty structural elements.",
     img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2001_10_02%20PM.png",
-    video: "/Concepts/glass slab animation.mp4",
+    video: "/Concepts/glass%20slab%20animation.mp4",
     stats: [
       { value: "5x", label: "Stronger" },
       { value: "99%", label: "Clarity" },
@@ -112,7 +112,7 @@ const CONCEPTS: ConceptItem[] = [
     tagline: "Advanced Impact Resistance",
     desc: "Safety is our absolute priority. This shatter animation demonstrates how our advanced laminated glazing systems react to extreme impact—holding together to prevent dangerous shards and maintaining a secure barrier even under immense stress.",
     img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2002_16_49%20PM.png",
-    video: "/Concepts/infiwin shatter animation.mp4",
+    video: "/Concepts/infiwin%20shatter%20animation.mp4",
     stats: [
       { value: "100%", label: "Shatterproof" },
       { value: "SGCC", label: "Approved" },
