@@ -199,16 +199,11 @@ export default function Concepts() {
                       src={concept.video}
                       autoPlay
                       loop
-                      muted={isMuted}
+                      defaultMuted
                       playsInline
                       className="absolute inset-0 w-full h-full object-cover z-0 group-hover:scale-[1.01] transition-transform duration-700"
                       onError={(e) => {
                         (e.target as HTMLVideoElement).style.display = "none";
-                      }}
-                      onPause={(e) => {
-                        // If it paused due to unmuting (browser policy), try to play it again
-                        const vid = e.target as HTMLVideoElement;
-                        vid.play().catch(() => {});
                       }}
                     />
 
