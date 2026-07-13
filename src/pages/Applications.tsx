@@ -60,7 +60,7 @@ export default function Applications() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img 
-            src="/guillotine_banner.jpg" 
+            src="/guillotine_banner.webp" 
             alt="Applications Background" 
             className="w-full h-full object-cover opacity-55"
           />
