@@ -59,7 +59,7 @@ export default function Applications() {
       <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-          <img loading="lazy" 
+          <img 
             src="/guillotine_banner.jpg" 
             alt="Applications Background" 
             className="w-full h-full object-cover opacity-55"
@@ -87,12 +87,8 @@ export default function Applications() {
             {featuredApps.map((app, idx) => {
               const isUnapproved = app.title === "Exterior" || app.title === "Garden" || app.title === "Int. Partition";
               return (
-                <motion.div
+                <div
                   key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
                 >
                   <Link to={`/gallery/application/${app.title.toLowerCase().replace(/[\s&.]+/g, '-')}`} className="group cursor-pointer block relative">
                     <div className="aspect-[16/10] overflow-hidden rounded-sm mb-6 relative shadow-md transition-shadow hover:shadow-xl">
@@ -119,7 +115,7 @@ export default function Applications() {
                       <ArrowRight size={20} className="text-slate-300 group-hover:text-luxury-gold transform translate-x-0 group-hover:translate-x-2 transition-all" />
                     </div>
                   </Link>
-                </motion.div>
+                </div>
               );
             })}
           </div>

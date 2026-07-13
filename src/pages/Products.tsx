@@ -38,7 +38,7 @@ export default function Products() {
       <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-          <img loading="lazy"
+          <img 
             src="/st_hero.png"
             alt="Products Background"
             className="w-full h-full object-cover opacity-55"
