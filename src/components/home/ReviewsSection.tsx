@@ -24,7 +24,7 @@ const reviews = [
 
 export const ReviewsSection = () => {
   return (
-    <section className="py-32 bg-[#fafafa] px-6">
+    <section className="py-12 lg:py-16 bg-[#fafafa] px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 flex flex-col items-center">
           <h2 className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-6">Owner Reviews</h2>

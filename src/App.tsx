@@ -43,7 +43,7 @@ function ScrollToTop() {
 }
 
 const PlaceholderPage = ({ title }: { title: string }) => (
-  <div className="pt-40 pb-20 px-6 min-h-screen bg-white">
+  <div className="pt-40 pb-12 lg:pb-16 px-6 min-h-screen bg-white">
     <div className="max-w-7xl mx-auto text-center">
       <h1 className="text-sm font-medium text-slate-400 uppercase tracking-[0.3em] mb-4">Coming Soon</h1>
       <h2 className="text-6xl font-serif text-slate-900 mb-8">{title}</h2>

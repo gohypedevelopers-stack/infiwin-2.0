@@ -199,7 +199,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
 
   if (isUnapproved) {
     return (
-      <div className="pt-40 pb-20 px-6 min-h-screen bg-slate-50 flex flex-col items-center justify-center text-center">
+      <div className="pt-40 pb-12 lg:pb-16 px-6 min-h-screen bg-slate-50 flex flex-col items-center justify-center text-center">
         <div className="bg-white p-12 rounded-xl shadow-lg border border-red-100 max-w-lg w-full">
           <div className="w-16 h-16 bg-red-100 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
             <X size={32} />
@@ -216,7 +216,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
 
   if (!data) {
     return (
-      <div className="pt-40 pb-20 px-6 min-h-screen bg-white flex flex-col items-center justify-center">
+      <div className="pt-40 pb-12 lg:pb-16 px-6 min-h-screen bg-white flex flex-col items-center justify-center">
         <h1 className="text-4xl font-serif text-slate-900 mb-4">Gallery Not Found</h1>
         <button onClick={() => navigate(-1)} className="text-luxury-gold hover:underline bg-transparent border-none cursor-pointer">Return to Previous Page</button>
       </div>
@@ -224,9 +224,9 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
   }
 
   return (
-    <div className="pt-20 md:pt-24 min-h-screen bg-slate-50 flex flex-col">
+    <div className="pt-12 lg:pt-16 md:pt-12 lg:pt-16 min-h-screen bg-slate-50 flex flex-col">
       {/* Hero Section - Split Layout */}
-      <section className="w-full max-w-7xl mx-auto px-6 pt-2 pb-12 md:py-20 flex flex-col md:flex-row items-center gap-12">
+      <section className="w-full max-w-7xl mx-auto px-6 pt-2 pb-12 md:py-12 lg:py-16 flex flex-col md:flex-row items-center gap-12">
         <div className="w-full md:w-1/2">
           {data.images.length > 0 ? (
             <div className="aspect-[4/3] rounded-sm overflow-hidden shadow-2xl">
@@ -364,7 +364,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
 
       {/* You Might Also Like */}
       {relatedProducts.length > 0 && (
-        <section className="px-6 py-20 bg-slate-50 border-t border-slate-200">
+        <section className="px-6 py-12 lg:py-16 bg-slate-50 border-t border-slate-200">
           <div className="max-w-7xl mx-auto">
             <div className="mb-12 text-center md:text-left">
               <h3 className="text-sm font-medium text-slate-400 uppercase tracking-[0.3em] mb-3">Related Systems</h3>
@@ -394,7 +394,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                     </div>
                     <div className="flex justify-between items-center mt-4 px-1">
                       <h5 className="text-lg font-serif group-hover:text-luxury-gold transition-colors">{p.title}</h5>
-                      <ArrowRight size={16} className="text-slate-300 group-hover:text-luxury-gold transform translate-x-0 group-hover:translate-x-1 transition-all" />
+                      
                     </div>
                   </Link>
                 </motion.div>
@@ -405,7 +405,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
       )}
 
       {/* Call to Action */}
-      <section className="px-6 py-20 bg-slate-900 text-white text-center">
+      <section className="px-6 py-12 lg:py-16 bg-slate-900 text-white text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl font-serif mb-6">Ready to bring your vision to life?</h2>
           <p className="text-slate-300 font-light mb-10 text-lg">

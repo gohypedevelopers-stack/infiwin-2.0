@@ -33,15 +33,14 @@ export const FrameColorSection = () => {
   const mobileFlexCenter = isMobile ? "center" : "flex-start";
 
   return (
-    <section className="py-20 bg-white px-6">
+    <section className="py-12 lg:py-16 bg-white px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Left Side - Content */}
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
-              <div className="w-8 h-[1px] bg-luxury-gold"></div>
-              <span className="text-[10px] uppercase tracking-[0.3em] text-luxury-gold">
+              <span className="text-[10px] uppercase tracking-[0.3em] text-luxury-gold text-center lg:text-left">
                 Slide & Turn System - Available Frame Finishes
               </span>
             </div>
@@ -52,11 +51,11 @@ export const FrameColorSection = () => {
               Our signature Slide & Turn system glides on ultra-smooth tracks, allowing individual sheets of toughened glass to fully stack to either corner — offering 100% opening potential. Now available in four premium powder-coated aluminium finishes.
             </p>
 
-            <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-10">
+            <div className="grid grid-cols-2 lg:flex lg:flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 mb-10 w-full max-w-[400px] lg:max-w-none mx-auto lg:mx-0">
               {badges.map((badge, idx) => (
-                <div key={idx} className="bg-white border border-slate-100 px-3 py-1.5 rounded-sm flex items-center gap-2 shadow-sm">
-                  <div className="w-1.5 h-1.5 rounded-full bg-luxury-gold"></div>
-                  <span className="text-[9px] uppercase tracking-[0.2em] text-slate-500">{badge}</span>
+                <div key={idx} className="bg-white border border-slate-100 px-1.5 py-2 sm:px-3 sm:py-1.5 rounded-sm flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 shadow-sm text-center lg:text-left justify-center lg:justify-start">
+                  <div className="w-1.5 h-1.5 rounded-full bg-luxury-gold shrink-0 hidden sm:block"></div>
+                  <span className="text-[8px] sm:text-[9px] uppercase tracking-[0.1em] sm:tracking-[0.2em] text-black leading-tight">{badge}</span>
                 </div>
               ))}
             </div>
@@ -130,7 +129,7 @@ export const FrameColorSection = () => {
                 to="/gallery/product/slide-turn"
                 className="bg-transparent text-slate-900 border border-slate-900 px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs hover:bg-slate-900 hover:text-white transition-colors flex items-center gap-2 cursor-pointer text-center"
               >
-                Explore All Finishes <ArrowRight size={14} />
+                Explore All Finishes 
               </Link>
               <Link 
                 to="/contact"

@@ -21,7 +21,7 @@ export const CostEstimatorSection = () => {
   const totalCost = area * basePrice;
 
   return (
-    <section className="py-32 bg-[#111111] px-6" id="estimator">
+    <section className="py-12 lg:py-16 bg-[#111111] px-6" id="estimator">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
 
         {/* Left Card - Estimator */}

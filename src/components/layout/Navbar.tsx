@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "motion/react";
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showMobileCTA, setShowMobileCTA] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isConceptsOpen, setIsConceptsOpen] = useState(false);
   const location = useLocation();
@@ -14,6 +15,7 @@ export const Navbar = () => {
     const handleScroll = () => {
       // Adjust scroll threshold based on presence of marquee
       setIsScrolled(window.scrollY > 30);
+      setShowMobileCTA(window.scrollY > 300);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -134,30 +136,40 @@ export const Navbar = () => {
       </nav>
 
       {/* Sticky Bottom Mobile CTA Bar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-100 rounded-t-2xl px-3 pt-3 pb-2 flex items-center justify-between shadow-2xl pointer-events-auto">
-        <a
-          href="tel:+917337074370"
-          className="w-12 h-12 rounded-lg bg-slate-900 text-white flex items-center justify-center active:bg-slate-800 shrink-0"
-          aria-label="Call Us"
-        >
-          <Phone size={18} />
-        </a>
-        <a
-          href="https://wa.me/917337074370"
-          target="_blank"
-          rel="noreferrer"
-          className="w-12 h-12 rounded-lg bg-[#25D366] text-white flex items-center justify-center active:bg-green-600 shrink-0 mx-2"
-          aria-label="Chat on WhatsApp"
-        >
-          <WhatsAppIcon size={18} />
-        </a>
-        <Link
-          to="/contact"
-          className="flex-grow h-12 rounded-lg bg-luxury-gold text-white font-medium text-[10px] sm:text-xs uppercase tracking-wider flex items-center justify-center gap-2 active:bg-yellow-700"
-        >
-          Get Quote <ArrowRight size={12} />
-        </Link>
-      </div>
+      <AnimatePresence>
+        {(!isHome || showMobileCTA) && (
+          <motion.div
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "100%" }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-100 rounded-t-2xl px-3 pt-3 pb-2 flex items-center justify-between shadow-2xl pointer-events-auto"
+          >
+            <a
+              href="tel:+917337074370"
+              className="w-12 h-12 rounded-lg bg-slate-900 text-white flex items-center justify-center active:bg-slate-800 shrink-0"
+              aria-label="Call Us"
+            >
+              <Phone size={18} />
+            </a>
+            <a
+              href="https://wa.me/917337074370"
+              target="_blank"
+              rel="noreferrer"
+              className="w-12 h-12 rounded-lg bg-[#25D366] text-white flex items-center justify-center active:bg-green-600 shrink-0 mx-2"
+              aria-label="Chat on WhatsApp"
+            >
+              <WhatsAppIcon size={18} />
+            </a>
+            <Link
+              to="/contact"
+              className="flex-grow h-12 rounded-lg bg-luxury-gold text-white font-medium text-[10px] sm:text-xs uppercase tracking-wider flex items-center justify-center gap-2 active:bg-yellow-700"
+            >
+              Get Quote 
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

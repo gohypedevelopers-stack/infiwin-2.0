@@ -29,7 +29,7 @@ export const FAQSection = () => {
   };
 
   return (
-    <section className="py-24 bg-white relative border-t border-slate-100">
+    <section className="py-12 lg:py-16 bg-white relative border-t border-slate-100">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="text-luxury-gold text-[10px] uppercase tracking-[0.3em] font-bold mb-4">Common Queries</p>
@@ -76,7 +76,7 @@ export const FAQSection = () => {
             className="inline-flex items-center gap-2 bg-black hover:bg-luxury-gold text-white px-8 py-4 rounded-none font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
           >
             View All FAQs
-            <ArrowRight size={14} />
+            
           </Link>
         </div>
       </div>

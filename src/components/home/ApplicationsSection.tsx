@@ -54,7 +54,7 @@ export const ApplicationsSection = () => {
   };
 
   return (
-    <section className="py-24 bg-white relative">
+    <section className="py-12 lg:py-16 bg-white relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-luxury-gold text-[10px] uppercase tracking-[0.3em] font-bold mb-4">Interactive Recommendation</p>
@@ -94,7 +94,7 @@ export const ApplicationsSection = () => {
             className="group flex items-center justify-center gap-3 bg-black hover:bg-slate-800 text-white px-6 py-3 rounded-lg transition-all shadow-lg font-medium tracking-wider uppercase text-xs cursor-pointer border-none"
           >
             Get Custom Enclosure Quote For Your Space
-            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            
           </Link>
         </div>
       </div>

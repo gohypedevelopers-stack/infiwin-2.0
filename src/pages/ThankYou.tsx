@@ -3,7 +3,7 @@ import { CheckCircle, ArrowRight } from "lucide-react";
 
 export default function ThankYou() {
   return (
-    <div className="min-h-screen pt-32 pb-20 flex flex-col items-center justify-center bg-slate-50 px-6">
+    <div className="min-h-screen pt-12 lg:pt-16 pb-12 lg:pb-16 flex flex-col items-center justify-center bg-slate-50 px-6">
       <div className="bg-white p-12 rounded-3xl shadow-xl border border-slate-100 max-w-xl text-center">
         <div className="w-24 h-24 bg-green-50 text-green-500 rounded-full flex items-center justify-center mx-auto mb-8">
           <CheckCircle size={48} />
@@ -28,7 +28,7 @@ export default function ThankYou() {
             to="/products"
             className="w-full sm:w-auto bg-slate-100 text-slate-700 px-8 py-3 rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-slate-200 transition-colors flex items-center justify-center gap-2"
           >
-            Explore Catalog <ArrowRight size={14} />
+            Explore Catalog 
           </Link>
         </div>
       </div>

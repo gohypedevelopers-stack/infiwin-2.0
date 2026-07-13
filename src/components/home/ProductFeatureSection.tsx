@@ -7,7 +7,7 @@ export const ProductFeatureSection = () => {
   const [activeVariant, setActiveVariant] = useState("full");
 
   return (
-    <section className="py-32 bg-white px-6">
+    <section className="py-12 lg:py-16 bg-white px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
@@ -122,7 +122,7 @@ export const ProductFeatureSection = () => {
 
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
               <Link to="/products" className="bg-transparent text-slate-900 border border-slate-900 px-8 py-3 rounded-lg uppercase tracking-[0.2em] text-[10px] hover:bg-slate-900 hover:text-white transition-colors flex items-center justify-center gap-3">
-                Inspect Custom Variants <ArrowRight size={14} />
+                Inspect Custom Variants 
               </Link>
               <Link to="/#estimator" className="bg-white text-slate-500 border border-slate-200 px-8 py-3 rounded-lg uppercase tracking-[0.2em] text-[10px] hover:border-luxury-gold hover:text-luxury-gold transition-colors flex items-center justify-center">
                 Calculate Approximate Quote

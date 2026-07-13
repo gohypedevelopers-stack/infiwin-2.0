@@ -55,7 +55,7 @@ export default function ConceptDetailPage({ data }: ConceptDetailPageProps) {
     setActiveGalleryIdx((i) => (i === data.gallery.length - 1 ? 0 : i + 1));
 
   return (
-    <main className="bg-[#0a0a0a] text-white min-h-screen overflow-x-hidden pt-24">
+    <main className="bg-[#0a0a0a] text-white min-h-screen overflow-x-hidden pt-12 lg:pt-16">
       {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="relative h-[85vh] min-h-[500px] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -83,7 +83,7 @@ export default function ConceptDetailPage({ data }: ConceptDetailPageProps) {
           </Link>
         </motion.div>
 
-        <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-16 pb-20 w-full">
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-16 pb-12 lg:pb-16 w-full">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -132,7 +132,7 @@ export default function ConceptDetailPage({ data }: ConceptDetailPageProps) {
       </section>
 
       {/* ── INTRO + HIGHLIGHTS ──────────────────────────────── */}
-      <section className="py-24">
+      <section className="py-12 lg:py-16">
         <div className="max-w-[1400px] mx-auto px-6 md:px-16 grid md:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -155,7 +155,7 @@ export default function ConceptDetailPage({ data }: ConceptDetailPageProps) {
               className="inline-flex items-center gap-3 bg-luxury-gold text-white text-xs font-bold uppercase tracking-widest px-8 py-3 rounded-lg hover:bg-white hover:text-black transition-all duration-300 group"
             >
               Enquire Now
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              
             </Link>
           </motion.div>
 
@@ -250,7 +250,7 @@ export default function ConceptDetailPage({ data }: ConceptDetailPageProps) {
       </section>
 
       {/* ── FEATURES GRID ────────────────────────────────────── */}
-      <section className="py-24">
+      <section className="py-12 lg:py-16">
         <div className="max-w-[1400px] mx-auto px-6 md:px-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -287,7 +287,7 @@ export default function ConceptDetailPage({ data }: ConceptDetailPageProps) {
 
       {/* ── GALLERY CAROUSEL ─────────────────────────────────── */}
       {data.gallery.length > 0 && (
-        <section className="py-24 bg-white/5 border-y border-white/5">
+        <section className="py-12 lg:py-16 bg-white/5 border-y border-white/5">
           <div className="max-w-[1400px] mx-auto px-6 md:px-16">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -335,7 +335,7 @@ export default function ConceptDetailPage({ data }: ConceptDetailPageProps) {
                 onClick={handleNext}
                 className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 border border-white/20 flex items-center justify-center text-white hover:border-luxury-gold hover:bg-luxury-gold/20 transition-all duration-300 backdrop-blur-sm"
               >
-                <ArrowRight size={18} />
+                
               </button>
             </div>
 
@@ -360,7 +360,7 @@ export default function ConceptDetailPage({ data }: ConceptDetailPageProps) {
 
       {/* ── RELATED CONCEPTS ─────────────────────────────────── */}
       {data.related.length > 0 && (
-        <section className="py-24">
+        <section className="py-12 lg:py-16">
           <div className="max-w-[1400px] mx-auto px-6 md:px-16">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -400,7 +400,7 @@ export default function ConceptDetailPage({ data }: ConceptDetailPageProps) {
                       <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition-all duration-500" />
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div className="bg-luxury-gold text-white text-xs font-bold uppercase tracking-widest px-5 py-3 rounded-sm flex items-center gap-2">
-                          View Concept <ArrowRight size={12} />
+                          View Concept 
                         </div>
                       </div>
                     </div>
@@ -416,7 +416,7 @@ export default function ConceptDetailPage({ data }: ConceptDetailPageProps) {
       )}
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="py-24 border-t border-white/5">
+      <section className="py-12 lg:py-16 border-t border-white/5">
         <div className="max-w-[900px] mx-auto px-6 md:px-16 text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -439,7 +439,7 @@ export default function ConceptDetailPage({ data }: ConceptDetailPageProps) {
                 className="inline-flex items-center justify-center gap-3 bg-luxury-gold text-white text-xs font-bold uppercase tracking-widest px-8 py-3 rounded-lg hover:bg-white hover:text-black transition-all duration-300 group"
               >
                 Start a Project
-                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                
               </Link>
               <Link
                 to="/products"

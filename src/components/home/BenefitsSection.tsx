@@ -40,7 +40,7 @@ export const BenefitsSection = () => {
   };
 
   return (
-    <section className="pt-8 pb-16 lg:py-24 bg-white relative">
+    <section className="pt-8 pb-16 lg:py-12 lg:py-16 bg-white relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="text-luxury-gold text-[10px] uppercase tracking-[0.3em] font-bold mb-4">Core Advantages</p>
@@ -74,7 +74,7 @@ export const BenefitsSection = () => {
 
         {/* Mobile & Tablet View - Carousel */}
         <div className="lg:hidden flex flex-col items-center w-full max-w-md mx-auto">
-          <div className="relative w-full overflow-hidden bg-slate-50 border border-slate-100 px-10 py-8 sm:px-12 sm:py-10 min-h-[280px] flex flex-col justify-between">
+          <div className="relative w-full overflow-hidden bg-slate-50 border border-slate-100 px-14 py-8 sm:px-16 sm:py-10 min-h-[280px] flex flex-col justify-between">
 
             {/* Left navigation arrow */}
             <button

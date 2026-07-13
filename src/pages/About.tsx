@@ -22,7 +22,7 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24 overflow-hidden">
+      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-12 lg:pt-16 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img loading="lazy" 
@@ -43,7 +43,7 @@ export default function About() {
       </section>
 
       {/* Beyond Boundaries Section */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-12 lg:py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -79,7 +79,7 @@ export default function About() {
       </section>
 
       {/* A Decade of Excellence Section */}
-      <section className="py-32 px-6 bg-slate-50 text-slate-900 overflow-hidden">
+      <section className="py-12 lg:py-16 px-6 bg-slate-50 text-slate-900 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 relative z-10">
             <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Milestones of growth</p>
@@ -148,7 +148,7 @@ export default function About() {
       </section>
 
       {/* The Infiwin Difference Section -> What Sets us apart */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-12 lg:py-16 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-20">
             <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">The Foundational Principles</p>
@@ -206,7 +206,7 @@ export default function About() {
       </section>
 
       {/* Vision Section */}
-      <section className="py-24 px-6 bg-slate-50">
+      <section className="py-12 lg:py-16 px-6 bg-slate-50">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">The Future of Living Spaces</p>
           <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-8">Vision</h2>
@@ -217,7 +217,7 @@ export default function About() {
       </section>
 
       {/* Engineering the Future Section */}
-      <section className="py-32 px-6 bg-slate-900 text-white relative rounded-t-[3rem] overflow-hidden">
+      <section className="py-12 lg:py-16 px-6 bg-slate-900 text-white relative rounded-t-[3rem] overflow-hidden">
         {/* Background Overlay or Image */}
         <div className="absolute inset-0 z-0 opacity-20">
           <img loading="lazy" 

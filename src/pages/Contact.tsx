@@ -148,7 +148,7 @@ function InlineTimerBanner({
         className="mt-5 w-full flex items-center justify-center gap-2 bg-luxury-gold/10 hover:bg-luxury-gold/20 border border-luxury-gold/20 text-luxury-gold rounded-xl py-3 text-[10px] font-bold uppercase tracking-[0.2em] transition-all group"
       >
         Explore Products
-        <ArrowRight size={11} className="group-hover:translate-x-1 transition-transform" />
+        
       </a>
     </motion.div>
   );
@@ -293,10 +293,7 @@ function SuccessPopup({
               className="w-full bg-luxury-gold text-white py-4 rounded-lg flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-yellow-600 transition-all group"
             >
               Get Started — Explore Products
-              <ArrowRight
-                size={13}
-                className="group-hover:translate-x-1 transition-transform"
-              />
+              
             </a>
             <button
               onClick={onClose}
@@ -423,7 +420,7 @@ export default function Contact() {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24 overflow-hidden">
+      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-12 lg:pt-16 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img loading="lazy"  loading="lazy"
@@ -447,7 +444,7 @@ export default function Contact() {
       </section>
 
       {/* Main Content */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
+      <section className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
 
           {/* ── Left Column ─────────────────────────────────────────────────── */}

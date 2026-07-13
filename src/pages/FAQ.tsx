@@ -132,7 +132,7 @@ export default function FAQ() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24">
+      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-12 lg:pt-16">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img loading="lazy" 
@@ -153,7 +153,7 @@ export default function FAQ() {
       </section>
 
       {/* FAQ Content */}
-      <section className="px-6 py-24">
+      <section className="px-6 py-12 lg:py-16">
         <div className="max-w-4xl mx-auto">
           <div className="space-y-20">
             {sections.map((section, idx) => (
@@ -174,7 +174,7 @@ export default function FAQ() {
       </section>
 
       {/* Support CTA */}
-      <section className="px-6 py-20 bg-slate-900 text-white rounded-t-[3rem] mt-20">
+      <section className="px-6 py-12 lg:py-16 bg-slate-900 text-white rounded-t-[3rem] mt-20">
         <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
           <div className="w-16 h-16 rounded-full bg-luxury-gold flex items-center justify-center mb-8">
             <ChatSquareText className="text-white" size={32} />

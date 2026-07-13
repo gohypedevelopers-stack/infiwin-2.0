@@ -38,7 +38,7 @@ export const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-24 bg-slate-50 relative overflow-hidden">
+    <section className="py-12 lg:py-16 bg-slate-50 relative overflow-hidden">
       {/* Decorative background element */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-luxury-gold/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
       

@@ -196,7 +196,7 @@ export default function Concepts() {
   return (
     <div className="min-h-screen bg-white text-slate-900 overflow-hidden">
       {/* ── HERO SECTION ──────────────────────────────────────────────── */}
-      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24 overflow-hidden">
+      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-12 lg:pt-16 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img loading="lazy"
@@ -228,7 +228,7 @@ export default function Concepts() {
           const rowBg = idx === 1 ? "bg-[#fafafa]" : "bg-white";
 
           return (
-            <div key={concept.id} className={`${rowBg} py-24 border-b border-slate-100 last:border-0`}>
+            <div key={concept.id} className={`${rowBg} py-12 lg:py-16 border-b border-slate-100 last:border-0`}>
               <div
                 className={`max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-12 lg:gap-20 items-start ${
                   isEven ? "" : "lg:flex-row-reverse"
@@ -325,7 +325,7 @@ export default function Concepts() {
                         className="bg-luxury-gold text-white text-[10px] font-bold uppercase tracking-[0.2em] px-8 py-3 rounded-lg hover:bg-yellow-600 transition-colors shadow-lg shadow-luxury-gold/5 flex items-center gap-2 group"
                       >
                         Enquire about {concept.title}
-                        <ArrowRight size={12} className="transform group-hover:translate-x-1 transition-transform" />
+                        
                       </Link>
                     </div>
                   </div>
@@ -337,7 +337,7 @@ export default function Concepts() {
       </section>
 
       {/* ── BOTTOM CTA SECTION ────────────────────────────────────────── */}
-      <section className="px-6 py-24 bg-[#fafafa] border-t border-slate-100">
+      <section className="px-6 py-12 lg:py-16 bg-[#fafafa] border-t border-slate-100">
         <div className="max-w-4xl mx-auto text-center">
           <Layers className="text-luxury-gold mx-auto mb-6 w-12 h-12 opacity-80" strokeWidth={1} />
           <h4 className="text-3xl md:text-4xl font-serif text-slate-900 mb-6">Explore Custom Visuals</h4>

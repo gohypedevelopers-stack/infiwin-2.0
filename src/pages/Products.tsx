@@ -35,7 +35,7 @@ export default function Products() {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24 overflow-hidden">
+      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-12 lg:pt-16 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img 
@@ -56,7 +56,7 @@ export default function Products() {
       </section>
 
       {/* Signature Range */}
-      <section className="px-6 py-24">
+      <section className="px-6 py-12 lg:py-16">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="text-center md:text-left">
@@ -97,7 +97,7 @@ export default function Products() {
                   </div>
                   <div className="flex justify-between items-center mt-6">
                     <h5 className="text-2xl font-serif group-hover:text-luxury-gold transition-colors">{p.title}</h5>
-                    <ArrowRight size={20} className="text-slate-300 group-hover:text-luxury-gold transform translate-x-0 group-hover:translate-x-2 transition-all" />
+                    
                   </div>
                 </Link>
               </div>
@@ -108,7 +108,7 @@ export default function Products() {
 
 
       {/* Tech Specs */}
-      <section className="px-6 py-24 bg-white">
+      <section className="px-6 py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto">
           {/* Mobile Heading */}
           <div className="mb-6 text-center lg:hidden">
@@ -163,7 +163,7 @@ export default function Products() {
       </section>
 
       {/* Call to Action */}
-      <section className="px-6 py-20 bg-luxury-gold/5 border-y border-luxury-gold/10">
+      <section className="px-6 py-12 lg:py-16 bg-luxury-gold/5 border-y border-luxury-gold/10">
         <div className="max-w-4xl mx-auto text-center">
           <h4 className="text-3xl font-serif mb-8">Ready to upgrade your space?</h4>
           <p className="text-slate-600 font-light mb-10 leading-relaxed">

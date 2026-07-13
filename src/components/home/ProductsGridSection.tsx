@@ -98,7 +98,7 @@ export const ProductsGridSection = () => {
   );
 
   return (
-    <section id="products-grid" className="py-24 bg-luxury-bg relative transition-colors duration-500">
+    <section id="products-grid" className="py-12 lg:py-16 bg-luxury-bg relative transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-serif text-slate-900 mb-6">Explore All Architectural Glass Offerings</h2>
@@ -165,7 +165,7 @@ export const ProductsGridSection = () => {
                       onClick={(e) => e.stopPropagation()} 
                       className="text-xs font-semibold uppercase tracking-wider bg-black text-white px-5 py-2 rounded-lg flex items-center gap-2 hover:bg-slate-800 transition-colors"
                     >
-                      Get Price <ArrowRight size={14} />
+                      Get Price 
                     </Link>
                   </div>
                 </div>

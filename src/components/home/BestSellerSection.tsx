@@ -6,7 +6,7 @@ export const BestSellerSection = () => {
   const [activeVariant, setActiveVariant] = useState<"full" | "half">("full");
 
   return (
-    <section id="variants" className="py-24 bg-slate-900 text-white relative overflow-hidden">
+    <section id="variants" className="py-12 lg:py-16 bg-slate-900 text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -82,7 +82,7 @@ export const BestSellerSection = () => {
                 className="flex items-center justify-center gap-2 bg-luxury-gold hover:bg-yellow-600 text-white px-6 py-3 rounded-lg transition-all font-medium text-xs uppercase tracking-wider cursor-pointer border-none"
               >
                 Inspect Custom Variants
-                <ArrowRight size={14} />
+                
               </Link>
               <Link
                 to="/#estimator"

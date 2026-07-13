@@ -3,7 +3,7 @@ import { ArrowRight, Phone } from "lucide-react";
 
 export const CTASection = () => {
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative py-12 lg:py-16 overflow-hidden">
       {/* Background Image with Parallax effect */}
       <motion.div
         initial={{ scale: 1.1 }}
@@ -40,7 +40,7 @@ export const CTASection = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <button className="w-full sm:w-auto bg-luxury-gold hover:bg-white text-black px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs transition-colors shadow-md flex items-center justify-center gap-3 border-none cursor-pointer">
-              Request Free Consultation <ArrowRight size={14} />
+              Request Free Consultation 
             </button>
             <button className="w-full sm:w-auto bg-transparent border border-white/30 text-white px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs hover:bg-white/10 transition-colors flex items-center justify-center gap-3 cursor-pointer">
               <Phone size={14} /> +91 98765 43210

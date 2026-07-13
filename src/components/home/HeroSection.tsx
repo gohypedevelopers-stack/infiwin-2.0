@@ -127,8 +127,8 @@ export const HeroSection = () => {
             variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } } }}
             className="text-xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight mb-4 md:mb-6 drop-shadow-2xl flex flex-col items-center lg:items-start"
           >
-            <span className="uppercase tracking-widest mb-1 font-light whitespace-nowrap text-[17px] sm:text-4xl">Breathtaking Views,</span>
-            <span className="text-luxury-gold italic font-normal tracking-wide whitespace-nowrap text-lg sm:text-4xl">Uncompromised Protection</span>
+            <span className="uppercase tracking-widest mb-1 font-light whitespace-nowrap text-[17px] sm:text-4xl lg:text-5xl xl:text-6xl">Breathtaking Views,</span>
+            <span className="text-luxury-gold italic font-normal tracking-wide whitespace-nowrap text-lg sm:text-4xl lg:text-5xl xl:text-6xl">Uncompromised Protection</span>
           </motion.h1>
 
           {/* Description Paragraph */}
@@ -156,7 +156,7 @@ export const HeroSection = () => {
               className="bg-transparent border border-white/30 hover:border-white hover:bg-white/10 text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg transition-all duration-300 font-medium text-[10px] sm:text-xs uppercase tracking-wider flex items-center gap-2 group w-[220px] sm:w-auto justify-center"
             >
               Explore Products
-              <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform sm:w-3.5 sm:h-3.5" />
+              
             </Link>
           </motion.div>
 

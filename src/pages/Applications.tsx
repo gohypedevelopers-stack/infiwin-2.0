@@ -56,7 +56,7 @@ export default function Applications() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-24">
+      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-12 lg:pt-16">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img 
@@ -77,7 +77,7 @@ export default function Applications() {
       </section>
 
       {/* Featured Applications */}
-      <section className="px-6 py-24">
+      <section className="px-6 py-12 lg:py-16">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-slate-400 text-sm font-medium uppercase tracking-[0.3em] mb-4">Explore Scenarios</p>
@@ -112,7 +112,7 @@ export default function Applications() {
                     </div>
                     <div className="flex justify-between items-center px-1">
                       <h5 className="text-2xl font-serif group-hover:text-luxury-gold transition-colors">{app.title}</h5>
-                      <ArrowRight size={20} className="text-slate-300 group-hover:text-luxury-gold transform translate-x-0 group-hover:translate-x-2 transition-all" />
+                      
                     </div>
                   </Link>
                 </div>
@@ -123,7 +123,7 @@ export default function Applications() {
       </section>
 
       {/* System Designs Section */}
-      <section className="relative w-full bg-white py-32 overflow-hidden border-t border-slate-100">
+      <section className="relative w-full bg-white py-12 lg:py-16 overflow-hidden border-t border-slate-100">
 
         {/* Floating texts */}
         <div className="absolute left-6 bottom-60 -rotate-90 origin-left transform z-10 hidden lg:block">
@@ -186,7 +186,7 @@ export default function Applications() {
       </section>
 
       {/* Call to Action */}
-      <section className="px-6 py-24 bg-luxury-gold/5 border-t border-luxury-gold/10">
+      <section className="px-6 py-12 lg:py-16 bg-luxury-gold/5 border-t border-luxury-gold/10">
         <div className="max-w-4xl mx-auto text-center">
           <h4 className="text-4xl font-serif mb-8 text-slate-900">Envision INFIWIN in Your Space</h4>
           <p className="text-slate-600 font-light mb-10 leading-relaxed text-lg">
