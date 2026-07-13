@@ -8,7 +8,7 @@ const CAROUSEL_IMAGES = [
   "/farmhouse_hero.png",
   "/hero/ChatGPT%20Image%20Jul%2010,%202026,%2004_36_52%20PM.png",
   "/hero/ChatGPT%20Image%20Jul%2010,%202026,%2004_47_11%20PM.png",
-  "/hero/ChatGPT%20Image%20Jul%2011,%202026,%2011_12_47%20AM.png"
+  "/hero/hero.png"
 ];
 
 interface AnimatedNumberProps {
