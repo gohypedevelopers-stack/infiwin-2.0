@@ -146,7 +146,7 @@ export default function Applications() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             {/* LEFT SIDE: Text Boxes */}
-            <div className="flex flex-col">
+            <div className="flex flex-col order-2 lg:order-1">
               
               <div className="flex flex-col space-y-6">
                 {[
@@ -176,7 +176,7 @@ export default function Applications() {
           </div>
 
           {/* RIGHT SIDE: Diagrams */}
-            <div className="flex flex-col items-center justify-center w-full h-full relative">
+            <div className="flex flex-col items-center justify-center w-full h-full relative order-1 lg:order-2">
               <img loading="lazy"
                 src="https://i.postimg.cc/dtstjGZ6/Chat-GPT-Image-Jul-1-2026-04-58-48-PM.png"
                 alt="System Configuration Diagrams"

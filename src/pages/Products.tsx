@@ -110,14 +110,21 @@ export default function Products() {
       {/* Tech Specs */}
       <section className="px-6 py-24 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-stretch">
-            <div>
-              <div className="mb-12 text-center lg:text-left">
+          {/* Mobile Heading */}
+          <div className="mb-6 text-center lg:hidden">
+            <h3 className="text-sm font-medium text-slate-400 uppercase tracking-[0.3em] mb-4">Technical Data</h3>
+            <h4 className="text-3xl md:text-5xl font-serif text-slate-900">Engineering Specifications</h4>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-stretch">
+            <div className="order-2 lg:order-1">
+              {/* Desktop Heading */}
+              <div className="mb-12 text-left hidden lg:block">
                 <h3 className="text-sm font-medium text-slate-400 uppercase tracking-[0.3em] mb-4">Technical Data</h3>
                 <h4 className="text-3xl md:text-5xl font-serif text-slate-900">Engineering Specifications</h4>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-6">
                 {[
                   { label: "Glass Type", value: "Toughened Glass", desc: "Premium Quality" },
                   { label: "Glass Thickness", value: "8mm & 10mm", desc: "Structural Grade" },
@@ -137,7 +144,7 @@ export default function Products() {
               </div>
             </div>
 
-            <div className="relative w-full h-full min-h-[400px] lg:min-h-0 rounded-sm overflow-hidden shadow-2xl mt-8 lg:mt-9">
+            <div className="relative w-full h-full min-h-[400px] lg:min-h-0 rounded-sm overflow-hidden shadow-2xl mt-0 lg:mt-9 order-1 lg:order-2">
               <img loading="lazy"
                 src="https://i.postimg.cc/HkDbBZHF/Chat-GPT-Image-Jul-1-2026-04-27-26-PM.png"
                 alt="Engineering Specifications"
