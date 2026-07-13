@@ -94,7 +94,7 @@ export const HeroSection = () => {
       </div>
 
       {/* Soft luxury gradient overlay */}
-      <div className="absolute inset-0 z-0 bg-slate-950/50 lg:bg-transparent lg:bg-gradient-to-r lg:from-slate-950/85 lg:via-slate-900/50 lg:to-transparent"></div>
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-slate-950/70 via-slate-950/50 to-slate-950/90 lg:bg-transparent lg:bg-gradient-to-r lg:from-slate-950/85 lg:via-slate-900/50 lg:to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full flex flex-col items-center text-center lg:items-start lg:text-left my-auto">
         <motion.div
@@ -113,7 +113,7 @@ export const HeroSection = () => {
           {/* Pre-Header Badge */}
           <motion.div
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
-            className="flex items-center justify-center lg:justify-start gap-3 mb-6 md:mb-8"
+            className="flex items-center justify-center lg:justify-start gap-2 sm:gap-3 mb-4 sm:mb-6 md:mb-8"
           >
             {/* Small decorative circle */}
             <div className="w-1.5 h-1.5 rounded-full border border-luxury-gold animate-pulse"></div>
@@ -127,33 +127,33 @@ export const HeroSection = () => {
             variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } } }}
             className="text-xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight mb-4 md:mb-6 drop-shadow-2xl flex flex-col items-center lg:items-start"
           >
-            <span className="uppercase tracking-widest mb-1 font-light whitespace-nowrap">Breathtaking Views,</span>
-            <span className="text-luxury-gold italic font-normal tracking-wide whitespace-nowrap">Uncompromised Protection</span>
+            <span className="uppercase tracking-widest mb-1 font-light whitespace-nowrap text-[17px] sm:text-4xl">Breathtaking Views,</span>
+            <span className="text-luxury-gold italic font-normal tracking-wide whitespace-nowrap text-lg sm:text-4xl">Uncompromised Protection</span>
           </motion.h1>
 
           {/* Description Paragraph */}
           <motion.p
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
-            className="text-slate-100 font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] text-xs sm:text-sm md:text-base max-w-2xl leading-relaxed mb-6 md:mb-8"
+            className="text-slate-200 font-light drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] text-[11px] sm:text-sm md:text-base max-w-2xl leading-relaxed mb-6 md:mb-8 px-4 sm:px-0"
           >
-            Infiwin manufactures premier Slide & Turn frameless glass balcony enclosures.<br />Extend your home space with architectural glass walls.
+            Premier Slide & Turn frameless glass balcony enclosures.<br className="hidden sm:block" /> Extend your home space with architectural glass walls.
           </motion.p>
 
           {/* Primary Call-to-Action Buttons */}
           <motion.div
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
-            className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 justify-center lg:justify-start mt-2 w-full sm:w-auto"
+            className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center lg:justify-start mt-2 w-full sm:w-auto"
           >
             <Link
               to="/#estimator"
-              className="bg-luxury-gold hover:bg-white hover:text-slate-900 text-white px-5 py-2.5 rounded-lg transition-all duration-300 shadow-md font-medium text-xs uppercase tracking-wider flex items-center gap-3 w-full sm:w-auto justify-center sm:justify-start"
+              className="bg-luxury-gold hover:bg-white hover:text-slate-900 text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg transition-all duration-300 shadow-md font-medium text-[10px] sm:text-xs uppercase tracking-wider flex items-center gap-2 sm:gap-3 w-[220px] sm:w-auto justify-center"
             >
-              <Calculator size={14} />
+              <Calculator size={12} className="sm:w-3.5 sm:h-3.5" />
               Calculate Cost Instantly
             </Link>
             <Link
               to="/products"
-              className="bg-transparent border border-white/30 hover:border-white hover:bg-white/10 text-white px-5 py-2.5 rounded-lg transition-all duration-300 font-medium text-xs uppercase tracking-wider flex items-center gap-2 group w-full sm:w-auto justify-center sm:justify-start"
+              className="bg-transparent border border-white/30 hover:border-white hover:bg-white/10 text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg transition-all duration-300 font-medium text-[10px] sm:text-xs uppercase tracking-wider flex items-center gap-2 group w-[220px] sm:w-auto justify-center"
             >
               Explore Products
               <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform sm:w-3.5 sm:h-3.5" />
@@ -197,8 +197,8 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Slide Previews - Centered in mobile, Right aligned in desktop */}
-          <div className="flex justify-center lg:justify-end gap-2 sm:gap-3 w-full lg:w-auto">
+          {/* Slide Previews - Hidden in mobile, Right aligned in desktop */}
+          <div className="hidden sm:flex justify-center lg:justify-end gap-2 sm:gap-3 w-full lg:w-auto">
             {CAROUSEL_IMAGES.map((img, idx) => (
               <button
                 key={idx}
@@ -225,11 +225,11 @@ export const HeroSection = () => {
       </motion.div>
 
       {/* Marquee at the Bottom of Hero */}
-      <div className="absolute bottom-0 left-0 bg-luxury-gold text-white text-xs py-2 w-full overflow-hidden flex z-20">
+      <div className="absolute bottom-0 left-0 bg-luxury-gold text-white py-1 sm:py-2 w-full overflow-hidden flex z-20">
         <motion.div
           animate={{ x: ["0%", "-50%"] }}
           transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
-          className="flex whitespace-nowrap shrink-0"
+          className="flex whitespace-nowrap shrink-0 text-[10px] sm:text-xs"
         >
           {[...Array(20)].map((_, i) => (
             <span key={i} className="mx-8 text-white font-bold tracking-wider">
