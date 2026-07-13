@@ -32,7 +32,7 @@ const CONCEPTS: ConceptItem[] = [
     tagline: "High-Performance Curtain Walls",
     desc: "Our Façade concept reimagines the exterior envelope of modern buildings as a dynamic interplay of glass, light, and structure. From panoramic curtain walls to bespoke cladding solutions, every panel is engineered for maximum thermal efficiency, acoustic performance, and visual drama.",
     img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2001_10_02%20PM.png",
-    video: "/Concepts/Facade.mp4",
+    video: "https://ik.imagekit.io/6tktrblyvs/doorspital/Facade.mp4",
     stats: [
       { value: "40%", label: "Energy Savings" },
       { value: "54dB", label: "Noise Reduction" },
@@ -52,7 +52,7 @@ const CONCEPTS: ConceptItem[] = [
     tagline: "Adaptable Dining Environments",
     desc: "Our Restaurant concept harnesses the power of movable glass walls to create infinitely adaptable dining spaces. During mild weather, fold back entire walls to create an alfresco atmosphere. As conditions change, close them in seconds without losing the panoramic view.",
     img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2002_16_49%20PM.png",
-    video: "/Concepts/Terrece%20Large.mp4",
+    video: "https://ik.imagekit.io/6tktrblyvs/doorspital/Terrece%20Large.mp4",
     stats: [
       { value: "360°", label: "Panoramic Views" },
       { value: "8s", label: "Full Retraction" },
@@ -72,7 +72,7 @@ const CONCEPTS: ConceptItem[] = [
     tagline: "Marine-Grade Leisure Glazing",
     desc: "The Pool Side Bar concept blends luxurious outdoor living with the practicality of weather-protected glass enclosures. Our systems are engineered for salt-air coastal environments, UV-resistant throughout, and designed to complement infinity pools, rooftop lounges, and resort decks.",
     img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2003_20_57%20PM.png",
-    video: "/Concepts/Pool.mp4",
+    video: "https://ik.imagekit.io/6tktrblyvs/doorspital/Pool.mp4",
     stats: [
       { value: "5★", label: "Resort Grade" },
       { value: "IP67", label: "Water Protection" },
@@ -92,7 +92,7 @@ const CONCEPTS: ConceptItem[] = [
     tagline: "Unmatched Structural Integrity",
     desc: "Witness the sheer strength of our structural glass slabs. Engineered to support massive loads while maintaining perfect optical clarity, these slabs form the foundation of our premium walkable skylights, glass floors, and heavy-duty structural elements.",
     img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2001_10_02%20PM.png",
-    video: "/Concepts/glass%20slab%20animation.mp4",
+    video: "https://ik.imagekit.io/6tktrblyvs/doorspital/glass%20slab%20animation.mp4",
     stats: [
       { value: "5x", label: "Stronger" },
       { value: "99%", label: "Clarity" },
@@ -112,7 +112,7 @@ const CONCEPTS: ConceptItem[] = [
     tagline: "Advanced Impact Resistance",
     desc: "Safety is our absolute priority. This shatter animation demonstrates how our advanced laminated glazing systems react to extreme impact—holding together to prevent dangerous shards and maintaining a secure barrier even under immense stress.",
     img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2002_16_49%20PM.png",
-    video: "/Concepts/infiwin%20shatter%20animation.mp4",
+    video: "https://ik.imagekit.io/6tktrblyvs/doorspital/infiwin%20shatter%20animation.mp4",
     stats: [
       { value: "100%", label: "Shatterproof" },
       { value: "SGCC", label: "Approved" },
@@ -137,6 +137,9 @@ const VolumeControl = ({ videoId }: { videoId: string }) => {
         if (vid) {
           const newMutedState = !vid.muted;
           vid.muted = newMutedState;
+          if (!newMutedState) {
+            vid.volume = 1.0;
+          }
           vid.play().catch(() => {});
           setIsMuted(newMutedState);
         }
@@ -146,6 +149,44 @@ const VolumeControl = ({ videoId }: { videoId: string }) => {
     >
       {isMuted ? <VolumeX size={14} /> : <Volume2 size={14} />}
     </button>
+  );
+};
+
+const LazyVideo = ({ id, src, className }: { id: string; src: string; className: string }) => {
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          videoRef.current?.play().catch(() => {});
+        } else {
+          videoRef.current?.pause();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <video
+      ref={videoRef}
+      id={id}
+      src={src}
+      loop
+      muted
+      playsInline
+      preload="none"
+      className={className}
+      onError={(e) => {
+        (e.target as HTMLVideoElement).style.display = "none";
+      }}
+    />
   );
 };
 
@@ -195,24 +236,13 @@ export default function Concepts() {
               >
                 {/* Video Player Side */}
                 <div className="w-full lg:w-1/2 relative shrink-0">
-                  <motion.div
-                    initial={{ opacity: 0, x: isEven ? -40 : 40 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                  <div
                     className="w-full aspect-video bg-black/60 rounded-sm border border-slate-200/60 overflow-hidden relative shadow-lg group flex flex-col justify-center items-center"
                   >
-                    <video
+                    <LazyVideo
                       id={`video-${concept.id}`}
                       src={concept.video}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
                       className="absolute inset-0 w-full h-full object-cover z-0 group-hover:scale-[1.01] transition-transform duration-700"
-                      onError={(e) => {
-                        (e.target as HTMLVideoElement).style.display = "none";
-                      }}
                     />
 
                     {/* Glass Backdrop Poster & Fallback Frame */}
@@ -250,17 +280,12 @@ export default function Concepts() {
                         {concept.subtitle}
                       </span>
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
 
                 {/* Description & Technical highlights Side */}
                 <div className="w-full lg:w-1/2 flex flex-col justify-start pt-2">
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8 }}
-                  >
+                  <div>
                     <span className="text-[9px] uppercase tracking-[0.25em] text-luxury-gold font-bold mb-3 block">
                       {concept.tagline}
                     </span>
@@ -303,7 +328,7 @@ export default function Concepts() {
                         <ArrowRight size={12} className="transform group-hover:translate-x-1 transition-transform" />
                       </Link>
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
               </div>
             </div>
