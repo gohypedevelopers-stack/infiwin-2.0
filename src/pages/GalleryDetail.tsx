@@ -244,8 +244,8 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
         </div>
         
         <div className="w-full md:w-1/2 flex flex-col items-center text-center md:items-start md:text-left">
-          <button onClick={() => navigate(-1)} className="hidden md:inline-flex items-center text-luxury-gold hover:text-slate-900 transition-colors mb-6 text-sm uppercase tracking-widest cursor-pointer bg-transparent border-none self-start md:self-auto">
-            <ArrowLeft size={16} className="mr-2" /> Back to {isApplication ? 'Applications' : 'Products'}
+          <button onClick={() => navigate(-1)} className="hidden md:inline-flex items-center text-luxury-gold hover:text-slate-900 transition-colors mb-6 text-sm uppercase tracking-widest cursor-pointer bg-transparent border-none p-0 self-start md:self-start">
+            <ArrowLeft size={16} className="mr-2" /> Back
           </button>
           <h1 className="text-4xl md:text-6xl font-serif text-slate-900 mb-6">{data.title}</h1>
           <p className="text-lg font-light text-slate-600 leading-relaxed max-w-xl text-center md:text-left">
@@ -281,7 +281,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
           </div>
 
           <button onClick={() => navigate(-1)} className="inline-flex md:hidden items-center text-luxury-gold hover:text-slate-900 transition-colors text-sm uppercase tracking-widest cursor-pointer bg-transparent border-none">
-            <ArrowLeft size={16} className="mr-2" /> Back to {isApplication ? 'Applications' : 'Products'}
+            <ArrowLeft size={16} className="mr-2" /> Back
           </button>
         </div>
       </section>
@@ -331,7 +331,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
           {data.images.length === 0 ? (
             <div className="text-center text-slate-500 py-12">No images found for this category.</div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:flex lg:flex-row lg:flex-wrap gap-6 justify-start">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
               {data.images.map((img, idx) => (
                 <motion.div
                   key={idx}
@@ -339,13 +339,13 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: (idx % 5) * 0.1 }}
-                  className="overflow-hidden rounded-xl border border-slate-200/50 shadow-md hover:shadow-xl transition-shadow cursor-pointer aspect-[4/3] lg:aspect-auto lg:h-[300px] lg:flex-grow"
+                  className="overflow-hidden rounded-xl border border-slate-200/50 shadow-md hover:shadow-xl transition-shadow cursor-pointer aspect-[4/3]"
                   onClick={() => setSelectedImageIndex(idx)}
                 >
                   <img loading="lazy"
                     src={img}
                     alt={`${data.title} ${idx + 1}`}
-                    className="w-full h-full object-cover lg:h-full lg:w-auto lg:min-w-full hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   />
                 </motion.div>
               ))}
