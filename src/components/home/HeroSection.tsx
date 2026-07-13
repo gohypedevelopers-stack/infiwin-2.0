@@ -8,7 +8,7 @@ const CAROUSEL_IMAGES = [
   "/farmhouse_hero.png",
   "/hero/ChatGPT%20Image%20Jul%2010,%202026,%2004_36_52%20PM.png",
   "/hero/ChatGPT%20Image%20Jul%2010,%202026,%2004_47_11%20PM.png",
-  "/hero/ChatGPT%20Image%20Jul%2011,%202026,%2011_12_59%20AM.png"
+  "/hero/ChatGPT%20Image%20Jul%2011,%202026,%2011_12_47%20AM.png"
 ];
 
 interface AnimatedNumberProps {
@@ -204,8 +204,8 @@ export const HeroSection = () => {
                 key={idx}
                 onClick={() => setCurrentImageIndex(idx)}
                 className={`relative w-16 h-12 sm:w-20 sm:h-14 rounded-lg overflow-hidden border-2 transition-all duration-300 ${currentImageIndex === idx
-                    ? "border-luxury-gold scale-105 shadow-lg"
-                    : "border-white/20 hover:border-white/50 hover:scale-102"
+                  ? "border-luxury-gold scale-105 shadow-lg"
+                  : "border-white/20 hover:border-white/50 hover:scale-102"
                   }`}
                 aria-label={`Go to slide ${idx + 1}`}
               >

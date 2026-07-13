@@ -25,7 +25,8 @@ export const galleryData: Record<string, GalleryItem> = {
       "/gallery/Applications/Commercial/3.png",
       "/gallery/Applications/Commercial/ChatGPT%20Image%20Jul%2011,%202026,%2002_29_15%20PM.png",
       "/gallery/Applications/Commercial/ChatGPT%20Image%20Jul%2011,%202026,%2002_31_28%20PM.png",
-      "/gallery/Applications/Commercial/ChatGPT%20Image%20Jul%2011,%202026,%2011_22_18%20AM.png"
+
+      "/gallery/Applications/Commercial/ChatGPT%20Image%20Jul%2011,%202026,%2010_45_38%20AM.png"
     ]
   },
   "office-space": {
