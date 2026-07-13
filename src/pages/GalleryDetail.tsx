@@ -308,19 +308,19 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
           {normalizedId === 'sliding-windows-doors' && (
             <div className="flex flex-wrap justify-center sm:justify-start gap-4 mb-8">
               <button
-                onClick={() => setSearchParams({})}
+                onClick={() => setSearchParams({}, { replace: true })}
                 className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${!variant ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
               >
                 All
               </button>
               <button
-                onClick={() => setSearchParams({ variant: '2-track' })}
+                onClick={() => setSearchParams({ variant: '2-track' }, { replace: true })}
                 className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${variant === '2-track' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
               >
                 2 Track Slider
               </button>
               <button
-                onClick={() => setSearchParams({ variant: '3-track' })}
+                onClick={() => setSearchParams({ variant: '3-track' }, { replace: true })}
                 className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${variant === '3-track' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
               >
                 3 Track Slider

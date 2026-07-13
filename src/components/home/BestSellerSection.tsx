@@ -11,24 +11,24 @@ export const BestSellerSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Content Column */}
-          <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
-            <div className="mb-4 inline-block">
+          <div className="text-center lg:text-left flex flex-col items-center lg:items-start w-full">
+            <div className="mb-4 inline-block order-1">
               <span className="bg-luxury-gold text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1 rounded-sm">
                 Most Popular - Infi S&T
               </span>
             </div>
 
-            <p className="text-white/50 text-[10px] uppercase tracking-[0.3em] font-bold mb-2">
+            <p className="text-white/50 text-[10px] uppercase tracking-[0.3em] font-bold mb-2 order-2">
               BALCONY ENCLOSURE CATEGORY
             </p>
-            <h3 className="text-4xl md:text-5xl font-serif mb-6">Slide & Turn System</h3>
+            <h3 className="text-4xl md:text-5xl font-serif mb-6 order-3">Slide & Turn System</h3>
 
-            <p className="text-white/70 font-light text-lg mb-10 leading-relaxed max-w-xl text-center lg:text-left">
+            <p className="text-white/70 font-light text-lg mb-10 leading-relaxed max-w-xl text-center lg:text-left order-6 lg:order-4">
               Our iconic signature slide and turn glides on ultra-smooth tracks, allowing individual sheets of toughened glass to fully stack to either extreme corner. Offers 100% opening potential when desired, making it absolute king of balcony utility layout concepts.
             </p>
 
             {/* Mobile Visual Presentation */}
-            <div className="lg:hidden relative h-[400px] sm:h-[500px] w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-800 mb-10">
+            <div className="lg:hidden relative h-[400px] sm:h-[500px] w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-800 mb-10 order-4">
               <div
                 className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "full" ? 'opacity-100' : 'opacity-0'}`}
                 style={{ backgroundImage: "url('https://i.postimg.cc/R05g4PxJ/IMG-20250119-WA0011.jpg')" }}
@@ -41,12 +41,12 @@ export const BestSellerSection = () => {
             </div>
 
             {/* Interactive Variant UI */}
-            <div className="bg-white/5 border border-white/10 p-6 rounded-lg mb-10">
+            <div className="bg-white/5 border border-white/10 p-6 rounded-lg mb-10 w-full lg:w-auto order-5">
               <p className="text-sm font-medium mb-4 text-white/90">Interactive Variant Check:</p>
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-row gap-2 sm:gap-3">
                 <button
                   onClick={() => setActiveVariant("full")}
-                  className={`flex-1 py-3 px-4 text-sm font-medium transition-all rounded-sm border ${activeVariant === "full"
+                  className={`flex-1 py-2 px-1 sm:py-3 sm:px-4 text-[10px] sm:text-sm font-medium transition-all rounded-sm border ${activeVariant === "full"
                     ? "bg-white text-slate-900 border-white"
                     : "bg-transparent text-white/70 border-white/20 hover:border-white/50"
                     }`}
@@ -55,7 +55,7 @@ export const BestSellerSection = () => {
                 </button>
                 <button
                   onClick={() => setActiveVariant("half")}
-                  className={`flex-1 py-3 px-4 text-sm font-medium transition-all rounded-sm border ${activeVariant === "half"
+                  className={`flex-1 py-2 px-1 sm:py-3 sm:px-4 text-[10px] sm:text-sm font-medium transition-all rounded-sm border ${activeVariant === "half"
                     ? "bg-white text-slate-900 border-white"
                     : "bg-transparent text-white/70 border-white/20 hover:border-white/50"
                     }`}
@@ -75,7 +75,7 @@ export const BestSellerSection = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center lg:justify-start order-7">
               <Link
                 to="/products"
                 state={{ filter: "Balcony System" }}
