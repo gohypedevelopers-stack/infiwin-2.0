@@ -35,7 +35,7 @@ export const galleryData: Record<string, GalleryItem> = {
     "images": [
       "/gallery/Applications/Office%20Space/4%20banner%20image.png",
       "/gallery/Applications/Office%20Space/5.png",
-      "/gallery/Applications/Office%20Space/6.png",
+
       "/gallery/Applications/Office%20Space/7.png",
       "/gallery/Applications/Office%20Space/1.png"
     ]
@@ -45,7 +45,7 @@ export const galleryData: Record<string, GalleryItem> = {
     "description": "Seamlessly connect beautiful country landscaping with spacious interiors. Our farmhouse glass installations provide expansive, uninterrupted views of nature while maintaining excellent thermal efficiency, keeping your country home cozy and fully integrated with the outdoors.",
     "images": [
       "/gallery/Applications/Farm%20House/7%20banner.png",
-      "/gallery/Applications/Farm%20House/4%20last.png"
+
     ]
   },
   "terrace": {
@@ -106,11 +106,11 @@ export const galleryData: Record<string, GalleryItem> = {
       "/gallery/Systems/Bathroom%20Encloser/84c12053-03ab-4416-952d-1716819d7009.jpg",
       "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%2010,%202026,%2002_24_21%20PM%20(2).png",
       "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%2010,%202026,%2002_24_40%20PM%20(2).png",
-      "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%2010,%202026,%2002_24_49%20PM%20(3).png",
+
       "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%2010,%202026,%2002_56_49%20PM.png",
       "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_06_18%20PM.png",
       "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_08_43%20PM.png",
-      "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_24_02%20PM.png"
+
     ]
   },
   "foldable-doors-(bi-fold)": {
@@ -118,7 +118,7 @@ export const galleryData: Record<string, GalleryItem> = {
     "description": "Redefine boundaries with our luxurious bi-fold folding door systems. Offering elegant folding paths, high thermal performance, and expansive opening areas that bring the outdoors inside.",
     "images": [
       "/gallery/Systems/Foldable%20Doors%20(Bi%20Fold)/bifold_banner.jpg",
-      "/gallery/Systems/Foldable%20Doors%20(Bi%20Fold)/ChatGPT%20Image%20Jul%206,%202026,%2001_01_34%20PM.png",
+
       "/gallery/Systems/Foldable%20Doors%20(Bi%20Fold)/ChatGPT%20Image%20Jul%209,%202026,%2004_28_55%20PM.png",
       "/gallery/Systems/Foldable%20Doors%20(Bi%20Fold)/ChatGPT%20Image%20Jul%209,%202026,%2004_29_00%20PM.png",
       "/gallery/Systems/Foldable%20Doors%20(Bi%20Fold)/Gemini_Generated_Image_qopljbqopljbqopl.png"
@@ -143,7 +143,7 @@ export const galleryData: Record<string, GalleryItem> = {
       "/gallery/Systems/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors.pdf%20(1).png",
       "/gallery/Systems/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors.pdf%20(2).png",
       "/gallery/Systems/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors.pdf%20(3).png",
-      "/gallery/Systems/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors.pdf%20(4).png"
+
     ]
   },
   "sliding-encloser": {
@@ -194,12 +194,11 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Balcony",
     "description": "Unobstructed frameless premium safety glazing barriers. Perfectly designed for balconies and terraces, offering panoramic views, superior weather protection, and effortless sliding mechanisms that redefine modern open-concept living spaces.",
     "images": [
-      "/gallery/Applications/Balcony/1.png",
+
       "/gallery/Applications/Balcony/2.png",
-      "/gallery/Applications/Balcony/3.png",
+
       "/gallery/Applications/Balcony/4.png",
-      "/gallery/Applications/Balcony/5.png",
-      "/gallery/Applications/Balcony/6.png"
+
     ]
   },
   "int-partition": {
