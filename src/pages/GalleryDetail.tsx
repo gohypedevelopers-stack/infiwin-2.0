@@ -63,12 +63,12 @@ const PRODUCT_BADGES: Record<string, string[]> = {
     "SOLID BRASS FITTINGS",
     "FRAMELESS AESTHETIC"
   ],
-  "sliding-encloser": [
-    "SPACE-SAVING SLIDER",
-    "TEMPERED SAFETY GLASS",
-    "ANTI-CALCIUM GLASS",
-    "SMOOTH ROLLERS"
-  ],
+  // "sliding-encloser": [
+  //   "SPACE-SAVING SLIDER",
+  //   "TEMPERED SAFETY GLASS",
+  //   "ANTI-CALCIUM GLASS",
+  //   "SMOOTH ROLLERS"
+  // ],
   "openable-door": [
     "TEMPERED SAFETY GLASS",
     "HEAVY DUTY HINGES",
@@ -152,8 +152,8 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
       normalizedId = 'sliding-windows-doors';
     } else if (cleanId === 'bathroomencloser' || cleanId === '90degreeencloser') {
       normalizedId = 'bathroom-encloser';
-    } else if (cleanId === 'slidingenclouser' || cleanId === 'slidingencloser') {
-      normalizedId = 'sliding-encloser';
+      // } else if (cleanId === 'slidingenclouser' || cleanId === 'slidingencloser') {
+      //   normalizedId = 'sliding-encloser';
     } else if (cleanId === 'openabledoor') {
       normalizedId = 'openable-door';
     } else if (cleanId === 'openablewindowsdoors') {
@@ -164,14 +164,14 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
   }
 
   const rawData = normalizedId ? galleryData[normalizedId] : null;
-  
+
   let filteredImages = rawData?.images || [];
   if (normalizedId === 'sliding-windows-doors' && variant === '2-track') {
     filteredImages = filteredImages.filter(img => img.includes('2_track'));
   } else if (normalizedId === 'sliding-windows-doors' && variant === '3-track') {
     filteredImages = filteredImages.filter(img => img.includes('3_track'));
   }
-  
+
   const data = rawData ? { ...rawData, images: filteredImages } : null;
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
@@ -230,9 +230,9 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
         <div className="w-full md:w-1/2">
           {data.images.length > 0 ? (
             <div className="aspect-[4/3] rounded-sm overflow-hidden shadow-2xl">
-              <img loading="lazy" 
-                src={data.images[0]} 
-                alt={`${data.title} Cover`} 
+              <img loading="lazy"
+                src={data.images[0]}
+                alt={`${data.title} Cover`}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -242,7 +242,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
             </div>
           )}
         </div>
-        
+
         <div className="w-full md:w-1/2 flex flex-col items-center text-center md:items-start md:text-left">
           <button onClick={() => navigate(-1)} className="hidden md:inline-flex items-center text-luxury-gold hover:text-slate-900 transition-colors mb-6 text-sm uppercase tracking-widest cursor-pointer bg-transparent border-none p-0 self-start md:self-start">
             <ArrowLeft size={16} className="mr-2" /> Back
@@ -251,7 +251,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
           <p className="text-lg font-light text-slate-600 leading-relaxed max-w-xl text-center md:text-left">
             {data.description}
           </p>
-          
+
           {/* Key Product Badges */}
           <div className="grid grid-cols-2 md:flex md:flex-wrap gap-3 mt-8 mb-8 w-full max-w-md md:max-w-none">
             {(PRODUCT_BADGES[normalizedId || ""] || DEFAULT_BADGES).map((badge, idx) => (
@@ -304,7 +304,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
               </button>
             )}
           </div>
-          
+
           {normalizedId === 'sliding-windows-doors' && (
             <div className="flex flex-wrap justify-center sm:justify-start gap-4 mb-8">
               <button
@@ -370,7 +370,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
               <h3 className="text-sm font-medium text-slate-400 uppercase tracking-[0.3em] mb-3">Related Systems</h3>
               <h2 className="text-3xl font-serif text-slate-900">You Might Also Like</h2>
             </div>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {relatedProducts.map((p, idx) => (
                 <motion.div
@@ -394,7 +394,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                     </div>
                     <div className="flex justify-between items-center mt-4 px-1">
                       <h5 className="text-lg font-serif group-hover:text-luxury-gold transition-colors">{p.title}</h5>
-                      
+
                     </div>
                   </Link>
                 </motion.div>

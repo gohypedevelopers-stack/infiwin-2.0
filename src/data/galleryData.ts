@@ -146,17 +146,17 @@ export const galleryData: Record<string, GalleryItem> = {
 
     ]
   },
-  "sliding-encloser": {
-    "title": "Sliding Encloser",
-    "description": "Sophisticated sliding glass enclosure systems for modern bathrooms. Smooth-gliding sliding tracks, high durability hardware, and space-saving frameless glass panels.",
-    "images": [
-      "/gallery/Systems/Sliding%20Encloser/sliding_enclosure_banner.jpg",
-      "/gallery/Systems/Sliding%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_17_00%20PM.png",
-      "/gallery/Systems/Sliding%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_19_57%20PM.png",
-      "/gallery/Systems/Sliding%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_21_03%20PM.png",
-      "/gallery/Systems/Sliding%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_22_04%20PM.png"
-    ]
-  },
+  // "sliding-encloser": {
+  //   "title": "Sliding Encloser",
+  //   "description": "Sophisticated sliding glass enclosure systems for modern bathrooms. Smooth-gliding sliding tracks, high durability hardware, and space-saving frameless glass panels.",
+  //   "images": [
+  //     "/gallery/Systems/Sliding%20Encloser/sliding_enclosure_banner.jpg",
+  //     "/gallery/Systems/Sliding%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_17_00%20PM.png",
+  //     "/gallery/Systems/Sliding%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_19_57%20PM.png",
+  //     "/gallery/Systems/Sliding%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_21_03%20PM.png",
+  //     "/gallery/Systems/Sliding%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_22_04%20PM.png"
+  //   ]
+  // },
   "sliding-windows-doors": {
     "title": "Sliding Windows & Doors",
     "description": "Multi-track sliding windows and doors offering expansive views, premium hardware, and effortless gliding operation for large external openings.",
