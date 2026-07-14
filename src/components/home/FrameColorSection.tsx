@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
@@ -22,6 +22,21 @@ const badges = [
 export const FrameColorSection = () => {
   const [selectedColor, setSelectedColor] = useState(frameColors[0]);
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 1024);
+  const touchStartX = useRef<number | null>(null);
+
+  const currentIndex = frameColors.findIndex(c => c.id === selectedColor.id);
+
+  const handleSwipe = (deltaX: number) => {
+    if (deltaX > 50) {
+      // Swipe left → next
+      const next = (currentIndex + 1) % frameColors.length;
+      setSelectedColor(frameColors[next]);
+    } else if (deltaX < -50) {
+      // Swipe right → prev
+      const prev = (currentIndex - 1 + frameColors.length) % frameColors.length;
+      setSelectedColor(frameColors[prev]);
+    }
+  };
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 1024);
@@ -62,15 +77,26 @@ export const FrameColorSection = () => {
 
             {/* Mobile Image Gallery */}
             <div className="flex flex-col items-center lg:hidden w-full mb-8 order-3 lg:order-5">
-              <div className="w-full relative bg-[#fafafa] rounded-sm p-2 mb-6 border border-black/5 h-[300px] xs:h-[400px] flex items-center justify-center overflow-hidden">
+              <div
+                className="w-full relative bg-[#fafafa] rounded-sm p-2 mb-6 border border-black/5 h-[300px] xs:h-[400px] flex items-center justify-center overflow-hidden select-none"
+                onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX; }}
+                onTouchEnd={(e) => {
+                  if (touchStartX.current !== null) {
+                    const deltaX = touchStartX.current - e.changedTouches[0].clientX;
+                    handleSwipe(deltaX);
+                    touchStartX.current = null;
+                  }
+                }}
+              >
                 <motion.img
                   key={selectedColor.id}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4 }}
+                  initial={{ opacity: 0, x: 40 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -40 }}
+                  transition={{ duration: 0.35 }}
                   src={selectedColor.img}
                   alt={`${selectedColor.name} Frame`}
-                  className="w-full h-full object-contain rounded-sm shadow-none mix-blend-multiply"
+                  className="w-full h-full object-contain rounded-sm shadow-none mix-blend-multiply pointer-events-none"
                   referrerPolicy="no-referrer"
                 />
               </div>
