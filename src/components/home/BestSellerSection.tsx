@@ -31,7 +31,7 @@ export const BestSellerSection = () => {
             <div className="lg:hidden relative h-[400px] sm:h-[500px] w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-800 mb-10 order-4">
               <div
                 className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "full" ? 'opacity-100' : 'opacity-0'}`}
-                style={{ backgroundImage: "url('https://i.postimg.cc/R05g4PxJ/IMG-20250119-WA0011.jpg')" }}
+                style={{ backgroundImage: "url('https://i.postimg.cc/dVH7W7yK/Chat-GPT-Image-Jul-14-2026-01-17-46-PM.png')" }}
               />
               <div
                 className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "half" ? 'opacity-100' : 'opacity-0'}`}
@@ -82,7 +82,7 @@ export const BestSellerSection = () => {
                 className="flex items-center justify-center gap-2 bg-luxury-gold hover:bg-yellow-600 text-white px-6 py-3 rounded-lg transition-all font-medium text-xs uppercase tracking-wider cursor-pointer border-none"
               >
                 Inspect Custom Variants
-                
+
               </Link>
               <Link
                 to="/#estimator"
@@ -98,7 +98,7 @@ export const BestSellerSection = () => {
           <div className="hidden lg:block relative h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-800">
             <div
               className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "full" ? 'opacity-100' : 'opacity-0'}`}
-              style={{ backgroundImage: "url('https://i.postimg.cc/R05g4PxJ/IMG-20250119-WA0011.jpg')" }}
+              style={{ backgroundImage: "url('https://i.postimg.cc/dVH7W7yK/Chat-GPT-Image-Jul-14-2026-01-17-46-PM.png')" }}
             />
             <div
               className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "half" ? 'opacity-100' : 'opacity-0'}`}

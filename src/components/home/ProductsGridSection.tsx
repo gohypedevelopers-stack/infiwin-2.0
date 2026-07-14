@@ -43,12 +43,12 @@ export const ProductsGridSection = () => {
       image: "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_1.png",
     },
     {
-      id: "openable-windows-doors",
+      id: "synchronized-systems",
       category: "Internal Partition",
       title: "Centre Open System",
       subtitle: "Split-fold Symmetrical",
       description: "Panels partition left and right symmetrically to retain optimal balances.",
-      image: "/centre_open.png",
+      image: "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2010,%202026,%2003_20_35%20PM%20(2).png",
     },
     {
       id: "foldable-doors-(bi-fold)",

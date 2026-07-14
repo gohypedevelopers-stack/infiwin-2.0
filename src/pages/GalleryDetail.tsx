@@ -170,9 +170,16 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
     filteredImages = filteredImages.filter(img => img.includes('2_track'));
   } else if (normalizedId === 'sliding-windows-doors' && variant === '3-track') {
     filteredImages = filteredImages.filter(img => img.includes('3_track'));
+  } else if (normalizedId === 'top-hang-bi-fold' && variant === 'bi-fold') {
+    filteredImages = galleryData['foldable-doors-(bi-fold)']?.images || [];
   }
 
-  const data = rawData ? { ...rawData, images: filteredImages } : null;
+  // For top-hang-bi-fold, use a combined title when in bi-fold sub-tab
+  const displayTitle = (normalizedId === 'top-hang-bi-fold' && variant === 'bi-fold')
+    ? 'Bi Fold (Foldable Doors)'
+    : rawData?.title || '';
+
+  const data = rawData ? { ...rawData, title: displayTitle, images: filteredImages } : null;
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   // Compute related products
@@ -324,6 +331,23 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                 className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${variant === '3-track' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
               >
                 3 Track Slider
+              </button>
+            </div>
+          )}
+
+          {normalizedId === 'top-hang-bi-fold' && (
+            <div className="flex flex-wrap justify-center sm:justify-start gap-4 mb-8">
+              <button
+                onClick={() => setSearchParams({}, { replace: true })}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${!variant ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+              >
+                Top Hang Bi Fold
+              </button>
+              <button
+                onClick={() => setSearchParams({ variant: 'bi-fold' }, { replace: true })}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${variant === 'bi-fold' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+              >
+                Bi Fold
               </button>
             </div>
           )}

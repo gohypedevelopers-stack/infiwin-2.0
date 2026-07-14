@@ -35,9 +35,10 @@ export const galleryData: Record<string, GalleryItem> = {
     "images": [
       "/gallery/Applications/Office%20Space/4%20banner%20image.png",
       "/gallery/Applications/Office%20Space/5.png",
-
       "/gallery/Applications/Office%20Space/7.png",
-      "/gallery/Applications/Office%20Space/1.png"
+      "/gallery/Applications/Office%20Space/1.png",
+      "/gallery/Applications/Office%20Space/ChatGPT%20Image%20Jul%2014,%202026,%2011_57_49%20AM.png",
+      "/gallery/Applications/Office%20Space/ChatGPT%20Image%20Jul%2014,%202026,%2012_04_49%20PM.png"
     ]
   },
   "farm-house": {
@@ -45,18 +46,21 @@ export const galleryData: Record<string, GalleryItem> = {
     "description": "Seamlessly connect beautiful country landscaping with spacious interiors. Our farmhouse glass installations provide expansive, uninterrupted views of nature while maintaining excellent thermal efficiency, keeping your country home cozy and fully integrated with the outdoors.",
     "images": [
       "/gallery/Applications/Farm%20House/7%20banner.png",
-
+      "/gallery/Applications/Farm%20House/ChatGPT%20Image%20Jul%2014,%202026,%2005_54_54%20PM.png",
+      "/gallery/Applications/Farm%20House/ChatGPT%20Image%20Jul%2014,%202026,%2011_38_27%20AM.png",
+      "/gallery/Applications/Farm%20House/ChatGPT%20Image%20Jul%2014,%202026,%2011_38_33%20AM.png"
     ]
   },
   "terrace": {
     "title": "Terrace",
     "description": "Convert open terraces into delightful, year-round glass lounges. Our weather-resistant enclosures protect against rain and wind while letting you enjoy the skyline. Enhance your rooftop or terrace into a luxurious, functional space for entertaining in any season.",
     "images": [
-
       "/gallery/Applications/Terrace/2.png",
       "/gallery/Applications/Terrace/4.png",
       "/gallery/Applications/Terrace/6.png",
-      "/gallery/Applications/Terrace/7.png"
+      "/gallery/Applications/Terrace/7.png",
+      "/gallery/Applications/Terrace/ChatGPT%20Image%20Jul%2014,%202026,%2001_56_07%20PM.png",
+      "/gallery/Applications/Terrace/ChatGPT%20Image%20Jul%2014,%202026,%2001_56_17%20PM.png"
     ]
   },
   "telescopic-sliders": {
@@ -143,7 +147,9 @@ export const galleryData: Record<string, GalleryItem> = {
       "/gallery/Systems/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors.pdf%20(1).png",
       "/gallery/Systems/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors.pdf%20(2).png",
       "/gallery/Systems/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors.pdf%20(3).png",
-
+      "/gallery/Systems/Openable%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%2014,%202026,%2012_31_44%20PM.png",
+      "/gallery/Systems/Openable%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%2014,%202026,%2012_35_35%20PM.png",
+      "/gallery/Systems/Openable%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%2014,%202026,%2012_38_16%20PM.png"
     ]
   },
   // "sliding-encloser": {
@@ -173,9 +179,13 @@ export const galleryData: Record<string, GalleryItem> = {
   },
   "synchronized-systems": {
     "title": "Synchronized Systems",
-    "description": "Synchronized multi-panel sliding systems for interior spaces. Quiet operation, sleek hardware, and automated-feeling movement that slides multiple panels simultaneously.",
+    "description": "The Synchronized Center Open System — a multi-panel sliding system for interior spaces. Quiet operation, sleek hardware, and automated-feeling movement that slides multiple panels simultaneously from the centre open.",
     "images": [
-      "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2010,%202026,%2003_20_35%20PM%20(2).png"
+      "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2010,%202026,%2003_20_35%20PM%20(2).png",
+      "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2014,%202026,%2001_45_59%20PM.png",
+      "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2014,%202026,%2001_46_04%20PM.png",
+      "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2014,%202026,%2001_46_09%20PM.png",
+      "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2014,%202026,%2001_46_13%20PM.png"
     ]
   },
   "top-hang-bi-fold": {
@@ -229,11 +239,11 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Fixed Partition",
     "description": "Elegant fixed glass partition systems for modern bathrooms and interiors, offering clean lines, structural stability, and minimalist aesthetics.",
     "images": [
-      "/gallery/Systems/Fixed%20Partition/fixed_partition_banner.jpg",
-      "/gallery/Systems/Fixed%20Partition/ChatGPT%20Image%20Jul%206,%202026,%2001_17_00%20PM.png",
-      "/gallery/Systems/Fixed%20Partition/ChatGPT%20Image%20Jul%206,%202026,%2001_19_57%20PM.png",
-      "/gallery/Systems/Fixed%20Partition/ChatGPT%20Image%20Jul%206,%202026,%2001_21_03%20PM.png",
-      "/gallery/Systems/Fixed%20Partition/ChatGPT%20Image%20Jul%206,%202026,%2001_22_04%20PM.png"
+
+      "/gallery/Systems/Fixed%20Partition/ChatGPT%20Image%20Jul%2014,%202026,%2002_06_05%20PM.png",
+      "/gallery/Systems/Fixed%20Partition/ChatGPT%20Image%20Jul%2014,%202026,%2002_08_01%20PM.png",
+      "/gallery/Systems/Fixed%20Partition/ChatGPT%20Image%20Jul%2014,%202026,%2011_38_42%20AM.png",
+      "/gallery/Systems/Fixed%20Partition/ChatGPT%20Image%20Jul%2014,%202026,%2011_38_47%20AM.png"
     ]
   }
 };
