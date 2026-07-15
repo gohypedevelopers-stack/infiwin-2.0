@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 const CAROUSEL_IMAGES = [
   "/hero/2.png",
-  "/hero/4.png",
+  "/hero/ChatGPT%20Image%20Jul%2014,%202026,%2001_56_07%20PM.png",
   "/hero/ChatGPT%20Image%20Jul%2011,%202026,%2002_29_15%20PM.png",
   "/hero/farmhouse_hero.png",
 ];
