@@ -11,10 +11,16 @@ export const galleryData: Record<string, GalleryItem> = {
     "images": [
       "/gallery/Systems/Slide%20&%20Turn/Slide & Turn.jpg.jpeg",
       "/gallery/Systems/Slide%20&%20Turn/Slide & Turn (1).jpg.jpeg",
-      "/gallery/Systems/Slide%20&%20Turn/Slide & Turn (2).jpg.jpeg",
+      "/gallery/Systems/Slide%20&%20Turn/Slide & Turn (2).jpg.png",
       "/gallery/Systems/Slide%20&%20Turn/Slide & Turn (3).jpg.jpeg",
       "/gallery/Systems/Slide%20&%20Turn/Slide & Turn (4).jpg.jpeg",
-      "/gallery/Systems/Slide%20&%20Turn/Slide & Turn (5).jpg.jpeg"
+      "/gallery/Systems/Slide%20&%20Turn/Slide & Turn (5).jpg.jpeg",
+      "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2014,%202026,%2001_19_27%20PM.png",
+      "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2014,%202026,%2001_20_52%20PM.png",
+      "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2015,%202026,%2010_58_05%20AM.png",
+      "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2015,%202026,%2010_58_12%20AM.png",
+      "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2015,%202026,%2010_58_26%20AM.png",
+      "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2015,%202026,%2010_58_51%20AM.png"
     ]
   },
   "commercial": {

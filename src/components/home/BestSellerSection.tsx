@@ -31,11 +31,11 @@ export const BestSellerSection = () => {
             <div className="lg:hidden relative h-[400px] sm:h-[500px] w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-800 mb-10 order-4">
               <div
                 className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "full" ? 'opacity-100' : 'opacity-0'}`}
-                style={{ backgroundImage: "url('https://i.postimg.cc/dVH7W7yK/Chat-GPT-Image-Jul-14-2026-01-17-46-PM.png')" }}
+                style={{ backgroundImage: "url('https://i.postimg.cc/k4d0gbCY/Chat-GPT-Image-Jul-15-2026-11-32-03-AM.png')" }}
               />
               <div
                 className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "half" ? 'opacity-100' : 'opacity-0'}`}
-                style={{ backgroundImage: "url('/slide_turn_banner.png')" }}
+                style={{ backgroundImage: "url('https://i.postimg.cc/FR3hPvFm/Chat-GPT-Image-Jul-15-2026-10-58-05-AM.png')" }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent pointer-events-none"></div>
             </div>
@@ -98,11 +98,11 @@ export const BestSellerSection = () => {
           <div className="hidden lg:block relative h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-800">
             <div
               className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "full" ? 'opacity-100' : 'opacity-0'}`}
-              style={{ backgroundImage: "url('https://i.postimg.cc/dVH7W7yK/Chat-GPT-Image-Jul-14-2026-01-17-46-PM.png')" }}
+              style={{ backgroundImage: "url('https://i.postimg.cc/k4d0gbCY/Chat-GPT-Image-Jul-15-2026-11-32-03-AM.png')" }}
             />
             <div
               className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "half" ? 'opacity-100' : 'opacity-0'}`}
-              style={{ backgroundImage: "url('/slide_turn_banner.png')" }}
+              style={{ backgroundImage: "url('https://i.postimg.cc/FR3hPvFm/Chat-GPT-Image-Jul-15-2026-10-58-05-AM.png')" }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent pointer-events-none"></div>
           </div>
