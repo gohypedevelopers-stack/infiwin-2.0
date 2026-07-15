@@ -4,11 +4,10 @@ import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
 
 const CAROUSEL_IMAGES = [
-  "/office_hero.jpg",
-  "/farmhouse_hero.png",
-  "/hero/ChatGPT%20Image%20Jul%2010,%202026,%2004_36_52%20PM.png",
-  "/hero/ChatGPT%20Image%20Jul%2010,%202026,%2004_47_11%20PM.png",
-  "/hero/hero.png"
+  "/hero/2.png",
+  "/hero/4.png",
+  "/hero/ChatGPT%20Image%20Jul%2011,%202026,%2002_29_15%20PM.png",
+  "/hero/farmhouse_hero.png",
 ];
 
 interface AnimatedNumberProps {
@@ -156,7 +155,7 @@ export const HeroSection = () => {
               className="bg-transparent border border-white/30 hover:border-white hover:bg-white/10 text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg transition-all duration-300 font-medium text-[10px] sm:text-xs uppercase tracking-wider flex items-center gap-2 group w-[220px] sm:w-auto justify-center"
             >
               Explore Products
-              
+
             </Link>
           </motion.div>
 
