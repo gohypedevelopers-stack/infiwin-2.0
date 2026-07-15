@@ -420,23 +420,29 @@ export default function Contact() {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-12 lg:pt-16 overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-          <img loading="lazy"  loading="lazy"
-            src="/farmhouse_hero.jpg"
+      <section className="relative w-full h-[560px] flex items-center justify-center overflow-hidden">
+        {/* Full-bleed background image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            loading="lazy"
+            src="/farmhouse_hero.png"
             alt="Contact Background"
-            className="w-full h-full object-cover opacity-35"
-            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/50" />
+          {/* Dark gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
         </div>
-        <div className="relative z-10 text-center text-white px-6">
+
+        {/* Centred text content */}
+        <div className="relative z-10 text-center text-white px-6 pt-16 lg:pt-20">
           <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">
             Get In Touch
           </p>
-          <h1 className="text-5xl md:text-7xl font-serif mb-4">Start Your Project</h1>
-          <p className="mt-8 text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          <h1 className="text-5xl md:text-7xl font-serif mb-6 leading-tight">
+            Start Your Project
+          </h1>
+          <div className="w-16 h-px bg-luxury-gold/60 mx-auto mb-6" />
+          <p className="text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Reach out to our architectural specialists to discuss requirements and receive a
             comprehensive proposal.
           </p>
