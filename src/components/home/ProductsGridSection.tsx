@@ -121,6 +121,7 @@ export const ProductsGridSection = () => {
                   let url = `/gallery/product/${product.id}`;
                   if (product.title === "2 Track Slider") url += "?variant=2-track";
                   else if (product.title === "3 Track Slider") url += "?variant=3-track";
+                  else if (product.title === "Bi-fold Glass System") url = "/gallery/product/top-hang-bi-fold?variant=bi-fold";
                   navigate(url);
                 }} 
                 className={`group bg-white rounded-xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full cursor-pointer ${
@@ -153,8 +154,14 @@ export const ProductsGridSection = () => {
                   
                   <div className="flex items-center justify-between border-t border-slate-100 pt-6 mt-auto">
                     <Link 
-                      to={product.id === "slide-turn" ? "/gallery/product/slide-turn#variants" : "/products"}
-                      state={product.id === "slide-turn" ? undefined : { filter: product.category }}
+                      to={
+                        product.id === "slide-turn"
+                          ? "/gallery/product/slide-turn#variants"
+                          : product.title === "Bi-fold Glass System"
+                          ? "/gallery/product/top-hang-bi-fold?variant=bi-fold"
+                          : "/products"
+                      }
+                      state={product.id === "slide-turn" || product.title === "Bi-fold Glass System" ? undefined : { filter: product.category }}
                       onClick={(e) => e.stopPropagation()}
                       className="text-xs font-semibold uppercase tracking-wider text-slate-600 flex items-center gap-1 hover:text-luxury-gold transition-colors cursor-pointer"
                     >

@@ -17,8 +17,8 @@ export const ApplicationsSection = () => {
   const applications = [
     { id: "balcony", title: "Balcony", description: "Unobstructed frameless premium safety glazing barriers.", icon: LayoutTemplate, recommendedProductIds: ["slide-turn"] },
     { id: "int-partition", title: "Int. Partition", description: "Sleek separation zones for functional multi-use spaces.", icon: LayoutDashboard, recommendedProductIds: ["telescopic-sliders"] },
-    { id: "commercial", title: "Commercial", description: "High durability storefront facades & internal partition grids.", icon: Building2, recommendedProductIds: ["openable-windows-doors"] },
-    { id: "exterior", title: "Exterior", description: "Rigid wind resistance profile constructs for elevations.", icon: PanelTop, recommendedProductIds: ["openable-windows-doors", "slide-turn"] },
+    { id: "commercial", title: "Commercial", description: "High durability storefront facades & internal partition grids.", icon: Building2, recommendedProductIds: ["synchronized-systems"] },
+    { id: "exterior", title: "Exterior", description: "Rigid wind resistance profile constructs for elevations.", icon: PanelTop, recommendedProductIds: ["slide-turn"] },
     { id: "terrace", title: "Terrace", description: "Convert open terraces into delightful year-round glass lounges.", icon: Box, recommendedProductIds: ["foldable-doors-(bi-fold)"] },
     { id: "farm-house", title: "Farm House", description: "Connect beautiful country landscaping with spacious interiors.", icon: Warehouse, recommendedProductIds: ["foldable-doors-(bi-fold)", "slide-turn"] },
     { id: "office-space", title: "Office Space", description: "Acoustically isolated conference cubes & manager cabins.", icon: Briefcase, recommendedProductIds: ["telescopic-sliders"] },
