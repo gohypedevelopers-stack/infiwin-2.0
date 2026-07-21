@@ -56,7 +56,8 @@ export const galleryData: Record<string, GalleryItem> = {
       "/gallery/Applications/Farm%20House/7%20banner.png",
       "/gallery/Applications/Farm%20House/ChatGPT%20Image%20Jul%2014,%202026,%2005_54_54%20PM.png",
       "/gallery/Applications/Farm%20House/ChatGPT%20Image%20Jul%2014,%202026,%2011_38_27%20AM.png",
-      "/gallery/Applications/Farm%20House/ChatGPT%20Image%20Jul%2014,%202026,%2011_38_33%20AM.png"
+      "/gallery/Applications/Farm%20House/ChatGPT%20Image%20Jul%2014,%202026,%2011_38_33%20AM.png",
+      "/gallery/Applications/Farm%20House/farmhouse 1.png",
     ]
   },
   "terrace": {
@@ -210,11 +211,13 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Balcony",
     "description": "Unobstructed frameless premium safety glazing barriers. Perfectly designed for balconies and terraces, offering panoramic views, superior weather protection, and effortless sliding mechanisms that redefine modern open-concept living spaces.",
     "images": [
-
       "/gallery/Applications/Balcony/2.png",
-
       "/gallery/Applications/Balcony/4.png",
-
+      "/gallery/Applications/Balcony/balcony 1.png",
+      "/gallery/Applications/Balcony/balcony 2.png",
+      "/gallery/Applications/Balcony/balcony 3.png",
+      "/gallery/Applications/Balcony/balcony 4.png",
+      "/gallery/Applications/Balcony/balcony 5.png"
     ]
   },
   "int-partition": {

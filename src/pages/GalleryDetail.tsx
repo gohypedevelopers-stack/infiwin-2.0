@@ -233,7 +233,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
   }
 
   return (
-    <div className="pt-12 lg:pt-16 md:pt-12 lg:pt-16 min-h-screen bg-slate-50 flex flex-col">
+    <div className="pt-24 lg:pt-28 md:pt-24 min-h-screen bg-slate-50 flex flex-col">
       {/* Hero Section - Split Layout */}
       <section className="w-full max-w-7xl mx-auto px-6 pt-2 pb-12 md:py-12 lg:py-16 flex flex-col md:flex-row items-center gap-12">
         <div className="w-full md:w-1/2">
@@ -404,36 +404,36 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                 if (isVideo && hasTitle) return null;
 
                 return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: (idx % 5) * 0.1 }}
-                  className="overflow-hidden rounded-xl border border-slate-200/50 shadow-md hover:shadow-xl transition-shadow cursor-pointer aspect-[4/3] relative group"
-                  onClick={() => setSelectedImageIndex(idx)}
-                >
-                  {isVideo ? (
-                    <video
-                      src={img}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 pointer-events-none"
-                      muted
-                      loop
-                      playsInline
-                    />
-                  ) : (
-                    <img loading="lazy"
-                      src={img}
-                      alt={`${data.title} ${idx + 1}`}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                    />
-                  )}
-                  {hasTitle && (
-                    <div className="absolute bottom-0 inset-x-0 bg-black/70 text-white p-3 text-center text-sm font-medium backdrop-blur-sm transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                      {decodeURIComponent(img.split('#title=')[1])}
-                    </div>
-                  )}
-                </motion.div>
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: (idx % 5) * 0.1 }}
+                    className="overflow-hidden rounded-xl border border-slate-200/50 shadow-md hover:shadow-xl transition-shadow cursor-pointer aspect-[4/3] relative group"
+                    onClick={() => setSelectedImageIndex(idx)}
+                  >
+                    {isVideo ? (
+                      <video
+                        src={img}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 pointer-events-none"
+                        muted
+                        loop
+                        playsInline
+                      />
+                    ) : (
+                      <img loading="lazy"
+                        src={img}
+                        alt={`${data.title} ${idx + 1}`}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                      />
+                    )}
+                    {hasTitle && (
+                      <div className="absolute bottom-0 inset-x-0 bg-black/70 text-white p-3 text-center text-sm font-medium backdrop-blur-sm transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        {decodeURIComponent(img.split('#title=')[1])}
+                      </div>
+                    )}
+                  </motion.div>
                 );
               })}
             </div>
@@ -457,7 +457,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
               <h3 className="text-sm font-medium text-luxury-gold uppercase tracking-[0.3em] mb-3">Featured Highlights</h3>
               <h2 className="text-3xl md:text-5xl font-serif">Video Showcases</h2>
             </div>
-            <div className="flex flex-col gap-20">
+            <div className="flex flex-wrap justify-center gap-12">
               {data.images.map((img, originalIdx) => {
                 const isVideo = img.split('#')[0].split('?')[0].toLowerCase().endsWith('.mp4');
                 const hasTitle = img.includes('#title=');
@@ -466,36 +466,20 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                 const title = decodeURIComponent(img.split('#title=')[1]);
 
                 return (
-                  <div key={originalIdx} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    {/* Content Left */}
-                    <div className="order-2 lg:order-1 px-4 lg:px-0">
-                      <h4 className="text-3xl md:text-4xl font-serif text-white mb-6 capitalize">{title}</h4>
-                      <p className="text-slate-400 font-light leading-relaxed mb-8 text-lg">
-                        Experience the exceptional quality and innovative design of our {title}. Watch the demonstration to see how our premium systems seamlessly integrate into modern environments, offering unmatched durability, smooth operation, and sophisticated aesthetics.
-                      </p>
-                      <div className="flex flex-wrap gap-4">
-                        <Link 
-                          to="/contact"
-                          className="px-6 py-3 bg-luxury-gold text-slate-900 hover:bg-white transition-colors uppercase tracking-widest text-sm font-medium flex items-center justify-center"
-                        >
-                          Get Quote
-                        </Link>
-                      </div>
+                  <div key={originalIdx} className="flex flex-col gap-6 w-full md:w-[calc(50%-1.5rem)]">
+                    <div className="rounded-lg overflow-hidden shadow-2xl relative border border-slate-800 group cursor-pointer" onClick={() => setSelectedImageIndex(originalIdx)}>
+                      <video
+                        src={img}
+                        className="w-full h-auto aspect-video object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
+                        muted
+                        loop
+                        playsInline
+                        autoPlay
+                      />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
                     </div>
-                    
-                    {/* Video Right */}
-                    <div className="order-1 lg:order-2 group cursor-pointer" onClick={() => setSelectedImageIndex(originalIdx)}>
-                      <div className="rounded-lg overflow-hidden shadow-2xl relative border border-slate-800">
-                        <video 
-                          src={img}
-                          className="w-full h-auto max-h-[80vh] object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
-                          muted
-                          loop
-                          playsInline
-                          autoPlay
-                        />
-                        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
-                      </div>
+                    <div className="px-2 text-center">
+                      <h4 className="text-2xl font-serif text-white capitalize">{title}</h4>
                     </div>
                   </div>
                 );
@@ -608,11 +592,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                 onClick={(e: any) => e.stopPropagation()}
               />
             )}
-            {data.images[selectedImageIndex].includes('#title=') && (
-              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black/80 text-white px-6 py-3 rounded-full text-sm backdrop-blur-md">
-                {decodeURIComponent(data.images[selectedImageIndex].split('#title=')[1])}
-              </div>
-            )}
+
 
             <button
               onClick={handleNext}
