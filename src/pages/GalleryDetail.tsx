@@ -398,7 +398,12 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
             <div className="text-center text-slate-500 py-12">No images found for this category.</div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-              {data.images.map((img, idx) => (
+              {data.images.map((img, idx) => {
+                const isVideo = img.split('#')[0].split('?')[0].toLowerCase().endsWith('.mp4');
+                const hasTitle = img.includes('#title=');
+                if (isVideo && hasTitle) return null;
+
+                return (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
@@ -408,7 +413,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                   className="overflow-hidden rounded-xl border border-slate-200/50 shadow-md hover:shadow-xl transition-shadow cursor-pointer aspect-[4/3] relative group"
                   onClick={() => setSelectedImageIndex(idx)}
                 >
-                  {img.split('#')[0].split('?')[0].toLowerCase().endsWith('.mp4') ? (
+                  {isVideo ? (
                     <video
                       src={img}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 pointer-events-none"
@@ -423,13 +428,14 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                     />
                   )}
-                  {img.includes('#title=') && (
+                  {hasTitle && (
                     <div className="absolute bottom-0 inset-x-0 bg-black/70 text-white p-3 text-center text-sm font-medium backdrop-blur-sm transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                       {decodeURIComponent(img.split('#title=')[1])}
                     </div>
                   )}
                 </motion.div>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>
@@ -441,6 +447,62 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
           <BestSellerSection />
           <FrameColorSection />
         </>
+      )}
+
+      {/* Featured Videos Section */}
+      {data.images.some(img => img.split('#')[0].split('?')[0].toLowerCase().endsWith('.mp4') && img.includes('#title=')) && (
+        <section className="px-6 py-16 bg-slate-900 text-white border-t border-slate-800">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h3 className="text-sm font-medium text-luxury-gold uppercase tracking-[0.3em] mb-3">Featured Highlights</h3>
+              <h2 className="text-3xl md:text-5xl font-serif">Video Showcases</h2>
+            </div>
+            <div className="flex flex-col gap-20">
+              {data.images.map((img, originalIdx) => {
+                const isVideo = img.split('#')[0].split('?')[0].toLowerCase().endsWith('.mp4');
+                const hasTitle = img.includes('#title=');
+                if (!(isVideo && hasTitle)) return null;
+
+                const title = decodeURIComponent(img.split('#title=')[1]);
+
+                return (
+                  <div key={originalIdx} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    {/* Content Left */}
+                    <div className="order-2 lg:order-1 px-4 lg:px-0">
+                      <h4 className="text-3xl md:text-4xl font-serif text-white mb-6 capitalize">{title}</h4>
+                      <p className="text-slate-400 font-light leading-relaxed mb-8 text-lg">
+                        Experience the exceptional quality and innovative design of our {title}. Watch the demonstration to see how our premium systems seamlessly integrate into modern environments, offering unmatched durability, smooth operation, and sophisticated aesthetics.
+                      </p>
+                      <div className="flex flex-wrap gap-4">
+                        <Link 
+                          to="/contact"
+                          className="px-6 py-3 bg-luxury-gold text-slate-900 hover:bg-white transition-colors uppercase tracking-widest text-sm font-medium flex items-center justify-center"
+                        >
+                          Get Quote
+                        </Link>
+                      </div>
+                    </div>
+                    
+                    {/* Video Right */}
+                    <div className="order-1 lg:order-2 group cursor-pointer" onClick={() => setSelectedImageIndex(originalIdx)}>
+                      <div className="rounded-lg overflow-hidden shadow-2xl relative border border-slate-800">
+                        <video 
+                          src={img}
+                          className="w-full h-auto max-h-[80vh] object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
+                          muted
+                          loop
+                          playsInline
+                          autoPlay
+                        />
+                        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
       )}
 
       {/* You Might Also Like */}

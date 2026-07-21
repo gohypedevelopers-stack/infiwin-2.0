@@ -118,7 +118,7 @@ export const galleryData: Record<string, GalleryItem> = {
       "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%2010,%202026,%2002_56_49%20PM.png",
       "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_06_18%20PM.png",
       "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_08_43%20PM.png",
-      "/gallery/Systems/Bathroom%20Encloser/WhatsApp%20Video%202026-07-20%20at%206.02.49%20PM.mp4"
+      "/gallery/Systems/Bathroom%20Encloser/WhatsApp%20Video%202026-07-20%20at%206.02.49%20PM.mp4#title=Bathroom%20Encloser"
     ]
   },
   "foldable-doors-(bi-fold)": {
