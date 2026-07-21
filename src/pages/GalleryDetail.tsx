@@ -239,11 +239,22 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
         <div className="w-full md:w-1/2">
           {data.images.length > 0 ? (
             <div className="aspect-[4/3] rounded-sm overflow-hidden shadow-2xl">
-              <img loading="lazy"
-                src={data.images[0]}
-                alt={`${data.title} Cover`}
-                className="w-full h-full object-cover"
-              />
+              {data.images[0].toLowerCase().endsWith('.mp4') ? (
+                <video
+                  src={data.images[0]}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <img loading="lazy"
+                  src={data.images[0]}
+                  alt={`${data.title} Cover`}
+                  className="w-full h-full object-cover"
+                />
+              )}
             </div>
           ) : (
             <div className="aspect-[4/3] bg-slate-200 rounded-sm flex items-center justify-center">
@@ -394,14 +405,29 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: (idx % 5) * 0.1 }}
-                  className="overflow-hidden rounded-xl border border-slate-200/50 shadow-md hover:shadow-xl transition-shadow cursor-pointer aspect-[4/3]"
+                  className="overflow-hidden rounded-xl border border-slate-200/50 shadow-md hover:shadow-xl transition-shadow cursor-pointer aspect-[4/3] relative group"
                   onClick={() => setSelectedImageIndex(idx)}
                 >
-                  <img loading="lazy"
-                    src={img}
-                    alt={`${data.title} ${idx + 1}`}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                  />
+                  {img.split('#')[0].split('?')[0].toLowerCase().endsWith('.mp4') ? (
+                    <video
+                      src={img}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 pointer-events-none"
+                      muted
+                      loop
+                      playsInline
+                    />
+                  ) : (
+                    <img loading="lazy"
+                      src={img}
+                      alt={`${data.title} ${idx + 1}`}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                  )}
+                  {img.includes('#title=') && (
+                    <div className="absolute bottom-0 inset-x-0 bg-black/70 text-white p-3 text-center text-sm font-medium backdrop-blur-sm transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                      {decodeURIComponent(img.split('#title=')[1])}
+                    </div>
+                  )}
                 </motion.div>
               ))}
             </div>
@@ -496,16 +522,35 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
               <ChevronLeft size={40} />
             </button>
 
-            <motion.img
-              key={selectedImageIndex}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.2 }}
-              src={data.images[selectedImageIndex]}
-              alt={`${data.title} fullscreen`}
-              className="max-w-full max-h-full object-contain shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-            />
+            {data.images[selectedImageIndex].split('#')[0].split('?')[0].toLowerCase().endsWith('.mp4') ? (
+              <motion.video
+                key={selectedImageIndex}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.2 }}
+                src={data.images[selectedImageIndex]}
+                controls
+                autoPlay
+                className="max-w-full max-h-full object-contain shadow-2xl"
+                onClick={(e: any) => e.stopPropagation()}
+              />
+            ) : (
+              <motion.img
+                key={selectedImageIndex}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.2 }}
+                src={data.images[selectedImageIndex]}
+                alt={`${data.title} fullscreen`}
+                className="max-w-full max-h-full object-contain shadow-2xl"
+                onClick={(e: any) => e.stopPropagation()}
+              />
+            )}
+            {data.images[selectedImageIndex].includes('#title=') && (
+              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black/80 text-white px-6 py-3 rounded-full text-sm backdrop-blur-md">
+                {decodeURIComponent(data.images[selectedImageIndex].split('#title=')[1])}
+              </div>
+            )}
 
             <button
               onClick={handleNext}

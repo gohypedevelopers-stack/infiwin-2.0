@@ -20,7 +20,9 @@ export const galleryData: Record<string, GalleryItem> = {
       "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2015,%202026,%2010_58_05%20AM.png",
       "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2015,%202026,%2010_58_12%20AM.png",
       "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2015,%202026,%2010_58_26%20AM.png",
-      "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2015,%202026,%2010_58_51%20AM.png"
+      "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2015,%202026,%2010_58_51%20AM.png",
+      "https://ik.imagekit.io/6tktrblyvs/doorspital/Pool.mp4#title=pool%20side%20-%20full%20length%20slide%20and%20turn",
+      "https://ik.imagekit.io/6tktrblyvs/doorspital/Terrece%20Large.mp4#title=restaurant%20-%20half%20length%20slide%20and%20turn"
     ]
   },
   "commercial": {
@@ -116,7 +118,7 @@ export const galleryData: Record<string, GalleryItem> = {
       "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%2010,%202026,%2002_56_49%20PM.png",
       "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_06_18%20PM.png",
       "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_08_43%20PM.png",
-
+      "/gallery/Systems/Bathroom%20Encloser/WhatsApp%20Video%202026-07-20%20at%206.02.49%20PM.mp4"
     ]
   },
   "foldable-doors-(bi-fold)": {
