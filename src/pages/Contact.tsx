@@ -425,7 +425,7 @@ export default function Contact() {
         <div className="absolute inset-0 z-0">
           <img
             loading="lazy"
-            src="/farmhouse_hero.png"
+            src="/gallery/Systems/Slide%20&%20Turn/Slide & Turn (4).jpg.jpeg"
             alt="Contact Background"
             className="w-full h-full object-cover"
           />

@@ -26,7 +26,7 @@ export default function About() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img loading="lazy" 
-            src="/synchronized_banner.jpg" 
+            src="/gallery/Systems/Slide%20&%20Turn/Slide & Turn (5).jpg.jpeg" 
             alt="About Infiwin Background" 
             className="w-full h-full object-cover opacity-55"
           />

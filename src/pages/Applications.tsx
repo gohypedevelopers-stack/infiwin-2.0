@@ -60,7 +60,7 @@ export default function Applications() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img 
-            src="/guillotine_banner.webp" 
+            src="/gallery/Systems/Slide%20&%20Turn/Slide & Turn.jpg.jpeg" 
             alt="Applications Background" 
             className="w-full h-full object-cover opacity-55"
           />
@@ -85,7 +85,6 @@ export default function Applications() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {featuredApps.map((app, idx) => {
-              const isUnapproved = app.title === "Exterior" || app.title === "Garden" || app.title === "Int. Partition";
               return (
                 <div
                   key={idx}
@@ -98,11 +97,6 @@ export default function Applications() {
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         referrerPolicy="no-referrer"
                       />
-                      {isUnapproved && (
-                        <div className="absolute top-4 right-4 bg-red-600/90 backdrop-blur-sm text-white text-[9px] uppercase font-bold tracking-widest px-3 py-1 rounded-sm shadow-md z-10">
-                          Not Approved Yet
-                        </div>
-                      )}
                       {/* Hover Overlay */}
                       <div className="absolute inset-0 bg-white/95 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center p-6 text-center z-0">
                         <app.icon size={32} strokeWidth={1.5} className="text-luxury-gold mb-4" />

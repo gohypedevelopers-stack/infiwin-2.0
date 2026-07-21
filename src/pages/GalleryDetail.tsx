@@ -172,12 +172,33 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
     filteredImages = filteredImages.filter(img => img.includes('3_track'));
   } else if (normalizedId === 'top-hang-bi-fold' && variant === 'bi-fold') {
     filteredImages = galleryData['foldable-doors-(bi-fold)']?.images || [];
+  } else if (normalizedId === 'int-partition') {
+    if (variant === 'bi-fold') {
+      filteredImages = galleryData['top-hang-bi-fold']?.images || [];
+    } else if (variant === 'telescopic') {
+      filteredImages = galleryData['telescopic-sliders']?.images || [];
+    } else if (variant === 'center-open') {
+      filteredImages = galleryData['synchronized-systems']?.images || [];
+    } else {
+      filteredImages = [
+        ...(galleryData['top-hang-bi-fold']?.images || []),
+        ...(galleryData['telescopic-sliders']?.images || []),
+        ...(galleryData['synchronized-systems']?.images || [])
+      ];
+    }
   }
 
   // For top-hang-bi-fold, use a combined title when in bi-fold sub-tab
-  const displayTitle = (normalizedId === 'top-hang-bi-fold' && variant === 'bi-fold')
-    ? 'Bi Fold (Foldable Doors)'
-    : rawData?.title || '';
+  let displayTitle = rawData?.title || '';
+  if (normalizedId === 'top-hang-bi-fold' && variant === 'bi-fold') {
+    displayTitle = 'Bi Fold (Foldable Doors)';
+  } else if (normalizedId === 'int-partition' && variant === 'bi-fold') {
+    displayTitle = 'Bi Fold';
+  } else if (normalizedId === 'int-partition' && variant === 'telescopic') {
+    displayTitle = 'Telescopic';
+  } else if (normalizedId === 'int-partition' && variant === 'center-open') {
+    displayTitle = 'Synchronized System';
+  }
 
   const data = rawData ? { ...rawData, title: displayTitle, images: filteredImages } : null;
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
@@ -201,25 +222,6 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
       setSelectedImageIndex((selectedImageIndex - 1 + data.images.length) % data.images.length);
     }
   };
-
-  const isUnapproved = isApplication && (normalizedId === 'exterior' || normalizedId === 'garden' || normalizedId === 'int-partition');
-
-  if (isUnapproved) {
-    return (
-      <div className="pt-40 pb-12 lg:pb-16 px-6 min-h-screen bg-slate-50 flex flex-col items-center justify-center text-center">
-        <div className="bg-white p-12 rounded-xl shadow-lg border border-red-100 max-w-lg w-full">
-          <div className="w-16 h-16 bg-red-100 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
-            <X size={32} />
-          </div>
-          <h1 className="text-3xl font-serif text-slate-900 mb-4">Not Approved Yet</h1>
-          <p className="text-slate-500 font-light mb-8">The images and details for this application area have not been approved for public display.</p>
-          <button onClick={() => navigate(-1)} className="text-luxury-gold hover:text-slate-900 transition-colors uppercase tracking-widest text-sm font-semibold flex items-center justify-center gap-2 mx-auto cursor-pointer border-none bg-transparent">
-            <ArrowLeft size={16} /> Go Back
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   if (!data) {
     return (
@@ -348,6 +350,35 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                 className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${variant === 'bi-fold' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
               >
                 Bi Fold
+              </button>
+            </div>
+          )}
+
+          {normalizedId === 'int-partition' && (
+            <div className="flex flex-wrap justify-center sm:justify-start gap-4 mb-8">
+              <button
+                onClick={() => setSearchParams({}, { replace: true })}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${!variant ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+              >
+                All
+              </button>
+              <button
+                onClick={() => setSearchParams({ variant: 'bi-fold' }, { replace: true })}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${variant === 'bi-fold' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+              >
+                Bi Fold
+              </button>
+              <button
+                onClick={() => setSearchParams({ variant: 'telescopic' }, { replace: true })}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${variant === 'telescopic' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+              >
+                Telescopic
+              </button>
+              <button
+                onClick={() => setSearchParams({ variant: 'center-open' }, { replace: true })}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${variant === 'center-open' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+              >
+                Synchronized System
               </button>
             </div>
           )}

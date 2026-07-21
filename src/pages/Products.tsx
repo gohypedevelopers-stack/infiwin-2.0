@@ -39,7 +39,7 @@ export default function Products() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img 
-            src="/st_hero.webp"
+            src="/gallery/Systems/Slide%20&%20Turn/Slide & Turn (1).jpg.jpeg"
             alt="Products Background"
             className="w-full h-full object-cover opacity-55"
           />

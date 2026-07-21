@@ -85,28 +85,24 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Exterior",
     "description": "Built for resilience, our rigid wind resistance profile constructs are ideal for high-rise elevations. These exterior glass systems are engineered to withstand extreme weather conditions, ensuring maximum safety, acoustic insulation, and a striking, modern architectural facade.",
     "images": [
-      "/gallery/Applications/Exterior/IMG-20230416-WA0001.jpg",
-      "/gallery/Applications/Exterior/IMG-20230416-WA0009.jpg",
-      "/gallery/Applications/Exterior/IMG-20230416-WA0010.jpg",
-      "/gallery/Applications/Exterior/IMG-20230416-WA0015.jpg",
-      "/gallery/Applications/Exterior/IMG-20230416-WA0016.jpg",
-      "/gallery/Applications/Exterior/IMG-20230416-WA0019.jpg",
-      "/gallery/Applications/Exterior/IMG-20230417-WA0008.jpg"
+
+
+      "/gallery/Applications/Exterior/ChatGPT%20Image%20Jul%2011,%202026,%2010_51_25%20AM.png",
+      "/gallery/Applications/Exterior/ChatGPT%20Image%20Jul%2011,%202026,%2011_12_59%20AM.png",
+      "/gallery/Applications/Exterior/ChatGPT%20Image%20Jul%2011,%202026,%2011_18_42%20AM.png",
+      "/gallery/Applications/Exterior/ChatGPT%20Image%20Jul%2021,%202026,%2010_54_23%20AM.png"
     ]
   },
   "garden": {
     "title": "Garden",
     "description": "Enhance your outdoor living spaces with glass enclosures that blend beauty with functionality, perfect for garden houses, patios, and gazebos. Create a modern glass oasis that keeps you connected to your garden throughout the seasons.",
     "images": [
-      "/gallery/Applications/Garden/FARMHOUSEHERO.jpg",
-      "/gallery/Applications/Garden/bifold_glass.png",
-      "/gallery/Applications/Garden/IMG_4395.jpg",
-      "/gallery/Applications/Garden/IMG_4402.jpg",
-      "/gallery/Applications/Garden/IMG_4403.jpg",
-      "/gallery/Applications/Garden/IMG_4408.jpg",
-      "/gallery/Applications/Garden/roof.png",
-      "/gallery/Applications/Garden/WhatsApp%20Image%202021-02-20%20at%205.28.31%20PM.jpg",
-      "/gallery/Applications/Garden/wind%20breaker.png"
+
+      "/gallery/Applications/Garden/2.png",
+      "/gallery/Applications/Garden/3.png",
+      "/gallery/Applications/Garden/9.png",
+      "/gallery/Applications/Garden/ChatGPT%20Image%20Jul%2011,%202026,%2011_56_49%20AM.png",
+      "/gallery/Applications/Garden/ChatGPT%20Image%20Jul%2011,%202026,%2012_25_03%20PM.png"
     ]
   },
   "bathroom-encloser": {
@@ -187,11 +183,13 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Synchronized Systems",
     "description": "The Synchronized Center Open System — a multi-panel sliding system for interior spaces. Quiet operation, sleek hardware, and automated-feeling movement that slides multiple panels simultaneously from the centre open.",
     "images": [
+      "/gallery/Systems/Synchronized%20Systems/5.png",
+      "/gallery/Systems/Synchronized%20Systems/6.png",
       "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2010,%202026,%2003_20_35%20PM%20(2).png",
       "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2014,%202026,%2001_45_59%20PM.png",
       "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2014,%202026,%2001_46_04%20PM.png",
       "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2014,%202026,%2001_46_09%20PM.png",
-      "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2014,%202026,%2001_46_13%20PM.png"
+
     ]
   },
   "top-hang-bi-fold": {

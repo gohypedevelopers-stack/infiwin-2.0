@@ -200,7 +200,7 @@ export default function Concepts() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img loading="lazy"
-            src="/bifold_banner.jpg"
+            src="/gallery/Systems/Slide%20&%20Turn/Slide & Turn (2).jpg.png"
             alt="Concepts Background"
             className="w-full h-full object-cover opacity-55"
           />

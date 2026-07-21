@@ -136,7 +136,7 @@ export default function FAQ() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img loading="lazy" 
-            src="/openable_banner.jpg" 
+            src="/gallery/Systems/Slide%20&%20Turn/Slide & Turn (3).jpg.jpeg" 
             alt="FAQ Background" 
             className="w-full h-full object-cover opacity-55"
           />
