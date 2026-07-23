@@ -26,7 +26,7 @@ export default function About() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img loading="lazy" 
-            src="/gallery/Systems/Slide%20&%20Turn/Slide & Turn (5).jpg.jpeg" 
+            src="/gallery/Systems/Slide%20&%20Turn/slide-turn-5.webp" 
             alt="About Infiwin Background" 
             className="w-full h-full object-cover opacity-55"
           />
@@ -69,10 +69,9 @@ export default function About() {
             className="relative rounded-3xl overflow-hidden shadow-2xl aspect-square lg:aspect-auto lg:h-[600px]"
           >
             <img loading="lazy" 
-              src="https://i.postimg.cc/zB29WQw6/Chat-GPT-Image-Jul-8-2026-05-39-21-PM.png" 
+              src="/balcony-5.webp" 
               alt="Balcony View" 
               className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
             />
           </motion.div>
         </div>
@@ -221,10 +220,9 @@ export default function About() {
         {/* Background Overlay or Image */}
         <div className="absolute inset-0 z-0 opacity-20">
           <img loading="lazy" 
-            src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80" 
+            src="/gallery/about-office.webp" 
             alt="Office Glass" 
             className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
           />
         </div>
         
