@@ -4,12 +4,12 @@ import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 
 const frameColors = [
-  { id: "white", name: "White", hex: "#e8e9e4", img: "/frame/white.png", desc: "A clean, bright finish that pairs effortlessly with modern and minimalist interiors." },
-  { id: "black", name: "Black", hex: "#18181a", img: "/frame/black.png", desc: "A timeless, bold look that provides striking contrast and modern sophistication." },
-  { id: "anodic-brown", name: "Anodic Brown", hex: "#463a35", img: "/frame/anadic%20brown.png", desc: "A rich, dark earthy tone offering a subtle architectural elegance." },
-  { id: "soft-silver", name: "Soft Silver", hex: "#b6b6b5", img: "/frame/soft%20silver.png", desc: "A sleek metallic finish providing a contemporary, high-end feel." },
-  { id: "sucho-grey", name: "Sucho Grey", hex: "#374140", img: "/frame/sucho%20grey.png", desc: "A versatile slate tone that bridges the gap between bold darks and lighter neutrals." },
-  { id: "champaign-brown", name: "Champaign Brown", hex: "#8d7966", img: "/frame/champaign%20brown.png", desc: "A warm, sophisticated tone that adds a touch of subtle luxury to your living space." }
+  { id: "white", name: "White", hex: "#e8e9e4", img: "/frame/white.webp", desc: "A clean, bright finish that pairs effortlessly with modern and minimalist interiors." },
+  { id: "black", name: "Black", hex: "#18181a", img: "/frame/black.webp", desc: "A timeless, bold look that provides striking contrast and modern sophistication." },
+  { id: "anodic-brown", name: "Anodic Brown", hex: "#463a35", img: "/frame/anadic%20brown.webp", desc: "A rich, dark earthy tone offering a subtle architectural elegance." },
+  { id: "soft-silver", name: "Soft Silver", hex: "#b6b6b5", img: "/frame/soft%20silver.webp", desc: "A sleek metallic finish providing a contemporary, high-end feel." },
+  { id: "sucho-grey", name: "Sucho Grey", hex: "#374140", img: "/frame/sucho%20grey.webp", desc: "A versatile slate tone that bridges the gap between bold darks and lighter neutrals." },
+  { id: "champaign-brown", name: "Champaign Brown", hex: "#8d7966", img: "/frame/champaign%20brown.webp", desc: "A warm, sophisticated tone that adds a touch of subtle luxury to your living space." }
 ];
 
 const badges = [
