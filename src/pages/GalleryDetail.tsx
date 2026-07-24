@@ -529,13 +529,13 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
         if (videos.length === 0) return null;
 
         return (
-          <section className="px-6 py-[90px] bg-slate-100 text-slate-900 border-t border-slate-200">
+          <section className="px-6 py-12 md:py-[90px] bg-slate-100 text-slate-900 border-t border-slate-200">
             <div className="max-w-[1000px] mx-auto">
-              <div className="text-center mb-[52px]">
+              <div className="text-center mb-10 md:mb-[52px]">
                 <h3 className="text-sm font-medium text-luxury-gold uppercase tracking-[0.3em] mb-3">Featured Highlights</h3>
                 <h2 className="text-3xl md:text-5xl font-serif">See Our Systems in Action</h2>
                 {videos.length > 1 && (
-                  <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+                  <p className="mt-4 text-slate-600 max-w-2xl mx-auto text-sm md:text-base">
                     Experience the smooth operation and premium quality of our engineered solutions.
                   </p>
                 )}
@@ -552,7 +552,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                     />
                     <div className="absolute inset-0 bg-black/10 transition-colors pointer-events-none" />
                   </div>
-                  <div className="w-full text-center md:text-left px-4">
+                  <div className="w-full text-left px-0 md:px-4 mt-6 md:mt-0">
                     {(() => {
                       const title = decodeURIComponent(videos[0].img.split('#title=')[1]);
                       const content = VIDEO_CONTENT_MAP[title] || {
@@ -564,13 +564,13 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                       };
                       return (
                         <>
-                          <h4 className="text-3xl md:text-4xl font-serif text-slate-900 capitalize mb-6">{content.heading}</h4>
-                          <p className="text-slate-600 font-light leading-relaxed text-lg mb-8">
+                          <h4 className="text-2xl md:text-4xl font-serif text-slate-900 capitalize mb-4 md:mb-6">{content.heading}</h4>
+                          <p className="text-slate-600 font-light leading-relaxed text-sm md:text-lg mb-6 md:mb-8">
                             {content.description}
                           </p>
-                          <ul className="text-left space-y-3 mb-8 mx-auto max-w-sm md:mx-0">
+                          <ul className="text-left space-y-3 mb-8">
                             {content.highlights.map((hl, i) => (
-                              <li key={i} className="flex items-center gap-3 text-slate-700"><div className="w-1.5 h-1.5 rounded-full bg-luxury-gold shrink-0" /> {hl}</li>
+                              <li key={i} className="flex items-center gap-3 text-slate-700 text-sm md:text-base"><div className="w-1.5 h-1.5 rounded-full bg-luxury-gold shrink-0" /> {hl}</li>
                             ))}
                           </ul>
                           <Link to="/contact" className="inline-flex items-center gap-2 text-luxury-gold hover:text-slate-900 transition-colors font-medium uppercase tracking-wider text-sm bg-transparent border-none cursor-pointer p-0 group">
@@ -583,7 +583,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                 </div>
               ) : (
                 // Condition 2: Two or more videos (Alternating Split Layout)
-                <div className="flex flex-col gap-[72px] max-w-5xl mx-auto">
+                <div className="flex flex-col gap-16 md:gap-[72px] max-w-5xl mx-auto">
                   {videos.map(({ img, idx }, arrIdx) => {
                     const title = decodeURIComponent(img.split('#title=')[1]);
                     const content = VIDEO_CONTENT_MAP[title] || {
@@ -595,7 +595,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                     };
                     const isEven = arrIdx % 2 === 0;
                     return (
-                      <div key={idx} className={`flex flex-col ${isEven ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-10 md:gap-16`}>
+                      <div key={idx} className={`flex flex-col ${isEven ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-8 md:gap-16`}>
                         {/* Video Card */}
                         <div className="w-full max-w-[340px] shrink-0 mx-auto md:mx-0 rounded-[16px] overflow-hidden shadow-lg relative border border-slate-200 group cursor-pointer" onClick={() => setSelectedImageIndex(idx)}>
                           <video
@@ -606,15 +606,15 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
                         </div>
                         {/* Below Video Content -> Beside Video Content */}
-                        <div className="w-full flex-1 text-center md:text-left px-4">
-                          <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-luxury-gold mb-3 inline-block">{content.category}</span>
-                          <h4 className="text-3xl font-serif text-slate-900 capitalize mb-5">{content.heading}</h4>
-                          <p className="text-slate-600 font-light leading-relaxed text-base mb-6">
+                        <div className="w-full flex-1 text-left px-0 md:px-4 mt-2 md:mt-0">
+                          <span className="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase text-luxury-gold mb-2 md:mb-3 inline-block">{content.category}</span>
+                          <h4 className="text-2xl md:text-3xl font-serif text-slate-900 capitalize mb-4 md:mb-5">{content.heading}</h4>
+                          <p className="text-slate-600 font-light leading-relaxed text-sm md:text-base mb-6">
                             {content.description}
                           </p>
-                          <ul className="text-left space-y-3 mb-8 mx-auto max-w-sm md:mx-0">
+                          <ul className="text-left space-y-3 mb-8">
                             {content.highlights.map((hl, i) => (
-                              <li key={i} className="flex items-center gap-3 text-slate-700"><div className="w-1.5 h-1.5 rounded-full bg-luxury-gold shrink-0" /> {hl}</li>
+                              <li key={i} className="flex items-center gap-3 text-slate-700 text-sm md:text-base"><div className="w-1.5 h-1.5 rounded-full bg-luxury-gold shrink-0" /> {hl}</li>
                             ))}
                           </ul>
                           <Link to="/contact" className="inline-flex items-center gap-2 text-luxury-gold hover:text-slate-900 transition-colors font-medium uppercase tracking-wider text-sm bg-transparent border-none cursor-pointer p-0 group">
