@@ -173,11 +173,11 @@ export const HeroSection = () => {
 
           {/* Stats - Centered in mobile, Left aligned in desktop */}
           <div className="flex flex-row flex-nowrap justify-center lg:justify-start gap-4 sm:gap-12 lg:gap-16 text-center lg:text-left w-full lg:w-auto overflow-x-auto scrollbar-none pb-2 lg:pb-0">
-            {/* Stat 1 */}
+            {/* Stat 1 (Formerly Warranty) */}
             <div className="flex flex-col items-center lg:items-start min-w-[100px] sm:min-w-0">
-              <span className="text-white text-[9px] sm:text-[10px] uppercase tracking-[0.2em] mb-1 font-semibold">Starting Price</span>
+              <span className="text-white text-[9px] sm:text-[10px] uppercase tracking-[0.2em] mb-1 font-semibold">Warranty</span>
               <span className="text-lg sm:text-2xl md:text-3xl font-display font-light text-white tracking-wide whitespace-nowrap">
-                <AnimatedNumber value={1800} prefix="₹" /> <span className="text-[10px] text-white">/ Sq.ft</span>
+                <AnimatedNumber value={10} suffix="+" /> Yrs
               </span>
             </div>
             {/* Stat 2 */}
@@ -185,13 +185,6 @@ export const HeroSection = () => {
               <span className="text-white text-[9px] sm:text-[10px] uppercase tracking-[0.2em] mb-1 font-semibold">Rain & Wind</span>
               <span className="text-lg sm:text-2xl md:text-3xl font-display font-light text-white tracking-wide whitespace-nowrap">
                 <AnimatedNumber value={100} suffix="%" /> Tight
-              </span>
-            </div>
-            {/* Stat 3 */}
-            <div className="flex flex-col items-center lg:items-start min-w-[100px] sm:min-w-0">
-              <span className="text-white text-[9px] sm:text-[10px] uppercase tracking-[0.2em] mb-1 font-semibold">Warranty</span>
-              <span className="text-lg sm:text-2xl md:text-3xl font-display font-light text-white tracking-wide whitespace-nowrap">
-                <AnimatedNumber value={10} suffix="+" /> Yrs
               </span>
             </div>
           </div>
@@ -232,7 +225,7 @@ export const HeroSection = () => {
         >
           {[...Array(20)].map((_, i) => (
             <span key={i} className="mx-8 text-white font-bold tracking-wider">
-              Transform your home with premium India-built glass systems starting from ₹1,800/sq.ft!
+              Transform your home with premium India-built glass systems!
             </span>
           ))}
         </motion.div>
