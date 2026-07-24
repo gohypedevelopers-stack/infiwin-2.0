@@ -1,7 +1,7 @@
 import { useState, MouseEvent, useEffect } from 'react';
 import { useParams, useNavigate, useLocation, Link, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowLeft, ChevronLeft, ChevronRight, X, Eye, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight, X, Eye, ArrowRight, Play } from 'lucide-react';
 import { galleryData } from '../data/galleryData';
 import { productsList } from '../data/productData';
 import { WhatsAppIcon } from '../components/icons/WhatsAppIcon';
@@ -90,6 +90,57 @@ const DEFAULT_BADGES = [
   "EXPERT INSTALLATION"
 ];
 
+const VIDEO_CONTENT_MAP: Record<string, { category: string, heading: string, description: string, highlights: string[], cta: string }> = {
+  "90° Enclosure": {
+    category: "BALCONY ENCLOSURE",
+    heading: "90° Enclosure",
+    description: "A modern corner enclosure system designed to provide clear panoramic views, improved weather protection, and a seamless connection between indoor and outdoor spaces.",
+    highlights: [
+      "Uninterrupted corner views",
+      "Enhanced safety and protection",
+      "Maximum natural light",
+      "Clean and modern design"
+    ],
+    cta: "Explore 90° Enclosure →"
+  },
+  "Openable Door": {
+    category: "DOOR SYSTEM",
+    heading: "Openable Door",
+    description: "A durable and elegant door system designed for smooth operation, secure access, and excellent ventilation while complementing modern architectural spaces.",
+    highlights: [
+      "Smooth and effortless opening",
+      "Strong and secure construction",
+      "Improved airflow and accessibility",
+      "Minimal, contemporary appearance"
+    ],
+    cta: "Explore Openable Door →"
+  },
+  "Full-Length Slide & Turn": {
+    category: "SLIDE & TURN SYSTEM",
+    heading: "Full-Length Slide & Turn",
+    description: "A floor-to-ceiling movable glass system designed to deliver panoramic views, flexible ventilation, and seamless access while creating an elegant and open living space.",
+    highlights: [
+      "Full-height panoramic visibility",
+      "Flexible sliding and turning panels",
+      "Maximum natural light and ventilation",
+      "Space-saving, modern design"
+    ],
+    cta: "Explore Full-Length Slide & Turn →"
+  },
+  "Half-Length Slide & Turn": {
+    category: "SLIDE & TURN SYSTEM",
+    heading: "Half-Length Slide & Turn",
+    description: "A versatile balcony enclosure system designed to provide improved safety, weather protection, and ventilation while preserving openness and uninterrupted outdoor views.",
+    highlights: [
+      "Ideal for balcony enclosures",
+      "Smooth sliding and turning operation",
+      "Enhanced safety and weather protection",
+      "Maintains natural light and visibility"
+    ],
+    cta: "Explore Half-Length Slide & Turn →"
+  }
+};
+
 interface GalleryDetailProps {
   type?: 'product' | 'application';
 }
@@ -146,7 +197,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
       }
     } else if (cleanId === 'synchronizedsystems') {
       normalizedId = 'synchronized-systems';
-    } else if (cleanId === 'tophangbifold') {
+    } else if (cleanId === 'tophangbifold' || cleanId === 'bifoldsystem') {
       normalizedId = 'top-hang-bi-fold';
     } else if (cleanId === 'slidingwindowsdoors') {
       normalizedId = 'sliding-windows-doors';
@@ -170,8 +221,17 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
     filteredImages = filteredImages.filter(img => img.includes('2_track'));
   } else if (normalizedId === 'sliding-windows-doors' && variant === '3-track') {
     filteredImages = filteredImages.filter(img => img.includes('3_track'));
-  } else if (normalizedId === 'top-hang-bi-fold' && variant === 'bi-fold') {
-    filteredImages = galleryData['foldable-doors-(bi-fold)']?.images || [];
+  } else if (normalizedId === 'top-hang-bi-fold') {
+    const currentVariant = variant || 'internal';
+    if (currentVariant === 'internal') {
+      filteredImages = ["/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold%20(3).jpg.jpeg"];
+    } else if (currentVariant === 'external') {
+      filteredImages = [
+        "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold.jpg.jpeg",
+        "/gallery/Systems/Foldable%20Doors%20(Bi%20Fold)/bifold_banner.jpg",
+        "/gallery/Systems/Foldable%20Doors%20(Bi%20Fold)/ChatGPT%20Image%20Jul%209,%202026,%2004_28_55%20PM.png"
+      ];
+    }
   } else if (normalizedId === 'int-partition') {
     if (variant === 'bi-fold') {
       filteredImages = galleryData['top-hang-bi-fold']?.images || [];
@@ -190,8 +250,17 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
 
   // For top-hang-bi-fold, use a combined title when in bi-fold sub-tab
   let displayTitle = rawData?.title || '';
-  if (normalizedId === 'top-hang-bi-fold' && variant === 'bi-fold') {
-    displayTitle = 'Bi Fold (Foldable Doors)';
+  let displayDescription = rawData?.description || '';
+
+  if (normalizedId === 'top-hang-bi-fold') {
+    const currentVariant = variant || 'internal';
+    if (currentVariant === 'internal') {
+      displayTitle = 'Internal Partitions';
+      displayDescription = 'Internal bi fold systems keeps flooring unobstructed without bottom guide rails while providing flexible room dividing setups.';
+    } else if (currentVariant === 'external') {
+      displayTitle = 'External Partitions';
+      displayDescription = 'External bi fold systems have bottom guide rails along with the top rails for better stability and sealing.';
+    }
   } else if (normalizedId === 'int-partition' && variant === 'bi-fold') {
     displayTitle = 'Bi Fold';
   } else if (normalizedId === 'int-partition' && variant === 'telescopic') {
@@ -200,7 +269,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
     displayTitle = 'Synchronized System';
   }
 
-  const data = rawData ? { ...rawData, title: displayTitle, images: filteredImages } : null;
+  const data = rawData ? { ...rawData, title: displayTitle, description: displayDescription, images: filteredImages } : null;
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   // Compute related products
@@ -351,16 +420,16 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
           {normalizedId === 'top-hang-bi-fold' && (
             <div className="flex flex-wrap justify-center sm:justify-start gap-4 mb-8">
               <button
-                onClick={() => setSearchParams({}, { replace: true })}
-                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${!variant ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                onClick={() => setSearchParams({ variant: 'internal' }, { replace: true })}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${variant === 'internal' || !variant ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
               >
-                Top Hang Bi Fold
+                Internal Partitions
               </button>
               <button
-                onClick={() => setSearchParams({ variant: 'bi-fold' }, { replace: true })}
-                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${variant === 'bi-fold' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                onClick={() => setSearchParams({ variant: 'external' }, { replace: true })}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${variant === 'external' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
               >
-                Bi Fold
+                External Partitions
               </button>
             </div>
           )}
@@ -402,6 +471,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                 const isVideo = img.split('#')[0].split('?')[0].toLowerCase().endsWith('.mp4');
                 const hasTitle = img.includes('#title=');
                 if (isVideo && hasTitle) return null;
+                if (normalizedId === 'fixed-partition' && idx === 0) return null;
 
                 return (
                   <motion.div
@@ -450,44 +520,116 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
       )}
 
       {/* Featured Videos Section */}
-      {data.images.some(img => img.split('#')[0].split('?')[0].toLowerCase().endsWith('.mp4') && img.includes('#title=')) && (
-        <section className="px-6 py-16 bg-slate-900 text-white border-t border-slate-800">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h3 className="text-sm font-medium text-luxury-gold uppercase tracking-[0.3em] mb-3">Featured Highlights</h3>
-              <h2 className="text-3xl md:text-5xl font-serif">Video Showcases</h2>
-            </div>
-            <div className="flex flex-wrap justify-center gap-12">
-              {data.images.map((img, originalIdx) => {
-                const isVideo = img.split('#')[0].split('?')[0].toLowerCase().endsWith('.mp4');
-                const hasTitle = img.includes('#title=');
-                if (!(isVideo && hasTitle)) return null;
+      {/* Featured Videos Section */}
+      {(() => {
+        const videos = data.images
+          .map((img, idx) => ({ img, idx }))
+          .filter(({ img }) => img.split('#')[0].split('?')[0].toLowerCase().endsWith('.mp4') && img.includes('#title='));
+          
+        if (videos.length === 0) return null;
 
-                const title = decodeURIComponent(img.split('#title=')[1]);
-
-                return (
-                  <div key={originalIdx} className="flex flex-col gap-6 w-full md:w-[calc(50%-1.5rem)]">
-                    <div className="rounded-lg overflow-hidden shadow-2xl relative border border-slate-800 group cursor-pointer" onClick={() => setSelectedImageIndex(originalIdx)}>
-                      <video
-                        src={img}
-                        className="w-full h-auto aspect-video object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
-                        muted
-                        loop
-                        playsInline
-                        autoPlay
-                      />
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
-                    </div>
-                    <div className="px-2 text-center">
-                      <h4 className="text-2xl font-serif text-white capitalize">{title}</h4>
-                    </div>
+        return (
+          <section className="px-6 py-[90px] bg-slate-100 text-slate-900 border-t border-slate-200">
+            <div className="max-w-[1000px] mx-auto">
+              <div className="text-center mb-[52px]">
+                <h3 className="text-sm font-medium text-luxury-gold uppercase tracking-[0.3em] mb-3">Featured Highlights</h3>
+                <h2 className="text-3xl md:text-5xl font-serif">See Our Systems in Action</h2>
+                {videos.length > 1 && (
+                  <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+                    Experience the smooth operation and premium quality of our engineered solutions.
+                  </p>
+                )}
+              </div>
+              
+              {videos.length === 1 ? (
+                // Condition 1: Only one video (Split Layout)
+                <div className="flex flex-col md:flex-row items-center gap-12 max-w-4xl mx-auto">
+                  <div className="w-full max-w-[340px] shrink-0 mx-auto md:mx-0 rounded-[16px] overflow-hidden shadow-lg relative border border-slate-200 group cursor-pointer" onClick={() => setSelectedImageIndex(videos[0].idx)}>
+                    <video
+                      src={videos[0].img}
+                      className="w-full aspect-[9/16] object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
+                      muted loop playsInline autoPlay
+                    />
+                    <div className="absolute inset-0 bg-black/10 transition-colors pointer-events-none" />
                   </div>
-                );
-              })}
+                  <div className="w-full text-center md:text-left px-4">
+                    {(() => {
+                      const title = decodeURIComponent(videos[0].img.split('#title=')[1]);
+                      const content = VIDEO_CONTENT_MAP[title] || {
+                        category: data.title,
+                        heading: title,
+                        description: "A space-efficient solution designed to create wider openings while maintaining a clean and elegant appearance. Perfect for modern architectural designs.",
+                        highlights: ["Wider opening area", "Smooth panel movement", "Modern space-saving design"],
+                        cta: "Explore Product →"
+                      };
+                      return (
+                        <>
+                          <h4 className="text-3xl md:text-4xl font-serif text-slate-900 capitalize mb-6">{content.heading}</h4>
+                          <p className="text-slate-600 font-light leading-relaxed text-lg mb-8">
+                            {content.description}
+                          </p>
+                          <ul className="text-left space-y-3 mb-8 mx-auto max-w-sm md:mx-0">
+                            {content.highlights.map((hl, i) => (
+                              <li key={i} className="flex items-center gap-3 text-slate-700"><div className="w-1.5 h-1.5 rounded-full bg-luxury-gold shrink-0" /> {hl}</li>
+                            ))}
+                          </ul>
+                          <Link to="/contact" className="inline-flex items-center gap-2 text-luxury-gold hover:text-slate-900 transition-colors font-medium uppercase tracking-wider text-sm bg-transparent border-none cursor-pointer p-0 group">
+                            Contact Us <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                          </Link>
+                        </>
+                      );
+                    })()}
+                  </div>
+                </div>
+              ) : (
+                // Condition 2: Two or more videos (Alternating Split Layout)
+                <div className="flex flex-col gap-[72px] max-w-5xl mx-auto">
+                  {videos.map(({ img, idx }, arrIdx) => {
+                    const title = decodeURIComponent(img.split('#title=')[1]);
+                    const content = VIDEO_CONTENT_MAP[title] || {
+                      category: data.title,
+                      heading: title,
+                      description: `Experience the premium quality and smooth operation of our ${title} system in action. Discover the impeccable design and engineering that defines our installations.`,
+                      highlights: ["Premium build quality", "Effortless gliding mechanism", "Modern architectural design"],
+                      cta: "Explore Product →"
+                    };
+                    const isEven = arrIdx % 2 === 0;
+                    return (
+                      <div key={idx} className={`flex flex-col ${isEven ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-10 md:gap-16`}>
+                        {/* Video Card */}
+                        <div className="w-full max-w-[340px] shrink-0 mx-auto md:mx-0 rounded-[16px] overflow-hidden shadow-lg relative border border-slate-200 group cursor-pointer" onClick={() => setSelectedImageIndex(idx)}>
+                          <video
+                            src={img}
+                            className="w-full aspect-[9/16] object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
+                            muted loop playsInline autoPlay
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                        </div>
+                        {/* Below Video Content -> Beside Video Content */}
+                        <div className="w-full flex-1 text-center md:text-left px-4">
+                          <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-luxury-gold mb-3 inline-block">{content.category}</span>
+                          <h4 className="text-3xl font-serif text-slate-900 capitalize mb-5">{content.heading}</h4>
+                          <p className="text-slate-600 font-light leading-relaxed text-base mb-6">
+                            {content.description}
+                          </p>
+                          <ul className="text-left space-y-3 mb-8 mx-auto max-w-sm md:mx-0">
+                            {content.highlights.map((hl, i) => (
+                              <li key={i} className="flex items-center gap-3 text-slate-700"><div className="w-1.5 h-1.5 rounded-full bg-luxury-gold shrink-0" /> {hl}</li>
+                            ))}
+                          </ul>
+                          <Link to="/contact" className="inline-flex items-center gap-2 text-luxury-gold hover:text-slate-900 transition-colors font-medium uppercase tracking-wider text-sm bg-transparent border-none cursor-pointer p-0 group">
+                            Contact Us <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                          </Link>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </div>
-          </div>
-        </section>
-      )}
+          </section>
+        );
+      })()}
 
       {/* You Might Also Like */}
       {relatedProducts.length > 0 && (
@@ -538,9 +680,9 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
           <p className="text-slate-300 font-light mb-10 text-lg">
             Contact our engineering experts today to discuss how our {data.title} systems can elevate your next architectural project.
           </p>
-          <button className="bg-luxury-gold hover:bg-slate-950 text-white px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs transition-colors shadow-md border-none cursor-pointer">
+          <Link to="/contact" className="inline-block bg-luxury-gold hover:bg-slate-950 text-white px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs transition-colors shadow-md border-none cursor-pointer">
             Request a Consultation
-          </button>
+          </Link>
         </div>
       </section>
 

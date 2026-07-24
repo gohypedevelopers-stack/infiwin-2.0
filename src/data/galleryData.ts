@@ -11,18 +11,15 @@ export const galleryData: Record<string, GalleryItem> = {
     "images": [
       "/gallery/Systems/Slide%20&%20Turn/Slide & Turn.jpg.jpeg",
       "/gallery/Systems/Slide%20&%20Turn/Slide & Turn (1).jpg.jpeg",
-      "/gallery/Systems/Slide%20&%20Turn/Slide & Turn (2).jpg.png",
       "/gallery/Systems/Slide%20&%20Turn/Slide & Turn (3).jpg.jpeg",
       "/gallery/Systems/Slide%20&%20Turn/Slide & Turn (4).jpg.jpeg",
       "/gallery/Systems/Slide%20&%20Turn/Slide & Turn (5).jpg.jpeg",
       "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2014,%202026,%2001_19_27%20PM.png",
-      "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2014,%202026,%2001_20_52%20PM.png",
       "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2015,%202026,%2010_58_05%20AM.png",
       "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2015,%202026,%2010_58_12%20AM.png",
       "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2015,%202026,%2010_58_26%20AM.png",
-      "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2015,%202026,%2010_58_51%20AM.png",
-      "https://ik.imagekit.io/6tktrblyvs/doorspital/Pool.mp4#title=pool%20side%20-%20full%20length%20slide%20and%20turn",
-      "https://ik.imagekit.io/6tktrblyvs/doorspital/Terrece%20Large.mp4#title=restaurant%20-%20half%20length%20slide%20and%20turn"
+      "/gallery/video%20section/slide%20and%20turn%20-%20full%20length.mp4#title=Full-Length%20Slide%20&%20Turn",
+      "/gallery/video%20section/slide%20and%20turn%20-%20half%20length.mp4#title=Half-Length%20Slide%20&%20Turn"
     ]
   },
   "commercial": {
@@ -81,7 +78,8 @@ export const galleryData: Record<string, GalleryItem> = {
       "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_4.png",
       "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_5.png",
       "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_6.png",
-      "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_7.png"
+      "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_7.png",
+      "/gallery/video%20section/telescopic%20slider.mp4#title=Telescopic%20Slider"
     ]
   },
   "exterior": {
@@ -112,14 +110,11 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Bathroom Encloser",
     "description": "Premium frameless glass enclosures designed to elevate modern bathrooms. Features watertight performance, solid brass hardware, and custom configurations that make efficient use of space.",
     "images": [
-      "/gallery/Systems/Bathroom%20Encloser/84c12053-03ab-4416-952d-1716819d7009.jpg",
-      "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%2010,%202026,%2002_24_21%20PM%20(2).png",
-      "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%2010,%202026,%2002_24_40%20PM%20(2).png",
-
       "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%2010,%202026,%2002_56_49%20PM.png",
-      "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_06_18%20PM.png",
       "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_08_43%20PM.png",
-      "/gallery/Systems/Bathroom%20Encloser/WhatsApp%20Video%202026-07-20%20at%206.02.49%20PM.mp4#title=Bathroom%20Encloser"
+      "/gallery/Systems/Bathroom%20Encloser/bathroom%20last%20image.png",
+      "/gallery/video%20section/bathroom%20vid%201.mp4#title=90°%20Enclosure",
+      "/gallery/video%20section/bathroom%20vid%202.mp4#title=Openable%20Door"
     ]
   },
   "foldable-doors-(bi-fold)": {
@@ -148,13 +143,9 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Openable Windows & Doors",
     "description": "Premium openable swing windows and doors featuring superior acoustic insulation, complete weather proofing, and elegant modern profiles.",
     "images": [
-      "/gallery/Systems/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors.pdf.png",
-      "/gallery/Systems/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors.pdf%20(1).png",
-      "/gallery/Systems/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors.pdf%20(2).png",
+      "/gallery/Systems/Openable%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%2014,%202026,%2012_38_16%20PM.png",
       "/gallery/Systems/Openable%20Windows%20&%20Doors/Openable%20Windows%20&%20Doors.pdf%20(3).png",
-      "/gallery/Systems/Openable%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%2014,%202026,%2012_31_44%20PM.png",
-      "/gallery/Systems/Openable%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%2014,%202026,%2012_35_35%20PM.png",
-      "/gallery/Systems/Openable%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%2014,%202026,%2012_38_16%20PM.png"
+      "/gallery/Systems/Openable%20Windows%20&%20Doors/ChatGPT%20Image%20Jul%2014,%202026,%2012_31_44%20PM.png"
     ]
   },
   // "sliding-encloser": {
@@ -173,31 +164,25 @@ export const galleryData: Record<string, GalleryItem> = {
     "description": "Multi-track sliding windows and doors offering expansive views, premium hardware, and effortless gliding operation for large external openings.",
     "images": [
       "/gallery/Systems/Sliding%20Windows%20&%20Doors/2_track_slider_door_2_1783583929100.png",
-      "/gallery/Systems/Sliding%20Windows%20&%20Doors/2_track_slider_door_3_1783585468460.png",
       "/gallery/Systems/Sliding%20Windows%20&%20Doors/2_track_slider_door_4_1783585490617.png",
       "/gallery/Systems/Sliding%20Windows%20&%20Doors/2_track_slider_door_5_1783585821723.png",
       "/gallery/Systems/Sliding%20Windows%20&%20Doors/3_track_slider_door_4_1783585629355.png",
       "/gallery/Systems/Sliding%20Windows%20&%20Doors/3_track_slider_door_5_1783585650997.png",
-      "/gallery/Systems/Sliding%20Windows%20&%20Doors/3_track_slider_door_6_1783585841802.png",
-      "/gallery/Systems/Sliding%20Windows%20&%20Doors/3_track_slider_new_1783753835013.png"
+      "/gallery/Systems/Sliding%20Windows%20&%20Doors/3_track_slider_door_6_1783585841802.png"
     ]
   },
   "synchronized-systems": {
     "title": "Synchronized Systems",
-    "description": "The Synchronized Center Open System — a multi-panel sliding system for interior spaces. Quiet operation, sleek hardware, and automated-feeling movement that slides multiple panels simultaneously from the centre open.",
+    "description": "The Synchronized Center Open System — a multi-panel top hung sliding system for interior spaces. Quiet operation, sleek hardware, and single touch synchronized movement that slides multiple panels simultaneously from the center.",
     "images": [
-      "/gallery/Systems/Synchronized%20Systems/5.png",
       "/gallery/Systems/Synchronized%20Systems/6.png",
-      "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2010,%202026,%2003_20_35%20PM%20(2).png",
       "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2014,%202026,%2001_45_59%20PM.png",
-      "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2014,%202026,%2001_46_04%20PM.png",
-      "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2014,%202026,%2001_46_09%20PM.png",
-
+      "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2014,%202026,%2001_46_04%20PM.png"
     ]
   },
   "top-hang-bi-fold": {
-    "title": "Top Hang Bi Fold",
-    "description": "Top-hung bi-fold systems for internal partition dividers. Keeps flooring unobstructed without bottom guide rails while providing flexible room dividing setups.",
+    "title": "Bi Fold Systems",
+    "description": "Bi-fold systems for internal & external partitions.",
     "images": [
       "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold.jpg.jpeg",
       "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold%20(1).jpg.jpeg",
@@ -240,13 +225,12 @@ export const galleryData: Record<string, GalleryItem> = {
       "/gallery/Systems/Guillotine%20Glass%20System/ChatGPT%20Image%20Jul%206,%202026,%2011_45_40%20AM.png",
       "/gallery/Systems/Guillotine%20Glass%20System/guillotine_banner.jpg",
       "/gallery/Systems/Guillotine%20Glass%20System/ChatGPT%20Image%20Jul%206,%202026,%2011_46_52%20AM.png",
-      "/gallery/Systems/Guillotine%20Glass%20System/ChatGPT%20Image%20Jul%206,%202026,%2011_47_57%20AM.png",
       // "/gallery/Systems/Guillotine%20Glass%20System/ChatGPT%20Image%20Jul%206,%202026,%2011_49_39%20AM.png"
     ]
   },
   "fixed-partition": {
     "title": "Fixed Partition",
-    "description": "Elegant fixed glass partition systems for modern bathrooms and interiors, offering clean lines, structural stability, and minimalist aesthetics.",
+    "description": "Elegant fixed glass partition systems for modern interiors, offering clean lines, structural stability, and minimalist aesthetics.",
     "images": [
 
       "/gallery/Systems/Fixed%20Partition/ChatGPT%20Image%20Jul%2014,%202026,%2002_06_05%20PM.png",

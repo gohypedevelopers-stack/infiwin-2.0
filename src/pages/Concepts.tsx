@@ -340,16 +340,15 @@ export default function Concepts() {
       <section className="px-6 py-12 lg:py-16 bg-[#fafafa] border-t border-slate-100">
         <div className="max-w-4xl mx-auto text-center">
           <Layers className="text-luxury-gold mx-auto mb-6 w-12 h-12 opacity-80" strokeWidth={1} />
-          <h4 className="text-3xl md:text-4xl font-serif text-slate-900 mb-6">Explore Custom Visuals</h4>
-          <p className="text-slate-600 font-light mb-8 max-w-xl mx-auto leading-relaxed text-sm">
-            We work alongside elite architects and hospitality groups to create custom visual layouts.
-            Get in touch to receive technical CAD drawings and customized quote estimates for your projects.
+          <h4 className="text-3xl md:text-4xl font-serif text-slate-900 mb-6">Explore INFIWIN Products</h4>
+          <p className="text-slate-600 font-light mb-8 max-w-2xl mx-auto leading-relaxed text-sm">
+            Discover how INFIWIN's premium architectural glass systems can elevate your space. Connect with us to explore our product range and receive customized quotes.
           </p>
           <Link
             to="/contact"
             className="inline-block bg-luxury-gold hover:bg-slate-950 text-white px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs transition-colors shadow-md border-none cursor-pointer"
           >
-            Request CAD & Price Sheet
+            Contact Us
           </Link>
         </div>
       </section>

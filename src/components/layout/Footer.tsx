@@ -24,10 +24,10 @@ export const Footer = () => {
             <ul className="space-y-4 text-white/60 text-sm">
               <li><Link to="/gallery/product/slide-turn" className="hover:text-white transition-colors">Slide & Turn System</Link></li>
               <li><Link to="/gallery/product/telescopic-sliders" className="hover:text-white transition-colors">Telescopic Slider</Link></li>
-              <li><Link to="/products" className="hover:text-white transition-colors">Centre Open System</Link></li>
+              <li><Link to="/gallery/product/synchronized-systems" className="hover:text-white transition-colors">Centre Open System</Link></li>
               <li><Link to="/gallery/product/foldable-doors-(bi-fold)" className="hover:text-white transition-colors">Bi-fold Enclosures</Link></li>
-              <li><Link to="/gallery/product/sliding-windows-doors" className="hover:text-white transition-colors">2 Track Slider</Link></li>
-              <li><Link to="/gallery/product/sliding-windows-doors" className="hover:text-white transition-colors">3 Track Slider</Link></li>
+              <li><Link to="/gallery/product/sliding-windows-doors?variant=2-track" className="hover:text-white transition-colors">2 Track Slider</Link></li>
+              <li><Link to="/gallery/product/sliding-windows-doors?variant=3-track" className="hover:text-white transition-colors">3 Track Slider</Link></li>
             </ul>
           </div>
 

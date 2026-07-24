@@ -59,14 +59,14 @@ export default function Applications() {
       <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-12 lg:pt-16">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-          <img 
-            src="/gallery/Systems/Slide%20&%20Turn/Slide & Turn.jpg.jpeg" 
-            alt="Applications Background" 
+          <img
+            src="/gallery/Systems/Slide%20&%20Turn/Slide & Turn.jpg.jpeg"
+            alt="Applications Background"
             className="w-full h-full object-cover opacity-55"
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
-        
+
         <div className="relative z-10 text-center text-white px-6">
           <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Architectural Harmony</p>
           <h1 className="text-4xl md:text-7xl font-serif mb-4">Spatial Fluidity</h1>
@@ -106,7 +106,7 @@ export default function Applications() {
                     </div>
                     <div className="flex justify-between items-center px-1">
                       <h5 className="text-2xl font-serif group-hover:text-luxury-gold transition-colors">{app.title}</h5>
-                      
+
                     </div>
                   </Link>
                 </div>
@@ -121,14 +121,14 @@ export default function Applications() {
 
         {/* Floating texts */}
         <div className="absolute left-6 bottom-60 -rotate-90 origin-left transform z-10 hidden lg:block">
-           <span className="text-xs tracking-[0.4em] text-slate-500 uppercase font-bold">#reclaimyourspace</span>
+          <span className="text-xs tracking-[0.4em] text-slate-500 uppercase font-bold">#reclaimyourspace</span>
         </div>
         <div className="absolute right-6 top-40 rotate-90 origin-right transform z-10 hidden lg:block">
-           <span className="text-xs tracking-[0.2em] text-slate-500 font-light lowercase">www.infiwindow.com</span>
+          <span className="text-xs tracking-[0.2em] text-slate-500 font-light lowercase">www.infiwindow.com</span>
         </div>
 
         <div className="max-w-6xl mx-auto px-6 relative z-10">
-          
+
           <div className="text-center mb-16">
             <h3 className="text-sm font-medium text-slate-400 uppercase tracking-[0.3em] mb-4">Configurations</h3>
             <h4 className="text-5xl font-serif text-slate-900">Shapes</h4>
@@ -137,35 +137,35 @@ export default function Applications() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             {/* LEFT SIDE: Text Boxes */}
             <div className="flex flex-col order-2 lg:order-1">
-              
+
               <div className="flex flex-col space-y-6">
                 {[
-                { 
-                  label: "Design Type", 
-                  title: "Single Panel Design", 
-                  desc: "A single panel of frameless glass that slides or pivots to open, providing a sleek and modern look with unobstructed views." 
-                },
-                { 
-                  label: "Design Type", 
-                  title: "Multiple Panel Design", 
-                  desc: "This design consists of multiple panels of frameless glass that slide or fold together, providing a wider opening and more flexibility in terms of how the space can be used." 
-                },
-                { 
-                  label: "Design Type", 
-                  title: "Corner Design", 
-                  desc: "This design features frameless glass panels that meet at a corner, creating a seamless and visually striking effect. It can be a great choice for spaces that require an open and airy feel." 
-                }
-              ].map((item, idx) => (
-                <div key={idx} className="p-6 bg-white border border-slate-100 rounded-sm hover:border-luxury-gold transition-colors text-center lg:text-left">
-                  <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-3">{item.label}</p>
-                  <p className="text-xl font-serif mb-1 text-slate-900">{item.title}</p>
-                  <p className="text-xs text-slate-500 font-light">{item.desc}</p>
-                </div>
-              ))}
+                  {
+                    label: "Design Type",
+                    title: "Single Panel Design",
+                    desc: "A single panel of frameless glass that slides or pivots to open, providing a sleek and modern look with unobstructed views."
+                  },
+                  {
+                    label: "Design Type",
+                    title: "Multiple Panel Design",
+                    desc: "This design consists of multiple panels of frameless glass that slide or fold together, providing a wider opening and more flexibility in terms of how the space can be used."
+                  },
+                  {
+                    label: "Design Type",
+                    title: "Corner Design",
+                    desc: "This design features frameless glass panels that meet at a corner, creating a seamless and visually striking effect. It can be a great choice for spaces that require an open and airy feel."
+                  }
+                ].map((item, idx) => (
+                  <div key={idx} className="p-6 bg-white border border-slate-100 rounded-sm hover:border-luxury-gold transition-colors text-center lg:text-left">
+                    <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-3">{item.label}</p>
+                    <p className="text-xl font-serif mb-1 text-slate-900">{item.title}</p>
+                    <p className="text-xs text-slate-500 font-light">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* RIGHT SIDE: Diagrams */}
+            {/* RIGHT SIDE: Diagrams */}
             <div className="flex flex-col items-center justify-center w-full h-full relative order-1 lg:order-2">
               <img loading="lazy"
                 src="https://i.postimg.cc/dtstjGZ6/Chat-GPT-Image-Jul-1-2026-04-58-48-PM.png"
@@ -183,11 +183,11 @@ export default function Applications() {
       <section className="px-6 py-12 lg:py-16 bg-luxury-gold/5 border-t border-luxury-gold/10">
         <div className="max-w-4xl mx-auto text-center">
           <h4 className="text-4xl font-serif mb-8 text-slate-900">Envision INFIWIN in Your Space</h4>
-          <p className="text-slate-600 font-light mb-10 leading-relaxed text-lg">
-            From luxury residential balconies to expansive commercial storefronts, discover how our frameless systems adapt perfectly to any architectural requirement. Explore our curated gallery of real-world applications.
+          <p className="text-slate-600 font-light mb-10 leading-relaxed text-lg max-w-3xl mx-auto">
+            Discover how our frameless systems adapt perfectly to any architectural requirement, from luxury residential balconies to expansive commercial storefronts.
           </p>
-          <Link to="/gallery/application/balcony" className="bg-black text-white px-8 py-3 rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-luxury-gold transition-colors shadow-lg inline-flex items-center gap-3 mx-auto">
-            <span>Explore Application Gallery</span>
+          <Link to="/contact" className="bg-black text-white px-8 py-3 rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-luxury-gold transition-colors shadow-lg inline-flex items-center gap-3 mx-auto">
+            <span>Contact Us</span>
           </Link>
         </div>
       </section>

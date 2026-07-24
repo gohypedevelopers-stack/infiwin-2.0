@@ -1,4 +1,4 @@
-import { Eye, CloudRain, Lock, ChevronLeft, ChevronRight } from "lucide-react";
+import { Eye, CloudRain, Lock, ChevronLeft, ChevronRight, Wind, CloudFog, Bird } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -13,13 +13,13 @@ export const BenefitsSection = () => {
     },
     {
       icon: <CloudRain className="text-luxury-gold w-[18px] h-[18px]" />,
-      title: "100%  Weather Shield Protection",
+      title: "Protection Against weather",
       description: "Blocks dust, windstorms, flying debris, and intense monsoon rains. Fully customized rubber profiles keep balconies immaculate through extreme climates.",
     },
     {
       icon: <Lock className="text-luxury-gold w-[18px] h-[18px]" />,
-      title: "Noise Dampening Isolation",
-      description: "Attenuate high-decibel street noises by up to 15DB to 20DB . Convert chaotic urban balconies into tranquil spaces suited for deep focus and reading",
+      title: "Full Opening",
+      description: "Effortlessly slide and stack all glass panels to one side to create a 100% clear, unobstructed opening. This seamless transition maximizes natural ventilation, frees up floor space, and beautifully merges your indoor and outdoor living areas.",
     },
   ];
 
@@ -129,6 +129,32 @@ export const BenefitsSection = () => {
             ))}
           </div>
         </div>
+
+        {/* Protection Against Section */}
+        <div className="hidden mt-20 border-t border-slate-100 pt-16">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl font-serif text-slate-900">Protection Against</h3>
+          </div>
+          <div className="flex flex-wrap justify-center gap-12 sm:gap-24">
+            <div className="flex flex-col items-center gap-3">
+              <CloudFog className="w-8 h-8 text-luxury-gold" />
+              <span className="text-slate-800 font-medium">Dust</span>
+            </div>
+            <div className="flex flex-col items-center gap-3">
+              <Wind className="w-8 h-8 text-luxury-gold" />
+              <span className="text-slate-800 font-medium">Wind</span>
+            </div>
+            <div className="flex flex-col items-center gap-3">
+              <CloudRain className="w-8 h-8 text-luxury-gold" />
+              <span className="text-slate-800 font-medium">Rain</span>
+            </div>
+            <div className="flex flex-col items-center gap-3">
+              <Bird className="w-8 h-8 text-luxury-gold" />
+              <span className="text-slate-800 font-medium">Birds</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

@@ -20,7 +20,7 @@ const badges = [
 ];
 
 export const FrameColorSection = () => {
-  const [selectedColor, setSelectedColor] = useState(frameColors[0]);
+  const [selectedColor, setSelectedColor] = useState(frameColors[1]);
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 1024);
   const touchStartX = useRef<number | null>(null);
 

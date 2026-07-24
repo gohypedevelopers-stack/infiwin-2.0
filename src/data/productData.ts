@@ -13,7 +13,7 @@ export const productsList = [
   { title: "Guillotine Glass System", category: "Balcony System", img: galleryData["guillotine-glass-system"]?.images[0] || "/guillotine_banner.jpg" },
   { title: "Telescopic Sliders", category: "Internal Partition", img: getProductImg("Telescopic Sliders", "/telescopic_banner.jpg") },
   { title: "Synchronized Systems", category: "Internal Partition", img: getProductImg("Synchronized Systems", "/synchronized_banner.jpg") },
-  { title: "Top Hang Bi Fold", category: "Internal Partition", img: getProductImg("Top Hang Bi Fold", "/tophang_banner.jpg") },
+  { title: "Bifold System", category: "Internal Partition", img: getProductImg("top-hang-bi-fold", "/tophang_banner.jpg") },
   { title: "Sliding Windows & Doors", category: "Doors & Windows", img: getProductImg("Sliding Windows & Doors", "/sliding_windows_banner.jpg") },
   { title: "Openable Windows & Doors", category: "Doors & Windows", img: getProductImg("Openable Windows & Doors", "/openable_banner.jpg") },
   { title: "Bathroom Encloser", category: "Bathroom", img: getProductImg("Bathroom Encloser", "/ninety_degree_banner.jpg") },

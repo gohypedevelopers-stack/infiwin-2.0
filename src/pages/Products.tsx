@@ -38,7 +38,7 @@ export default function Products() {
       <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-12 lg:pt-16 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-          <img 
+          <img
             src="/gallery/Systems/Slide%20&%20Turn/Slide & Turn (1).jpg.jpeg"
             alt="Products Background"
             className="w-full h-full object-cover opacity-55"
@@ -97,7 +97,7 @@ export default function Products() {
                   </div>
                   <div className="flex justify-between items-center mt-6">
                     <h5 className="text-2xl font-serif group-hover:text-luxury-gold transition-colors">{p.title}</h5>
-                    
+
                   </div>
                 </Link>
               </div>
@@ -169,9 +169,9 @@ export default function Products() {
           <p className="text-slate-600 font-light mb-10 leading-relaxed">
             Our consultants are ready to provide a detailed technical assessment and quote for your project.
           </p>
-          <button className="bg-black hover:bg-slate-800 text-white px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs transition-colors shadow-md border-none cursor-pointer">
+          <Link to="/contact" className="inline-block bg-black hover:bg-slate-800 text-white px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs transition-colors shadow-md border-none cursor-pointer">
             Request a Technical Quote
-          </button>
+          </Link>
         </div>
       </section>
     </div>
