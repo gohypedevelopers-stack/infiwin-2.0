@@ -116,7 +116,7 @@ export const HeroSection = () => {
           >
             {/* Small decorative circle */}
             <div className="w-1.5 h-1.5 rounded-full border border-luxury-gold animate-pulse"></div>
-            <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-luxury-gold font-medium">
+            <span className="text-xs uppercase tracking-[0.3em] text-luxury-gold font-medium">
               Frameless Glazing Redefined
             </span>
           </motion.div>
@@ -124,16 +124,16 @@ export const HeroSection = () => {
           {/* Primary Foundational Heading */}
           <motion.h1
             variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } } }}
-            className="text-xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight mb-4 md:mb-6 drop-shadow-2xl flex flex-col items-center lg:items-start"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight mb-4 md:mb-6 drop-shadow-2xl flex flex-col items-center lg:items-start text-center lg:text-left"
           >
-            <span className="uppercase tracking-widest mb-1 font-light whitespace-nowrap text-[17px] sm:text-4xl lg:text-5xl xl:text-6xl">Breathtaking Views,</span>
-            <span className="text-luxury-gold italic font-normal tracking-wide whitespace-nowrap text-lg sm:text-4xl lg:text-5xl xl:text-6xl">Uncompromised Protection</span>
+            <span className="uppercase tracking-widest mb-1 font-light whitespace-nowrap text-2xl sm:text-4xl lg:text-5xl xl:text-6xl">Breathtaking Views,</span>
+            <span className="text-luxury-gold italic font-normal tracking-wide whitespace-nowrap text-2xl sm:text-4xl lg:text-5xl xl:text-6xl">Uncompromised Protection</span>
           </motion.h1>
 
           {/* Description Paragraph */}
           <motion.p
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
-            className="text-slate-200 font-light drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] text-[11px] sm:text-sm md:text-base max-w-2xl leading-relaxed mb-6 md:mb-8 px-4 sm:px-0"
+            className="text-slate-200 font-light drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] text-[14px] sm:text-sm md:text-base max-w-2xl leading-relaxed mb-6 md:mb-8 px-4 sm:px-0"
           >
             Premier Slide & Turn frameless glass balcony enclosures.<br className="hidden sm:block" /> Extend your home space with architectural glass walls.
           </motion.p>
@@ -145,14 +145,14 @@ export const HeroSection = () => {
           >
             <Link
               to="/#estimator"
-              className="bg-luxury-gold hover:bg-white hover:text-slate-900 text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg transition-all duration-300 shadow-md font-medium text-[10px] sm:text-xs uppercase tracking-wider flex items-center gap-2 sm:gap-3 w-[220px] sm:w-auto justify-center"
+              className="bg-luxury-gold hover:bg-white hover:text-slate-900 text-white px-4 py-3 sm:px-5 sm:py-2.5 rounded-lg transition-all duration-300 shadow-md font-medium text-xs sm:text-xs uppercase tracking-wider flex items-center gap-2 sm:gap-3 w-[260px] sm:w-auto justify-center"
             >
-              <Calculator size={12} className="sm:w-3.5 sm:h-3.5" />
+              <Calculator size={16} className="sm:w-3.5 sm:h-3.5" />
               Calculate Cost Instantly
             </Link>
             <Link
               to="/products"
-              className="bg-transparent border border-white/30 hover:border-white hover:bg-white/10 text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-lg transition-all duration-300 font-medium text-[10px] sm:text-xs uppercase tracking-wider flex items-center gap-2 group w-[220px] sm:w-auto justify-center"
+              className="bg-transparent border border-white/30 hover:border-white hover:bg-white/10 text-white px-4 py-3 sm:px-5 sm:py-2.5 rounded-lg transition-all duration-300 font-medium text-xs sm:text-xs uppercase tracking-wider flex items-center gap-2 group w-[260px] sm:w-auto justify-center"
             >
               Explore Products
 
@@ -221,7 +221,7 @@ export const HeroSection = () => {
         <motion.div
           animate={{ x: ["0%", "-50%"] }}
           transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
-          className="flex whitespace-nowrap shrink-0 text-[10px] sm:text-xs"
+          className="flex whitespace-nowrap shrink-0 text-xs sm:text-xs"
         >
           {[...Array(20)].map((_, i) => (
             <span key={i} className="mx-8 text-white font-bold tracking-wider">
