@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { 
   Target, 
   Shield,
@@ -78,65 +79,89 @@ export default function About() {
       </section>
 
       {/* A Decade of Excellence Section */}
-      <section className="py-12 lg:py-16 px-6 bg-slate-50 text-slate-900 overflow-hidden">
+      <section className="py-16 lg:py-24 px-6 bg-slate-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 relative z-10">
-            <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Milestones of growth</p>
-            <h2 className="text-4xl md:text-6xl font-serif text-slate-900 mb-6">Journey</h2>
-            <p className="text-slate-600 font-light leading-relaxed max-w-3xl mx-auto text-lg">
-              Our journey from architectural hardware suppliers to pioneers of automated luxury frameless glazing solutions in India.
-            </p>
+          <div className="text-center mb-24 relative z-10">
+            <motion.p 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-[10px] md:text-xs font-bold text-luxury-gold uppercase tracking-[0.3em] mb-4"
+            >
+              Milestones of Growth
+            </motion.p>
+            <motion.h2 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-4xl md:text-6xl font-serif text-slate-900 mb-6"
+            >
+              Our Journey
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-slate-600 font-light leading-relaxed max-w-2xl mx-auto text-lg"
+            >
+              From architectural hardware suppliers to pioneers of automated luxury frameless glazing solutions in India.
+            </motion.p>
           </div>
           
-          <div ref={timelineRef} className="max-w-5xl mx-auto relative">
-            {/* Vertical Line Inactive */}
-            <div className="absolute left-[2rem] md:left-1/2 top-0 bottom-0 w-[1px] bg-luxury-gold/20 md:-translate-x-1/2"></div>
-            {/* Vertical Line Active */}
+          <div ref={timelineRef} className="max-w-5xl mx-auto relative pb-10">
+            {/* Vertical Line Background */}
+            <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-luxury-gold/30 to-transparent md:-translate-x-1/2"></div>
+            
+            {/* Active Line (Animated) */}
             <motion.div 
-              className="absolute left-[2rem] md:left-1/2 top-0 bottom-0 w-[2px] bg-luxury-gold md:-translate-x-1/2 origin-top shadow-[0_0_15px_rgba(212,175,55,0.8)] z-10"
+              className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-[2px] bg-luxury-gold md:-translate-x-1/2 origin-top shadow-[0_0_15px_rgba(212,175,55,0.6)] z-10"
               style={{ scaleY: scrollYProgress }}
             ></motion.div>
             
-            <div className="space-y-32 md:space-y-0">
+            <div className="space-y-12 md:space-y-24 relative z-20">
               {milestones.map((m, i) => {
                 const isEven = i % 2 === 0;
                 return (
                   <motion.div 
-                    key={i}
+                    key={i} 
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: false, margin: "2000px 0px -40% 0px" }}
-                    className={`relative flex items-center ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} flex-row md:h-[400px]`}
+                    viewport={{ once: false, margin: "0px 0px -50% 0px" }}
+                    className={`relative flex flex-col md:flex-row items-center ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                   >
+                    
                     {/* Timeline Dot */}
                     <motion.div 
                       variants={{
-                        hidden: { backgroundColor: "#e2e8f0", boxShadow: "0px 0px 0px rgba(212,175,55,0)" },
-                        visible: { backgroundColor: "#d4af37", boxShadow: "0px 0px 20px rgba(212,175,55,0.6)", transition: { duration: 0.4 } }
+                        hidden: { backgroundColor: "#f8fafc", scale: 1 }, // slate-50
+                        visible: { backgroundColor: "#c5a059", scale: 1.1, transition: { duration: 0.4 } } // luxury-gold
                       }}
-                      className="absolute left-[2rem] md:left-1/2 w-4 h-4 rounded-full -translate-x-1/2 z-20 outline outline-4 outline-slate-50"
-                    >
-                    </motion.div>
-
-                    {/* Content Half */}
-                    <div className={`w-full md:w-1/2 flex flex-col justify-center pl-12 md:pl-0 ${isEven ? 'md:pr-24 md:items-end md:text-right' : 'md:pl-24 md:items-start md:text-left'} relative`}>
-                      <motion.div 
-                        variants={{
-                          hidden: { opacity: 0, y: 30 },
-                          visible: { opacity: 1, y: 0, transition: { duration: 0.7, delay: 0.2 } }
-                        }}
-                        className="relative z-10"
-                      >
-                        <div className={`flex items-center gap-4 mb-4 ${isEven ? 'md:justify-end' : 'md:justify-start'}`}>
-                          <span className="text-luxury-gold text-lg font-bold tracking-widest">{m.year}</span>
-                          <span className="hidden md:block w-12 h-[1px] bg-luxury-gold/50"></span>
-                        </div>
-                        <h3 className="text-2xl md:text-4xl font-serif text-slate-900 mb-6">{m.title}</h3>
-                        <p className="text-slate-500 font-light leading-relaxed text-sm md:text-base max-w-md">{m.desc}</p>
-                      </motion.div>
-                    </div>
+                      className="absolute left-[28px] md:left-1/2 w-4 h-4 rounded-full border-[3px] border-luxury-gold -translate-x-1/2 shadow-[0_0_10px_rgba(197,160,89,0.5)] z-30"
+                    ></motion.div>
                     
-                    {/* Empty Half */}
+                    {/* Content Card */}
+                    <motion.div 
+                      variants={{
+                        hidden: { opacity: 0, x: isEven ? -40 : 40, y: 10 },
+                        visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.6, delay: 0.3, ease: "easeOut" } }
+                      }}
+                      className={`w-full md:w-1/2 flex flex-col pl-20 md:pl-0 ${isEven ? 'md:pr-16 md:items-end md:text-right' : 'md:pl-16 md:items-start md:text-left'}`}
+                    >
+                      <div className="bg-white p-6 md:p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:border-luxury-gold/30 transition-colors w-full group relative overflow-hidden text-left md:text-inherit">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-luxury-gold/5 rounded-bl-full -mr-10 -mt-10 transition-transform duration-500 group-hover:scale-110"></div>
+                        
+                        <div className={`flex items-center gap-4 mb-4 ${isEven ? 'md:justify-end' : 'md:justify-start'}`}>
+                          <span className="text-luxury-gold text-xl md:text-2xl font-bold font-serif">{m.year}</span>
+                          <span className="w-8 md:w-12 h-[1px] bg-luxury-gold/50"></span>
+                        </div>
+                        <h3 className="text-xl md:text-2xl font-serif text-slate-900 mb-3">{m.title}</h3>
+                        <p className="text-slate-500 font-light leading-relaxed text-sm md:text-base">{m.desc}</p>
+                      </div>
+                    </motion.div>
+                    
+                    {/* Empty Space for layout */}
                     <div className="hidden md:block w-1/2"></div>
                   </motion.div>
                 )
@@ -217,24 +242,15 @@ export default function About() {
 
       {/* Engineering the Future Section */}
       <section className="py-12 lg:py-16 px-6 bg-slate-900 text-white relative rounded-t-[3rem] overflow-hidden">
-        {/* Background Overlay or Image */}
-        <div className="absolute inset-0 z-0 opacity-20">
-          <img loading="lazy" 
-            src="/gallery/about-office.webp" 
-            alt="Office Glass" 
-            className="w-full h-full object-cover"
-          />
-        </div>
-        
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-6">Let's Connect</p>
           <h2 className="text-4xl md:text-6xl font-serif mb-8 leading-tight">Ready to Transform Your Space?</h2>
           <p className="text-white/70 font-light text-lg md:text-xl leading-relaxed mb-12 max-w-3xl mx-auto">
             Our experts are ready to assist you in designing the perfect frameless glass solution.
           </p>
-          <button className="bg-luxury-gold text-white px-8 py-3 rounded-lg font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-black transition-colors shadow-lg shadow-black/10">
+          <Link to="/contact" className="inline-block bg-luxury-gold text-white px-8 py-3 rounded-lg font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-black transition-colors shadow-lg shadow-black/10">
             Consult With Our Experts
-          </button>
+          </Link>
         </div>
       </section>
     </div>
