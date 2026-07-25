@@ -50,7 +50,7 @@ export default function Products() {
           <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Structural Excellence</p>
           <h1 className="text-4xl md:text-7xl font-serif mb-4">Precision Engineered</h1>
           <p className="mt-8 text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Experience the pinnacle of precision-engineered glass systems. Our collection defines the boundaries of transparency and structural innovation.
+            Experience our precision-engineered glass structures.
           </p>
         </div>
       </section>

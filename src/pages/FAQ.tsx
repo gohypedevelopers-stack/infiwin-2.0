@@ -147,7 +147,7 @@ export default function FAQ() {
           <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Expertise, Defined</p>
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif mb-4 whitespace-nowrap">Spatial Knowledge</h1>
           <p className="mt-4 text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed mb-6">
-            Explore our comprehensive guide to architectural glass systems, structural integrity, and premium installation standards.
+            Explore our guide to premium architectural glass systems.
           </p>
         </div>
       </section>

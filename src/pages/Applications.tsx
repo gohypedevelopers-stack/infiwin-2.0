@@ -71,7 +71,7 @@ export default function Applications() {
           <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Architectural Harmony</p>
           <h1 className="text-4xl md:text-7xl font-serif mb-4">Spatial Fluidity</h1>
           <p className="mt-8 text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Explore how INFIWIN systems integrate into diverse environments, creating seamless transitions between nature and architecture.
+            Explore how our glass systems integrate into any space.
           </p>
         </div>
       </section>

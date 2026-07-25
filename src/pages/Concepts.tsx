@@ -214,7 +214,7 @@ export default function Concepts() {
             Animated Architectural Concepts
           </h1>
           <p className="mt-8 text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Witness our high-end glass systems come to life. Discover how our luxury glazing merges structural boundaries, custom-fit for world-class design planners.
+            Witness our high-end architectural systems come to life.
           </p>
         </div>
       </section>

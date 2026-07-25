@@ -438,13 +438,11 @@ export default function Contact() {
           <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">
             Get In Touch
           </p>
-          <h1 className="text-5xl md:text-7xl font-serif mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-serif mb-3 leading-tight">
             Start Your Project
           </h1>
-          <div className="w-16 h-px bg-luxury-gold/60 mx-auto mb-6" />
           <p className="text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Reach out to our architectural specialists to discuss requirements and receive a
-            comprehensive proposal.
+            Reach out to our specialists to discuss your project.
           </p>
         </div>
       </section>

@@ -158,6 +158,8 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
       if (element) {
         setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth' });
+          // Remove hash from URL so that back navigation doesn't trigger scroll again
+          window.history.replaceState(null, '', window.location.pathname + window.location.search);
         }, 100);
       }
     } else {
@@ -389,7 +391,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                 className="bg-luxury-gold hover:bg-slate-950 text-white px-5 py-2.5 rounded-lg font-medium uppercase tracking-wider text-xs transition-colors shadow flex items-center gap-2 cursor-pointer border-none self-center sm:self-auto"
               >
                 <Eye size={14} />
-                View All Images
+                View Images
               </button>
             )}
           </div>
@@ -525,7 +527,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
         const videos = data.images
           .map((img, idx) => ({ img, idx }))
           .filter(({ img }) => img.split('#')[0].split('?')[0].toLowerCase().endsWith('.mp4') && img.includes('#title='));
-          
+
         if (videos.length === 0) return null;
 
         return (
@@ -540,7 +542,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                   </p>
                 )}
               </div>
-              
+
               {videos.length === 1 ? (
                 // Condition 1: Only one video (Split Layout)
                 <div className="flex flex-col md:flex-row items-center gap-12 max-w-4xl mx-auto">
@@ -705,9 +707,9 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
 
             <button
               onClick={handlePrev}
-              className="absolute left-4 md:left-10 text-white/70 hover:text-white transition-colors p-2 bg-black/50 rounded-full hover:bg-black/80"
+              className="absolute left-4 md:left-10 text-white/70 hover:text-white transition-colors p-2 md:p-3 bg-black/50 rounded-full hover:bg-black/80"
             >
-              <ChevronLeft size={40} />
+              <ChevronLeft className="w-6 h-6 md:w-10 md:h-10" />
             </button>
 
             {data.images[selectedImageIndex].split('#')[0].split('?')[0].toLowerCase().endsWith('.mp4') ? (
@@ -738,9 +740,9 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
 
             <button
               onClick={handleNext}
-              className="absolute right-4 md:right-10 text-white/70 hover:text-white transition-colors p-2 bg-black/50 rounded-full hover:bg-black/80"
+              className="absolute right-4 md:right-10 text-white/70 hover:text-white transition-colors p-2 md:p-3 bg-black/50 rounded-full hover:bg-black/80"
             >
-              <ChevronRight size={40} />
+              <ChevronRight className="w-6 h-6 md:w-10 md:h-10" />
             </button>
           </motion.div>
         )}

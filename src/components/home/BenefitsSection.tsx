@@ -74,7 +74,7 @@ export const BenefitsSection = () => {
 
         {/* Mobile & Tablet View - Carousel */}
         <div className="lg:hidden flex flex-col items-center w-full max-w-md mx-auto">
-          <div className="relative w-full overflow-hidden bg-slate-50 border border-slate-100 px-14 py-8 sm:px-16 sm:py-10 min-h-[280px] flex flex-col justify-between">
+          <div className="relative w-full overflow-hidden bg-slate-50 border border-slate-100 px-12 py-6 sm:px-16 sm:py-10 min-h-[210px] sm:min-h-[280px] flex flex-col justify-between">
 
             {/* Left navigation arrow */}
             <button
@@ -98,7 +98,7 @@ export const BenefitsSection = () => {
                   <div className="bg-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm shrink-0">
                     {benefits[activeIdx].icon}
                   </div>
-                  <h3 className="text-sm font-semibold text-slate-900 leading-snug">{benefits[activeIdx].title}</h3>
+                  <h3 className="text-[12px] sm:text-sm font-semibold text-slate-900 leading-snug whitespace-nowrap overflow-hidden text-ellipsis">{benefits[activeIdx].title}</h3>
                 </div>
                 <p className="text-slate-500 font-light text-xs sm:text-sm leading-relaxed pl-1">
                   {benefits[activeIdx].description}
