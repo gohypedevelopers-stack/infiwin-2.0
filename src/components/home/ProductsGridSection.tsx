@@ -143,16 +143,16 @@ export const ProductsGridSection = () => {
                 </div>
                 
                 {/* Content Container */}
-                <div className="p-8 flex flex-col flex-grow text-center md:text-left">
+                <div className="p-8 pb-4 flex flex-col flex-grow text-center md:text-left">
                   <p className="text-luxury-gold text-[10px] uppercase tracking-[0.2em] font-bold mb-2">{product.subtitle}</p>
                   <h3 className="text-xl font-medium text-slate-900 mb-4">{product.title}</h3>
                   
                   {/* 1-line benefit */}
-                  <p className="text-slate-500 font-light text-sm line-clamp-2 flex-grow mb-8">
+                  <p className="text-slate-500 font-light text-sm line-clamp-2 flex-grow mb-4">
                     {product.description}
                   </p>
                   
-                  <div className="flex items-center justify-between border-t border-slate-100 pt-6 mt-auto">
+                  <div className="flex items-center justify-between border-t border-slate-100 pt-4 mt-auto">
                     <Link 
                       to={
                         product.id === "slide-turn"
@@ -165,7 +165,7 @@ export const ProductsGridSection = () => {
                       onClick={(e) => e.stopPropagation()}
                       className="text-xs font-semibold uppercase tracking-wider text-slate-600 flex items-center gap-1 hover:text-luxury-gold transition-colors cursor-pointer"
                     >
-                      Variants
+                      View Variants
                     </Link>
                     <Link 
                       to="/#estimator" 

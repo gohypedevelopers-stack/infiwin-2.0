@@ -54,9 +54,8 @@ export const Footer = () => {
         <div className="flex flex-row flex-wrap justify-between items-center border-t border-white/5 pt-10 gap-y-4 text-[9px] uppercase tracking-widest text-white/30 font-medium">
           <p>© 2026 Infiwin Glazing Inc. All rights reserved.</p>
           <div className="flex gap-4">
-            <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="#" className="hover:text-white transition-colors">Terms of Service</Link>
-            <Link to="#" className="hover:text-white transition-colors">Cookie Policy</Link>
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
           </div>
         </div>
       </div>

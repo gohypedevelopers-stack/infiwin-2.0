@@ -20,6 +20,8 @@ import Concepts from "./pages/Concepts";
 import Facade from "./pages/concepts/Facade";
 import Restaurant from "./pages/concepts/Restaurant";
 import PoolSideBar from "./pages/concepts/PoolSideBar";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
 
 // Scroll to top or hash on route change
 function ScrollToTop() {
@@ -76,6 +78,8 @@ export default function App() {
             <Route path="/gallery/product/:id" element={<GalleryDetail type="product" />} />
             <Route path="/gallery/application/:id" element={<GalleryDetail type="application" />} />
             <Route path="/gallery/:id" element={<GalleryDetail />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           </Routes>
         </main>
         <Footer />
