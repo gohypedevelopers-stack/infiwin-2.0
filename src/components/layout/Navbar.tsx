@@ -45,7 +45,7 @@ export const Navbar = () => {
   const navBackground = isScrolled || !isHome ? "bg-white shadow-lg" : "bg-transparent";
   const textColor = isScrolled || !isHome ? "text-black md:hover:text-black/70 font-bold" : "text-white/90 md:hover:text-white";
   const logoColor = isScrolled || !isHome ? "text-black" : "text-white";
-  const buttonClass = isScrolled || !isHome ? "bg-black text-white md:hover:bg-luxury-gold shadow-md" : "bg-white text-black md:hover:bg-slate-200 shadow-md";
+  const buttonClass = isScrolled || !isHome ? "bg-luxury-gold text-white md:hover:bg-black shadow-md" : "bg-white text-black md:hover:bg-slate-200 shadow-md";
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 pointer-events-none">
@@ -68,7 +68,7 @@ export const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className={`transition-colors uppercase tracking-[0.2em] text-[10px] ${textColor}`}
+                className={`transition-colors uppercase tracking-[0.2em] text-[11px] ${textColor}`}
               >
                 {link.name}
               </Link>
@@ -78,7 +78,7 @@ export const Navbar = () => {
           <div className="flex justify-end items-center gap-8">
             <Link
               to="/contact"
-              className={`hidden md:flex items-center justify-center px-8 py-3.5 rounded-lg uppercase tracking-wider text-[10px] font-medium transition-all duration-300 ${buttonClass}`}
+              className={`hidden md:flex items-center justify-center px-8 py-3.5 rounded-lg uppercase tracking-wider text-[11px] font-medium transition-all duration-300 ${buttonClass}`}
             >
               REQUEST QUOTE
             </Link>
@@ -120,7 +120,7 @@ export const Navbar = () => {
                 <div className="flex flex-col gap-3 mt-2 pt-4 border-t border-slate-100">
                   <Link
                     to="/contact"
-                    className="bg-black text-white px-5 h-11 rounded-lg uppercase tracking-widest text-xs font-bold w-full flex items-center justify-center"
+                    className="bg-luxury-gold text-white px-5 h-11 rounded-lg uppercase tracking-widest text-xs font-bold w-full flex items-center justify-center"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Request Design Quote
