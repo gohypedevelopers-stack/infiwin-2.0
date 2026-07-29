@@ -28,7 +28,7 @@ export const BestSellerSection = () => {
             </p>
 
             {/* Mobile Visual Presentation */}
-            <div className="lg:hidden relative h-[400px] sm:h-[500px] w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-800 mb-10 order-4">
+            <div className="lg:hidden relative h-[400px] sm:h-[500px] w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border border-black/5 bg-[#f5f5f5] mb-10 order-4">
               <div
                 className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "full" ? 'opacity-100' : 'opacity-0'}`}
                 style={{ backgroundImage: "url('/gallery/best seller/full-length.webp')" }}
@@ -41,7 +41,7 @@ export const BestSellerSection = () => {
             </div>
 
             {/* Interactive Variant UI */}
-            <div className="bg-white/5 border border-white/10 p-6 rounded-lg mb-10 w-full lg:w-auto order-5">
+            <div className="bg-white/5 border border-white/10 p-6 rounded-lg mb-10 w-full max-w-[460px] order-5">
               <p className="text-sm font-medium mb-4 text-white/90">Interactive Variant Check:</p>
               <div className="flex flex-row gap-2 sm:gap-3">
                 <button
@@ -63,7 +63,7 @@ export const BestSellerSection = () => {
                   Half Length Option
                 </button>
               </div>
-              <div className="mt-4 text-white/60 text-sm font-light">
+              <div className="mt-4 text-white/60 text-sm font-light min-h-[60px] sm:min-h-[40px]">
                 {activeVariant === "full"
                   ? "From floor to ceiling coverage structure providing maximum visual span."
                   : (
@@ -95,7 +95,7 @@ export const BestSellerSection = () => {
           </div>
 
           {/* Visual Presentation */}
-          <div className="hidden lg:block relative h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-slate-800">
+          <div className="hidden lg:block relative h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl border border-black/5 bg-[#f5f5f5]">
             <div
               className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "full" ? 'opacity-100' : 'opacity-0'}`}
               style={{ backgroundImage: "url('/gallery/best seller/full-length.webp')" }}

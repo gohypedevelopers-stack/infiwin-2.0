@@ -4,8 +4,8 @@ import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 
 const frameColors = [
-  { id: "white", name: "White", hex: "#e8e9e4", img: "/frame/white.webp", desc: "A clean, bright finish that pairs effortlessly with modern and minimalist interiors." },
   { id: "black", name: "Black", hex: "#18181a", img: "/frame/black.webp", desc: "A timeless, bold look that provides striking contrast and modern sophistication." },
+  { id: "white", name: "White", hex: "#e8e9e4", img: "/frame/white.webp", desc: "A clean, bright finish that pairs effortlessly with modern and minimalist interiors." },
   { id: "anodic-brown", name: "Anodic Brown", hex: "#463a35", img: "/frame/anadic%20brown.webp", desc: "A rich, dark earthy tone offering a subtle architectural elegance." },
   { id: "soft-silver", name: "Soft Silver", hex: "#b6b6b5", img: "/frame/soft%20silver.webp", desc: "A sleek metallic finish providing a contemporary, high-end feel." },
   { id: "sucho-grey", name: "Sucho Grey", hex: "#374140", img: "/frame/sucho%20grey.webp", desc: "A versatile slate tone that bridges the gap between bold darks and lighter neutrals." },
@@ -20,7 +20,7 @@ const badges = [
 ];
 
 export const FrameColorSection = () => {
-  const [selectedColor, setSelectedColor] = useState(frameColors[1]);
+  const [selectedColor, setSelectedColor] = useState(frameColors[0]);
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 1024);
   const touchStartX = useRef<number | null>(null);
 
