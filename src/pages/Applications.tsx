@@ -168,7 +168,7 @@ export default function Applications() {
             {/* RIGHT SIDE: Diagrams */}
             <div className="flex flex-col items-center justify-center w-full h-full relative order-1 lg:order-2">
               <img loading="lazy"
-                src="https://i.postimg.cc/dtstjGZ6/Chat-GPT-Image-Jul-1-2026-04-58-48-PM.png"
+                src="/shapes.webp"
                 alt="System Configuration Diagrams"
                 className="w-full h-auto object-contain max-w-2xl"
                 referrerPolicy="no-referrer"

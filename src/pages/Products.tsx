@@ -146,7 +146,7 @@ export default function Products() {
 
             <div className="relative w-full h-full min-h-[400px] lg:min-h-0 rounded-sm overflow-hidden shadow-2xl mt-0 lg:mt-9 order-1 lg:order-2">
               <img loading="lazy"
-                src="https://i.postimg.cc/HkDbBZHF/Chat-GPT-Image-Jul-1-2026-04-27-26-PM.png"
+                src="/engineering-specs.webp"
                 alt="Engineering Specifications"
                 className="absolute inset-0 w-full h-full object-cover"
                 referrerPolicy="no-referrer"
