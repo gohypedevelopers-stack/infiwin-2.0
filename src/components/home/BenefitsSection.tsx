@@ -131,27 +131,23 @@ export const BenefitsSection = () => {
         </div>
 
         {/* Protection Against Section */}
-        <div className="hidden mt-20 border-t border-slate-100 pt-16">
-          <div className="text-center mb-10">
-            <h3 className="text-2xl font-serif text-slate-900">Protection Against</h3>
+        <div className="mt-24 border-t border-slate-100 pt-16">
+          <div className="text-center mb-12">
+            <p className="text-luxury-gold text-[10px] uppercase tracking-[0.3em] font-bold mb-4">Ultimate Shield</p>
+            <h3 className="text-3xl md:text-4xl font-serif text-slate-900 mb-6">Complete Protection Against</h3>
           </div>
-          <div className="flex flex-wrap justify-center gap-12 sm:gap-24">
-            <div className="flex flex-col items-center gap-3">
-              <CloudFog className="w-8 h-8 text-luxury-gold" />
-              <span className="text-slate-800 font-medium">Dust</span>
-            </div>
-            <div className="flex flex-col items-center gap-3">
-              <Wind className="w-8 h-8 text-luxury-gold" />
-              <span className="text-slate-800 font-medium">Wind</span>
-            </div>
-            <div className="flex flex-col items-center gap-3">
-              <CloudRain className="w-8 h-8 text-luxury-gold" />
-              <span className="text-slate-800 font-medium">Rain</span>
-            </div>
-            <div className="flex flex-col items-center gap-3">
-              <Bird className="w-8 h-8 text-luxury-gold" />
-              <span className="text-slate-800 font-medium">Birds</span>
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {[
+              { icon: <CloudFog className="w-8 h-8 text-luxury-gold mb-4 group-hover:scale-110 transition-transform duration-300" />, label: "Dust" },
+              { icon: <Wind className="w-8 h-8 text-luxury-gold mb-4 group-hover:scale-110 transition-transform duration-300" />, label: "Wind" },
+              { icon: <CloudRain className="w-8 h-8 text-luxury-gold mb-4 group-hover:scale-110 transition-transform duration-300" />, label: "Rain" },
+              { icon: <Bird className="w-8 h-8 text-luxury-gold mb-4 group-hover:scale-110 transition-transform duration-300" />, label: "Birds" },
+            ].map((item, idx) => (
+              <div key={idx} className="bg-slate-50 border border-slate-100 rounded-2xl p-8 flex flex-col items-center justify-center text-center hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-default">
+                {item.icon}
+                <span className="text-slate-800 font-semibold tracking-wide">{item.label}</span>
+              </div>
+            ))}
           </div>
         </div>
 
