@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 export const FAQSection = () => {
   const faqs = [
     {
-      question: "What is the standard base price for installation of Slide & Turn glass?",
-      answer: "Our baseline starting price for premium architectural systems is approximately ₹1,800/sq.ft. This calculation incorporates elite double-tempered structural safety glass, premium heavy-gauge aluminum support rails, customized weatherproof locking rubber seals, and baseline engineering fitting charges. Freight and government taxes are determined additionally based on shipping distance."
+      question: "What is the standard base price for installation of Slide & Turn® glass?",
+      answer: "Our pricing for premium architectural systems depends on the specific project requirements. It incorporates elite double-tempered structural safety glass, premium heavy-gauge aluminum support rails, customized weatherproof locking rubber seals, and baseline engineering fitting charges. Please request a quote to get an accurate estimate. Freight and government taxes are determined additionally based on shipping distance."
     },
     {
       question: "How do Full Length versus Half Length variants differ?",
-      answer: "Full Length structures span continuously from the floor straight up to the concrete ceiling line. Half Length systems are designed to begin either at the top boundary of an existing protective balcony metal/concrete railing, or alternatively feature a pre-installed bottom glass panel acting as a rigid structural railing while the Slide & Turn sliding panes operate seamlessly above it."
+      answer: "Full Length structures span continuously from the floor straight up to the concrete ceiling line. Half Length systems are designed to begin either at the top boundary of an existing protective balcony metal/concrete railing, or alternatively feature a pre-installed bottom glass panel acting as a rigid structural railing while the Slide & Turn® sliding panes operate seamlessly above it."
     },
     {
       question: "Are frameless glass structures totally waterproof during heavy monsoon seasons?",

@@ -14,7 +14,7 @@ export const Footer = () => {
                 referrerPolicy="no-referrer"
               />
             </Link>
-            <p className="text-white/40 text-sm font-light leading-relaxed max-w-xs">
+            <p className="text-white/40 text-sm font-light leading-relaxed max-w-xs mb-6">
               Premium architectural glass and slide & turn frameless balcony structures designed for Indian climatic conditions.
             </p>
           </div>
@@ -22,7 +22,7 @@ export const Footer = () => {
           <div className="col-span-1 md:col-span-1 text-left">
             <h5 className="text-[10px] uppercase tracking-[0.3em] text-white font-bold mb-8">6 Product Lines</h5>
             <ul className="space-y-4 text-white/60 text-sm">
-              <li><Link to="/gallery/product/slide-turn" className="hover:text-white transition-colors">Slide & Turn System</Link></li>
+              <li><Link to="/gallery/product/slide-turn" className="hover:text-white transition-colors">Slide & Turn® System</Link></li>
               <li><Link to="/gallery/product/telescopic-sliders" className="hover:text-white transition-colors">Telescopic Slider</Link></li>
               <li><Link to="/gallery/product/synchronized-systems" className="hover:text-white transition-colors">Centre Open System</Link></li>
               <li><Link to="/gallery/product/foldable-doors-(bi-fold)" className="hover:text-white transition-colors">Bi-fold Enclosures</Link></li>
@@ -43,11 +43,16 @@ export const Footer = () => {
 
           <div className="col-span-2 md:col-span-1 text-left">
             <h5 className="text-[10px] uppercase tracking-[0.3em] text-white font-bold mb-8">Contact Info</h5>
-            <ul className="space-y-4 text-white/60 text-sm font-light">
+            <ul className="space-y-4 text-white/60 text-sm font-light mb-8">
               <li>Corporate Office: <br />H 195, Sector 63, Noida, UP - 201309</li>
               <li><a href="mailto:hi@infiwindow.com" className="hover:text-white transition-colors">hi@infiwindow.com</a></li>
               <li><a href="tel:+917337074370" className="hover:text-white transition-colors">+91 73370 74370</a></li>
             </ul>
+            <div className="flex gap-4 items-center flex-wrap -ml-2">
+              <img src="/footer stickers/9001-removebg-preview.png" alt="ISO 9001" className="h-12 object-contain" />
+              <img src="/footer stickers/ISO-45001-Certification.png" alt="ISO 45001" className="h-12 object-contain" />
+              <img src="/footer stickers/images.png" alt="Certification" className="h-12 object-contain" />
+            </div>
           </div>
         </div>
 

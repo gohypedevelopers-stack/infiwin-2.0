@@ -56,7 +56,7 @@ export const FrameColorSection = () => {
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <div className="flex items-center justify-center lg:justify-start gap-3 mb-4 order-1">
               <span className="text-[10px] uppercase tracking-[0.3em] text-luxury-gold text-center lg:text-left">
-                Slide & Turn System - Available Frame Finishes
+                Slide & Turn® System - Available Frame Finishes
               </span>
             </div>
 
@@ -72,7 +72,7 @@ export const FrameColorSection = () => {
             </div>
 
             <p className="text-slate-500 font-light text-[15px] leading-loose mb-10 text-center lg:text-left order-6 lg:order-4 w-full">
-              Our signature Slide & Turn system glides on ultra-smooth tracks, allowing individual sheets of toughened glass to fully stack to either corner — offering 100% opening potential. Now available in four premium powder-coated aluminium finishes.
+              Our signature Slide & Turn® system glides on ultra-smooth tracks, allowing individual sheets of toughened glass to fully stack to either corner — offering 100% opening potential. Now available in four premium powder-coated aluminium finishes.
             </p>
 
             {/* Mobile Image Gallery */}

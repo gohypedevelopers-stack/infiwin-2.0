@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 export const TestimonialsSection = () => {
   const testimonials = [
     {
-      review: "The Infiwin Slide & Turn system transformed our 12th-floor balcony in Delhi completely. We get absolute protection from heavy monsoon wind gusts and heavy dust while enjoying a 100% frameless visual landscape. Excellent execution team!",
+      review: "The Infiwin Slide & Turn® system transformed our 12th-floor balcony in Delhi completely. We get absolute protection from heavy monsoon wind gusts and heavy dust while enjoying a 100% frameless visual landscape. Excellent execution team!",
       name: "Rajesh Devgn",
       subtitle: "DLF Phase 5 Resident"
     },
@@ -14,7 +14,7 @@ export const TestimonialsSection = () => {
       subtitle: "VP, Capital Commercial Hub"
     },
     {
-      review: "Unbelievable execution. The cost estimator was accurate and the on-ground installers took extreme safety measures to finish the railing fixed glass + Slide & Turn setup in under 5 hours. Outstanding engineering standard.",
+      review: "Unbelievable execution. The custom quote was accurate and the on-ground installers took extreme safety measures to finish the railing fixed glass + Slide & Turn® setup in under 5 hours. Outstanding engineering standard.",
       name: "Sneha Mehta",
       subtitle: "Villa Owner, Pune"
     }

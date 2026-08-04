@@ -10,7 +10,7 @@ import {
 export default function About() {
   const milestones = [
     { year: "01", num: "1", title: "The Beginning", desc: "Started as a small architectural hardware supplier, laying the foundation for excellence." },
-    { year: "02", num: "2", title: "Pioneering S&T", desc: "Introduced our signature Slide & Turn frameless balcony systems to the domestic market." },
+    { year: "02", num: "2", title: "Pioneering S&T", desc: "Introduced our signature Slide & Turn® frameless balcony systems to the domestic market." },
     { year: "03", num: "3", title: "Commercial Expansion", desc: "Expanded operations to cover large-scale commercial facades and hotel projects." },
     { year: "04", num: "4", title: "Automated Luxury", desc: "Launched motorized guillotine systems and bioclimatic pergolas." }
   ];
@@ -37,7 +37,7 @@ export default function About() {
         <div className="relative z-10 text-center text-white px-6">
           <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">The Infiwin Story</p>
           <h1 className="text-4xl md:text-7xl font-serif mb-4">Redefining Views</h1>
-          <p className="mt-8 text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Crafting India's Premier Frameless Glass Solutions Aligned with Global Standards of Architectural Excellence.
           </p>
         </div>
@@ -235,7 +235,7 @@ export default function About() {
           <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">The Future of Living Spaces</p>
           <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-8">Vision</h2>
           <p className="text-slate-600 font-light text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
-            Our mission is simple: To expand your functional living space while providing absolute protection. We manufacture, deliver, and install India's most advanced Slide & Turn glass systems, motorized vertical barriers, and smart structural roofs. By blending high-luxury minimalist designs with rugged, heavy-gauge materials, we turn underutilized balconies, terraces, and commercial spaces into pristine, year-round sanctuaries.
+            Our mission is simple: To expand your functional living space while providing absolute protection. We manufacture, deliver, and install India's most advanced Slide & Turn® glass systems, motorized vertical barriers, and smart structural roofs. By blending high-luxury minimalist designs with rugged, heavy-gauge materials, we turn underutilized balconies, terraces, and commercial spaces into pristine, year-round sanctuaries.
           </p>
         </div>
       </section>

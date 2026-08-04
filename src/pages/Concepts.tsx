@@ -30,18 +30,14 @@ const CONCEPTS: ConceptItem[] = [
     title: "Façade",
     subtitle: "Architectural Concept",
     tagline: "High-Performance Curtain Walls",
-    desc: "Our Façade concept reimagines the exterior envelope of modern buildings as a dynamic interplay of glass, light, and structure. From panoramic curtain walls to bespoke cladding solutions, every panel is engineered for maximum thermal efficiency, acoustic performance, and visual drama.",
+    desc: "Our Façade concept reimagines the exterior envelope of modern buildings as a dynamic interplay of glass, light, and structure. From panoramic curtain walls to bespoke cladding solutions, every panel is engineered for seamless view, visual drama and easy maintenance.",
     img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2001_10_02%20PM.png",
     video: "https://ik.imagekit.io/6tktrblyvs/doorspital/Facade.mp4",
-    stats: [
-      { value: "40%", label: "Energy Savings" },
-      { value: "54dB", label: "Noise Reduction" },
-      { value: "25yr", label: "Design Life" },
-    ],
+    stats: [],
     highlights: [
-      "Customizable panel sizes up to 3.6m × 6m",
-      "Thermal-break aluminum frames prevent drafts",
-      "Compatible with external solar shading & automation",
+      "Customizable panel sizes up to 3m × 3m",
+      "Robust aluminum frames",
+      "Compatible with external solar shading",
     ],
     href: "/concepts/facade",
   },
@@ -54,13 +50,13 @@ const CONCEPTS: ConceptItem[] = [
     img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2002_16_49%20PM.png",
     video: "https://ik.imagekit.io/6tktrblyvs/doorspital/Terrece%20Large.mp4",
     stats: [
-      { value: "360°", label: "Panoramic Views" },
-      { value: "8s", label: "Full Retraction" },
-      { value: "IP65", label: "Weather Rating" },
+      { value: "360°", label: "PANORAMIC VIEWS" },
+      { value: "8s", label: "FULL RETRACTION" },
+      { value: "IP65", label: "WEATHER RATING" },
     ],
     highlights: [
       "Zero visible threshold — fully flush floor tracks",
-      "Concealed hinge lines & soundproof insulation",
+      "Concealed hinge lines & sound insulation",
       "Custom anodized finishes matching interior branding",
     ],
     href: "/concepts/restaurant",
@@ -74,9 +70,9 @@ const CONCEPTS: ConceptItem[] = [
     img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2003_20_57%20PM.png",
     video: "https://ik.imagekit.io/6tktrblyvs/doorspital/Pool.mp4",
     stats: [
-      { value: "5★", label: "Resort Grade" },
-      { value: "IP67", label: "Water Protection" },
-      { value: "316", label: "Marine Stainless" },
+      { value: "IP65", label: "Water Protection" },
+      { value: "6063", label: "Architectural Aluminum" },
+      { value: "5★", label: "RESORT GRADE" },
     ],
     highlights: [
       "Pass-through sliding service counter integration",
@@ -284,42 +280,44 @@ export default function Concepts() {
                 </div>
 
                 {/* Description & Technical highlights Side */}
-                <div className="w-full lg:w-1/2 flex flex-col justify-start pt-2">
-                  <div>
-                    <span className="text-[9px] uppercase tracking-[0.25em] text-luxury-gold font-bold mb-3 block">
+                <div className="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left pt-2">
+                  <div className="flex flex-col items-center lg:items-start w-full">
+                    <span className="text-[9px] uppercase tracking-[0.25em] text-luxury-gold font-bold mb-3 block text-center lg:text-left">
                       {concept.tagline}
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6 leading-tight">
+                    <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6 leading-tight text-center lg:text-left">
                       {concept.title}
                     </h2>
-                    <p className="text-slate-600 font-light leading-relaxed mb-8 text-sm md:text-base">
+                    <p className="text-slate-600 font-light leading-relaxed mb-8 text-sm md:text-base text-center lg:text-left">
                       {concept.desc}
                     </p>
 
                     {/* Stats Bar */}
-                    <div className="grid grid-cols-3 gap-4 border-y border-slate-200/60 py-6 mb-8">
-                      {concept.stats.map((stat, sIdx) => (
-                        <div key={sIdx} className="text-left">
-                          <p className="text-xl font-bold text-luxury-gold">{stat.value}</p>
-                          <p className="text-[9px] uppercase tracking-wider text-slate-500 mt-1">
-                            {stat.label}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
+                    {concept.stats.length > 0 && (
+                      <div className="grid grid-cols-3 gap-4 border-y border-slate-200/60 py-6 mb-8 w-full">
+                        {concept.stats.map((stat, sIdx) => (
+                          <div key={sIdx} className="text-center lg:text-left">
+                            <p className="text-xl font-bold text-luxury-gold">{stat.value}</p>
+                            <p className="text-[9px] uppercase tracking-wider text-slate-500 mt-1">
+                              {stat.label}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
 
                     {/* Checklist Highlights */}
-                    <div className="space-y-3 mb-8">
+                    <div className="space-y-3 mb-8 w-fit mx-auto lg:mx-0 max-w-full flex flex-col items-start text-left">
                       {concept.highlights.map((highlight, hIdx) => (
-                        <div key={hIdx} className="flex items-center gap-3">
-                          <CheckCircle size={14} className="text-luxury-gold shrink-0" />
+                        <div key={hIdx} className="flex items-start gap-3">
+                          <CheckCircle size={14} className="text-luxury-gold shrink-0 mt-0.5" />
                           <span className="text-xs text-slate-600 font-light">{highlight}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* Buttons */}
-                    <div className="flex flex-wrap items-center gap-4">
+                    <div className="flex flex-wrap justify-center lg:justify-start items-center gap-4">
                       <Link
                         to="/contact"
                         className="bg-luxury-gold text-white text-[10px] font-bold uppercase tracking-[0.2em] px-8 py-3 rounded-lg hover:bg-yellow-600 transition-colors shadow-lg shadow-luxury-gold/5 flex items-center gap-2 group"

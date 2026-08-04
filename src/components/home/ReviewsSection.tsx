@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 const reviews = [
   {
-    content: "The Infiwin Slide & Turn system transformed our 12th-floor balcony in Delhi completely. We get absolute protection from heavy monsoon wind gusts and heavy dust while enjoying a 100% frameless visual landscape. Excellent execution team!",
+    content: "The Infiwin Slide & Turn® system transformed our 12th-floor balcony in Delhi completely. We get absolute protection from heavy monsoon wind gusts and heavy dust while enjoying a 100% frameless visual landscape. Excellent execution team!",
     author: "Rajesh Devgn",
     role: "DLF PHASE 5 RESIDENT",
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80"
@@ -15,7 +15,7 @@ const reviews = [
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
   },
   {
-    content: "Unbelievable execution. The cost estimator was accurate and the on-ground installers took extreme safety measures to finish the railing fixed glass + Slide & Turn setup in under 5 hours. Outstanding engineering standard.",
+    content: "Unbelievable execution. The custom quote was accurate and the on-ground installers took extreme safety measures to finish the railing fixed glass + Slide & Turn® setup in under 5 hours. Outstanding engineering standard.",
     author: "Sneha Mehta",
     role: "VILLA OWNER, PUNE",
     avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80"

@@ -12,6 +12,7 @@ import {
   Timer,
   ArrowRight,
   Hourglass,
+  Upload,
 } from "lucide-react";
 
 // ─── Countdown helpers ────────────────────────────────────────────────────────
@@ -503,7 +504,7 @@ export default function Contact() {
                     Working Hours
                   </h4>
                   <p className="text-slate-500 font-light text-sm leading-relaxed">
-                    Mon - Sat: 9:00 - 18:00
+                    Mon - Sat: 10:00 - 19:00
                     <br />
                     Sun: Closed
                   </p>
@@ -639,72 +640,62 @@ export default function Contact() {
           {/* ── Right Column ──────────────────────────────────────────────────── */}
           <div className="flex flex-col gap-10">
 
-            {/* Cost Estimator */}
+            {/* Request a Quote */}
             <div className="bg-[#0a0a0a] text-white p-10 md:p-14 rounded-sm shadow-2xl shadow-black/10">
               <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-6">
-                Immediate Tool
+                Custom Quote
               </p>
-              <h3 className="text-3xl font-serif mb-4">Cost Estimator</h3>
+              <h3 className="text-3xl font-serif mb-4">Request a Quote</h3>
               <p className="text-white/60 font-light text-sm leading-relaxed mb-10 max-w-sm">
-                Get a quick, approximate cost for your project based on standard rates of
-                ₹1800/sqft.
+                Provide your specific dimensions so our engineering team can accurately design your custom quote.
               </p>
 
-              <div className="flex gap-6 mb-8">
-                <div className="flex-1">
-                  <label className="block text-[9px] font-bold text-white/40 uppercase tracking-widest mb-3">
-                    Length (ft)
-                  </label>
-                  <input
-                    type="number"
-                    value={length}
-                    onChange={(e) => {
-                      setLength(Number(e.target.value));
-                      setEstimate(null);
-                    }}
-                    className="w-full bg-[#1a1a1a] border border-white/10 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-luxury-gold transition-colors"
-                  />
+              <form onSubmit={(e) => { e.preventDefault(); alert("Quote request submitted"); }} className="space-y-6">
+                <div className="flex gap-6 mb-2">
+                  <div className="flex-1">
+                    <label className="block text-[9px] font-bold text-white/40 uppercase tracking-widest mb-3">
+                      Length (ft)
+                    </label>
+                    <input
+                      type="number"
+                      min="6"
+                      value={length}
+                      onChange={(e) => setLength(Number(e.target.value))}
+                      className="w-full bg-[#1a1a1a] border border-white/10 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-luxury-gold transition-colors"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <label className="block text-[9px] font-bold text-white/40 uppercase tracking-widest mb-3">
+                      Height (ft)
+                    </label>
+                    <input
+                      type="number"
+                      min="5"
+                      value={height}
+                      onChange={(e) => setHeight(Number(e.target.value))}
+                      className="w-full bg-[#1a1a1a] border border-white/10 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-luxury-gold transition-colors"
+                    />
+                  </div>
                 </div>
-                <div className="flex-1">
+
+                <div>
                   <label className="block text-[9px] font-bold text-white/40 uppercase tracking-widest mb-3">
-                    Height (ft)
+                    Upload Site Pic (Optional)
                   </label>
-                  <input
-                    type="number"
-                    value={height}
-                    onChange={(e) => {
-                      setHeight(Number(e.target.value));
-                      setEstimate(null);
-                    }}
-                    className="w-full bg-[#1a1a1a] border border-white/10 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-luxury-gold transition-colors"
-                  />
+                  <label className="flex items-center justify-center gap-2 w-full bg-[#1a1a1a] border border-white/10 rounded-sm px-4 py-3 text-white cursor-pointer hover:bg-white/5 transition-colors">
+                    <Upload size={16} />
+                    <span className="text-sm font-light">Choose File</span>
+                    <input type="file" className="hidden" accept="image/*" />
+                  </label>
                 </div>
-              </div>
 
-              <button
-                onClick={() => setEstimate(length * height * 1800)}
-                className="w-full bg-luxury-gold text-white py-3 text-[10px] font-bold uppercase tracking-[0.2em] rounded-lg hover:bg-yellow-600 transition-colors"
-              >
-                Calculate Estimate
-              </button>
-
-              <AnimatePresence>
-                {estimate !== null && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
-                    className="mt-6 p-5 rounded-sm bg-[#1a1a1a] border border-luxury-gold/20 flex justify-between items-center"
-                  >
-                    <span className="text-white/50 text-xs uppercase tracking-widest">
-                      Approx. Cost
-                    </span>
-                    <span className="text-luxury-gold text-xl font-serif font-semibold">
-                      ₹{estimate.toLocaleString("en-IN")}
-                    </span>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                <button
+                  type="submit"
+                  className="w-full bg-luxury-gold text-white py-3 text-[10px] font-bold uppercase tracking-[0.2em] rounded-lg hover:bg-yellow-600 transition-colors mt-4"
+                >
+                  Submit Request
+                </button>
+              </form>
             </div>
 
             {/* Global Presence */}
@@ -719,10 +710,10 @@ export default function Contact() {
               <div className="p-8 lg:p-10 relative z-10 w-full mt-auto">
                 <div className="bg-white/95 backdrop-blur-md p-6 rounded-sm border border-white/20 shadow-2xl">
                   <h4 className="text-[10px] font-bold text-slate-900 uppercase tracking-widest mb-2">
-                    Global Presence
+                    Services Provided Pan India
                   </h4>
                   <p className="text-slate-600 text-sm font-light">
-                    Serving clients across GCC, India, and Southeast Asia.
+                    Serving clients across all major cities and regions in India.
                   </p>
                 </div>
               </div>

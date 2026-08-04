@@ -111,25 +111,27 @@ export default function ConceptDetailPage({ data }: ConceptDetailPageProps) {
       </section>
 
       {/* ── STATS BAR ────────────────────────────────────────── */}
-      <section className="border-y border-white/10 bg-white/5 backdrop-blur-sm">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-16 py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:divide-x md:divide-white/10">
-            {data.stats.map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="text-center px-4 first:pl-0 last:pr-0"
-              >
-                <div className="text-3xl md:text-4xl font-bold text-luxury-gold mb-1">{stat.value}</div>
-                <div className="text-[10px] uppercase tracking-widest text-white/40 font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
+      {data.stats.length > 0 && (
+        <section className="border-y border-white/10 bg-white/5 backdrop-blur-sm">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-16 py-10">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:divide-x md:divide-white/10">
+              {data.stats.map((stat, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  className="text-center px-4 first:pl-0 last:pr-0"
+                >
+                  <div className="text-3xl md:text-4xl font-bold text-luxury-gold mb-1">{stat.value}</div>
+                  <div className="text-[10px] uppercase tracking-widest text-white/40 font-medium">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ── INTRO + HIGHLIGHTS ──────────────────────────────── */}
       <section className="py-12 lg:py-16">

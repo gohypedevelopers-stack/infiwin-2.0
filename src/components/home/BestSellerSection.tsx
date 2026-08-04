@@ -21,7 +21,7 @@ export const BestSellerSection = () => {
             <p className="text-white/50 text-[10px] uppercase tracking-[0.3em] font-bold mb-2 order-2">
               BALCONY ENCLOSURE CATEGORY
             </p>
-            <h3 className="text-4xl md:text-5xl font-serif mb-6 order-3">Slide & Turn System</h3>
+            <h3 className="text-4xl md:text-5xl font-serif mb-6 order-3">Slide & Turn® System</h3>
 
             <p className="text-white/70 font-light text-lg mb-10 leading-relaxed max-w-xl text-center lg:text-left order-6 lg:order-4">
               Our iconic signature slide and turn glides on ultra-smooth tracks, allowing individual sheets of toughened glass to fully stack to either extreme corner. Offers 100% opening potential when desired, making it absolute king of balcony utility layout concepts.

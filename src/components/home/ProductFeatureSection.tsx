@@ -76,7 +76,7 @@ export const ProductFeatureSection = () => {
                   Balcony Enclosure Category
                 </span>
               </div>
-              <h2 className="text-5xl md:text-6xl font-serif text-slate-900 mb-6 font-light">Slide & Turn System</h2>
+              <h2 className="text-5xl md:text-6xl font-serif text-slate-900 mb-6 font-light">Slide & Turn® System</h2>
               <p className="text-slate-500 font-light text-[15px] leading-loose mb-10">
                 Our iconic signature slide and turn glides on ultra-smooth tracks, allowing individual sheets of toughened glass to fully stack to either extreme corner. Offers 100% opening potential when desired, making it absolute king of balcony utility layout concepts.
               </p>

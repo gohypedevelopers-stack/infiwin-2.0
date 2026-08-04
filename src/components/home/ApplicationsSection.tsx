@@ -15,7 +15,7 @@ export const ApplicationsSection = () => {
   }, []);
 
   const applications = [
-    { id: "balcony", title: "Balcony", description: "Unobstructed frameless premium safety glazing barriers.", icon: LayoutTemplate, recommendedProductIds: ["slide-turn"] },
+    { id: "balcony", title: "Balcony", description: "Unobstructed frameless premium glazing barriers.", icon: LayoutTemplate, recommendedProductIds: ["slide-turn"] },
     { id: "int-partition", title: "Int. Partition", description: "Sleek separation zones for functional multi-use spaces.", icon: LayoutDashboard, recommendedProductIds: ["telescopic-sliders"] },
     { id: "commercial", title: "Commercial", description: "High durability storefront facades & internal partition grids.", icon: Building2, recommendedProductIds: ["synchronized-systems"] },
     { id: "exterior", title: "Exterior", description: "Rigid wind resistance profile constructs for elevations.", icon: PanelTop, recommendedProductIds: ["slide-turn"] },

@@ -8,7 +8,7 @@ const TermsAndConditions = () => {
         <div className="prose prose-slate max-w-none text-slate-600 font-light leading-relaxed">
           <p className="mb-4">Last updated: {new Date().toLocaleDateString()}</p>
           <p className="mb-4">
-            Please read these terms and conditions carefully before using Our Service or purchasing our architectural glass systems, including Slide & Turn Systems, Fabric Glass Sliders, and related products.
+            Please read these terms and conditions carefully before using Our Service or purchasing our architectural glass systems, including Slide & Turn® Systems, Fabric Glass Sliders, and related products.
           </p>
           <h2 className="text-2xl font-serif text-slate-900 mt-8 mb-4">Our Work Process</h2>
           

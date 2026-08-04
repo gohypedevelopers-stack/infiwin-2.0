@@ -135,7 +135,7 @@ export const HeroSection = () => {
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
             className="text-slate-200 font-light drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] text-[14px] sm:text-sm md:text-base max-w-2xl leading-relaxed mb-6 md:mb-8 px-4 sm:px-0"
           >
-            Premier Slide & Turn frameless glass balcony enclosures.<br className="hidden sm:block" /> Extend your home space with architectural glass walls.
+            Premier Slide & Turn® frameless glass balcony enclosures.<br className="hidden sm:block" /> Extend your home space with architectural glass walls.
           </motion.p>
 
           {/* Primary Call-to-Action Buttons */}

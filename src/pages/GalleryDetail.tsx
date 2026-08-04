@@ -80,6 +80,12 @@ const PRODUCT_BADGES: Record<string, string[]> = {
     "SOLID U-CHANNEL FIT",
     "TEMPERED SAFETY GLASS",
     "HIGH STABILITY"
+  ],
+  "int-partition": [
+    "PREMIUM AESTHETICS",
+    "STRUCTURAL INTEGRITY",
+    "FUNCTIONAL & BEAUTIFUL",
+    "EXPERT INSTALLATION"
   ]
 };
 
@@ -117,7 +123,7 @@ const VIDEO_CONTENT_MAP: Record<string, { category: string, heading: string, des
   },
   "Full-Length Slide & Turn": {
     category: "SLIDE & TURN SYSTEM",
-    heading: "Full-Length Slide & Turn",
+    heading: "Full-Length Slide & Turn®",
     description: "A floor-to-ceiling movable glass system designed to deliver panoramic views, flexible ventilation, and seamless access while creating an elegant and open living space.",
     highlights: [
       "Full-height panoramic visibility",
@@ -125,11 +131,11 @@ const VIDEO_CONTENT_MAP: Record<string, { category: string, heading: string, des
       "Maximum natural light and ventilation",
       "Space-saving, modern design"
     ],
-    cta: "Explore Full-Length Slide & Turn →"
+    cta: "Explore Full-Length Slide & Turn® →"
   },
   "Half-Length Slide & Turn": {
     category: "SLIDE & TURN SYSTEM",
-    heading: "Half-Length Slide & Turn",
+    heading: "Half-Length Slide & Turn®",
     description: "A versatile balcony enclosure system designed to provide improved safety, weather protection, and ventilation while preserving openness and uninterrupted outdoor views.",
     highlights: [
       "Ideal for balcony enclosures",
@@ -137,7 +143,7 @@ const VIDEO_CONTENT_MAP: Record<string, { category: string, heading: string, des
       "Enhanced safety and weather protection",
       "Maintains natural light and visibility"
     ],
-    cta: "Explore Half-Length Slide & Turn →"
+    cta: "Explore Half-Length Slide & Turn® →"
   }
 };
 
@@ -275,7 +281,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   // Compute related products
-  const currentProduct = productsList.find(p => p.title.toLowerCase().replace(/[\s&.]+/g, '-') === normalizedId);
+  const currentProduct = productsList.find(p => p.title.toLowerCase().replace(/®/g, '').replace(/[\s&.]+/g, '-') === normalizedId);
   const sameCategoryProducts = productsList.filter(p => p.category === currentProduct?.category && p.title !== currentProduct?.title);
   const otherProducts = productsList.filter(p => p.title !== currentProduct?.title && !sameCategoryProducts.includes(p));
   const relatedProducts = [...sameCategoryProducts, ...otherProducts].slice(0, 4);
@@ -513,7 +519,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
         </div>
       </section>
 
-      {/* Slide & Turn Specific Sections */}
+      {/* Slide & Turn® Specific Sections */}
       {normalizedId === 'slide-turn' && (
         <>
           <BestSellerSection />
@@ -651,7 +657,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1, duration: 0.4 }}
                 >
-                  <Link to={`/gallery/product/${p.title.toLowerCase().replace(/[\s&.]+/g, '-')}`} className="group cursor-pointer block">
+                  <Link to={`/gallery/product/${p.title.toLowerCase().replace(/®/g, '').replace(/[\s&.]+/g, '-')}`} className="group cursor-pointer block">
                     <div className="aspect-[4/3] overflow-hidden rounded-sm mb-4 shadow-md transition-shadow hover:shadow-xl relative">
                       <img loading="lazy"
                         src={p.img}

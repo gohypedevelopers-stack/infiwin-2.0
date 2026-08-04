@@ -19,7 +19,7 @@ import {
 
 export default function Applications() {
   const getAppImg = (title: string, fallbackImg: string) => {
-    const id = title.toLowerCase().replace(/[\\s&.]+/g, '-');
+    const id = title.toLowerCase().replace(/®/g, '').replace(/[\s&.]+/g, '-');
     if (galleryData[id] && galleryData[id].images.length > 0) {
       return galleryData[id].images[0];
     }
@@ -27,8 +27,8 @@ export default function Applications() {
   };
 
   const featuredApps = [
-    { title: "Balcony", description: "Unobstructed frameless premium safety glazing barriers.", icon: LayoutTemplate, img: galleryData["balcony"]?.images[0] || "https://i.postimg.cc/1tm1yGXW/Chat-GPT-Image-Jun-29-2026-12-04-16-PM.png" },
-    { title: "Int. Partition", description: "Sleek separation zones for functional multi-use spaces.", icon: LayoutDashboard, img: galleryData["int-partition"]?.images[0] || "https://i.postimg.cc/QxWwG4S3/Chat-GPT-Image-Jun-29-2026-12-06-24-PM.png" },
+    { title: "Balcony", description: "Unobstructed frameless premium glazing barriers.", icon: LayoutTemplate, img: galleryData["balcony"]?.images[0] || "https://i.postimg.cc/1tm1yGXW/Chat-GPT-Image-Jun-29-2026-12-04-16-PM.png" },
+    { title: "Int. Partition", description: "Sleek partitions for functional multi-use spaces.", icon: LayoutDashboard, img: galleryData["int-partition"]?.images[0] || "https://i.postimg.cc/QxWwG4S3/Chat-GPT-Image-Jun-29-2026-12-06-24-PM.png" },
     { title: "Commercial", description: "High durability storefront facades & internal partition grids.", icon: Building2, img: galleryData["commercial"]?.images[0] || "https://i.postimg.cc/YS8yfJ2Q/Chat-GPT-Image-Jun-29-2026-12-07-47-PM.png" },
     { title: "Exterior", description: "Rigid wind resistance profile constructs for elevations.", icon: PanelTop, img: galleryData["exterior"]?.images[0] || "https://i.postimg.cc/59Hbympn/Chat-GPT-Image-Jun-29-2026-12-11-13-PM.png" },
     { title: "Terrace", description: "Convert open terraces into delightful year-round glass lounges.", icon: Box, img: galleryData["terrace"]?.images[0] || "https://i.postimg.cc/DwhTC3Fn/Chat-GPT-Image-Jun-29-2026-12-12-32-PM.png" },
@@ -48,7 +48,7 @@ export default function Applications() {
   ];
 
   const suggestedSystems = [
-    { title: "Infi SET Slide & Turn", type: "Premium Series", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600" },
+    { title: "Infi SET Slide & Turn®", type: "Premium Series", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600" },
     { title: "Telescopic Slider", type: "Architectural Series", img: "https://images.unsplash.com/photo-1515263487990-61b07816b324?auto=format&fit=crop&q=80&w=600" },
     { title: "Bi-fold System", type: "Panoramic Series", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600" }
   ];
@@ -89,7 +89,7 @@ export default function Applications() {
                 <div
                   key={idx}
                 >
-                  <Link to={`/gallery/application/${app.title.toLowerCase().replace(/[\s&.]+/g, '-')}`} className="group cursor-pointer block relative">
+                  <Link to={`/gallery/application/${app.title.toLowerCase().replace(/®/g, '').replace(/[\s&.]+/g, '-')}`} className="group cursor-pointer block relative">
                     <div className="aspect-[16/10] overflow-hidden rounded-sm mb-6 relative shadow-md transition-shadow hover:shadow-xl">
                       <img loading="lazy"
                         src={app.img}

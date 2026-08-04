@@ -9,12 +9,12 @@ export const BenefitsSection = () => {
     {
       icon: <Eye className="text-luxury-gold w-[18px] h-[18px]" />,
       title: "Unobstructed Panoramic Views",
-      description: "No vertical frames between glass structures ensures completely transparent viewports, expanding visual horizons and natural luxury lighting levels instantly.",
+      description: "No vertical frames between glass structures ensures completely transparent views, expanding visual horizons, natural luxury & lighting levels instantly.",
     },
     {
       icon: <CloudRain className="text-luxury-gold w-[18px] h-[18px]" />,
       title: "Protection Against weather",
-      description: "Blocks dust, windstorms, flying debris, and intense monsoon rains. Fully customized rubber profiles keep balconies immaculate through extreme climates.",
+      description: "Blocks dust, storms, flying debris and rain. Fully customized system keeps balconies immaculate through extreme climates.",
     },
     {
       icon: <Lock className="text-luxury-gold w-[18px] h-[18px]" />,
@@ -44,7 +44,7 @@ export const BenefitsSection = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="text-luxury-gold text-[10px] uppercase tracking-[0.3em] font-bold mb-4">Core Advantages</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-slate-900 mb-6 leading-tight">The Premium 'Slide & Turn' Edge</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-slate-900 mb-6 leading-tight">The Premium 'Slide & Turn®' Edge</h2>
           <p className="text-slate-500 font-light text-lg max-w-2xl mx-auto">
             Discover why modern homeowners and commercial spaces are replacing conventional iron grills with custom frameless folding structures.
           </p>
@@ -134,7 +134,7 @@ export const BenefitsSection = () => {
         <div className="mt-24 border-t border-slate-100 pt-16">
           <div className="text-center mb-12">
             <p className="text-luxury-gold text-[10px] uppercase tracking-[0.3em] font-bold mb-4">Ultimate Shield</p>
-            <h3 className="text-3xl md:text-4xl font-serif text-slate-900 mb-6">Complete Protection Against</h3>
+            <h3 className="text-3xl md:text-4xl font-serif text-slate-900 mb-6">Protection Against</h3>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {[

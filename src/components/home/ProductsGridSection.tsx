@@ -28,7 +28,7 @@ export const ProductsGridSection = () => {
     {
       id: "slide-turn",
       category: "Balcony System",
-      title: "Slide & Turn System",
+      title: "Slide & Turn® System",
       subtitle: "Balcony Enclosure",
       description: "Perfect view maximization with foldaway tracking system layout.",
       tag: "Best Seller",

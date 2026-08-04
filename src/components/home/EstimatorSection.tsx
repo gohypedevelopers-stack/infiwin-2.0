@@ -73,14 +73,10 @@ export const EstimatorSection = () => {
 
         {/* Results */}
         <div className="bg-white/5 border border-white/10 rounded-xl p-6">
-          <div className="grid grid-cols-2 gap-4 mb-6 border-b border-white/10 pb-6">
+          <div className="grid grid-cols-1 gap-4 mb-6 border-b border-white/10 pb-6">
             <div>
               <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-400 mb-1">Calculated Area</p>
               <p className="text-base sm:text-xl font-medium whitespace-nowrap">{area} sq.ft</p>
-            </div>
-            <div>
-              <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-400 mb-1">Base Unit Price</p>
-              <p className="text-base sm:text-xl font-medium whitespace-nowrap">₹1,800 / sq.ft</p>
             </div>
           </div>
           

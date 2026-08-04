@@ -19,10 +19,9 @@ const DATA: ConceptDetailData = {
     { icon: "🔧", title: "Easy Maintenance", description: "Tool-free panel removal for deep cleaning and quick hardware inspection — essential for commercial pool venues." },
   ],
   stats: [
-    { value: "5★", label: "Resort Grade" },
-    { value: "IP67", label: "Water Protection" },
-    { value: "−10°C", label: "Min Operating Temp" },
-    { value: "200+", label: "Installations" },
+    { value: "IP65", label: "Water Protection" },
+    { value: "6063", label: "Architectural Aluminum" },
+    { value: "5★", label: "RESORT GRADE" },
   ],
   gallery: [
     { img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2003_20_57%20PM.png", caption: "Infinity pool bar — glass wall fully open to poolside" },

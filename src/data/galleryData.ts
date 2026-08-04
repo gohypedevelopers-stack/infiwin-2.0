@@ -6,8 +6,8 @@ export interface GalleryItem {
 
 export const galleryData: Record<string, GalleryItem> = {
   "slide-turn": {
-    "title": "Slide & Turn",
-    "description": "Experience the ultimate freedom with our unobstructed frameless premium safety glazing barriers. Perfectly designed for balconies and terraces, offering panoramic views, superior weather protection, and effortless sliding mechanisms that redefine modern open-concept living spaces.",
+    "title": "Slide & Turn®",
+    "description": "Experience the ultimate freedom with our unobstructed frameless premium glazing barriers. Perfectly designed for balconies and terraces, offering panoramic views, superior weather protection, and effortless sliding mechanisms that redefine modern open-concept living spaces.",
     "images": [
       "/gallery/Systems/Slide%20&%20Turn/Slide & Turn.jpg.jpeg",
       "/gallery/Systems/Slide%20&%20Turn/Slide & Turn (1).jpg.jpeg",
@@ -24,14 +24,15 @@ export const galleryData: Record<string, GalleryItem> = {
   },
   "commercial": {
     "title": "Commercial",
-    "description": "Elevate your business environment with high durability storefront facades and versatile internal partition grids. Our commercial glass systems combine structural integrity with sophisticated aesthetics to create professional, light-filled, and highly secure commercial spaces.",
+    "description": "Elevate your business environment with high durability storefront facades. Our commercial glass systems combine structural integrity with sophisticated aesthetics to create professional, light-filled, and highly secure commercial spaces.",
     "images": [
       "/gallery/Applications/Commercial/2.png",
       "/gallery/Applications/Commercial/3.png",
       "/gallery/Applications/Commercial/ChatGPT%20Image%20Jul%2011,%202026,%2002_29_15%20PM.png",
       "/gallery/Applications/Commercial/ChatGPT%20Image%20Jul%2011,%202026,%2002_31_28%20PM.png",
 
-      "/gallery/Applications/Commercial/ChatGPT%20Image%20Jul%2011,%202026,%2010_45_38%20AM.png"
+      "/gallery/Applications/Commercial/ChatGPT%20Image%20Jul%2011,%202026,%2010_45_38%20AM.png",
+      "/gallery/Applications/Commercial/ChatGPT%20Image%20Aug%204,%202026,%2012_20_03%20PM.png"
     ]
   },
   "office-space": {
@@ -48,11 +49,10 @@ export const galleryData: Record<string, GalleryItem> = {
   },
   "farm-house": {
     "title": "Farm House",
-    "description": "Seamlessly connect beautiful country landscaping with spacious interiors. Our farmhouse glass installations provide expansive, uninterrupted views of nature while maintaining excellent thermal efficiency, keeping your country home cozy and fully integrated with the outdoors.",
+    "description": "Seamlessly connect beautiful country landscaping with spacious interiors. Our farmhouse glass installations provide expansive, uninterrupted views of nature, keeping your country home cozy and fully integrated with the outdoors.",
     "images": [
       "/gallery/Applications/Farm%20House/7%20banner.png",
       "/gallery/Applications/Farm%20House/ChatGPT%20Image%20Jul%2014,%202026,%2005_54_54%20PM.png",
-      "/gallery/Applications/Farm%20House/ChatGPT%20Image%20Jul%2014,%202026,%2011_38_27%20AM.png",
       "/gallery/Applications/Farm%20House/ChatGPT%20Image%20Jul%2014,%202026,%2011_38_33%20AM.png",
       "/gallery/Applications/Farm%20House/farmhouse 1.png",
     ]
@@ -71,12 +71,9 @@ export const galleryData: Record<string, GalleryItem> = {
   },
   "telescopic-sliders": {
     "title": "Telescopic Sliders",
-    "description": "Create sleek separation zones for functional multi-use spaces. Telescopic sliding systems offer ultra-smooth operation and space-saving efficiency, effortlessly gliding away to merge rooms or sliding shut to create private enclosures in both residential and commercial settings.",
+    "description": "Create sleek partitions for functional multi-use spaces. Telescopic sliding systems offer ultra-smooth operation and space-saving efficiency, effortlessly gliding away to merge rooms or sliding shut to create private enclosures in both residential and commercial settings.",
     "images": [
-      "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_1.png",
-      "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_2.png",
       "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_4.png",
-      "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_5.png",
       "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_6.png",
       "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_7.png",
       "/gallery/video%20section/telescopic%20slider.mp4#title=Telescopic%20Slider"
@@ -84,12 +81,11 @@ export const galleryData: Record<string, GalleryItem> = {
   },
   "exterior": {
     "title": "Exterior",
-    "description": "Built for resilience, our rigid wind resistance profile constructs are ideal for high-rise elevations. These exterior glass systems are engineered to withstand extreme weather conditions, ensuring maximum safety, acoustic insulation, and a striking, modern architectural facade.",
+    "description": "Built for resilience, our rigid wind resistance profile constructs are ideal for high-rise elevations. These exterior glass systems are engineered to withstand extreme weather conditions, ensuring maximum safety and a striking, modern architectural facade.",
     "images": [
 
 
       "/gallery/Applications/Exterior/ChatGPT%20Image%20Jul%2011,%202026,%2010_51_25%20AM.png",
-      "/gallery/Applications/Exterior/ChatGPT%20Image%20Jul%2011,%202026,%2011_12_59%20AM.png",
       "/gallery/Applications/Exterior/ChatGPT%20Image%20Jul%2011,%202026,%2011_18_42%20AM.png",
       "/gallery/Applications/Exterior/ChatGPT%20Image%20Jul%2021,%202026,%2010_54_23%20AM.png"
     ]
@@ -184,38 +180,33 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Bi Fold Systems",
     "description": "Bi-fold systems for internal & external partitions.",
     "images": [
-      "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold.jpg.jpeg",
-      "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold%20(1).jpg.jpeg",
       "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold%20(2).jpg.jpeg",
       "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold%20(3).jpg.jpeg",
-      "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold%20(4).jpg.jpeg",
-      "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold%20(5).jpg.jpeg"
+      "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold%20(4).jpg.jpeg"
     ]
   },
   "balcony": {
     "title": "Balcony",
-    "description": "Unobstructed frameless premium safety glazing barriers. Perfectly designed for balconies and terraces, offering panoramic views, superior weather protection, and effortless sliding mechanisms that redefine modern open-concept living spaces.",
+    "description": "Unobstructed frameless premium glazing barriers. Perfectly designed for balconies and terraces, offering panoramic views, superior weather protection, and effortless sliding mechanisms that redefine modern open-concept living spaces.",
     "images": [
       "/gallery/Applications/Balcony/2.png",
-      "/gallery/Applications/Balcony/4.png",
+      // "/gallery/Applications/Balcony/4.png",
       "/gallery/Applications/Balcony/balcony 1.png",
       "/gallery/Applications/Balcony/balcony 2.png",
       "/gallery/Applications/Balcony/balcony 3.png",
       "/gallery/Applications/Balcony/balcony 4.png",
-      "/gallery/Applications/Balcony/balcony 5.png"
+      "/gallery/Applications/Balcony/balcony 5.png",
+      "/gallery/video%20section/VID-20240725-WA0042.mp4#title=Balcony%20Slide%20&%20Turn"
     ]
   },
   "int-partition": {
     "title": "Interior Partition",
-    "description": "Sleek separation zones for functional multi-use spaces. Internal glass partitions offer privacy without compromising on natural light or open design aesthetics.",
+    "description": "Sleek partitions for functional multi-use spaces. Internal glass partitions offer privacy without compromising on functionality, convenience and open design aesthetics.",
     "images": [
-      "/gallery/Applications/Int.%20Partition/IMG-20230722-WA0025.jpg",
-      "/gallery/Applications/Int.%20Partition/IMG-20240802-WA0046.jpg",
-      "/gallery/Applications/Int.%20Partition/IMG-20240802-WA0047.jpg",
-      "/gallery/Applications/Int.%20Partition/IMG-20240809-WA0015.jpg",
-      "/gallery/Applications/Int.%20Partition/IMG-20240815-WA0004.jpg",
-      "/gallery/Applications/Int.%20Partition/IMG-20240815-WA0005.jpg",
-      "/gallery/Applications/Int.%20Partition/IMG-20240909-WA0002.jpg"
+      "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_1.png",
+      "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_2.png",
+      "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_4.png",
+      "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_5.png"
     ]
   },
   "guillotine-glass-system": {

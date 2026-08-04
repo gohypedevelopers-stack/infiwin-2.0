@@ -83,7 +83,7 @@ export default function Products() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {filteredProducts.map((p) => (
               <div key={p.title}>
-                <Link to={`/gallery/product/${p.title.toLowerCase().replace(/[\s&.]+/g, '-')}`} className="group cursor-pointer block">
+                <Link to={`/gallery/product/${p.title.toLowerCase().replace(/®/g, '').replace(/[\s&.]+/g, '-')}`} className="group cursor-pointer block">
                   <div className="aspect-[16/10] overflow-hidden rounded-sm mb-6 shadow-md transition-shadow hover:shadow-xl relative">
                     <img loading="lazy"
                       src={p.img}

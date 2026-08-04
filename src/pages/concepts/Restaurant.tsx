@@ -19,10 +19,9 @@ const DATA: ConceptDetailData = {
     { icon: "🎨", title: "Custom Finishes", description: "Bronze, anthracite, warm gold and white frame finishes match any interior design palette." },
   ],
   stats: [
-    { value: "360°", label: "Panoramic Views" },
-    { value: "8s", label: "Full Open / Close" },
-    { value: "IP65", label: "Weather Rating" },
-    { value: "∞", label: "Configuration Options" },
+    { value: "360°", label: "PANORAMIC VIEWS" },
+    { value: "8s", label: "FULL RETRACTION" },
+    { value: "IP65", label: "WEATHER RATING" },
   ],
   gallery: [
     { img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2002_16_49%20PM.png", caption: "Open-air dining mode — bi-fold walls fully retracted" },
