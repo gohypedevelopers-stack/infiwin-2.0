@@ -177,8 +177,84 @@ export default function Contact() {
 
       {/* Main Content */}
       <section className="max-w-7xl mx-auto px-6 py-12 lg:py-16 flex flex-col gap-16">
-        
+        {/* Contact Info & Global Presence Row */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-stretch">
+          
+          {/* Contact Info Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="flex gap-4">
+              <div className="w-10 h-10 rounded-full bg-luxury-gold/10 flex items-center justify-center text-luxury-gold flex-shrink-0 border border-luxury-gold/20">
+                <Phone size={18} />
+              </div>
+              <div>
+                <h4 className="text-[9px] font-bold text-slate-900 uppercase tracking-widest mb-2">
+                  Call Us
+                </h4>
+                <p className="text-slate-500 font-light text-sm">+91 73370 74370</p>
+              </div>
+            </div>
 
+            <div className="flex gap-4">
+              <div className="w-10 h-10 rounded-full bg-luxury-gold/10 flex items-center justify-center text-luxury-gold flex-shrink-0 border border-luxury-gold/20">
+                <Mail size={18} />
+              </div>
+              <div>
+                <h4 className="text-[9px] font-bold text-slate-900 uppercase tracking-widest mb-2">
+                  Email
+                </h4>
+                <p className="text-slate-500 font-light text-sm">hi@infiwindow.com</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="w-10 h-10 rounded-full bg-luxury-gold/10 flex items-center justify-center text-luxury-gold flex-shrink-0 border border-luxury-gold/20">
+                <MapPin size={18} />
+              </div>
+              <div>
+                <h4 className="text-[9px] font-bold text-slate-900 uppercase tracking-widest mb-2">
+                  Headquarters
+                </h4>
+                <p className="text-slate-500 font-light text-sm leading-relaxed">
+                  H 195, Sector 63, Noida, UP - 201309
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <div className="w-10 h-10 rounded-full bg-luxury-gold/10 flex items-center justify-center text-luxury-gold flex-shrink-0 border border-luxury-gold/20">
+                <Clock size={18} />
+              </div>
+              <div>
+                <h4 className="text-[9px] font-bold text-slate-900 uppercase tracking-widest mb-2">
+                  Working Hours
+                </h4>
+                <p className="text-slate-500 font-light text-sm leading-relaxed">
+                  Mon - Sat: 10:00 - 19:00
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Global Presence */}
+          <div className="rounded-sm flex flex-col justify-end overflow-hidden relative min-h-[300px] shadow-xl shadow-black/5 h-full">
+            <img loading="lazy" src="/premium_global_presence.png"
+              alt="Premium Global Presence"
+              className="absolute inset-0 w-full h-full object-cover z-0"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent z-0 pointer-events-none" />
+
+            <div className="p-8 relative z-10 w-full mt-auto">
+              <div className="bg-white/95 backdrop-blur-md p-6 rounded-sm border border-white/20 shadow-2xl inline-block">
+                <h4 className="text-[10px] font-bold text-slate-900 uppercase tracking-widest mb-2">
+                  Services Provided Pan India
+                </h4>
+                <p className="text-slate-600 text-sm font-light">
+                  Serving clients across all major cities and regions in India.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* ── Inline Timer Banner ── */}
         <AnimatePresence>
@@ -215,7 +291,10 @@ export default function Contact() {
                       min="6"
                       placeholder="Min 6"
                       value={length}
-                      onChange={(e) => setLength(e.target.value ? Number(e.target.value) : "")}
+                      onChange={(e) => {
+                        setLength(e.target.value ? Number(e.target.value) : "");
+                        if (errors.dimensions) setErrors(prev => ({ ...prev, dimensions: "" }));
+                      }}
                       className={`w-full bg-[#1a1a1a] border rounded-sm px-4 py-3 text-white focus:outline-none transition-colors ${errors.dimensions && (length === "" || length < 6) ? "border-red-500" : "border-white/10 focus:border-luxury-gold"}`}
                     />
                   </div>
@@ -228,7 +307,10 @@ export default function Contact() {
                       min="5"
                       placeholder="Min 5"
                       value={height}
-                      onChange={(e) => setHeight(e.target.value ? Number(e.target.value) : "")}
+                      onChange={(e) => {
+                        setHeight(e.target.value ? Number(e.target.value) : "");
+                        if (errors.dimensions) setErrors(prev => ({ ...prev, dimensions: "" }));
+                      }}
                       className={`w-full bg-[#1a1a1a] border rounded-sm px-4 py-3 text-white focus:outline-none transition-colors ${errors.dimensions && (height === "" || height < 5) ? "border-red-500" : "border-white/10 focus:border-luxury-gold"}`}
                     />
                   </div>
@@ -448,85 +530,6 @@ export default function Contact() {
             </form>
           </div>
 
-        </div>
-
-        {/* Contact Info & Global Presence Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-stretch mt-8">
-          
-          {/* Contact Info Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="flex gap-4">
-              <div className="w-10 h-10 rounded-full bg-luxury-gold/10 flex items-center justify-center text-luxury-gold flex-shrink-0 border border-luxury-gold/20">
-                <Phone size={18} />
-              </div>
-              <div>
-                <h4 className="text-[9px] font-bold text-slate-900 uppercase tracking-widest mb-2">
-                  Call Us
-                </h4>
-                <p className="text-slate-500 font-light text-sm">+91 73370 74370</p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="w-10 h-10 rounded-full bg-luxury-gold/10 flex items-center justify-center text-luxury-gold flex-shrink-0 border border-luxury-gold/20">
-                <Mail size={18} />
-              </div>
-              <div>
-                <h4 className="text-[9px] font-bold text-slate-900 uppercase tracking-widest mb-2">
-                  Email
-                </h4>
-                <p className="text-slate-500 font-light text-sm">hi@infiwindow.com</p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="w-10 h-10 rounded-full bg-luxury-gold/10 flex items-center justify-center text-luxury-gold flex-shrink-0 border border-luxury-gold/20">
-                <MapPin size={18} />
-              </div>
-              <div>
-                <h4 className="text-[9px] font-bold text-slate-900 uppercase tracking-widest mb-2">
-                  Headquarters
-                </h4>
-                <p className="text-slate-500 font-light text-sm leading-relaxed">
-                  H 195, Sector 63, Noida, UP - 201309
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="w-10 h-10 rounded-full bg-luxury-gold/10 flex items-center justify-center text-luxury-gold flex-shrink-0 border border-luxury-gold/20">
-                <Clock size={18} />
-              </div>
-              <div>
-                <h4 className="text-[9px] font-bold text-slate-900 uppercase tracking-widest mb-2">
-                  Working Hours
-                </h4>
-                <p className="text-slate-500 font-light text-sm leading-relaxed">
-                  Mon - Sat: 10:00 - 19:00
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Global Presence */}
-          <div className="rounded-sm flex flex-col justify-end overflow-hidden relative min-h-[300px] shadow-xl shadow-black/5 h-full">
-            <img loading="lazy" src="/premium_global_presence.png"
-              alt="Premium Global Presence"
-              className="absolute inset-0 w-full h-full object-cover z-0"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent z-0 pointer-events-none" />
-
-            <div className="p-8 relative z-10 w-full mt-auto">
-              <div className="bg-white/95 backdrop-blur-md p-6 rounded-sm border border-white/20 shadow-2xl inline-block">
-                <h4 className="text-[10px] font-bold text-slate-900 uppercase tracking-widest mb-2">
-                  Services Provided Pan India
-                </h4>
-                <p className="text-slate-600 text-sm font-light">
-                  Serving clients across all major cities and regions in India.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
 
       </section>

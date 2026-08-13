@@ -115,7 +115,10 @@ export const ContactForms = () => {
                 min="6"
                 placeholder="Min 6"
                 value={length}
-                onChange={(e) => setLength(e.target.value ? Number(e.target.value) : "")}
+                onChange={(e) => {
+                  setLength(e.target.value ? Number(e.target.value) : "");
+                  if (errors.dimensions) setErrors(prev => ({ ...prev, dimensions: "" }));
+                }}
                 className={`w-full bg-[#1a1a1a] border rounded-sm px-4 py-3 text-white focus:outline-none transition-colors ${errors.dimensions && (length === "" || length < 6) ? "border-red-500" : "border-white/10 focus:border-luxury-gold"}`}
               />
             </div>
@@ -128,7 +131,10 @@ export const ContactForms = () => {
                 min="5"
                 placeholder="Min 5"
                 value={height}
-                onChange={(e) => setHeight(e.target.value ? Number(e.target.value) : "")}
+                onChange={(e) => {
+                  setHeight(e.target.value ? Number(e.target.value) : "");
+                  if (errors.dimensions) setErrors(prev => ({ ...prev, dimensions: "" }));
+                }}
                 className={`w-full bg-[#1a1a1a] border rounded-sm px-4 py-3 text-white focus:outline-none transition-colors ${errors.dimensions && (height === "" || height < 5) ? "border-red-500" : "border-white/10 focus:border-luxury-gold"}`}
               />
             </div>
