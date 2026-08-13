@@ -5,20 +5,16 @@ import { Link } from "react-router-dom";
 export const FAQSection = () => {
   const faqs = [
     {
-      question: "What is the standard base price for installation of Slide & Turn® glass?",
-      answer: "Our pricing for premium architectural systems depends on the specific project requirements. It incorporates elite double-tempered structural safety glass, premium heavy-gauge aluminum support rails, customized weatherproof locking rubber seals, and baseline engineering fitting charges. Please request a quote to get an accurate estimate. Freight and government taxes are determined additionally based on shipping distance."
+      question: "How is Slide&Turn different from regular slider?",
+      answer: "Conventional Sliders Panels only slide horizontally; only half the window can open, while in Frameless Slide & Turn, Panels slide to stack neatly, and each can swing inward for full opening and easy cleaning. Conventional Sliders comes with bulky frames, clutters the view while S&T gives uninterrupted panoramic view."
     },
     {
-      question: "How do Full Length versus Half Length variants differ?",
-      answer: "Full Length structures span continuously from the floor straight up to the concrete ceiling line. Half Length systems are designed to begin either at the top boundary of an existing protective balcony metal/concrete railing, or alternatively feature a pre-installed bottom glass panel acting as a rigid structural railing while the Slide & Turn® sliding panes operate seamlessly above it."
+      question: "Is uPVC or regular aluminum slider a better option?",
+      answer: "uPVC or aluminum sliders are convention methods to enclose areas, they come with bulky frames and limit the opening to half. Sliders are simpler in design and hardware, making them more affordable, Slide & Turn is the aspirational upgrade—offering elegance, performance, and exclusivity."
     },
     {
-      question: "Are frameless glass structures totally waterproof during heavy monsoon seasons?",
-      answer: "Yes! Infiwin systems feature inter-pane H-profiles containing customized translucent polymer seals designed to block intense windblown rain completely. Our design profiles feature integrated lower drain holes that successfully transport any minor moisture out towards the exterior facade."
-    },
-    {
-      question: "What type of glass is used in fabrication?",
-      answer: "We use high-grade 10mm or 12mm double-tempered structural glass sheets that are extremely robust. This glass is structurally rated to withstand massive high-altitude wind pressure loads and is impact-resistant for complete home safety."
+      question: "How do Bi-fold systems compare to sliding doors?",
+      answer: "Bi-fold systems allow for a bigger clear opening, stacking panels to one or both sides. Sliding doors, while maintaining larger glass panes for unobstructed views even when closed, typically allow for a 50-66% opening. Bi-folds are ideal for maximum airflow, whereas sliders are preferred for minimalist aesthetic and large panoramic views."
     }
   ];
 
@@ -41,24 +37,24 @@ export const FAQSection = () => {
 
         <div className="space-y-4 animate-on-scroll">
           {faqs.map((faq, idx) => (
-            <div 
+            <div
               key={idx}
               className={`border rounded-lg overflow-hidden transition-all duration-300 ${openIndex === idx ? 'border-luxury-gold shadow-md' : 'border-slate-200'}`}
             >
-              <button 
+              <button
                 onClick={() => toggleAccordion(idx)}
                 className="w-full text-left px-6 py-6 flex items-center justify-between bg-white hover:bg-slate-50 transition-colors"
               >
                 <h3 className={`font-medium pr-8 ${openIndex === idx ? 'text-luxury-gold' : 'text-slate-900'}`}>
                   {faq.question}
                 </h3>
-                <ChevronDown 
-                  className={`flex-shrink-0 transition-transform duration-300 ${openIndex === idx ? 'transform rotate-180 text-luxury-gold' : 'text-slate-400'}`} 
+                <ChevronDown
+                  className={`flex-shrink-0 transition-transform duration-300 ${openIndex === idx ? 'transform rotate-180 text-luxury-gold' : 'text-slate-400'}`}
                   size={20}
                 />
               </button>
-              
-              <div 
+
+              <div
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
               >
                 <div className="px-6 pb-6 pt-0 text-slate-500 font-light leading-relaxed border-t border-slate-100 mt-2 pt-4">
@@ -71,12 +67,12 @@ export const FAQSection = () => {
 
         {/* Redirect to full FAQ page */}
         <div className="text-center mt-12">
-          <Link 
-            to="/faq" 
+          <Link
+            to="/faq"
             className="inline-flex items-center gap-2 bg-black hover:bg-luxury-gold text-white px-8 py-4 rounded-none font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
           >
             View All FAQs
-            
+
           </Link>
         </div>
       </div>
