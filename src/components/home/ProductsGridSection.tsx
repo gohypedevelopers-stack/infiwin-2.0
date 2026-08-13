@@ -11,6 +11,18 @@ export const ProductsGridSection = () => {
     const handleHighlight = (e: CustomEvent<{ filterName: string | null; productIds: string[] | null }>) => {
       setFilterName(e.detail?.filterName || null);
       setHighlightedIds(e.detail?.productIds || null);
+
+      if (e.detail?.productIds && e.detail.productIds.length > 0) {
+        setTimeout(() => {
+          const firstProductId = e.detail.productIds[0];
+          const element = document.querySelector(`[data-product-id="${firstProductId}"]`) as HTMLElement;
+          
+          if (element) {
+            // Smoothly scroll both vertically and horizontally so the card is perfectly centered on screen
+            element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+          }
+        }, 100);
+      }
     };
     window.addEventListener("highlight-products", handleHighlight as EventListener);
     return () => window.removeEventListener("highlight-products", handleHighlight as EventListener);
@@ -84,13 +96,13 @@ export const ProductsGridSection = () => {
   const showBottomMessage = filterName && firstHighlightedIndex >= 3;
 
   const filterMessage = (
-    <div className={`flex flex-col sm:flex-row items-center justify-between bg-white p-6 rounded-lg border border-slate-200 shadow-sm ${showTopMessage ? 'mb-10' : 'mt-10'}`}>
-      <p className="text-slate-700 font-medium text-sm mb-4 sm:mb-0">
+    <div className={`flex flex-row items-center justify-between gap-3 bg-white p-4 md:p-6 rounded-lg border border-slate-200 shadow-sm ${showTopMessage ? 'mb-10' : 'mt-10'}`}>
+      <p className="text-slate-700 font-medium text-[11px] md:text-sm text-left">
         Displaying product recommendations suitable for: <span className="text-luxury-gold font-bold">{filterName}</span>
       </p>
       <button 
         onClick={handleReset}
-        className="text-xs uppercase tracking-wider font-semibold text-slate-500 hover:text-slate-900 transition-colors border border-slate-300 rounded-lg px-4 py-2 bg-slate-50 hover:bg-slate-100"
+        className="text-[9px] md:text-xs uppercase tracking-wider font-semibold text-slate-500 hover:text-slate-900 transition-colors border border-slate-300 rounded-lg px-3 py-2 md:px-4 shrink-0 bg-slate-50 hover:bg-slate-100"
       >
         Show all systems
       </button>
@@ -110,7 +122,7 @@ export const ProductsGridSection = () => {
         {/* Active Interactive Filter Status Messages */}
         {showTopMessage && filterMessage}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div id="products-carousel" className="flex overflow-x-auto snap-x snap-mandatory gap-4 md:gap-8 pb-8 -mx-6 px-6 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible md:pb-0 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {products.map((product, idx) => {
             const isDimmed = highlightedIds !== null && !highlightedIds.includes(product.id);
             return (
@@ -124,12 +136,12 @@ export const ProductsGridSection = () => {
                   else if (product.title === "Bi-fold Glass System") url = "/gallery/product/top-hang-bi-fold?variant=bi-fold";
                   navigate(url);
                 }} 
-                className={`group bg-white rounded-lg border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full cursor-pointer ${
+                className={`group bg-white rounded-lg border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full cursor-pointer snap-start shrink-0 w-[85vw] sm:w-[60vw] md:w-auto ${
                   isDimmed ? "opacity-40 grayscale scale-[0.98]" : "opacity-100 grayscale-0 scale-100"
                 }`}
               >
                 {/* Image Container */}
-                <div className="relative aspect-[4/5] overflow-hidden bg-slate-100">
+                <div className="relative aspect-[4/3] md:aspect-[4/5] overflow-hidden bg-slate-100">
                   <img loading="lazy" src={product.image} 
                     alt={product.title}
                     className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
@@ -143,7 +155,7 @@ export const ProductsGridSection = () => {
                 </div>
                 
                 {/* Content Container */}
-                <div className="p-8 pb-4 flex flex-col flex-grow text-center md:text-left">
+                <div className="p-5 md:p-8 pb-4 md:pb-4 flex flex-col flex-grow text-center md:text-left">
                   <p className="text-luxury-gold text-[10px] uppercase tracking-[0.2em] font-bold mb-2">{product.subtitle}</p>
                   <h3 className="text-xl font-medium text-slate-900 mb-4">{product.title}</h3>
                   
@@ -182,6 +194,16 @@ export const ProductsGridSection = () => {
         </div>
         
         {showBottomMessage && filterMessage}
+
+        <div className="text-center mt-12 md:mt-16">
+          <Link 
+            to="/products" 
+            className="inline-flex items-center gap-2 bg-black hover:bg-luxury-gold text-white px-8 py-4 rounded-lg font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+          >
+            View All Systems
+            <ArrowRight size={16} />
+          </Link>
+        </div>
       </div>
     </section>
   );
