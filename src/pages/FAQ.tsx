@@ -109,7 +109,7 @@ export default function FAQ() {
       items: [
         {
           question: "Are the systems certified for high-wind areas?",
-          answer: "Absolutely. Our systems are certified for exceeding standard architectural requirements for high-rise balconies. We conduct rigorous stress-testing in our labs for both static load and dynamic impact."
+          answer: "Absolutely. Our systems are certified for architectural requirements for high-rise balconies. We conduct rigorous stress-testing in our labs for both static load and dynamic impact."
         },
         {
           question: "Is frameless glass safe for a home?",
