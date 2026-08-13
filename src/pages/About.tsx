@@ -121,57 +121,52 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 max-w-4xl lg:max-w-none mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-10 max-w-6xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white p-5 md:p-6 rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:border-luxury-gold/30 transition-colors duration-500 text-left flex flex-row items-start gap-5"
+              className="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:border-luxury-gold/40 hover:-translate-y-1 transition-all duration-500 flex flex-col items-center text-center group"
             >
-              <div className="w-12 h-12 text-luxury-gold border border-luxury-gold/20 rounded-full flex items-center justify-center bg-luxury-gold/5 shrink-0">
-                <Maximize size={24} />
+              <div className="w-16 h-16 mb-6 text-luxury-gold border border-luxury-gold/20 rounded-full flex items-center justify-center bg-luxury-gold/5 group-hover:bg-luxury-gold group-hover:text-white transition-all duration-500">
+                <Maximize size={28} />
               </div>
-              <div>
-                <h3 className="text-lg md:text-xl font-serif text-slate-900 mb-2">Panoramic Design</h3>
-                <p className="text-sm text-slate-500 font-light leading-relaxed">
-                  Full-length views without vertical frames.
-                </p>
-              </div>
+              <h3 className="text-xl font-serif text-slate-900 mb-3">Panoramic Design</h3>
+              <p className="text-[15px] text-slate-500 font-light leading-relaxed">
+                Full-length views without vertical frames.
+              </p>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white p-5 md:p-6 rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:border-luxury-gold/30 transition-colors duration-500 text-left flex flex-row items-start gap-5"
+              transition={{ delay: 0.1 }}
+              className="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:border-luxury-gold/40 hover:-translate-y-1 transition-all duration-500 flex flex-col items-center text-center group"
             >
-              <div className="w-12 h-12 text-luxury-gold border border-luxury-gold/20 rounded-full flex items-center justify-center bg-luxury-gold/5 shrink-0">
-                <Move size={24} />
+              <div className="w-16 h-16 mb-6 text-luxury-gold border border-luxury-gold/20 rounded-full flex items-center justify-center bg-luxury-gold/5 group-hover:bg-luxury-gold group-hover:text-white transition-all duration-500">
+                <Move size={28} />
               </div>
-              <div>
-                <h3 className="text-lg md:text-xl font-serif text-slate-900 mb-2">Flexible Utility</h3>
-                <p className="text-sm text-slate-500 font-light leading-relaxed">
-                  Complete opening of balconies, terraces, penthouses, villas, or large spaces of any shape or size.
-                </p>
-              </div>
+              <h3 className="text-xl font-serif text-slate-900 mb-3">Flexible Utility</h3>
+              <p className="text-[15px] text-slate-500 font-light leading-relaxed">
+                Complete opening of balconies, terraces, penthouses, villas, or large spaces of any shape or size.
+              </p>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-white p-5 md:p-6 rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 hover:border-luxury-gold/30 transition-colors duration-500 text-left flex flex-row items-start gap-5"
+              className="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-slate-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:border-luxury-gold/40 hover:-translate-y-1 transition-all duration-500 flex flex-col items-center text-center group"
             >
-              <div className="w-12 h-12 text-luxury-gold border border-luxury-gold/20 rounded-full flex items-center justify-center bg-luxury-gold/5 shrink-0">
-                <LayoutGrid size={24} />
+              <div className="w-16 h-16 mb-6 text-luxury-gold border border-luxury-gold/20 rounded-full flex items-center justify-center bg-luxury-gold/5 group-hover:bg-luxury-gold group-hover:text-white transition-all duration-500">
+                <LayoutGrid size={28} />
               </div>
-              <div>
-                <h3 className="text-lg md:text-xl font-serif text-slate-900 mb-2">Space Efficiency</h3>
-                <p className="text-sm text-slate-500 font-light leading-relaxed">
-                  Movable glass walls that maximize usability compared to conventional doors and windows.
-                </p>
-              </div>
+              <h3 className="text-xl font-serif text-slate-900 mb-3">Space Efficiency</h3>
+              <p className="text-[15px] text-slate-500 font-light leading-relaxed">
+                Movable glass walls that maximize usability compared to conventional doors and windows.
+              </p>
             </motion.div>
           </div>
         </div>
