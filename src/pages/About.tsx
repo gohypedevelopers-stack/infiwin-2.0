@@ -11,9 +11,30 @@ export default function About() {
   const milestones = [
     { year: "2021", num: "1", title: "The Beginning", desc: "Launched India’s first Slide & Turn™ frameless glass window system." },
     { year: "2022", num: "2", title: "90° Turnable", desc: "Introduced the 90° turn able Slide & Turn Glass Window System." },
-    { year: "2023", num: "3", title: "Design Flexibility", desc: "Expanded design flexibility for angular and arch-shaped enclosures, extended portfolio with conventional aluminium window systems, and successfully completed 200+ installations." },
+    { 
+      year: "2023", 
+      num: "3", 
+      title: "Design Flexibility", 
+      desc: (
+        <ul className="list-disc pl-4 space-y-1">
+          <li>Expanded design flexibility for angular and arch-shaped enclosures,</li>
+          <li>extended portfolio with conventional aluminium window systems,</li>
+          <li>and successfully completed 200+ installations.</li>
+        </ul>
+      ) 
+    },
     { year: "2024", num: "4", title: "Nationwide Presence", desc: "Strengthened nationwide presence with 300+ installations across 18 cities." },
-    { year: "2025", num: "5", title: "Expanded Portfolio", desc: "Widened the product range by adding shower cubicles, crossed 500+ installations across 23 cities." }
+    { 
+      year: "2025", 
+      num: "5", 
+      title: "Expanded Portfolio", 
+      desc: (
+        <ul className="list-disc pl-4 space-y-1">
+          <li>Widened the product range by adding shower cubicles,</li>
+          <li>crossed 500+ installations across 23 cities</li>
+        </ul>
+      ) 
+    }
   ];
 
   const timelineRef = useRef<HTMLDivElement>(null);
@@ -218,7 +239,7 @@ export default function About() {
                           <span className="w-8 md:w-12 h-[1px] bg-luxury-gold/50"></span>
                         </div>
                         <h3 className="text-xl md:text-2xl font-serif text-slate-900 mb-3">{m.title}</h3>
-                        <p className="text-slate-500 font-light leading-relaxed text-sm md:text-base">{m.desc}</p>
+                        <div className="text-slate-500 font-light leading-relaxed text-sm md:text-base">{m.desc}</div>
                       </div>
                     </motion.div>
 
@@ -273,7 +294,7 @@ export default function About() {
             <div className="absolute top-0 right-0 w-72 h-72 bg-luxury-gold/10 rounded-full blur-[80px] group-hover:bg-luxury-gold/20 transition-all duration-700 -mr-20 -mt-20"></div>
 
             <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-6 relative z-10">Looking Ahead</p>
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-serif mb-6 md:mb-8 relative z-10 text-white group-hover:text-luxury-gold/90 transition-colors duration-500">Vision Beyond Windows</h2>
+            <h2 className="text-[26px] min-[400px]:text-3xl md:text-4xl xl:text-5xl whitespace-nowrap font-serif mb-6 md:mb-8 relative z-10 text-white group-hover:text-luxury-gold/90 transition-colors duration-500">Vision Beyond Windows</h2>
 
             <p className="text-slate-300 font-light text-base md:text-lg leading-relaxed mb-8 md:mb-10 relative z-10">
               Infi Window System aspires to become a household name for cutting-edge methods and creative solutions that meet the evolving needs of modern life. With a forward-looking spirit, we aim to redefine living spaces in India by blending innovation, elegance, and accessibility at par with global standards.
