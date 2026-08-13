@@ -11,29 +11,29 @@ export default function About() {
   const milestones = [
     { year: "2021", num: "1", title: "The Beginning", desc: "Launched India’s first Slide & Turn™ frameless glass window system." },
     { year: "2022", num: "2", title: "90° Turnable", desc: "Introduced the 90° turn able Slide & Turn Glass Window System." },
-    { 
-      year: "2023", 
-      num: "3", 
-      title: "Design Flexibility", 
+    {
+      year: "2023",
+      num: "3",
+      title: "Design Flexibility",
       desc: (
         <ul className="list-disc pl-4 space-y-1">
           <li>Expanded design flexibility for angular and arch-shaped enclosures,</li>
           <li>extended portfolio with conventional aluminium window systems,</li>
           <li>and successfully completed 200+ installations.</li>
         </ul>
-      ) 
+      )
     },
     { year: "2024", num: "4", title: "Nationwide Presence", desc: "Strengthened nationwide presence with 300+ installations across 18 cities." },
-    { 
-      year: "2025", 
-      num: "5", 
-      title: "Expanded Portfolio", 
+    {
+      year: "2025",
+      num: "5",
+      title: "Expanded Portfolio",
       desc: (
         <ul className="list-disc pl-4 space-y-1">
           <li>Widened the product range by adding shower cubicles,</li>
           <li>crossed 500+ installations across 23 cities</li>
         </ul>
-      ) 
+      )
     }
   ];
 
@@ -78,13 +78,20 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-8">How Our Journey Began</h2>
             <div className="space-y-6 text-slate-600 font-light leading-relaxed text-justify">
               <p>
-                Our story started with a simple yet powerful thought: modern Indian homes deserve world-class infrastructure solutions without compromise. What began as a spark of curiosity soon evolved into a mission—to reclaim spaces for people by blending design innovation with everyday functionality.
+                Our story started with a simple yet powerful thought: modern Indian homes deserve world-class infrastructure solutions without compromise.
+
+              </p>
+              <p>
+                What began as a spark of curiosity soon evolved into a mission—to reclaim spaces for people by blending design innovation with everyday functionality.
               </p>
               <p>
                 We saw balconies, terraces, and large openings being underutilized due to conventional window systems. We envisioned a solution that would open up spaces fully, offer panoramic views, and bring global design standards to Indian homes.
               </p>
               <p>
-                That vision gave birth to INFIWIN, a home-grown innovation that redefined how glass doors and windows could function. From the first prototype to today’s premium installations, our journey has been fueled by innovation, persistence, and a belief that Indian engineering can set global benchmarks.
+                That vision gave birth to INFIWIN, a home-grown innovation that redefined how glass doors and windows could function.
+              </p>
+              <p>
+                From the first prototype to today’s premium installations, our journey has been fueled by innovation, persistence, and a belief that Indian engineering can set global benchmarks.
               </p>
             </div>
           </motion.div>
@@ -274,11 +281,12 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl xl:text-6xl font-serif mb-8 leading-tight">Our Commitment</h2>
             <div className="space-y-6 text-slate-300 font-light text-lg md:text-xl leading-relaxed">
               <p>
-                At Infi Window System, innovation is in our DNA. We continuously design systems that meet the needs of modern Indian lifestyles while matching global standards.
+                At Infi Window System, innovation is in our DNA.
               </p>
               <p>
-                Our mission is to deliver solutions that inspire, simplify, and endure—combining safety, durability, and elegance. We aspire to set new benchmarks in convenience, sustainability, and design excellence, ensuring accessibility for Indian buyers.
+                We continuously design systems that meet the needs of modern Indian lifestyles while matching global standards  Our mission is to deliver solutions that inspire, simplify, and <br></br>endure—combining safety, durability, and elegance. We aspire to set new benchmarks in convenience, sustainability, and design excellence, ensuring accessibility for Indian buyers.
               </p>
+
             </div>
           </motion.div>
 
