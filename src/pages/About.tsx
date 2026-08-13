@@ -308,14 +308,9 @@ export default function About() {
               Infi Window System aspires to become a household name for cutting-edge methods and creative solutions that meet the evolving needs of modern life. With a forward-looking spirit, we aim to redefine living spaces in India by blending innovation, elegance, and accessibility at par with global standards.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 relative z-10 w-full">
-              <div className="inline-flex items-center justify-center bg-luxury-gold/10 px-5 md:px-6 py-3 md:py-4 rounded-lg border border-luxury-gold/30 w-full sm:w-auto">
-                <span className="text-luxury-gold text-xs md:text-sm font-medium tracking-wide text-center">Awarded ISO 9001, 45001, CE</span>
-              </div>
-              <div className="px-2 sm:px-4 py-2 border-l border-white/20">
-                <span className="text-sm text-slate-400 font-medium tracking-wider uppercase text-[10px]">Recognized Startup</span>
-              </div>
-            </div>
+            <p className="text-luxury-gold text-sm md:text-base font-medium relative z-10 w-full text-center md:text-left mt-2">
+              Infi Window System is recognized startup, awarded ISO 9001, ISO 45001, CE certifications.
+            </p>
           </motion.div>
         </div>
       </section>
