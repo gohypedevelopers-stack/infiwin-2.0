@@ -181,7 +181,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-stretch">
           
           {/* Contact Info Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-2 gap-6 md:gap-10">
             <div className="flex gap-4">
               <div className="w-10 h-10 rounded-full bg-luxury-gold/10 flex items-center justify-center text-luxury-gold flex-shrink-0 border border-luxury-gold/20">
                 <Phone size={18} />
@@ -237,8 +237,8 @@ export default function Contact() {
 
           {/* Global Presence */}
           <div className="rounded-sm flex flex-col justify-end overflow-hidden relative min-h-[300px] shadow-xl shadow-black/5 h-full">
-            <img loading="lazy" src="/premium_global_presence.png"
-              alt="Premium Global Presence"
+            <img loading="lazy" src="/pan_india_presence.png"
+              alt="Premium Pan India Presence"
               className="absolute inset-0 w-full h-full object-cover z-0"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent z-0 pointer-events-none" />
