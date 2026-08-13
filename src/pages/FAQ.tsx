@@ -136,7 +136,7 @@ export default function FAQ() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-12 lg:pt-16">
+      <section className="relative w-full h-[50vh] md:h-[600px] flex items-center justify-center bg-black/80 pt-12 lg:pt-16 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img loading="lazy"
@@ -147,11 +147,11 @@ export default function FAQ() {
           <div className="absolute inset-0 bg-black/50" />
         </div>
 
-        <div className="relative z-10 text-center text-white px-6 w-full max-w-4xl mx-auto">
-          <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Expertise, Defined</p>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif mb-4 whitespace-nowrap">Spatial Knowledge</h1>
-          <p className="mt-4 text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed mb-6">
-            Explore our guide to premium architectural glass systems.
+        <div className="relative z-10 text-center text-white px-6 mt-12 w-full max-w-4xl mx-auto">
+          <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em]">Expertise, Defined</p>
+          <h1 className="text-4xl md:text-6xl font-serif mb-2 leading-tight max-w-4xl mx-auto whitespace-nowrap">Spatial Knowledge</h1>
+          <p className="text-[11px] md:text-[16px] font-light text-slate-200 max-w-4xl mx-auto leading-relaxed text-center text-balance">
+            Explore our comprehensive guide to premium glass systems. Find detailed answers to all your questions about our innovative design, installation and functionality.
           </p>
         </div>
       </section>

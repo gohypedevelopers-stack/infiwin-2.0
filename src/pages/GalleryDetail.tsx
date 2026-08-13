@@ -406,7 +406,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-8">
             <Link
               to="/contact"
-              className="bg-black hover:bg-slate-800 text-white px-6 py-3.5 rounded-lg font-semibold uppercase tracking-widest text-[10px] sm:text-xs transition-colors shadow-md text-center inline-flex items-center justify-center cursor-pointer border-none"
+              className="bg-black hover:bg-slate-800 text-white px-6 py-3.5 rounded-lg font-semibold uppercase tracking-widest text-[10px] sm:text-xs transition-colors shadow-md text-center inline-flex items-center justify-center cursor-pointer border-none whitespace-nowrap shrink-0"
             >
               Request a Quote
             </Link>
@@ -437,7 +437,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
             {data.images.length > 0 && (
               <button
                 onClick={() => setSelectedImageIndex(0)}
-                className="bg-luxury-gold hover:bg-slate-950 text-white px-5 py-2.5 rounded-lg font-medium uppercase tracking-wider text-xs transition-colors shadow flex items-center gap-2 cursor-pointer border-none self-center sm:self-auto"
+                className="bg-luxury-gold hover:bg-slate-950 text-white px-5 py-2.5 rounded-lg font-medium uppercase tracking-wider text-xs transition-colors shadow flex items-center gap-2 cursor-pointer border-none whitespace-nowrap shrink-0 self-center sm:self-auto"
               >
                 <Eye size={14} />
                 View Images
@@ -446,22 +446,22 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
           </div>
 
           {normalizedId === 'sliding-windows-doors' && (
-            <div className="flex flex-wrap justify-center sm:justify-start gap-4 mb-8">
+            <div className="flex overflow-x-auto sm:flex-wrap justify-start gap-2 sm:gap-4 mb-8 pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
               <button
                 onClick={() => setSearchParams({}, { replace: true })}
-                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${!variant ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none whitespace-nowrap shrink-0 ${!variant ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
               >
                 All
               </button>
               <button
                 onClick={() => setSearchParams({ variant: '2-track' }, { replace: true })}
-                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${variant === '2-track' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none whitespace-nowrap shrink-0 ${variant === '2-track' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
               >
                 2 Track Slider
               </button>
               <button
                 onClick={() => setSearchParams({ variant: '3-track' }, { replace: true })}
-                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${variant === '3-track' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none whitespace-nowrap shrink-0 ${variant === '3-track' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
               >
                 3 Track Slider
               </button>
@@ -469,16 +469,16 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
           )}
 
           {normalizedId === 'top-hang-bi-fold' && (
-            <div className="flex flex-wrap justify-center sm:justify-start gap-4 mb-8">
+            <div className="flex overflow-x-auto sm:flex-wrap justify-start gap-2 sm:gap-4 mb-8 pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
               <button
                 onClick={() => setSearchParams({ variant: 'internal' }, { replace: true })}
-                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${variant === 'internal' || !variant ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none whitespace-nowrap shrink-0 ${variant === 'internal' || !variant ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
               >
                 Internal Partitions
               </button>
               <button
                 onClick={() => setSearchParams({ variant: 'external' }, { replace: true })}
-                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${variant === 'external' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none whitespace-nowrap shrink-0 ${variant === 'external' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
               >
                 External Partitions
               </button>
@@ -486,28 +486,28 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
           )}
 
           {normalizedId === 'int-partition' && (
-            <div className="flex flex-wrap justify-center sm:justify-start gap-4 mb-8">
+            <div className="flex overflow-x-auto sm:flex-wrap justify-start gap-2 sm:gap-4 mb-8 pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
               <button
                 onClick={() => setSearchParams({}, { replace: true })}
-                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${!variant ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none whitespace-nowrap shrink-0 ${!variant ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
               >
                 All
               </button>
               <button
                 onClick={() => setSearchParams({ variant: 'bi-fold' }, { replace: true })}
-                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${variant === 'bi-fold' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none whitespace-nowrap shrink-0 ${variant === 'bi-fold' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
               >
                 Bi Fold
               </button>
               <button
                 onClick={() => setSearchParams({ variant: 'telescopic' }, { replace: true })}
-                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${variant === 'telescopic' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none whitespace-nowrap shrink-0 ${variant === 'telescopic' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
               >
                 Telescopic
               </button>
               <button
                 onClick={() => setSearchParams({ variant: 'center-open' }, { replace: true })}
-                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none ${variant === 'center-open' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none whitespace-nowrap shrink-0 ${variant === 'center-open' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
               >
                 Synchronized System
               </button>
@@ -517,7 +517,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
           {data.images.length === 0 ? (
             <div className="text-center text-slate-500 py-12">No images found for this category.</div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-6">
               {data.images.map((img, idx) => {
                 const isVideo = img.split('#')[0].split('?')[0].toLowerCase().endsWith('.mp4');
                 const hasTitle = img.includes('#title=');
@@ -531,7 +531,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: (idx % 5) * 0.1 }}
-                    className="overflow-hidden rounded-lg border border-slate-200/50 shadow-md hover:shadow-xl transition-shadow cursor-pointer aspect-[4/3] relative group"
+                    className="overflow-hidden rounded-lg border border-slate-200/50 shadow-md hover:shadow-xl transition-shadow cursor-pointer aspect-square sm:aspect-[4/3] relative group [&:nth-child(odd):last-child]:col-span-2 [&:nth-child(odd):last-child]:aspect-[16/9] md:[&:nth-child(odd):last-child]:col-span-1 md:[&:nth-child(odd):last-child]:aspect-[4/3]"
                     onClick={() => setSelectedImageIndex(idx)}
                   >
                     {isVideo ? (
@@ -598,7 +598,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                   <div className="w-full max-w-[340px] shrink-0 mx-auto md:mx-0 rounded-lg overflow-hidden shadow-lg relative border border-slate-200 group cursor-pointer" onClick={() => setSelectedImageIndex(videos[0].idx)}>
                     <video
                       src={videos[0].img}
-                      className="w-full aspect-[9/16] object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
+                      className="w-full aspect-[4/5] md:aspect-[9/16] object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
                       muted loop playsInline autoPlay
                     />
                     <div className="absolute inset-0 bg-black/10 transition-colors pointer-events-none" />
@@ -651,7 +651,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                         <div className="w-full max-w-[340px] shrink-0 mx-auto md:mx-0 rounded-lg overflow-hidden shadow-lg relative border border-slate-200 group cursor-pointer" onClick={() => setSelectedImageIndex(idx)}>
                           <video
                             src={img}
-                            className="w-full aspect-[9/16] object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
+                            className="w-full aspect-[4/5] md:aspect-[9/16] object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
                             muted loop playsInline autoPlay
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
@@ -691,7 +691,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
               <h2 className="text-3xl font-serif text-slate-900">You Might Also Like</h2>
             </div>
 
-            <div 
+            <div
               ref={carouselRef}
               className="flex overflow-x-auto snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 pb-6 sm:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
             >

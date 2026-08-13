@@ -7,21 +7,21 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-10 text-left">
           <div className="col-span-2 md:col-span-1 flex flex-col items-start text-left">
-            <Link to="/" className="block -ml-3.5 mb-2">
+            <Link to="/" className="block -ml-3.5 md:-mt-4 lg:-mt-6 mb-2">
               <img loading="lazy" src="https://i.postimg.cc/0Q7DD7KK/H-Logo-V-BG.png"
                 alt="INFIWIN"
-                className="h-16 md:h-20 max-w-full object-contain brightness-0 invert"
+                className="h-24 md:h-28 max-w-full object-contain brightness-0 invert"
                 referrerPolicy="no-referrer"
               />
             </Link>
-            <p className="text-white/40 text-sm font-light leading-relaxed max-w-xs mb-6">
+            <p className="text-white/40 text-[10px] md:text-sm font-light leading-relaxed max-w-xs mb-6">
               Premium architectural glass and slide & turn frameless balcony structures designed for Indian climatic conditions.
             </p>
           </div>
 
           <div className="col-span-1 md:col-span-1 text-left">
-            <h5 className="text-[10px] uppercase tracking-[0.3em] text-white font-bold mb-8">6 Product Lines</h5>
-            <ul className="space-y-4 text-white/60 text-sm">
+            <div className="text-xs md:text-sm uppercase tracking-widest text-white font-bold mb-4">6 Product Lines</div>
+            <ul className="space-y-4 text-white/60 text-[12px] md:text-sm">
               <li><Link to="/gallery/product/slide-turn" className="hover:text-white transition-colors">Slide & Turn® System</Link></li>
               <li><Link to="/gallery/product/telescopic-sliders" className="hover:text-white transition-colors">Telescopic Slider</Link></li>
               <li><Link to="/gallery/product/synchronized-systems" className="hover:text-white transition-colors">Centre Open System</Link></li>
@@ -32,8 +32,8 @@ export const Footer = () => {
           </div>
 
           <div className="col-span-1 md:col-span-1 text-left">
-            <h5 className="text-[10px] uppercase tracking-[0.3em] text-white font-bold mb-8">Space Usages</h5>
-            <ul className="space-y-4 text-white/60 text-sm">
+            <div className="text-xs md:text-sm uppercase tracking-widest text-white font-bold mb-4">Space Usages</div>
+            <ul className="space-y-4 text-white/60 text-[12px] md:text-sm">
               <li><Link to="/gallery/application/balcony" className="hover:text-white transition-colors">Balcony Glass</Link></li>
               <li><Link to="/gallery/application/office-space" className="hover:text-white transition-colors">Office Glass Partitions</Link></li>
               <li><Link to="/gallery/application/commercial" className="hover:text-white transition-colors">Commercial Facades</Link></li>
@@ -42,8 +42,8 @@ export const Footer = () => {
           </div>
 
           <div className="col-span-2 md:col-span-1 text-left">
-            <h5 className="text-[10px] uppercase tracking-[0.3em] text-white font-bold mb-8">Contact Info</h5>
-            <ul className="space-y-4 text-white/60 text-sm font-light mb-8">
+            <div className="text-xs md:text-sm uppercase tracking-widest text-white font-bold mb-4">Contact Info</div>
+            <ul className="space-y-4 text-white/60 text-[12px] md:text-sm font-light mb-8">
               <li>Corporate Office: <br />H 195, Sector 63, Noida, UP - 201309</li>
               <li><a href="mailto:hi@infiwindow.com" className="hover:text-white transition-colors">hi@infiwindow.com</a></li>
               <li><a href="tel:+917337074370" className="hover:text-white transition-colors">+91 73370 74370</a></li>

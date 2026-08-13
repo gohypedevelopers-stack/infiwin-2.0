@@ -192,7 +192,7 @@ export default function Concepts() {
   return (
     <div className="min-h-screen bg-white text-slate-900 overflow-hidden">
       {/* ── HERO SECTION ──────────────────────────────────────────────── */}
-      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-12 lg:pt-16 overflow-hidden">
+      <section className="relative w-full h-[50vh] md:h-[600px] flex items-center justify-center bg-black/80 pt-12 lg:pt-16 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img loading="lazy"
@@ -202,15 +202,15 @@ export default function Concepts() {
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
-        <div className="relative z-10 text-center text-white px-6">
-          <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">
+        <div className="relative z-10 text-center text-white px-6 mt-12">
+          <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em]">
             Design Visions
           </p>
-          <h1 className="text-5xl md:text-7xl font-serif mb-4">
+          <h1 className="text-4xl md:text-6xl font-serif mb-2 leading-tight max-w-4xl mx-auto">
             Animated Architectural Concepts
           </h1>
-          <p className="mt-8 text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Witness our high-end architectural systems come to life.
+          <p className="text-[11px] md:text-[16px] font-light text-slate-200 max-w-4xl mx-auto leading-relaxed text-center text-balance">
+            Witness our high-end architectural systems come to life. Immerse yourself in our animated design visions that showcase the limitless possibilities of our glass.
           </p>
         </div>
       </section>

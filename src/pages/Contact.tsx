@@ -421,29 +421,28 @@ export default function Contact() {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section className="relative w-full h-[560px] flex items-center justify-center overflow-hidden">
+      <section className="relative w-full h-[50vh] md:h-[600px] flex items-center justify-center bg-black/80 pt-12 lg:pt-16 overflow-hidden">
         {/* Full-bleed background image */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img
             loading="lazy"
             src="/gallery/Systems/Slide%20&%20Turn/Slide & Turn (4).jpg.jpeg"
             alt="Contact Background"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-55"
           />
-          {/* Dark gradient overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
 
         {/* Centred text content */}
-        <div className="relative z-10 text-center text-white px-6 pt-16 lg:pt-20">
-          <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">
+        <div className="relative z-10 text-center text-white px-6 mt-12">
+          <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em]">
             Get In Touch
           </p>
-          <h1 className="text-5xl md:text-7xl font-serif mb-0 md:mb-3 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-serif mb-2 leading-tight max-w-4xl mx-auto">
             Start Your Project
           </h1>
-          <p className="text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed mt-0 md:mt-4">
-            Reach out to our specialists to discuss your project.
+          <p className="text-[11px] md:text-[16px] font-light text-slate-200 max-w-4xl mx-auto leading-relaxed text-center text-balance">
+            Reach out to our specialists today to discuss your project. From initial design consultation to seamless installation, our dedicated team is here to assist you.
           </p>
         </div>
       </section>

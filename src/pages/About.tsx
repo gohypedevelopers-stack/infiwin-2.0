@@ -244,9 +244,9 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col justify-center w-full"
+            className="flex flex-col justify-center w-full text-center md:text-left"
           >
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center justify-center md:justify-start gap-4 mb-6">
               <span className="w-12 h-[1px] bg-luxury-gold"></span>
               <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em]">Our Values</p>
             </div>
@@ -267,7 +267,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-col justify-center bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md p-8 md:p-12 lg:p-14 rounded-lg border border-white/10 shadow-2xl relative overflow-hidden group hover:border-luxury-gold/30 transition-colors duration-500 w-full mx-auto lg:mx-0"
+            className="flex flex-col justify-center bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md p-8 md:p-12 lg:p-14 rounded-lg border border-white/10 shadow-2xl relative overflow-hidden group hover:border-luxury-gold/30 transition-colors duration-500 w-full mx-auto lg:mx-0 text-center md:text-left"
           >
             {/* Hover Glow Effect */}
             <div className="absolute top-0 right-0 w-72 h-72 bg-luxury-gold/10 rounded-full blur-[80px] group-hover:bg-luxury-gold/20 transition-all duration-700 -mr-20 -mt-20"></div>
@@ -279,7 +279,7 @@ export default function About() {
               Infi Window System aspires to become a household name for cutting-edge methods and creative solutions that meet the evolving needs of modern life. With a forward-looking spirit, we aim to redefine living spaces in India by blending innovation, elegance, and accessibility at par with global standards.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 relative z-10 w-full">
+            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 relative z-10 w-full">
               <div className="inline-flex items-center justify-center bg-luxury-gold/10 px-5 md:px-6 py-3 md:py-4 rounded-lg border border-luxury-gold/30 w-full sm:w-auto">
                 <span className="text-luxury-gold text-xs md:text-sm font-medium tracking-wide text-center">Awarded ISO 9001, 45001, CE</span>
               </div>
@@ -294,12 +294,12 @@ export default function About() {
       {/* Let's Connect Section */}
       <section className="py-12 lg:py-16 px-6 bg-slate-50 text-slate-900 relative">
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-6">Let's Connect</p>
-          <h2 className="text-4xl md:text-5xl font-serif mb-8 leading-tight">Ready to Transform Your Space?</h2>
-          <p className="text-slate-600 font-light text-lg md:text-xl leading-relaxed mb-12 max-w-3xl mx-auto">
+          <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-2">Let's Connect</p>
+          <h2 className="!text-[17.5px] md:!text-5xl font-serif mb-4 leading-tight">Ready to Transform Your Space?</h2>
+          <p className="text-slate-600 font-light !text-[12px] md:!text-xl leading-relaxed mb-6 max-w-3xl mx-auto">
             Our experts are ready to assist you in designing the perfect frameless glass solution.
           </p>
-          <Link to="/contact" className="inline-block bg-luxury-gold text-white px-8 py-3 rounded-lg font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-black transition-colors shadow-lg shadow-black/10">
+          <Link to="/contact" className="cta-btn inline-block bg-luxury-gold hover:bg-slate-950 text-white px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs transition-colors shadow-md border-none cursor-pointer">
             Consult With Our Experts
           </Link>
         </div>

@@ -56,7 +56,7 @@ export default function Applications() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-12 lg:pt-16">
+      <section className="relative w-full h-[50vh] md:h-[600px] flex items-center justify-center bg-black/80 pt-12 lg:pt-16 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img
@@ -67,11 +67,11 @@ export default function Applications() {
           <div className="absolute inset-0 bg-black/50" />
         </div>
 
-        <div className="relative z-10 text-center text-white px-6">
-          <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Architectural Harmony</p>
-          <h1 className="text-4xl md:text-7xl font-serif mb-4">Spatial Fluidity</h1>
-          <p className="mt-8 text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Explore how our glass systems integrate into any space.
+        <div className="relative z-10 text-center text-white px-6 mt-12">
+          <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em]">Architectural Harmony</p>
+          <h1 className="text-4xl md:text-6xl font-serif mb-2 leading-tight max-w-4xl mx-auto">Spatial Fluidity</h1>
+          <p className="text-[11px] md:text-[16px] font-light text-slate-200 max-w-4xl mx-auto leading-relaxed text-center text-balance">
+            Explore how our premium glass systems integrate flawlessly into any architectural space. From balcony facades to terrace glazing, we bring your vision to life.
           </p>
         </div>
       </section>

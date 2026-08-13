@@ -35,7 +35,7 @@ export default function Products() {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-12 lg:pt-16 overflow-hidden">
+      <section className="relative w-full h-[50vh] md:h-[600px] flex items-center justify-center bg-black/80 pt-12 lg:pt-16 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <img
@@ -46,11 +46,11 @@ export default function Products() {
           <div className="absolute inset-0 bg-black/50" />
         </div>
 
-        <div className="relative z-10 text-center text-white px-6">
-          <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Structural Excellence</p>
-          <h1 className="text-4xl md:text-7xl font-serif mb-4">Precision Engineered</h1>
-          <p className="mt-8 text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Experience our precision-engineered glass structures.
+        <div className="relative z-10 text-center text-white px-6 mt-12">
+          <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em]">Structural Excellence</p>
+          <h1 className="text-4xl md:text-6xl font-serif mb-2 leading-tight max-w-4xl mx-auto">Precision Engineered</h1>
+          <p className="text-[11px] md:text-[16px] font-light text-slate-200 max-w-4xl mx-auto leading-relaxed text-center text-balance">
+            Experience our precision-engineered frameless glass structures. Our innovative Slide & Turn systems transform spaces with seamless elegance and functionality.
           </p>
         </div>
       </section>
@@ -64,12 +64,12 @@ export default function Products() {
               <h4 className="text-3xl md:text-4xl font-serif text-slate-900">Highly Engineered Systems</h4>
             </div>
 
-            <div className="flex flex-wrap gap-2 md:gap-4 items-center justify-center md:justify-start">
+            <div className="flex overflow-x-auto md:flex-wrap gap-2 md:gap-4 items-center justify-start md:justify-start pb-2 md:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] px-1 -mx-1">
               {categories.map((cat, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveFilter(cat)}
-                  className={`px-3 py-1.5 md:px-6 md:py-2 rounded-sm text-xs md:text-sm tracking-wide transition-all duration-300 ${activeFilter === cat
+                  className={`px-3 py-1.5 md:px-6 md:py-2 rounded-sm text-xs md:text-sm tracking-wide transition-all duration-300 whitespace-nowrap shrink-0 ${activeFilter === cat
                     ? "bg-luxury-gold text-white font-medium shadow-md"
                     : "bg-slate-100 text-slate-500 hover:bg-slate-200"
                     }`}
