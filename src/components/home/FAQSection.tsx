@@ -43,7 +43,7 @@ export const FAQSection = () => {
           {faqs.map((faq, idx) => (
             <div 
               key={idx}
-              className={`border rounded-xl overflow-hidden transition-all duration-300 ${openIndex === idx ? 'border-luxury-gold shadow-md' : 'border-slate-200'}`}
+              className={`border rounded-lg overflow-hidden transition-all duration-300 ${openIndex === idx ? 'border-luxury-gold shadow-md' : 'border-slate-200'}`}
             >
               <button 
                 onClick={() => toggleAccordion(idx)}

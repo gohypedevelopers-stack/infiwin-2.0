@@ -4,7 +4,7 @@ import { CheckCircle, ArrowRight } from "lucide-react";
 export default function ThankYou() {
   return (
     <div className="min-h-screen pt-12 lg:pt-16 pb-12 lg:pb-16 flex flex-col items-center justify-center bg-slate-50 px-6">
-      <div className="bg-white p-12 rounded-3xl shadow-xl border border-slate-100 max-w-xl text-center">
+      <div className="bg-white p-12 rounded-lg shadow-xl border border-slate-100 max-w-xl text-center">
         <div className="w-24 h-24 bg-green-50 text-green-500 rounded-full flex items-center justify-center mx-auto mb-8">
           <CheckCircle size={48} />
         </div>

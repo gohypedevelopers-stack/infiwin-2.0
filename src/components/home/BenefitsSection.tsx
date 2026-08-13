@@ -143,7 +143,7 @@ export const BenefitsSection = () => {
               { icon: <CloudRain className="w-8 h-8 text-luxury-gold mb-4 group-hover:scale-110 transition-transform duration-300" />, label: "Rain" },
               { icon: <Bird className="w-8 h-8 text-luxury-gold mb-4 group-hover:scale-110 transition-transform duration-300" />, label: "Birds" },
             ].map((item, idx) => (
-              <div key={idx} className="bg-slate-50 border border-slate-100 rounded-2xl p-8 flex flex-col items-center justify-center text-center hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-default">
+              <div key={idx} className="bg-slate-50 border border-slate-100 rounded-lg p-8 flex flex-col items-center justify-center text-center hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-default">
                 {item.icon}
                 <span className="text-slate-800 font-semibold tracking-wide">{item.label}</span>
               </div>

@@ -60,7 +60,7 @@ export default function Products() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="text-center md:text-left">
-              <h3 className="text-sm font-medium text-slate-400 uppercase tracking-[0.3em] mb-4">Signature Range</h3>
+              <h5 className="text-sm font-medium text-slate-400 uppercase mb-4">Signature Range</h5>
               <h4 className="text-3xl md:text-4xl font-serif text-slate-900">Highly Engineered Systems</h4>
             </div>
 
@@ -95,7 +95,7 @@ export default function Products() {
                       {p.category}
                     </div>
                   </div>
-                  <div className="flex justify-between items-center mt-6">
+                  <div className="flex justify-center md:justify-between items-center mt-6 text-center md:text-left">
                     <h5 className="text-2xl font-serif group-hover:text-luxury-gold transition-colors">{p.title}</h5>
 
                   </div>
@@ -135,10 +135,10 @@ export default function Products() {
                   { label: "Mechanism", value: "Slide and Turn", desc: "Smooth Operation" },
                   { label: "Profile", value: "Aluminium", desc: "Durable Frame" }
                 ].map((stat, i) => (
-                  <div key={i} className="p-6 border border-slate-100 rounded-sm hover:border-luxury-gold transition-colors text-center sm:text-left">
-                    <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-3">{stat.label}</p>
-                    <p className="text-xl font-serif mb-1 text-slate-900">{stat.value}</p>
-                    <p className="text-xs text-slate-500 font-light">{stat.desc}</p>
+                  <div key={i} className="p-4 md:p-6 border border-slate-100 rounded-sm hover:border-luxury-gold transition-colors text-center sm:text-left">
+                    <p className="text-[9px] md:text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-2 md:mb-3">{stat.label}</p>
+                    <p className="text-base md:text-xl font-serif mb-1 text-slate-900">{stat.value}</p>
+                    <p className="text-[10px] md:text-xs text-slate-500 font-light">{stat.desc}</p>
                   </div>
                 ))}
               </div>
@@ -163,13 +163,13 @@ export default function Products() {
       </section>
 
       {/* Call to Action */}
-      <section className="px-6 py-12 lg:py-16 bg-luxury-gold/5 border-y border-luxury-gold/10">
+      <section className="cta-section px-6 py-12 lg:py-16 bg-luxury-gold/5 border-y border-luxury-gold/10">
         <div className="max-w-4xl mx-auto text-center">
-          <h4 className="text-3xl font-serif mb-8">Ready to upgrade your space?</h4>
-          <p className="text-slate-600 font-light mb-10 leading-relaxed">
+          <h4 className="text-3xl font-serif mb-3">Ready to upgrade your space?</h4>
+          <p className="text-slate-600 font-light mb-5 leading-relaxed">
             Our consultants are ready to provide a detailed technical assessment and quote for your project.
           </p>
-          <Link to="/contact" className="inline-block bg-black hover:bg-slate-800 text-white px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs transition-colors shadow-md border-none cursor-pointer">
+          <Link to="/contact" className="cta-btn inline-block bg-black hover:bg-slate-800 text-white px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs transition-colors shadow-md border-none cursor-pointer">
             Request a Technical Quote
           </Link>
         </div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Plus, Dash, ChatSquareText, ChevronRight, BoxSeam, Tools, ShieldCheck, Envelope } from "react-bootstrap-icons";
 import { WhatsAppIcon } from "../components/icons/WhatsAppIcon";
@@ -56,12 +56,16 @@ export default function FAQ() {
       icon: <BoxSeam />,
       items: [
         {
-          question: "What defines the INFIWIN 2 Track Slider system?",
-          answer: "Our 2 Track Sliders feature precision-engineered stainless steel rollers and minimalist 20mm sightlines. Designed for seamless transitions, they support panel weights up to 400kg while maintaining effortless motion. The system is built with high-grade architectural aluminum and ultra-clear low-iron glass."
+          question: "How is Slide&Turn different from regular slider?",
+          answer: "Conventional Sliders Panels only slide horizontally; only half the window can open, while in Frameless Slide & Turn, Panels slide to stack neatly, and each can swing inward for full opening and easy cleaning. Conventional Sliders comes with bulky frames, clutters the view while S&T gives uninterrupted panoramic view."
+        },
+        {
+          question: "Is uPVC or regular aluminum slider a better option?",
+          answer: "uPVC or aluminum sliders are convention methods to enclose areas, they come with bulky frames and limit the opening to half. Sliders are simpler in design and hardware, making them more affordable, Slide & Turn is the aspirational upgrade—offering elegance, performance, and exclusivity."
         },
         {
           question: "How do Bi-fold systems compare to sliding doors?",
-          answer: "Bi-fold systems allow for a 100% clear opening, stacking panels to one or both sides. Sliding doors, while maintaining larger glass panes for unobstructed views even when closed, typically allow for a 50-66% opening. Bi-folds are ideal for maximum airflow, whereas sliders are preferred for minimalist aesthetic and large panoramic views."
+          answer: "Bi-fold systems allow for a bigger clear opening, stacking panels to one or both sides. Sliding doors, while maintaining larger glass panes for unobstructed views even when closed, typically allow for a 50-66% opening. Bi-folds are ideal for maximum airflow, whereas sliders are preferred for minimalist aesthetic and large panoramic views."
         },
         {
           question: "Can I customize the glass tint or opacity?",
@@ -69,15 +73,19 @@ export default function FAQ() {
         },
         {
           question: "What is the standard base price for installation of Slide & Turn® glass?",
-          answer: "Our pricing for premium architectural systems depends on the specific project requirements. It incorporates elite double-tempered structural safety glass, premium heavy-gauge aluminum support rails, customized weatherproof locking rubber seals, and baseline engineering fitting charges. Please request a quote to get an accurate estimate. Freight and government taxes are determined additionally based on shipping distance."
+          answer: "Our pricing for premium architectural systems depends on the specific project requirements. It incorporates elite tempered structural safety glass, premium heavy-gauge aluminum support rails, customization and baseline engineering fitting charges. Please request a quote to get an accurate estimate. Freight and government taxes are determined additionally based on shipping distance."
         },
         {
           question: "How do Full Length versus Half Length variants differ?",
-          answer: "Full Length structures span continuously from the floor straight up to the concrete ceiling line. Half Length systems are designed to begin either at the top boundary of an existing protective balcony metal/concrete railing, or alternatively feature a pre-installed bottom glass panel acting as a rigid structural railing while the Slide & Turn® sliding panes operate seamlessly above it."
+          answer: "Full Length structures span continuously from the floor straight up to the ceiling line. Half Length systems are designed to begin either at the top boundary of an existing protective balcony metal/concrete railing, or alternatively feature a pre-installed bottom glass panel acting as a rigid structural railing while the Slide & Turn® sliding panes operate seamlessly above it."
         },
         {
           question: "What type of glass is used in fabrication?",
-          answer: "We use high-grade 10mm or 12mm double-tempered structural glass sheets that are extremely robust. This glass is structurally rated to withstand massive high-altitude wind pressure loads and is impact-resistant for complete home safety."
+          answer: "We use toughened glass of 8MM & 10 MM thickness that are extremely robust. This glass is structurally rated to withstand massive high-altitude wind pressure loads and is impact-resistant for complete home safety."
+        },
+        {
+          question: "Does it stop rain, dust and pigeons?",
+          answer: "Yes. Closed, the panels seal the balcony against rain, dust buildup and birds, and cut outside noise substantially. Open, they stack away and the balcony is open air again. You choose, day by day."
         }
       ]
     },
@@ -87,7 +95,7 @@ export default function FAQ() {
       items: [
         {
           question: "What does 'White-Glove' installation include?",
-          answer: "Our specialized teams handle everything from detailed site surveys and structural laser measurements to final assembly and micro-polishing. We ensure structural alignment within 1mm tolerances and use proprietary elastic sealants for maximum acoustic isolation and longevity. Our teams are trained in noise-minimization and dust-control protocols during site work."
+          answer: "Our specialized teams handle everything from detailed site surveys and structural laser measurements to final assembly. We ensure structural alignment within 5 mm."
         },
         {
           question: "How long does a typical installation take?",
@@ -101,15 +109,11 @@ export default function FAQ() {
       items: [
         {
           question: "Are the systems certified for high-wind areas?",
-          answer: "Absolutely. Our systems are certified for Category 5 hurricane pressures, exceeding standard architectural requirements for high-rise balconies. We conduct rigorous stress-testing in our labs for both static load and dynamic impact."
+          answer: "Absolutely. Our systems are certified for exceeding standard architectural requirements for high-rise balconies. We conduct rigorous stress-testing in our labs for both static load and dynamic impact."
         },
         {
-          question: "What safety standards does your glass follow?",
-          answer: "All panels are tempered and heat-soaked according to EN 14179-1 standards to eliminate spontaneous breakage risks. For overhead or high-security applications, we use SGP (SentryGlas Plus) or PVB interlayers for superior structural integrity even if the glass is compromised."
-        },
-        {
-          question: "Are frameless glass structures totally waterproof during heavy monsoon seasons?",
-          answer: "Yes! Infiwin systems feature inter-pane H-profiles containing customized translucent polymer seals designed to block intense windblown rain completely. Our design profiles feature integrated lower drain holes that successfully transport any minor moisture out towards the exterior facade."
+          question: "Is frameless glass safe for a home?",
+          answer: "Yes, the system is specially designed for exterior use to protect from strong winds, dust and weather. Frameless Slide & Turn systems use premium hardware, profiles designed for Highrise apartments. It comes with 3 years warrantee on hardware & 10 years on profile for complete peace of mind."
         }
       ]
     },
@@ -118,12 +122,12 @@ export default function FAQ() {
       icon: <Envelope />,
       items: [
         {
-          question: "What is the warranty period for INFIWIN systems?",
-          answer: "We provide a 10-year structural warranty on all glass and aluminum components, and a 5-year warranty on specialized hardware and moving parts. This reflects our confidence in the materials and engineering precision of our systems."
+          question: "What is the warranty period for INFIWIN Slide & Turn systems?",
+          answer: "We provide a 10-year structural warranty on aluminum profiles and a 3 year warranty on specialized hardware and moving parts. This reflects our confidence in the materials and engineering precision of our systems."
         },
         {
           question: "How should I clean and maintain the glass?",
-          answer: "We recommend cleaning with a soft cloth and PH-neutral glass cleaner. Avoid abrasive pads or harsh chemical solvents. Applying our proprietary hydrophobic coating once every two years will ensure the self-cleaning properties and clarity are maintained."
+          answer: "We recommend cleaning with a soft cloth and PH-neutral glass cleaner. Avoid abrasive pads or harsh chemical solvents. Its very easy to clean Slide and Turn, when open every panel turns inside and just wipe the glass with a soft cloth and keep the track clear. You can clean both sides from inside your balcony. No hanging outside, no ladders."
         }
       ]
     }
@@ -135,14 +139,14 @@ export default function FAQ() {
       <section className="relative w-full h-[500px] flex items-center justify-center bg-black/80 pt-12 lg:pt-16">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-          <img loading="lazy" 
-            src="/gallery/Systems/Slide%20&%20Turn/Slide & Turn (3).jpg.jpeg" 
-            alt="FAQ Background" 
+          <img loading="lazy"
+            src="/gallery/Systems/Slide%20&%20Turn/Slide & Turn (3).jpg.jpeg"
+            alt="FAQ Background"
             className="w-full h-full object-cover opacity-55"
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
-        
+
         <div className="relative z-10 text-center text-white px-6 w-full max-w-4xl mx-auto">
           <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">Expertise, Defined</p>
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif mb-4 whitespace-nowrap">Spatial Knowledge</h1>

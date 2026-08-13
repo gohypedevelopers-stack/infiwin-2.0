@@ -173,7 +173,8 @@ export const galleryData: Record<string, GalleryItem> = {
     "images": [
       "/gallery/Systems/Synchronized%20Systems/6.png",
       "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2014,%202026,%2001_45_59%20PM.png",
-      "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2014,%202026,%2001_46_04%20PM.png"
+      "/gallery/Systems/Synchronized%20Systems/ChatGPT%20Image%20Jul%2014,%202026,%2001_46_04%20PM.png",
+      "/gallery/video%20section/Synchronised.mp4#title=Synchronized%20System"
     ]
   },
   "top-hang-bi-fold": {
@@ -182,7 +183,9 @@ export const galleryData: Record<string, GalleryItem> = {
     "images": [
       "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold%20(2).jpg.jpeg",
       "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold%20(3).jpg.jpeg",
-      "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold%20(4).jpg.jpeg"
+      "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold%20(4).jpg.jpeg",
+      "/gallery/Systems/Top%20Hang%20Bi%20Fold/tb1.jpeg",
+      "/gallery/Systems/Top%20Hang%20Bi%20Fold/tb2.jpeg"
     ]
   },
   "balcony": {
@@ -216,6 +219,7 @@ export const galleryData: Record<string, GalleryItem> = {
       "/gallery/Systems/Guillotine%20Glass%20System/ChatGPT%20Image%20Jul%206,%202026,%2011_45_40%20AM.png",
       "/gallery/Systems/Guillotine%20Glass%20System/guillotine_banner.jpg",
       "/gallery/Systems/Guillotine%20Glass%20System/ChatGPT%20Image%20Jul%206,%202026,%2011_46_52%20AM.png",
+      "/gallery/video%20section/Guillotine%20Window%20Systems.mp4#title=Guillotine%20System"
       // "/gallery/Systems/Guillotine%20Glass%20System/ChatGPT%20Image%20Jul%206,%202026,%2011_49_39%20AM.png"
     ]
   },

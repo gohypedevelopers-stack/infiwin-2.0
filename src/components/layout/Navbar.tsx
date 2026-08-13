@@ -101,7 +101,7 @@ export const Navbar = () => {
               animate={{ opacity: 1, height: "auto", marginTop: 16 }}
               exit={{ opacity: 0, height: 0, marginTop: 0 }}
               transition={{ duration: 0.2 }}
-              className="lg:hidden absolute top-full left-0 right-0 mx-auto w-full max-w-[calc(100vw-2rem)] bg-white rounded-3xl overflow-hidden shadow-2xl border border-slate-100"
+              className="lg:hidden absolute top-full left-0 right-0 mx-auto w-full max-w-[calc(100vw-2rem)] bg-white rounded-lg overflow-hidden shadow-2xl border border-slate-100"
             >
               <div className="p-6 flex flex-col gap-2">
                 <div className="flex flex-col">

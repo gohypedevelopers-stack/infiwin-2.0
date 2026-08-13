@@ -84,7 +84,7 @@ export const ProductsGridSection = () => {
   const showBottomMessage = filterName && firstHighlightedIndex >= 3;
 
   const filterMessage = (
-    <div className={`flex flex-col sm:flex-row items-center justify-between bg-white p-6 rounded-xl border border-slate-200 shadow-sm ${showTopMessage ? 'mb-10' : 'mt-10'}`}>
+    <div className={`flex flex-col sm:flex-row items-center justify-between bg-white p-6 rounded-lg border border-slate-200 shadow-sm ${showTopMessage ? 'mb-10' : 'mt-10'}`}>
       <p className="text-slate-700 font-medium text-sm mb-4 sm:mb-0">
         Displaying product recommendations suitable for: <span className="text-luxury-gold font-bold">{filterName}</span>
       </p>
@@ -124,7 +124,7 @@ export const ProductsGridSection = () => {
                   else if (product.title === "Bi-fold Glass System") url = "/gallery/product/top-hang-bi-fold?variant=bi-fold";
                   navigate(url);
                 }} 
-                className={`group bg-white rounded-xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full cursor-pointer ${
+                className={`group bg-white rounded-lg border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full cursor-pointer ${
                   isDimmed ? "opacity-40 grayscale scale-[0.98]" : "opacity-100 grayscale-0 scale-100"
                 }`}
               >

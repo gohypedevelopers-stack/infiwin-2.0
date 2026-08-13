@@ -104,7 +104,7 @@ export default function Applications() {
                         <p className="text-slate-500 text-sm font-light leading-relaxed">{app.description}</p>
                       </div>
                     </div>
-                    <div className="flex justify-between items-center px-1">
+                    <div className="flex justify-center md:justify-between items-center px-1 text-center md:text-left">
                       <h5 className="text-2xl font-serif group-hover:text-luxury-gold transition-colors">{app.title}</h5>
 
                     </div>
@@ -156,10 +156,10 @@ export default function Applications() {
                     desc: "This design features frameless glass panels that meet at a corner, creating a seamless and visually striking effect. It can be a great choice for spaces that require an open and airy feel."
                   }
                 ].map((item, idx) => (
-                  <div key={idx} className="p-6 bg-white border border-slate-100 rounded-sm hover:border-luxury-gold transition-colors text-center lg:text-left">
-                    <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-3">{item.label}</p>
-                    <p className="text-xl font-serif mb-1 text-slate-900">{item.title}</p>
-                    <p className="text-xs text-slate-500 font-light">{item.desc}</p>
+                  <div key={idx} className="p-4 md:p-6 bg-white border border-slate-100 rounded-sm hover:border-luxury-gold transition-colors text-center lg:text-left">
+                    <p className="text-[9px] md:text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-2 md:mb-3">{item.label}</p>
+                    <p className="text-base md:text-xl font-serif mb-1 text-slate-900">{item.title}</p>
+                    <p className="text-[10px] md:text-xs text-slate-500 font-light">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -180,13 +180,13 @@ export default function Applications() {
       </section>
 
       {/* Call to Action */}
-      <section className="px-6 py-12 lg:py-16 bg-luxury-gold/5 border-t border-luxury-gold/10">
+      <section className="cta-section px-6 py-12 lg:py-16 bg-luxury-gold/5 border-t border-luxury-gold/10">
         <div className="max-w-4xl mx-auto text-center">
-          <h4 className="text-4xl font-serif mb-8 text-slate-900">Envision INFIWIN in Your Space</h4>
-          <p className="text-slate-600 font-light mb-10 leading-relaxed text-lg max-w-3xl mx-auto">
+          <h4 className="text-4xl font-serif mb-3 text-slate-900">Envision INFIWIN in Your Space</h4>
+          <p className="text-slate-600 font-light mb-5 leading-relaxed text-lg max-w-3xl mx-auto">
             Discover how our frameless systems adapt perfectly to any architectural requirement, from luxury residential balconies to expansive commercial storefronts.
           </p>
-          <Link to="/contact" className="bg-black text-white px-8 py-3 rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-luxury-gold transition-colors shadow-lg inline-flex items-center gap-3 mx-auto">
+          <Link to="/contact" className="cta-btn bg-black text-white px-8 py-3 rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-luxury-gold transition-colors shadow-lg inline-flex items-center gap-3 mx-auto">
             <span>Contact Us</span>
           </Link>
         </div>

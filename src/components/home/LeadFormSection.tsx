@@ -57,7 +57,7 @@ export const LeadFormSection = () => {
   };
 
   return (
-    <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-slate-100 relative h-full">
+    <div className="bg-white rounded-lg p-8 md:p-12 shadow-xl border border-slate-100 relative h-full">
       <div className="flex flex-col justify-center h-full gap-6">
         {/* Header Block at Top */}
         <div className="text-center md:text-left">

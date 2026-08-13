@@ -5,7 +5,7 @@ import { FrameColorSection } from "../components/home/FrameColorSection";
 import { ProductsGridSection } from "../components/home/ProductsGridSection";
 import { ApplicationsSection } from "../components/home/ApplicationsSection";
 import { TestimonialsSection } from "../components/home/TestimonialsSection";
-import { ContactForms } from "../components/home/ContactForms";
+import { ContactForms } from "../components/home/ContactForms.tsx";
 import { FAQSection } from "../components/home/FAQSection";
 
 export default function Home() {

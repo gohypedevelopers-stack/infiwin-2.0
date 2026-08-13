@@ -136,7 +136,7 @@ const VolumeControl = ({ videoId }: { videoId: string }) => {
           if (!newMutedState) {
             vid.volume = 1.0;
           }
-          vid.play().catch(() => {});
+          vid.play().catch(() => { });
           setIsMuted(newMutedState);
         }
       }}
@@ -155,7 +155,7 @@ const LazyVideo = ({ id, src, className }: { id: string; src: string; className:
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          videoRef.current?.play().catch(() => {});
+          videoRef.current?.play().catch(() => { });
         } else {
           videoRef.current?.pause();
         }
@@ -226,9 +226,8 @@ export default function Concepts() {
           return (
             <div key={concept.id} className={`${rowBg} py-12 lg:py-16 border-b border-slate-100 last:border-0`}>
               <div
-                className={`max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-12 lg:gap-20 items-start ${
-                  isEven ? "" : "lg:flex-row-reverse"
-                }`}
+                className={`max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-12 lg:gap-20 items-start ${isEven ? "" : "lg:flex-row-reverse"
+                  }`}
               >
                 {/* Video Player Side */}
                 <div className="w-full lg:w-1/2 relative shrink-0">
@@ -323,7 +322,7 @@ export default function Concepts() {
                         className="bg-luxury-gold text-white text-[10px] font-bold uppercase tracking-[0.2em] px-8 py-3 rounded-lg hover:bg-yellow-600 transition-colors shadow-lg shadow-luxury-gold/5 flex items-center gap-2 group"
                       >
                         Enquire about {concept.title}
-                        
+
                       </Link>
                     </div>
                   </div>

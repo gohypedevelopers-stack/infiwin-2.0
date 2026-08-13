@@ -1,4 +1,4 @@
-import { useState, MouseEvent, useEffect } from 'react';
+import { useState, MouseEvent, useEffect, useRef } from 'react';
 import { useParams, useNavigate, useLocation, Link, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft, ChevronLeft, ChevronRight, X, Eye, ArrowRight, Play } from 'lucide-react';
@@ -144,6 +144,30 @@ const VIDEO_CONTENT_MAP: Record<string, { category: string, heading: string, des
       "Maintains natural light and visibility"
     ],
     cta: "Explore Half-Length Slide & Turn® →"
+  },
+  "Synchronized System": {
+    category: "INTERIOR PARTITION",
+    heading: "Synchronized System",
+    description: "An advanced center-opening sliding system that moves multiple glass panels simultaneously. Perfect for creating expansive, unobstructed openings with a single touch.",
+    highlights: [
+      "Single-touch synchronized movement",
+      "No bottom track required",
+      "Silent, smooth-gliding rollers",
+      "Ideal for internal partitions"
+    ],
+    cta: "Explore Synchronized System →"
+  },
+  "Guillotine System": {
+    category: "VERTICAL SLIDER",
+    heading: "Guillotine System",
+    description: "A state-of-the-art motorized vertical sliding glass system. Effortlessly control ventilation and enclosure with a remote, designed for modern cafes, balconies, and premium facades.",
+    highlights: [
+      "Fully motorized vertical sliding",
+      "Functions as a glass balustrade",
+      "Superior wind and weather sealing",
+      "Remote-controlled operation"
+    ],
+    cta: "Explore Guillotine System →"
   }
 };
 
@@ -157,6 +181,21 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
   const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
   const variant = searchParams.get('variant');
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (carouselRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+        if (scrollLeft + clientWidth >= scrollWidth - 10) {
+          carouselRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          carouselRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+        }
+      }
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     if (location.hash) {
@@ -232,7 +271,11 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
   } else if (normalizedId === 'top-hang-bi-fold') {
     const currentVariant = variant || 'internal';
     if (currentVariant === 'internal') {
-      filteredImages = ["/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold%20(3).jpg.jpeg"];
+      filteredImages = [
+        "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold%20(3).jpg.jpeg",
+        "/gallery/Systems/Top%20Hang%20Bi%20Fold/tb1.jpeg",
+        "/gallery/Systems/Top%20Hang%20Bi%20Fold/tb2.jpeg"
+      ];
     } else if (currentVariant === 'external') {
       filteredImages = [
         "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold.jpg.jpeg",
@@ -388,7 +431,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
             <div className="text-center sm:text-left w-full sm:w-auto">
-              <h3 className="text-sm font-medium text-slate-400 uppercase tracking-[0.3em] mb-2">Project Showcase</h3>
+              <h5 className="text-sm font-medium text-slate-400 uppercase mb-2">Project Showcase</h5>
               <h2 className="text-3xl font-serif text-slate-900">Explore {data.title} Installations</h2>
             </div>
             {data.images.length > 0 && (
@@ -488,7 +531,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: (idx % 5) * 0.1 }}
-                    className="overflow-hidden rounded-xl border border-slate-200/50 shadow-md hover:shadow-xl transition-shadow cursor-pointer aspect-[4/3] relative group"
+                    className="overflow-hidden rounded-lg border border-slate-200/50 shadow-md hover:shadow-xl transition-shadow cursor-pointer aspect-[4/3] relative group"
                     onClick={() => setSelectedImageIndex(idx)}
                   >
                     {isVideo ? (
@@ -540,7 +583,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
           <section className="px-6 py-12 md:py-[90px] bg-slate-100 text-slate-900 border-t border-slate-200">
             <div className="max-w-[1000px] mx-auto">
               <div className="text-center mb-10 md:mb-[52px]">
-                <h3 className="text-sm font-medium text-luxury-gold uppercase tracking-[0.3em] mb-3">Featured Highlights</h3>
+                <h5 className="text-sm font-medium text-luxury-gold uppercase mb-3">Featured Highlights</h5>
                 <h2 className="text-3xl md:text-5xl font-serif">See Our Systems in Action</h2>
                 {videos.length > 1 && (
                   <p className="mt-4 text-slate-600 max-w-2xl mx-auto text-sm md:text-base">
@@ -552,7 +595,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
               {videos.length === 1 ? (
                 // Condition 1: Only one video (Split Layout)
                 <div className="flex flex-col md:flex-row items-center gap-12 max-w-4xl mx-auto">
-                  <div className="w-full max-w-[340px] shrink-0 mx-auto md:mx-0 rounded-[16px] overflow-hidden shadow-lg relative border border-slate-200 group cursor-pointer" onClick={() => setSelectedImageIndex(videos[0].idx)}>
+                  <div className="w-full max-w-[340px] shrink-0 mx-auto md:mx-0 rounded-lg overflow-hidden shadow-lg relative border border-slate-200 group cursor-pointer" onClick={() => setSelectedImageIndex(videos[0].idx)}>
                     <video
                       src={videos[0].img}
                       className="w-full aspect-[9/16] object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
@@ -605,7 +648,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                     return (
                       <div key={idx} className={`flex flex-col ${isEven ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-8 md:gap-16`}>
                         {/* Video Card */}
-                        <div className="w-full max-w-[340px] shrink-0 mx-auto md:mx-0 rounded-[16px] overflow-hidden shadow-lg relative border border-slate-200 group cursor-pointer" onClick={() => setSelectedImageIndex(idx)}>
+                        <div className="w-full max-w-[340px] shrink-0 mx-auto md:mx-0 rounded-lg overflow-hidden shadow-lg relative border border-slate-200 group cursor-pointer" onClick={() => setSelectedImageIndex(idx)}>
                           <video
                             src={img}
                             className="w-full aspect-[9/16] object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none"
@@ -644,20 +687,24 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
         <section className="px-6 py-12 lg:py-16 bg-slate-50 border-t border-slate-200">
           <div className="max-w-7xl mx-auto">
             <div className="mb-12 text-center md:text-left">
-              <h3 className="text-sm font-medium text-slate-400 uppercase tracking-[0.3em] mb-3">Related Systems</h3>
+              <h5 className="text-sm font-medium text-slate-400 uppercase mb-3">Related Systems</h5>
               <h2 className="text-3xl font-serif text-slate-900">You Might Also Like</h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div 
+              ref={carouselRef}
+              className="flex overflow-x-auto snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 pb-6 sm:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+            >
               {relatedProducts.map((p, idx) => (
                 <motion.div
                   key={`${p.title}-${idx}`}
+                  className="w-[75vw] max-w-[300px] sm:w-auto sm:min-w-0 flex-shrink-0 snap-start"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1, duration: 0.4 }}
                 >
-                  <Link to={`/gallery/product/${p.title.toLowerCase().replace(/®/g, '').replace(/[\s&.]+/g, '-')}`} className="group cursor-pointer block">
+                  <Link to={`/gallery/product/${p.title.toLowerCase().replace(/®/g, '').replace(/[\s&.]+/g, '-')}`} className="group cursor-pointer block h-full">
                     <div className="aspect-[4/3] overflow-hidden rounded-sm mb-4 shadow-md transition-shadow hover:shadow-xl relative">
                       <img loading="lazy"
                         src={p.img}
@@ -665,13 +712,12 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         referrerPolicy="no-referrer"
                       />
-                      <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-sm text-white text-[9px] uppercase tracking-widest px-2.5 py-1 rounded-sm">
+                      <div className="absolute top-3 left-3 bg-black/80 backdrop-blur-sm text-white text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-sm">
                         {p.category}
                       </div>
                     </div>
-                    <div className="flex justify-between items-center mt-4 px-1">
-                      <h5 className="text-lg font-serif group-hover:text-luxury-gold transition-colors">{p.title}</h5>
-
+                    <div className="flex justify-center items-center mt-4 px-1 text-center w-full">
+                      <h5 className="text-lg font-serif text-slate-900 group-hover:text-luxury-gold transition-colors">{p.title}</h5>
                     </div>
                   </Link>
                 </motion.div>
@@ -682,13 +728,13 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
       )}
 
       {/* Call to Action */}
-      <section className="px-6 py-12 lg:py-16 bg-slate-900 text-white text-center">
+      <section className="cta-section px-6 py-12 lg:py-16 bg-slate-900 text-white text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl font-serif mb-6">Ready to bring your vision to life?</h2>
-          <p className="text-slate-300 font-light mb-10 text-lg">
+          <p className="text-slate-300 font-light mb-5 text-lg">
             Contact our engineering experts today to discuss how our {data.title} systems can elevate your next architectural project.
           </p>
-          <Link to="/contact" className="inline-block bg-luxury-gold hover:bg-slate-950 text-white px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs transition-colors shadow-md border-none cursor-pointer">
+          <Link to="/contact" className="cta-btn inline-block bg-luxury-gold hover:bg-slate-950 text-white px-6 py-3 rounded-lg font-medium uppercase tracking-wider text-xs transition-colors shadow-md border-none cursor-pointer">
             Request a Consultation
           </Link>
         </div>

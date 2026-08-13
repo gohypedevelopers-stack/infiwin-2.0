@@ -28,7 +28,7 @@ export const BestSellerSection = () => {
             </p>
 
             {/* Mobile Visual Presentation */}
-            <div className="lg:hidden relative h-[400px] sm:h-[500px] w-full rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl border border-black/5 bg-[#f5f5f5] mb-10 order-4">
+            <div className="lg:hidden relative h-[400px] sm:h-[500px] w-full rounded-lg sm:rounded-lg overflow-hidden shadow-2xl border border-black/5 bg-[#f5f5f5] mb-10 order-4">
               <div
                 className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "full" ? 'opacity-100' : 'opacity-0'}`}
                 style={{ backgroundImage: "url('/gallery/best seller/full-length.webp')" }}
@@ -95,7 +95,7 @@ export const BestSellerSection = () => {
           </div>
 
           {/* Visual Presentation */}
-          <div className="hidden lg:block relative h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl border border-black/5 bg-[#f5f5f5]">
+          <div className="hidden lg:block relative h-[600px] w-full rounded-lg overflow-hidden shadow-2xl border border-black/5 bg-[#f5f5f5]">
             <div
               className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "full" ? 'opacity-100' : 'opacity-0'}`}
               style={{ backgroundImage: "url('/gallery/best seller/full-length.webp')" }}

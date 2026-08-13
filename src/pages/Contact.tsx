@@ -59,7 +59,7 @@ function FlipDigit({
   return (
     <div className="flex flex-col items-center gap-1">
       <div className={`relative ${box}`}>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a2e] to-[#0f0f1e] rounded-xl border border-luxury-gold/30 flex items-center justify-center shadow-lg shadow-luxury-gold/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a2e] to-[#0f0f1e] rounded-lg border border-luxury-gold/30 flex items-center justify-center shadow-lg shadow-luxury-gold/10" />
         <AnimatePresence mode="wait">
           <motion.div
             key={value}
@@ -67,7 +67,7 @@ function FlipDigit({
             animate={{ rotateX: 0, opacity: 1 }}
             exit={{ rotateX: 90, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="absolute inset-0 flex items-center justify-center rounded-xl"
+            className="absolute inset-0 flex items-center justify-center rounded-lg"
           >
             <span className={`${text} font-mono font-bold text-white tracking-tight`}>
               {value}
@@ -100,7 +100,7 @@ function InlineTimerBanner({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -16 }}
       transition={{ type: "spring", damping: 20, stiffness: 260 }}
-      className="relative overflow-hidden rounded-2xl bg-[#0a0a0a] border border-luxury-gold/20 shadow-2xl shadow-luxury-gold/10 p-6 sm:p-8"
+      className="relative overflow-hidden rounded-lg bg-[#0a0a0a] border border-luxury-gold/20 shadow-2xl shadow-luxury-gold/10 p-6 sm:p-8"
     >
       {/* Progress bar */}
       <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-white/5">
@@ -146,10 +146,10 @@ function InlineTimerBanner({
       {/* CTA */}
       <a
         href="/products"
-        className="mt-5 w-full flex items-center justify-center gap-2 bg-luxury-gold/10 hover:bg-luxury-gold/20 border border-luxury-gold/20 text-luxury-gold rounded-xl py-3 text-[10px] font-bold uppercase tracking-[0.2em] transition-all group"
+        className="mt-5 w-full flex items-center justify-center gap-2 bg-luxury-gold/10 hover:bg-luxury-gold/20 border border-luxury-gold/20 text-luxury-gold rounded-lg py-3 text-[10px] font-bold uppercase tracking-[0.2em] transition-all group"
       >
         Explore Products
-        
+
       </a>
     </motion.div>
   );
@@ -187,7 +187,7 @@ function SuccessPopup({
         animate={{ scale: 1, opacity: 1, y: 0 }}
         exit={{ scale: 0.8, opacity: 0, y: 40 }}
         transition={{ type: "spring", damping: 20, stiffness: 300 }}
-        className="relative w-full max-w-md bg-[#0a0a0a] rounded-2xl overflow-hidden shadow-2xl border border-white/10"
+        className="relative w-full max-w-md bg-[#0a0a0a] rounded-lg overflow-hidden shadow-2xl border border-white/10"
       >
         {/* Gold glow top */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-1 bg-luxury-gold rounded-b-full blur-sm" />
@@ -294,7 +294,7 @@ function SuccessPopup({
               className="w-full bg-luxury-gold text-white py-4 rounded-lg flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-yellow-600 transition-all group"
             >
               Get Started — Explore Products
-              
+
             </a>
             <button
               onClick={onClose}
@@ -439,10 +439,10 @@ export default function Contact() {
           <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em] mb-4">
             Get In Touch
           </p>
-          <h1 className="text-5xl md:text-7xl font-serif mb-3 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-serif mb-0 md:mb-3 leading-tight">
             Start Your Project
           </h1>
-          <p className="text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl font-light text-slate-300 max-w-2xl mx-auto leading-relaxed mt-0 md:mt-4">
             Reach out to our specialists to discuss your project.
           </p>
         </div>
@@ -539,11 +539,10 @@ export default function Contact() {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="John Doe"
-                      className={`w-full bg-transparent border-b pb-3 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none transition-colors ${
-                        errors.name
-                          ? "border-red-400"
-                          : "border-slate-200 focus:border-luxury-gold"
-                      }`}
+                      className={`w-full bg-transparent border-b pb-3 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none transition-colors ${errors.name
+                        ? "border-red-400"
+                        : "border-slate-200 focus:border-luxury-gold"
+                        }`}
                     />
                     {errors.name && (
                       <p className="mt-1 text-[10px] text-red-500">{errors.name}</p>
@@ -561,11 +560,10 @@ export default function Contact() {
                       value={form.phone}
                       onChange={handleChange}
                       placeholder="+91"
-                      className={`w-full bg-transparent border-b pb-3 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none transition-colors ${
-                        errors.phone
-                          ? "border-red-400"
-                          : "border-slate-200 focus:border-luxury-gold"
-                      }`}
+                      className={`w-full bg-transparent border-b pb-3 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none transition-colors ${errors.phone
+                        ? "border-red-400"
+                        : "border-slate-200 focus:border-luxury-gold"
+                        }`}
                     />
                     {errors.phone && (
                       <p className="mt-1 text-[10px] text-red-500">{errors.phone}</p>
@@ -601,11 +599,10 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="How can we help you?"
                     rows={3}
-                    className={`w-full bg-transparent border-b pb-3 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none transition-colors resize-none ${
-                      errors.message
-                        ? "border-red-400"
-                        : "border-slate-200 focus:border-luxury-gold"
-                    }`}
+                    className={`w-full bg-transparent border-b pb-3 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none transition-colors resize-none ${errors.message
+                      ? "border-red-400"
+                      : "border-slate-200 focus:border-luxury-gold"
+                      }`}
                   />
                   {errors.message && (
                     <p className="mt-1 text-[10px] text-red-500">{errors.message}</p>
@@ -700,13 +697,13 @@ export default function Contact() {
 
             {/* Global Presence */}
             <div className="rounded-sm flex flex-col h-full justify-end overflow-hidden relative min-h-[400px] shadow-xl shadow-black/5">
-              <img loading="lazy" src="/premium_global_presence.png" 
-                alt="Premium Global Presence" 
+              <img loading="lazy" src="/premium_global_presence.png"
+                alt="Premium Global Presence"
                 className="absolute inset-0 w-full h-full object-cover z-0"
               />
               {/* Subtle dark gradient at the bottom so the text card pops nicely */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/5 to-transparent z-0 pointer-events-none" />
-              
+
               <div className="p-8 lg:p-10 relative z-10 w-full mt-auto">
                 <div className="bg-white/95 backdrop-blur-md p-6 rounded-sm border border-white/20 shadow-2xl">
                   <h4 className="text-[10px] font-bold text-slate-900 uppercase tracking-widest mb-2">
@@ -724,13 +721,13 @@ export default function Contact() {
 
       {/* Full Width Map Section */}
       <section className="w-full h-[400px] border-t border-slate-100">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.080819071319!2d77.37780917613706!3d28.627339784315406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef3e8827a2b7%3A0x4e26c22a34fd6e52!2sInfiWindow!5e0!3m2!1sen!2sin!4v1783504063318!5m2!1sen!2sin" 
-          width="100%" 
-          height="100%" 
-          style={{ border: 0 }} 
-          allowFullScreen 
-          loading="lazy" 
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.080819071319!2d77.37780917613706!3d28.627339784315406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef3e8827a2b7%3A0x4e26c22a34fd6e52!2sInfiWindow!5e0!3m2!1sen!2sin!4v1783504063318!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
           referrerPolicy="strict-origin-when-cross-origin"
         ></iframe>
       </section>

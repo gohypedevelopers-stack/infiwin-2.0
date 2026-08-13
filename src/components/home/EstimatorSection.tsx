@@ -16,7 +16,7 @@ export const EstimatorSection = () => {
   }, [length, height]);
 
   return (
-    <div className="bg-slate-900 rounded-2xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden h-full" id="estimator">
+    <div className="bg-slate-900 rounded-lg p-8 md:p-12 text-white shadow-2xl relative overflow-hidden h-full" id="estimator">
       <div className="relative z-10 flex flex-col justify-between h-full gap-8">
         <div className="text-center md:text-left flex flex-col items-center md:items-start">
           <p className="text-luxury-gold text-[10px] uppercase tracking-[0.3em] font-bold mb-4">Instant Pricing Guide</p>
@@ -72,7 +72,7 @@ export const EstimatorSection = () => {
         </div>
 
         {/* Results */}
-        <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+        <div className="bg-white/5 border border-white/10 rounded-lg p-6">
           <div className="grid grid-cols-1 gap-4 mb-6 border-b border-white/10 pb-6">
             <div>
               <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-400 mb-1">Calculated Area</p>
