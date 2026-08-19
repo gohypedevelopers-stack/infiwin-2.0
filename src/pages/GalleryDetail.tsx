@@ -98,7 +98,7 @@ const DEFAULT_BADGES = [
 
 const VIDEO_CONTENT_MAP: Record<string, { category: string, heading: string, description: string, highlights: string[], cta: string }> = {
   "90° Enclosure": {
-    category: "BALCONY ENCLOSURE",
+    category: "BATHROOM ENCLOSER",
     heading: "90° Enclosure",
     description: "A modern corner enclosure system designed to provide clear panoramic views, improved weather protection, and a seamless connection between indoor and outdoor spaces.",
     highlights: [
