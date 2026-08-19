@@ -269,19 +269,24 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
   } else if (normalizedId === 'sliding-windows-doors' && variant === '3-track') {
     filteredImages = filteredImages.filter(img => img.includes('3_track'));
   } else if (normalizedId === 'top-hang-bi-fold') {
-    const currentVariant = variant || 'internal';
+    const currentVariant = variant || 'all';
+    const internalImages = [
+      "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold%20(3).jpg.jpeg",
+      "/gallery/Systems/Top%20Hang%20Bi%20Fold/tb1.jpeg",
+      "/gallery/Systems/Top%20Hang%20Bi%20Fold/tb2.jpeg"
+    ];
+    const externalImages = [
+      "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold.jpg.jpeg",
+      "/gallery/Systems/Foldable%20Doors%20(Bi%20Fold)/bifold_banner.jpg",
+      "/gallery/Systems/Foldable%20Doors%20(Bi%20Fold)/ChatGPT%20Image%20Jul%209,%202026,%2004_28_55%20PM.png"
+    ];
+    
     if (currentVariant === 'internal') {
-      filteredImages = [
-        "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold%20(3).jpg.jpeg",
-        "/gallery/Systems/Top%20Hang%20Bi%20Fold/tb1.jpeg",
-        "/gallery/Systems/Top%20Hang%20Bi%20Fold/tb2.jpeg"
-      ];
+      filteredImages = internalImages;
     } else if (currentVariant === 'external') {
-      filteredImages = [
-        "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold.jpg.jpeg",
-        "/gallery/Systems/Foldable%20Doors%20(Bi%20Fold)/bifold_banner.jpg",
-        "/gallery/Systems/Foldable%20Doors%20(Bi%20Fold)/ChatGPT%20Image%20Jul%209,%202026,%2004_28_55%20PM.png"
-      ];
+      filteredImages = externalImages;
+    } else {
+      filteredImages = [...internalImages, ...externalImages];
     }
   } else if (normalizedId === 'int-partition') {
     if (variant === 'bi-fold') {
@@ -471,8 +476,14 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
           {normalizedId === 'top-hang-bi-fold' && (
             <div className="flex overflow-x-auto sm:flex-wrap justify-start gap-2 sm:gap-4 mb-8 pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
               <button
+                onClick={() => setSearchParams({ variant: 'all' }, { replace: true })}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none whitespace-nowrap shrink-0 ${!variant || variant === 'all' || variant === 'bi-fold' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+              >
+                All
+              </button>
+              <button
                 onClick={() => setSearchParams({ variant: 'internal' }, { replace: true })}
-                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none whitespace-nowrap shrink-0 ${variant === 'internal' || !variant ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none whitespace-nowrap shrink-0 ${variant === 'internal' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
               >
                 Internal Partitions
               </button>
