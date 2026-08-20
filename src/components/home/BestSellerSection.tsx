@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { ArrowRight, Calculator } from "lucide-react";
+import { ArrowRight, Calculator, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "motion/react";
 
 export const BestSellerSection = () => {
   const [activeVariant, setActiveVariant] = useState<"full" | "half">("full");
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   return (
     <section id="variants" className="py-12 lg:py-16 bg-slate-900 text-white relative overflow-hidden">
@@ -27,17 +29,21 @@ export const BestSellerSection = () => {
               Our iconic signature slide and turn glides on ultra-smooth tracks, allowing individual sheets of toughened glass to fully stack to either extreme corner. Offers 100% opening potential when desired, making it absolute king of balcony utility layout concepts.
             </p>
 
-            {/* Mobile Visual Presentation */}
-            <div className="lg:hidden relative h-[400px] sm:h-[500px] w-full rounded-lg sm:rounded-lg overflow-hidden shadow-2xl border border-black/5 bg-[#f5f5f5] mb-10 order-4">
-              <div
-                className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "full" ? 'opacity-100' : 'opacity-0'}`}
-                style={{ backgroundImage: "url('/gallery/best seller/full-length.webp')" }}
+            <div 
+              className="lg:hidden relative h-[400px] sm:h-[500px] w-full rounded-lg sm:rounded-lg overflow-hidden shadow-2xl border border-black/5 bg-[#f5f5f5] mb-10 order-4 cursor-pointer"
+              onClick={() => setIsVideoModalOpen(true)}
+            >
+              <video
+                src="/gallery/video%20section/slide%20and%20turn%20-%20full%20length.mp4"
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${activeVariant === "full" ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+                autoPlay muted loop playsInline
               />
-              <div
-                className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "half" ? 'opacity-100' : 'opacity-0'}`}
-                style={{ backgroundImage: "url('/gallery/best seller/half-length.webp')" }}
+              <video
+                src="/gallery/video%20section/slide%20and%20turn%20-%20half%20length.mp4"
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${activeVariant === "half" ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+                autoPlay muted loop playsInline
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent pointer-events-none z-20"></div>
             </div>
 
             {/* Interactive Variant UI */}
@@ -95,19 +101,57 @@ export const BestSellerSection = () => {
           </div>
 
           {/* Visual Presentation */}
-          <div className="hidden lg:block relative h-[600px] w-full rounded-lg overflow-hidden shadow-2xl border border-black/5 bg-[#f5f5f5]">
-            <div
-              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "full" ? 'opacity-100' : 'opacity-0'}`}
-              style={{ backgroundImage: "url('/gallery/best seller/full-length.webp')" }}
+          <div 
+            className="hidden lg:block relative h-[600px] w-full rounded-lg overflow-hidden shadow-2xl border border-black/5 bg-[#f5f5f5] cursor-pointer"
+            onClick={() => setIsVideoModalOpen(true)}
+          >
+            <video
+              src="/gallery/video%20section/slide%20and%20turn%20-%20full%20length.mp4"
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${activeVariant === "full" ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+              autoPlay muted loop playsInline
             />
-            <div
-              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${activeVariant === "half" ? 'opacity-100' : 'opacity-0'}`}
-              style={{ backgroundImage: "url('/gallery/best seller/half-length.webp')" }}
+            <video
+              src="/gallery/video%20section/slide%20and%20turn%20-%20half%20length.mp4"
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${activeVariant === "half" ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+              autoPlay muted loop playsInline
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent pointer-events-none z-20"></div>
           </div>
         </div>
       </div>
+
+      {/* Video Lightbox Modal */}
+      <AnimatePresence>
+        {isVideoModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsVideoModalOpen(false)}
+            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 md:p-8"
+          >
+            <button
+              onClick={() => setIsVideoModalOpen(false)}
+              className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors p-2 z-[60]"
+            >
+              <X size={32} />
+            </button>
+
+            <motion.video
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.2 }}
+              src={activeVariant === "full" 
+                ? "/gallery/video%20section/slide%20and%20turn%20-%20full%20length.mp4" 
+                : "/gallery/video%20section/slide%20and%20turn%20-%20half%20length.mp4"}
+              controls
+              autoPlay
+              className="max-w-full max-h-full object-contain shadow-2xl relative z-[50]"
+              onClick={(e: any) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

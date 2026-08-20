@@ -168,6 +168,18 @@ const VIDEO_CONTENT_MAP: Record<string, { category: string, heading: string, des
       "Remote-controlled operation"
     ],
     cta: "Explore Guillotine System →"
+  },
+  "Shower Cubicle": {
+    category: "BATHROOM ENCLOSER",
+    heading: "Shower Cubicle",
+    description: "A modern corner Glass Sliding Shower enclosure system designed to save space.",
+    highlights: [
+      "Clean and modern design",
+      "Great space saver",
+      "Maximum Opening",
+      "Suitable for apartments"
+    ],
+    cta: "Explore Shower Cubicle →"
   }
 };
 
@@ -452,24 +464,30 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
 
           {normalizedId === 'sliding-windows-doors' && (
             <div className="flex overflow-x-auto sm:flex-wrap justify-start gap-2 sm:gap-4 mb-8 pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-              <button
-                onClick={() => setSearchParams({}, { replace: true })}
-                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none whitespace-nowrap shrink-0 ${!variant ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
-              >
-                All
-              </button>
-              <button
-                onClick={() => setSearchParams({ variant: '2-track' }, { replace: true })}
-                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none whitespace-nowrap shrink-0 ${variant === '2-track' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
-              >
-                2 Track Slider
-              </button>
-              <button
-                onClick={() => setSearchParams({ variant: '3-track' }, { replace: true })}
-                className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none whitespace-nowrap shrink-0 ${variant === '3-track' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
-              >
-                3 Track Slider
-              </button>
+              {variant !== '2-track' && variant !== '3-track' && (
+                <button
+                  onClick={() => setSearchParams({}, { replace: true })}
+                  className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none whitespace-nowrap shrink-0 ${!variant ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                >
+                  All
+                </button>
+              )}
+              {variant !== '3-track' && (
+                <button
+                  onClick={() => setSearchParams({ variant: '2-track' }, { replace: true })}
+                  className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none whitespace-nowrap shrink-0 ${variant === '2-track' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                >
+                  2 Track Slider
+                </button>
+              )}
+              {variant !== '2-track' && (
+                <button
+                  onClick={() => setSearchParams({ variant: '3-track' }, { replace: true })}
+                  className={`px-4 py-2 text-sm font-medium uppercase tracking-wider rounded-sm transition-colors cursor-pointer border-none whitespace-nowrap shrink-0 ${variant === '3-track' ? 'bg-luxury-gold text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}`}
+                >
+                  3 Track Slider
+                </button>
+              )}
             </div>
           )}
 
@@ -533,7 +551,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                 const isVideo = img.split('#')[0].split('?')[0].toLowerCase().endsWith('.mp4');
                 const hasTitle = img.includes('#title=');
                 if (isVideo && hasTitle) return null;
-                if (normalizedId === 'fixed-partition' && idx === 0) return null;
+                if (['fixed-partition', 'farm-house', 'commercial', 'office-space'].includes(normalizedId || '') && idx === 0) return null;
 
                 return (
                   <motion.div

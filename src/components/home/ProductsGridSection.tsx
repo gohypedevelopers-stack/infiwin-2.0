@@ -52,7 +52,7 @@ export const ProductsGridSection = () => {
       title: "Telescopic Slider System",
       subtitle: "Super Smooth Gliding",
       description: "Overlapping glazed sheets for continuous uninterrupted tracks.",
-      image: "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_1.png",
+      image: "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_2.png",
     },
     {
       id: "synchronized-systems",
@@ -125,6 +125,9 @@ export const ProductsGridSection = () => {
         <div id="products-carousel" className="flex overflow-x-auto snap-x snap-mandatory gap-4 md:gap-8 pb-8 -mx-6 px-6 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible md:pb-0 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {products.map((product, idx) => {
             const isDimmed = highlightedIds !== null && !highlightedIds.includes(product.id);
+            
+            if (isDimmed) return null;
+
             return (
               <div 
                 key={idx} 
@@ -136,9 +139,7 @@ export const ProductsGridSection = () => {
                   else if (product.title === "Bi-fold Glass System") url = "/gallery/product/top-hang-bi-fold?variant=bi-fold";
                   navigate(url);
                 }} 
-                className={`group bg-white rounded-lg border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full cursor-pointer snap-start shrink-0 w-[85vw] sm:w-[60vw] md:w-auto ${
-                  isDimmed ? "opacity-40 grayscale scale-[0.98]" : "opacity-100 grayscale-0 scale-100"
-                }`}
+                className="group bg-white rounded-lg border border-slate-100 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full cursor-pointer snap-start shrink-0 w-[85vw] sm:w-[60vw] md:w-auto opacity-100 grayscale-0 scale-100"
               >
                 {/* Image Container */}
                 <div className="relative aspect-[4/3] md:aspect-[4/5] overflow-hidden bg-slate-100">

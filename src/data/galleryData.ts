@@ -17,21 +17,16 @@ export const galleryData: Record<string, GalleryItem> = {
       "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2014,%202026,%2001_19_27%20PM.png",
       "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2015,%202026,%2010_58_05%20AM.png",
       "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2015,%202026,%2010_58_12%20AM.png",
-      "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2015,%202026,%2010_58_26%20AM.png",
-      "/gallery/video%20section/slide%20and%20turn%20-%20full%20length.mp4#title=Full-Length%20Slide%20&%20Turn",
-      "/gallery/video%20section/slide%20and%20turn%20-%20half%20length.mp4#title=Half-Length%20Slide%20&%20Turn"
+      "/gallery/Systems/Slide%20&%20Turn/ChatGPT%20Image%20Jul%2015,%202026,%2010_58_26%20AM.png"
     ]
   },
   "commercial": {
     "title": "Commercial",
     "description": "Elevate your business environment with high durability storefront facades. Our commercial glass systems combine structural integrity with sophisticated aesthetics to create professional, light-filled, and highly secure commercial spaces.",
     "images": [
-      "/gallery/Applications/Commercial/2.png",
       "/gallery/Applications/Commercial/3.png",
       "/gallery/Applications/Commercial/ChatGPT%20Image%20Jul%2011,%202026,%2002_29_15%20PM.png",
       "/gallery/Applications/Commercial/ChatGPT%20Image%20Jul%2011,%202026,%2002_31_28%20PM.png",
-
-      "/gallery/Applications/Commercial/ChatGPT%20Image%20Jul%2011,%202026,%2010_45_38%20AM.png",
       "/gallery/Applications/Commercial/ChatGPT%20Image%20Aug%204,%202026,%2012_20_03%20PM.png"
     ]
   },
@@ -109,8 +104,8 @@ export const galleryData: Record<string, GalleryItem> = {
       "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%2010,%202026,%2002_56_49%20PM.png",
       "/gallery/Systems/Bathroom%20Encloser/ChatGPT%20Image%20Jul%206,%202026,%2001_08_43%20PM.png",
       "/gallery/Systems/Bathroom%20Encloser/bathroom%20last%20image.png",
-      "/gallery/video%20section/bathroom%20vid%201.mp4#title=90°%20Enclosure",
-      "/gallery/video%20section/bathroom%20vid%202.mp4#title=Openable%20Door"
+      "/gallery/video%20section/bathroom%20vid%202.mp4#title=Openable%20Door",
+      "/gallery/Systems/Bathroom%20Encloser/WhatsApp%20Video%202026-07-20%20at%206.02.49%20PM.mp4#title=Shower%20Cubicle"
     ]
   },
   "foldable-doors-(bi-fold)": {
@@ -181,10 +176,8 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Bi Fold Systems",
     "description": "Bi-fold systems for internal & external partitions.",
     "images": [
-      "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold%20(2).jpg.jpeg",
       "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold%20(3).jpg.jpeg",
       "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold%20(4).jpg.jpeg",
-      "/gallery/Systems/Top%20Hang%20Bi%20Fold/tb1.jpeg",
       "/gallery/Systems/Top%20Hang%20Bi%20Fold/tb2.jpeg"
     ]
   },
@@ -206,10 +199,8 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Interior Partition",
     "description": "Sleek partitions for functional multi-use spaces. Internal glass partitions offer privacy without compromising on functionality, convenience and open design aesthetics.",
     "images": [
-      "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_1.png",
-      "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_2.png",
-      "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_4.png",
-      "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_5.png"
+      "/gallery/Systems/Top%20Hang%20Bi%20Fold/Top%20Hang%20Bi%20Fold%20(3).jpg.jpeg",
+      "/gallery/Systems/Telescopic%20Sliders/Telescopic%20Sliders_page_4.png"
     ]
   },
   "guillotine-glass-system": {
