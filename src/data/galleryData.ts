@@ -39,7 +39,8 @@ export const galleryData: Record<string, GalleryItem> = {
       "/gallery/Applications/Office%20Space/7.png",
       "/gallery/Applications/Office%20Space/1.png",
       "/gallery/Applications/Office%20Space/ChatGPT%20Image%20Jul%2014,%202026,%2011_57_49%20AM.png",
-      "/gallery/Applications/Office%20Space/ChatGPT%20Image%20Jul%2014,%202026,%2012_04_49%20PM.png"
+      "/gallery/Applications/Office%20Space/ChatGPT%20Image%20Jul%2014,%202026,%2012_04_49%20PM.png",
+      "/gallery/Applications/Office%20Space/new_office_space.jpg"
     ]
   },
   "farm-house": {
@@ -89,12 +90,9 @@ export const galleryData: Record<string, GalleryItem> = {
     "title": "Garden",
     "description": "Enhance your outdoor living spaces with glass enclosures that blend beauty with functionality, perfect for garden houses, patios, and gazebos. Create a modern glass oasis that keeps you connected to your garden throughout the seasons.",
     "images": [
-
-      "/gallery/Applications/Garden/2.png",
       "/gallery/Applications/Garden/3.png",
       "/gallery/Applications/Garden/9.png",
-      "/gallery/Applications/Garden/ChatGPT%20Image%20Jul%2011,%202026,%2011_56_49%20AM.png",
-      "/gallery/Applications/Garden/ChatGPT%20Image%20Jul%2011,%202026,%2012_25_03%20PM.png"
+      "/gallery/Applications/Garden/ChatGPT%20Image%20Jul%2011,%202026,%2011_56_49%20AM.png"
     ]
   },
   "bathroom-encloser": {
@@ -192,7 +190,7 @@ export const galleryData: Record<string, GalleryItem> = {
       "/gallery/Applications/Balcony/balcony 3.png",
       "/gallery/Applications/Balcony/balcony 4.png",
       "/gallery/Applications/Balcony/balcony 5.png",
-      "/gallery/video%20section/VID-20240725-WA0042.mp4#title=Balcony%20Slide%20&%20Turn"
+      "/gallery/video%20section/Slide&Turn.mp4#title=Balcony%20Slide%20&%20Turn"
     ]
   },
   "int-partition": {

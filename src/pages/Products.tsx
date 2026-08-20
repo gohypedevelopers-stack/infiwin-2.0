@@ -30,7 +30,7 @@ export default function Products() {
 
   const products = productsList;
 
-  const categories = ["All", "Balcony System", "Internal Partition", "Doors & Windows", "Bathroom"];
+  const categories = ["All", "Balcony System", "Internal Partition", "Doors & Windows", "Bathroom", "Partitions"];
   const filteredProducts = activeFilter === "All" ? products : products.filter(p => p.category === activeFilter);
 
   return (

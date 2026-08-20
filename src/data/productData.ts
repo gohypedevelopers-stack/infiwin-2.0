@@ -17,5 +17,5 @@ export const productsList = [
   { title: "Sliding Windows & Doors", category: "Doors & Windows", img: getProductImg("Sliding Windows & Doors", "/sliding_windows_banner.jpg") },
   { title: "Openable Windows & Doors", category: "Doors & Windows", img: getProductImg("Openable Windows & Doors", "/openable_banner.jpg") },
   { title: "Bathroom Encloser", category: "Bathroom", img: getProductImg("Bathroom Encloser", "/ninety_degree_banner.jpg") },
-  { title: "Fixed Partition", category: "Bathroom", img: getProductImg("Fixed Partition", "/fixed_partition_banner.jpg") }
+  { title: "Fixed Partition", category: "Partitions", img: getProductImg("Fixed Partition", "/fixed_partition_banner.jpg") }
 ];
