@@ -108,7 +108,7 @@ const CONCEPTS: ConceptItem[] = [
     tagline: "Advanced Impact Resistance",
     desc: "Safety is our absolute priority. This shatter animation demonstrates how our advanced laminated glazing systems react to extreme impact—holding together to prevent dangerous shards and maintaining a secure barrier even under immense stress.",
     img: "https://infiwin-new.vercel.app/infiwin%20images%20new/ChatGPT%20Image%20May%2023,%202026,%2002_16_49%20PM.png",
-    video: "https://ik.imagekit.io/6tktrblyvs/doorspital/infiwin%20shatter%20animation.mp4",
+    video: "/Infiwin video.mp4",
     stats: [
       { value: "100%", label: "Shatterproof" },
       { value: "SGCC", label: "Approved" },
@@ -152,6 +152,10 @@ const LazyVideo = ({ id, src, className }: { id: string; src: string; className:
   const videoRef = React.useRef<HTMLVideoElement>(null);
 
   React.useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => { });
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -167,7 +171,7 @@ const LazyVideo = ({ id, src, className }: { id: string; src: string; className:
       observer.observe(videoRef.current);
     }
     return () => observer.disconnect();
-  }, []);
+  }, [src]);
 
   return (
     <video
@@ -177,7 +181,8 @@ const LazyVideo = ({ id, src, className }: { id: string; src: string; className:
       loop
       muted
       playsInline
-      preload="none"
+      autoPlay
+      preload="auto"
       className={className}
       onError={(e) => {
         (e.target as HTMLVideoElement).style.display = "none";
