@@ -123,33 +123,9 @@ const CONCEPTS: ConceptItem[] = [
   }
 ];
 
-const VolumeControl = ({ videoId }: { videoId: string }) => {
-  const [isMuted, setIsMuted] = useState(true);
-
-  return (
-    <button
-      onClick={() => {
-        const vid = document.getElementById(videoId) as HTMLVideoElement;
-        if (vid) {
-          const newMutedState = !vid.muted;
-          vid.muted = newMutedState;
-          if (!newMutedState) {
-            vid.volume = 1.0;
-          }
-          vid.play().catch(() => { });
-          setIsMuted(newMutedState);
-        }
-      }}
-      className="w-9 h-9 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center border border-white/10 hover:border-luxury-gold/50 transition-colors cursor-pointer"
-      title={isMuted ? "Unmute" : "Mute"}
-    >
-      {isMuted ? <VolumeX size={14} /> : <Volume2 size={14} />}
-    </button>
-  );
-};
-
-const LazyVideo = ({ id, src, className }: { id: string; src: string; className: string }) => {
+const ConceptVideoCard = ({ concept }: { concept: ConceptItem }) => {
   const videoRef = React.useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
 
   React.useEffect(() => {
     if (videoRef.current) {
@@ -171,23 +147,83 @@ const LazyVideo = ({ id, src, className }: { id: string; src: string; className:
       observer.observe(videoRef.current);
     }
     return () => observer.disconnect();
-  }, [src]);
+  }, [concept.video]);
+
+  const toggleMute = () => {
+    if (!videoRef.current) return;
+    const newMutedState = !isMuted;
+    videoRef.current.muted = newMutedState;
+    if (!newMutedState) {
+      videoRef.current.volume = 1.0;
+      videoRef.current.play().catch(() => { });
+    }
+    setIsMuted(newMutedState);
+  };
 
   return (
-    <video
-      ref={videoRef}
-      id={id}
-      src={src}
-      loop
-      muted
-      playsInline
-      autoPlay
-      preload="auto"
-      className={className}
-      onError={(e) => {
-        (e.target as HTMLVideoElement).style.display = "none";
-      }}
-    />
+    <div
+      onClick={toggleMute}
+      className="w-full aspect-video bg-black/60 rounded-sm border border-slate-200/60 overflow-hidden relative shadow-lg group flex flex-col justify-center items-center cursor-pointer select-none"
+    >
+      <video
+        ref={videoRef}
+        id={`video-${concept.id}`}
+        src={concept.video}
+        loop
+        muted={isMuted}
+        playsInline
+        autoPlay
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover z-0 group-hover:scale-[1.01] transition-transform duration-700"
+        onError={(e) => {
+          (e.target as HTMLVideoElement).style.display = "none";
+        }}
+      />
+
+      {/* Glass Backdrop Poster & Fallback Frame */}
+      <div className="absolute inset-0 z-[-1] pointer-events-none">
+        <img loading="lazy" src={concept.img}
+          alt={concept.title}
+          className="w-full h-full object-cover filter brightness-[0.35]"
+        />
+      </div>
+
+      {/* Fallback Overlay if Video file isn't loaded */}
+      <div className="video-fallback absolute inset-0 z-0 bg-[#0a0a0a]/40 backdrop-blur-sm pointer-events-none flex flex-col items-center justify-center text-center p-6 opacity-0 group-has-[[style*='display: none']]:opacity-100 transition-opacity duration-300">
+        <div className="w-16 h-16 rounded-full border-2 border-luxury-gold/50 flex items-center justify-center mb-4 bg-luxury-gold/15 animate-pulse">
+          <Play className="w-8 h-8 text-luxury-gold translate-x-0.5" />
+        </div>
+        <span className="text-[10px] font-bold text-luxury-gold/80 uppercase tracking-widest">
+          Showcase Video Coming Soon
+        </span>
+        <span className="text-[9px] text-white/30 tracking-wider mt-1">
+          (Place your mp4 file in public/concepts_videos/{concept.id}.mp4)
+        </span>
+      </div>
+
+      {/* Gradient overlays */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none z-10" />
+
+      {/* Interactive Controls Overlay */}
+      <div className="absolute top-4 right-4 flex items-center gap-2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            toggleMute();
+          }}
+          className="w-9 h-9 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center border border-white/10 hover:border-luxury-gold/50 transition-colors cursor-pointer"
+          title={isMuted ? "Unmute" : "Mute"}
+        >
+          {isMuted ? <VolumeX size={14} /> : <Volume2 size={14} />}
+        </button>
+      </div>
+
+      <div className="absolute bottom-4 left-4 z-20">
+        <span className="bg-black/75 backdrop-blur-sm text-[9px] font-bold text-luxury-gold uppercase tracking-[0.2em] px-3.5 py-1.5 rounded-sm border border-white/5 shadow-md">
+          {concept.subtitle}
+        </span>
+      </div>
+    </div>
   );
 };
 
@@ -236,51 +272,7 @@ export default function Concepts() {
               >
                 {/* Video Player Side */}
                 <div className="w-full lg:w-1/2 relative shrink-0">
-                  <div
-                    className="w-full aspect-video bg-black/60 rounded-sm border border-slate-200/60 overflow-hidden relative shadow-lg group flex flex-col justify-center items-center"
-                  >
-                    <LazyVideo
-                      id={`video-${concept.id}`}
-                      src={concept.video}
-                      className="absolute inset-0 w-full h-full object-cover z-0 group-hover:scale-[1.01] transition-transform duration-700"
-                    />
-
-                    {/* Glass Backdrop Poster & Fallback Frame */}
-                    <div className="absolute inset-0 z-[-1] pointer-events-none">
-                      <img loading="lazy" src={concept.img}
-                        alt={concept.title}
-                        className="w-full h-full object-cover filter brightness-[0.35]"
-                      />
-                    </div>
-
-                    {/* Fallback Overlay if Video file isn't loaded */}
-                    <div className="video-fallback absolute inset-0 z-0 bg-[#0a0a0a]/40 backdrop-blur-sm pointer-events-none flex flex-col items-center justify-center text-center p-6 opacity-0 group-has-[[style*='display: none']]:opacity-100 transition-opacity duration-300">
-                      <div className="w-16 h-16 rounded-full border-2 border-luxury-gold/50 flex items-center justify-center mb-4 bg-luxury-gold/15 animate-pulse">
-                        <Play className="w-8 h-8 text-luxury-gold translate-x-0.5" />
-                      </div>
-                      <span className="text-[10px] font-bold text-luxury-gold/80 uppercase tracking-widest">
-                        Showcase Video Coming Soon
-                      </span>
-                      <span className="text-[9px] text-white/30 tracking-wider mt-1">
-                        (Place your mp4 file in public/concepts_videos/{concept.id}.mp4)
-                      </span>
-                    </div>
-
-                    {/* Gradient overlays */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none z-10" />
-
-                    {/* Interactive Controls Overlay */}
-                    <div className="absolute top-4 right-4 flex items-center gap-2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {/* Mute Button */}
-                      <VolumeControl videoId={`video-${concept.id}`} />
-                    </div>
-
-                    <div className="absolute bottom-4 left-4 z-20">
-                      <span className="bg-black/75 backdrop-blur-sm text-[9px] font-bold text-luxury-gold uppercase tracking-[0.2em] px-3.5 py-1.5 rounded-sm border border-white/5 shadow-md">
-                        {concept.subtitle}
-                      </span>
-                    </div>
-                  </div>
+                  <ConceptVideoCard concept={concept} />
                 </div>
 
                 {/* Description & Technical highlights Side */}

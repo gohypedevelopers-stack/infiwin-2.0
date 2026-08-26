@@ -383,7 +383,13 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover cursor-pointer"
+                  onClick={(e) => {
+                    const vid = e.currentTarget;
+                    vid.muted = !vid.muted;
+                    if (!vid.muted) vid.volume = 1.0;
+                  }}
+                  title="Click to unmute/mute audio"
                 />
               ) : (
                 <img loading="lazy"

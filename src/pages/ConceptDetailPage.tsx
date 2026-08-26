@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowLeft, ArrowRight, Play, CheckCircle, ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Play, CheckCircle, ChevronRight, Volume2, VolumeX } from "lucide-react";
 
 export interface ConceptFeature {
   icon: string;
@@ -23,6 +23,7 @@ export interface RelatedConcept {
   id: string;
   title: string;
   img: string;
+  subtitle?: string;
   href: string;
 }
 
@@ -41,6 +42,53 @@ export interface ConceptDetailData {
   related: RelatedConcept[];
   accentColor?: string;
 }
+
+const DetailVideoPlayer = ({ src, title }: { src: string; title: string }) => {
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const toggleMute = () => {
+    if (!videoRef.current) return;
+    const newMuted = !isMuted;
+    videoRef.current.muted = newMuted;
+    if (!newMuted) {
+      videoRef.current.volume = 1.0;
+      videoRef.current.play().catch(() => { });
+    }
+    setIsMuted(newMuted);
+  };
+
+  return (
+    <div
+      onClick={toggleMute}
+      className="w-full aspect-video bg-black/60 rounded-sm border border-white/10 overflow-hidden relative shadow-[0_0_80px_rgba(212,175,55,0.08)] group cursor-pointer select-none"
+    >
+      <video
+        ref={videoRef}
+        src={src}
+        autoPlay
+        loop
+        muted={isMuted}
+        playsInline
+        className="w-full h-full object-cover"
+      />
+
+      {/* Mute/Unmute Icon Button */}
+      <div className="absolute top-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            toggleMute();
+          }}
+          className="w-9 h-9 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center border border-white/10 hover:border-luxury-gold/50 transition-colors cursor-pointer"
+          title={isMuted ? "Unmute" : "Mute"}
+        >
+          {isMuted ? <VolumeX size={14} /> : <Volume2 size={14} />}
+        </button>
+      </div>
+    </div>
+  );
+};
 
 interface ConceptDetailPageProps {
   data: ConceptDetailData;
@@ -213,14 +261,7 @@ export default function ConceptDetailPage({ data }: ConceptDetailPageProps) {
             className="w-full aspect-video bg-black/60 rounded-sm border border-white/10 overflow-hidden relative shadow-[0_0_80px_rgba(212,175,55,0.08)] group"
           >
             {data.videoPlaceholder ? (
-              <video
-                src={data.videoPlaceholder}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover"
-              />
+              <DetailVideoPlayer src={data.videoPlaceholder} title={data.title} />
             ) : (
               <>
                 <div className="absolute inset-0 bg-gradient-to-br from-luxury-gold/5 via-transparent to-luxury-gold/5" />
