@@ -1,12 +1,18 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Phone } from "lucide-react";
 import { WhatsAppIcon } from "../icons/WhatsAppIcon";
 import { motion } from "motion/react";
+
 
 export const CostEstimatorSection = () => {
   const [length, setLength] = useState(10);
   const [height, setHeight] = useState(10);
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+
+  const [formData, setFormData] = useState({ name: "", phone: "", city: "" });
+  const [errors, setErrors] = useState({ name: "", phone: "", city: "" });
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
@@ -19,6 +25,41 @@ export const CostEstimatorSection = () => {
   const basePrice = 1800;
   const area = length * height;
   const totalCost = area * basePrice;
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const newErrors = { name: "", phone: "", city: "" };
+    let isValid = true;
+    if (!formData.name.trim()) { newErrors.name = "Full name is required"; isValid = false; }
+    if (!formData.phone.trim()) { newErrors.phone = "Phone number is required"; isValid = false; }
+    if (!formData.city.trim()) { newErrors.city = "Location city is required"; isValid = false; }
+    
+    setErrors(newErrors);
+    if (!isValid) return;
+
+    setLoading(true);
+    try {
+      await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formType: 'Cost Estimator Inquiry',
+          name: formData.name,
+          phone: formData.phone,
+          city: formData.city,
+          length: length,
+          height: height,
+          subject: `Cost Estimator Inquiry from ${formData.name}`,
+          message: `Estimated Area: ${area} sq.ft, Estimated Total: ₹${totalCost.toLocaleString('en-IN')}`,
+        }),
+      });
+    } catch (err) {
+      console.error('Failed to send estimator email:', err);
+    }
+    setLoading(false);
+    setSubmitted(true);
+    setFormData({ name: "", phone: "", city: "" });
+  };
 
   return (
     <section className="py-12 lg:py-16 bg-[#111111] px-6" id="estimator">
@@ -131,51 +172,77 @@ export const CostEstimatorSection = () => {
             </p>
           </div>
 
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-            <div>
-              <label className="text-[9px] uppercase tracking-widest text-slate-400 font-bold mb-2 block">Full Name</label>
-              <input
-                type="text"
-                placeholder="e.g. Rajesh Sharma"
-                className="w-full border-b border-slate-200 pb-2 text-sm text-slate-900 placeholder:text-slate-300 focus:outline-none focus:border-luxury-gold transition-colors bg-transparent"
-              />
+          {submitted ? (
+            <div className="bg-emerald-50 border border-emerald-200 text-emerald-800 p-6 rounded-lg text-center my-auto">
+              <h4 className="text-lg font-bold mb-2">Thank You!</h4>
+              <p className="text-sm">Your quote request has been sent successfully. Our team will contact you shortly.</p>
             </div>
-            <div>
-              <label className="text-[9px] uppercase tracking-widest text-slate-400 font-bold mb-2 block">Phone Number</label>
-              <input
-                type="tel"
-                placeholder="+91 99999 99999"
-                className="w-full border-b border-slate-200 pb-2 text-sm text-slate-900 placeholder:text-slate-300 focus:outline-none focus:border-luxury-gold transition-colors bg-transparent"
-              />
-            </div>
-            <div>
-              <label className="text-[9px] uppercase tracking-widest text-slate-400 font-bold mb-2 block">Your Location City</label>
-              <input
-                type="text"
-                placeholder="e.g. Noida, Delhi, Gurgaon"
-                className="w-full border-b border-slate-200 pb-2 text-sm text-slate-900 placeholder:text-slate-300 focus:outline-none focus:border-luxury-gold transition-colors bg-transparent"
-              />
-            </div>
-          </form>
+          ) : (
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              <div>
+                <label className="text-[9px] uppercase tracking-widest text-slate-400 font-bold mb-2 block">Full Name</label>
+                <input
+                  type="text"
+                  placeholder="e.g. Rajesh Sharma"
+                  value={formData.name}
+                  onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                  className="w-full border-b border-slate-200 pb-2 text-sm text-slate-900 placeholder:text-slate-300 focus:outline-none focus:border-luxury-gold transition-colors bg-transparent"
+                />
+                {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+              </div>
+              <div>
+                <label className="text-[9px] uppercase tracking-widest text-slate-400 font-bold mb-2 block">Phone Number</label>
+                <input
+                  type="tel"
+                  placeholder="+91 99999 99999"
+                  value={formData.phone}
+                  onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                  className="w-full border-b border-slate-200 pb-2 text-sm text-slate-900 placeholder:text-slate-300 focus:outline-none focus:border-luxury-gold transition-colors bg-transparent"
+                />
+                {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
+              </div>
+              <div>
+                <label className="text-[9px] uppercase tracking-widest text-slate-400 font-bold mb-2 block">Your Location City</label>
+                <input
+                  type="text"
+                  placeholder="e.g. Noida, Delhi, Gurgaon"
+                  value={formData.city}
+                  onChange={(e) => setFormData(prev => ({ ...prev, city: e.target.value }))}
+                  className="w-full border-b border-slate-200 pb-2 text-sm text-slate-900 placeholder:text-slate-300 focus:outline-none focus:border-luxury-gold transition-colors bg-transparent"
+                />
+                {errors.city && <p className="text-red-500 text-xs mt-1">{errors.city}</p>}
+              </div>
 
-          <div className="mt-10">
-            <button className="w-full bg-black text-white py-3.5 rounded-lg uppercase tracking-wide sm:tracking-wider text-[11px] sm:text-xs font-semibold sm:font-bold hover:bg-luxury-gold transition-colors flex items-center justify-center gap-3 mb-6 shadow-none cursor-pointer border-none">
-              <Phone size={14} /> Request Quote &amp; Call Back
-            </button>
+              <div className="mt-10">
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full bg-black text-white py-3.5 rounded-lg uppercase tracking-wide sm:tracking-wider text-[11px] sm:text-xs font-semibold sm:font-bold hover:bg-luxury-gold transition-colors flex items-center justify-center gap-3 mb-6 shadow-none cursor-pointer border-none disabled:opacity-50"
+                >
+                  <Phone size={14} /> {loading ? "Sending Request..." : "Request Quote & Call Back"}
+                </button>
 
-            <div className="flex items-center gap-4 mb-4">
-              <div className="h-[1px] bg-slate-100 flex-1"></div>
-              <span className="text-[9px] uppercase tracking-widest text-slate-400 font-bold">Or Chat Directly</span>
-              <div className="h-[1px] bg-slate-100 flex-1"></div>
-            </div>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="h-[1px] bg-slate-100 flex-1"></div>
+                  <span className="text-[9px] uppercase tracking-widest text-slate-400 font-bold">Or Chat Directly</span>
+                  <div className="h-[1px] bg-slate-100 flex-1"></div>
+                </div>
 
-            <button className="w-full bg-transparent text-[#25D366] border border-[#25D366] py-3.5 rounded-lg uppercase tracking-wide sm:tracking-wider text-[11px] sm:text-xs font-semibold sm:font-bold hover:bg-[#25D366] hover:text-white transition-colors flex items-center justify-center gap-3 shadow-none cursor-pointer">
-              <WhatsAppIcon size={14} /> Get Instant Price Via Whatsapp
-            </button>
-          </div>
+                <a
+                  href={`https://wa.me/919136004100?text=${encodeURIComponent(`Hi Infiwin, I am interested in Slide & Turn Balcony System for length: ${length}ft and height: ${height}ft.`)}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full bg-transparent text-[#25D366] border border-[#25D366] py-3.5 rounded-lg uppercase tracking-wide sm:tracking-wider text-[11px] sm:text-xs font-semibold sm:font-bold hover:bg-[#25D366] hover:text-white transition-colors flex items-center justify-center gap-3 shadow-none cursor-pointer"
+                >
+                  <WhatsAppIcon size={14} /> Get Instant Price Via Whatsapp
+                </a>
+              </div>
+            </form>
+          )}
         </motion.div>
 
       </div>
     </section>
   );
 };
+

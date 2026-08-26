@@ -19,9 +19,9 @@ import { WhatsAppIcon } from "../components/icons/WhatsAppIcon";
 import {
   TOTAL_SECONDS,
   LS_KEY,
-  InlineTimerBanner,
   SuccessPopup,
 } from "../components/SuccessPopup.tsx";
+
 
 // ─── Main Contact page ────────────────────────────────────────────────────────
 export default function Contact() {
@@ -29,9 +29,12 @@ export default function Contact() {
   const [form, setForm] = useState({
     name: "",
     phone: "",
+    city: "",
     subject: "General Inquiry",
     message: "",
   });
+  const [sitePic, setSitePic] = useState<string>("");
+  const [sitePicName, setSitePicName] = useState<string>("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
 
@@ -50,14 +53,12 @@ export default function Contact() {
     return null;
   });
   const [showPopup, setShowPopup] = useState(false);
-  const [showBanner, setShowBanner] = useState(false);
 
   // Tick every second while we have a countdown
   useEffect(() => {
     if (remaining === null) return;
     if (remaining <= 0) {
       setRemaining(null);
-      setShowBanner(false);
       try { localStorage.removeItem(LS_KEY); } catch { /* ignore */ }
       return;
     }
@@ -67,10 +68,6 @@ export default function Contact() {
     return () => clearInterval(id);
   }, [remaining]);
 
-  // Show banner whenever there's an active countdown (even on page reload)
-  useEffect(() => {
-    if (remaining !== null && remaining > 0) setShowBanner(true);
-  }, []);
 
   // ── Cost estimator state ────────────────────────────────────────────────────
   const [length, setLength] = useState<number | "">("");
@@ -85,11 +82,9 @@ export default function Contact() {
     if (!form.phone.trim()) errs.phone = "Phone number is required.";
     else if (!/^\+?[\d\s\-]{7,15}$/.test(form.phone.trim()))
       errs.phone = "Enter a valid phone number.";
-    if (!(form as any).city?.trim()) errs.city = "City is required.";
+    if (!form.city.trim()) errs.city = "City is required.";
     if (!form.message.trim()) errs.message = "Please enter a message.";
-    if (length === "" || height === "") {
-      errs.dimensions = "Please provide the dimensions (Length & Height) of your space.";
-    } else {
+    if (length !== "" && height !== "") {
       let dimError = "";
       if (typeof length === 'number' && length < 6) {
         dimError += "Length must be at least 6 ft. ";
@@ -100,6 +95,49 @@ export default function Contact() {
       if (dimError) errs.dimensions = dimError.trim();
     }
     return errs;
+
+  }
+
+  async function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (file) {
+      setSitePicName(file.name);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setSitePic(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  async function handleDimensionsSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (length === "" || height === "") {
+      setErrors((prev) => ({ ...prev, dimensions: "Please provide Length and Height." }));
+      return;
+    }
+    setLoading(true);
+    try {
+      await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formType: 'Custom Quote / Dimensions',
+          length,
+          height,
+          sitePic,
+          sitePicName,
+          message: `Custom Quote Request for Length: ${length}ft, Height: ${height}ft`
+        }),
+      });
+    } catch (error) {
+      console.error('Error submitting dimensions form:', error);
+    }
+    const deadline = Date.now() + TOTAL_SECONDS * 1000;
+    try { localStorage.setItem(LS_KEY, String(deadline)); } catch { /* ignore */ }
+    setRemaining(TOTAL_SECONDS);
+    setShowPopup(true);
+    setLoading(false);
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -112,18 +150,38 @@ export default function Contact() {
     setErrors({});
     setLoading(true);
 
-    // Simulate API / replace with EmailJS / fetch call
-    await new Promise((r) => setTimeout(r, 1400));
+    try {
+      await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formType: 'Request a Quote Inquiry',
+          name: form.name,
+          phone: form.phone,
+          city: form.city,
+          subject: form.subject,
+          message: form.message,
+          length: length,
+          height: height,
+          sitePic: sitePic,
+          sitePicName: sitePicName,
+        }),
+      });
+    } catch (error) {
+      console.error('Error submitting inquiry form:', error);
+    }
 
     // Start the 24-hour countdown
     const deadline = Date.now() + TOTAL_SECONDS * 1000;
     try { localStorage.setItem(LS_KEY, String(deadline)); } catch { /* ignore */ }
     setRemaining(TOTAL_SECONDS);
-    setShowBanner(true);
     setShowPopup(true);
     setLoading(false);
-    setForm({ name: "", phone: "", subject: "General Inquiry", message: "" });
+    setForm({ name: "", phone: "", city: "", subject: "General Inquiry", message: "" });
+    setSitePic("");
+    setSitePicName("");
   }
+
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -135,8 +193,8 @@ export default function Contact() {
 
   function handleClosePopup() {
     setShowPopup(false);
-    // banner is already set to true — timer stays visible on page
   }
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -202,7 +260,7 @@ export default function Contact() {
                 <h4 className="text-[9px] font-bold text-slate-900 uppercase tracking-widest mb-2">
                   Email
                 </h4>
-                <p className="text-slate-500 font-light text-sm">hi@infiwindow.com</p>
+                <p className="text-slate-500 font-light text-sm">connect@infiwindow.com</p>
               </div>
             </div>
 
@@ -256,15 +314,6 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* ── Inline Timer Banner ── */}
-        <AnimatePresence>
-          {showBanner && !showPopup && remaining !== null && (
-            <InlineTimerBanner
-              remaining={remaining}
-              onDismiss={() => setShowBanner(false)}
-            />
-          )}
-        </AnimatePresence>
 
         {/* Forms Side-by-Side */}
         <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch rounded-xl overflow-hidden shadow-2xl bg-white border border-slate-100">
@@ -279,7 +328,7 @@ export default function Contact() {
               Provide your specific dimensions so our engineering team can accurately design your custom quote.
             </p>
 
-            <form onSubmit={(e) => { e.preventDefault(); alert("Quote request submitted"); }} className="space-y-6 flex-1 flex flex-col justify-between">
+            <form onSubmit={handleDimensionsSubmit} className="space-y-6 flex-1 flex flex-col justify-between">
               <div>
                 <div className="flex gap-6 mb-2">
                   <div className="flex-1">
@@ -322,11 +371,12 @@ export default function Contact() {
                   </label>
                   <label className="flex items-center justify-center gap-2 w-full bg-[#1a1a1a] border border-white/10 rounded-sm px-4 py-3 text-white cursor-pointer hover:bg-white/5 transition-colors">
                     <Upload size={16} />
-                    <span className="text-sm font-light">Choose File</span>
-                    <input type="file" className="hidden" accept="image/*" />
+                    <span className="text-sm font-light">{sitePicName ? sitePicName : "Choose File"}</span>
+                    <input type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
                   </label>
                 </div>
               </div>
+
 
               <div className="mt-6 pt-6 border-t border-white/10 text-center">
                 <div className="flex lg:hidden flex-col gap-4 mb-8">

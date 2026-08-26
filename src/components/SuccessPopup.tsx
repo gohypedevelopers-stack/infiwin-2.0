@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Hourglass, X, CheckCircle, Timer } from "lucide-react";
+import { Hourglass, X, CheckCircle2, Timer, ArrowRight, Sparkles } from "lucide-react";
 
 export const TOTAL_SECONDS = 24 * 60 * 60; // 24 hours
 export const LS_KEY = "infiwin_inquiry_deadline";
@@ -21,10 +21,12 @@ export function FlipDigit({
   value,
   label,
   size = "lg",
+  theme = "light",
 }: {
   value: string;
   label: string;
   size?: "sm" | "lg";
+  theme?: "light" | "dark";
 }) {
   const prevRef = useRef(value);
   const changed = prevRef.current !== value;
@@ -34,17 +36,34 @@ export function FlipDigit({
 
   const box =
     size === "lg"
-      ? "w-16 h-16 sm:w-20 sm:h-20"
-      : "w-12 h-12 sm:w-14 sm:h-14";
+      ? "w-16 h-18 sm:w-20 sm:h-22"
+      : "w-12 h-14 sm:w-14 sm:h-16";
   const text =
     size === "lg"
       ? "text-3xl sm:text-4xl"
       : "text-xl sm:text-2xl";
 
+  const bgStyles =
+    theme === "light"
+      ? "bg-gradient-to-b from-amber-50/90 via-white to-amber-50/40 border border-amber-300/80 shadow-md"
+      : "bg-gradient-to-b from-[#1c1917] via-[#12100e] to-[#0a0a0a] border border-amber-500/25 shadow-2xl";
+
+  const textStyles =
+    theme === "light"
+      ? "text-slate-900 font-mono font-bold"
+      : "text-amber-200 font-mono font-bold drop-shadow-[0_2px_10px_rgba(212,175,55,0.35)]";
+
+  const labelStyles =
+    theme === "light"
+      ? "text-amber-900/80 font-bold"
+      : "text-amber-400/60 font-medium";
+
   return (
-    <div className="flex flex-col items-center gap-1">
-      <div className={`relative ${box}`}>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a2e] to-[#0f0f1e] rounded-lg border border-luxury-gold/30 flex items-center justify-center shadow-lg shadow-luxury-gold/10" />
+    <div className="flex flex-col items-center gap-2">
+      <div className={`relative ${box} rounded-xl overflow-hidden ${bgStyles}`}>
+        {/* Inner top glow */}
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-amber-400/50 to-transparent pointer-events-none" />
+        
         <AnimatePresence mode="wait">
           <motion.div
             key={value}
@@ -52,16 +71,18 @@ export function FlipDigit({
             animate={{ rotateX: 0, opacity: 1 }}
             exit={{ rotateX: 90, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="absolute inset-0 flex items-center justify-center rounded-lg"
+            className="absolute inset-0 flex items-center justify-center"
           >
-            <span className={`${text} font-mono font-bold text-white tracking-tight`}>
+            <span className={`${text} ${textStyles} tracking-tight`}>
               {value}
             </span>
           </motion.div>
         </AnimatePresence>
-        <div className="absolute top-1/2 left-0 right-0 h-px bg-luxury-gold/20 pointer-events-none" />
+
+        {/* Center horizontal split line */}
+        <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-amber-400/30 to-transparent pointer-events-none" />
       </div>
-      <span className="text-[8px] uppercase tracking-widest text-white/40 font-semibold">
+      <span className={`text-[9px] uppercase tracking-[0.2em] ${labelStyles} font-sans`}>
         {label}
       </span>
     </div>
@@ -84,12 +105,15 @@ export function InlineTimerBanner({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -16 }}
       transition={{ type: "spring", damping: 20, stiffness: 260 }}
-      className="relative overflow-hidden rounded-lg bg-[#0a0a0a] border border-luxury-gold/20 shadow-2xl shadow-luxury-gold/10 p-6 sm:p-8"
+      className="relative overflow-hidden rounded-xl bg-gradient-to-b from-[#141414] to-[#090909] border border-amber-500/30 shadow-2xl shadow-amber-500/10 p-6 sm:p-8"
     >
+      {/* Top metallic bar */}
+      <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-amber-400 to-transparent" />
+
       {/* Progress bar */}
       <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-white/5">
         <motion.div
-          className="h-full bg-luxury-gold rounded-full"
+          className="h-full bg-gradient-to-r from-amber-500 to-amber-300 rounded-full"
           style={{ width: `${pct}%` }}
           transition={{ duration: 1 }}
         />
@@ -98,41 +122,43 @@ export function InlineTimerBanner({
       {/* Dismiss */}
       <button
         onClick={onDismiss}
-        className="absolute top-4 right-4 w-7 h-7 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-white/30 hover:text-white/60 transition-all"
+        className="absolute top-4 right-4 w-7 h-7 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-white/40 hover:text-white transition-all cursor-pointer"
       >
-        <X size={12} />
+        <X size={13} />
       </button>
 
       {/* Header */}
-      <div className="flex items-center gap-3 mb-5">
-        <div className="w-9 h-9 rounded-full bg-luxury-gold/10 border border-luxury-gold/30 flex items-center justify-center flex-shrink-0">
-          <Hourglass size={16} className="text-luxury-gold" />
+      <div className="flex items-center gap-3.5 mb-6">
+        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400/20 to-amber-600/5 border border-amber-400/30 flex items-center justify-center flex-shrink-0 shadow-lg shadow-amber-500/10">
+          <Hourglass size={18} className="text-amber-400 animate-pulse" />
         </div>
         <div>
-          <p className="text-[9px] uppercase tracking-[0.25em] text-luxury-gold font-semibold">
-            Inquiry Submitted ✓
+          <p className="text-[10px] uppercase tracking-[0.25em] text-amber-400 font-semibold flex items-center gap-1.5">
+            <span>Inquiry Submitted</span>
+            <span className="text-emerald-400">✓</span>
           </p>
-          <p className="text-white/50 text-xs font-light mt-0.5">
-            We'll revert within 24 hours
+          <p className="text-white/60 text-xs font-light mt-0.5">
+            Guaranteed response within 24 hours
           </p>
         </div>
       </div>
 
       {/* Countdown */}
-      <div className="flex items-center justify-center gap-3">
-        <FlipDigit value={hours} label="Hours" size="sm" />
-        <span className="text-xl font-mono text-luxury-gold/50 mb-4">:</span>
-        <FlipDigit value={minutes} label="Mins" size="sm" />
-        <span className="text-xl font-mono text-luxury-gold/50 mb-4">:</span>
-        <FlipDigit value={seconds} label="Secs" size="sm" />
+      <div className="flex items-center justify-center gap-3 my-2">
+        <FlipDigit value={hours} label="Hours" size="sm" theme="dark" />
+        <span className="text-xl font-mono text-amber-400/60 mb-5 animate-pulse">:</span>
+        <FlipDigit value={minutes} label="Mins" size="sm" theme="dark" />
+        <span className="text-xl font-mono text-amber-400/60 mb-5 animate-pulse">:</span>
+        <FlipDigit value={seconds} label="Secs" size="sm" theme="dark" />
       </div>
 
       {/* CTA */}
       <a
         href="/products"
-        className="mt-5 w-full flex items-center justify-center gap-2 bg-luxury-gold/10 hover:bg-luxury-gold/20 border border-luxury-gold/20 text-luxury-gold rounded-lg py-3 text-[10px] font-bold uppercase tracking-[0.2em] transition-all group"
+        className="mt-6 w-full flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500/10 via-amber-400/15 to-amber-500/10 hover:from-amber-500/25 hover:via-amber-400/30 hover:to-amber-500/25 border border-amber-400/30 text-amber-300 rounded-lg py-3 text-[10px] font-bold uppercase tracking-[0.2em] transition-all group"
       >
-        Explore Products
+        <span>Explore Products</span>
+        <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
       </a>
     </motion.div>
   );
@@ -154,115 +180,125 @@ export function SuccessPopup({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[999] flex items-center justify-center p-4"
+      className="fixed inset-0 z-[999] flex items-center justify-center p-4 overflow-y-auto"
     >
-      {/* Blurred overlay */}
+      {/* Soft Backdrop */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         onClick={onClose}
-        className="absolute inset-0 bg-black/60 backdrop-blur-md"
+        className="absolute inset-0 bg-slate-900/60 backdrop-blur-md"
       />
 
-      {/* Card */}
+      {/* White Modal Container */}
       <motion.div
-        initial={{ scale: 0.8, opacity: 0, y: 40 }}
+        initial={{ scale: 0.9, opacity: 0, y: 30 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
-        exit={{ scale: 0.8, opacity: 0, y: 40 }}
-        transition={{ type: "spring", damping: 20, stiffness: 300 }}
-        className="relative w-full max-w-md bg-[#0a0a0a] rounded-lg overflow-hidden shadow-2xl border border-white/10"
+        exit={{ scale: 0.9, opacity: 0, y: 30 }}
+        transition={{ type: "spring", damping: 22, stiffness: 320 }}
+        className="relative w-full max-w-lg bg-white rounded-2xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.18)] border border-amber-300/70 my-auto"
       >
-        {/* Gold glow top */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-1 bg-luxury-gold rounded-b-full blur-sm" />
+        {/* Top Shimmer Line */}
+        <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300 z-20" />
 
-        {/* Close button */}
+        {/* Ambient Backlight Aura */}
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-80 bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
+
+        {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-white/50 hover:text-white transition-all z-10 cursor-pointer"
+          className="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-900 transition-all z-20 cursor-pointer shadow-sm"
         >
-          <X size={14} />
+          <X size={15} />
         </button>
 
-        <div className="px-8 pt-10 pb-8 flex flex-col items-center text-center gap-6 relative z-0">
-          {/* Animated check */}
+        <div className="px-8 sm:px-12 pt-10 pb-8 flex flex-col items-center text-center gap-7 relative z-10">
+          
+          {/* Animated Gold Check Badge */}
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            transition={{ delay: 0.15, type: "spring", damping: 15, stiffness: 300 }}
+            transition={{ delay: 0.12, type: "spring", damping: 14, stiffness: 280 }}
             className="relative"
           >
-            <div className="w-20 h-20 rounded-full bg-luxury-gold/10 border border-luxury-gold/30 flex items-center justify-center">
-              <CheckCircle className="text-luxury-gold w-10 h-10" strokeWidth={1.5} />
+            <div className="w-22 h-22 rounded-full bg-gradient-to-br from-amber-100 via-amber-50 to-white border border-amber-300 flex items-center justify-center shadow-[0_0_25px_rgba(212,175,55,0.25)] backdrop-blur-sm">
+              <CheckCircle2 className="text-amber-600 w-11 h-11 drop-shadow-[0_2px_8px_rgba(212,175,55,0.4)]" strokeWidth={1.5} />
             </div>
+
+            {/* Concentric Pulsing Rings */}
             <motion.div
-              animate={{ scale: [1, 1.6], opacity: [0.4, 0] }}
-              transition={{ repeat: Infinity, duration: 1.8, ease: "easeOut" }}
-              className="absolute inset-0 rounded-full border border-luxury-gold/40 pointer-events-none"
+              animate={{ scale: [1, 1.55], opacity: [0.5, 0] }}
+              transition={{ repeat: Infinity, duration: 2, ease: "easeOut" }}
+              className="absolute inset-0 rounded-full border border-amber-400/40 pointer-events-none"
             />
             <motion.div
-              animate={{ scale: [1, 1.4], opacity: [0.3, 0] }}
-              transition={{ repeat: Infinity, duration: 1.8, delay: 0.5, ease: "easeOut" }}
-              className="absolute inset-0 rounded-full border border-luxury-gold/30 pointer-events-none"
+              animate={{ scale: [1, 1.35], opacity: [0.4, 0] }}
+              transition={{ repeat: Infinity, duration: 2, delay: 0.5, ease: "easeOut" }}
+              className="absolute inset-0 rounded-full border border-amber-400/25 pointer-events-none"
             />
           </motion.div>
 
-          {/* Text */}
+          {/* Heading and Description */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.25 }}
-            className="flex flex-col gap-2"
+            transition={{ delay: 0.22 }}
+            className="flex flex-col items-center gap-2.5"
           >
-            <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em]">
-              Inquiry Submitted
-            </p>
-            <h2 className="text-2xl font-serif text-white leading-tight">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-[10px] uppercase font-bold tracking-[0.25em]">
+              <Sparkles size={11} className="text-amber-600" />
+              <span>Inquiry Submitted</span>
+            </div>
+
+            <h2 className="text-2xl sm:text-3xl font-serif text-slate-900 leading-snug tracking-wide font-normal mt-1">
               Your inquiry has been
               <br />
-              successfully submitted!
+              <span className="italic text-amber-700">successfully submitted!</span>
             </h2>
-            <p className="text-white/50 text-sm font-light leading-relaxed mt-1">
-              Our team will review your request and revert back to you within{" "}
-              <span className="text-white font-medium">24 hours</span>.
+
+            <p className="text-slate-600 text-sm font-light leading-relaxed max-w-sm mt-1">
+              Our engineering specialists will review your requirements and revert back to you within{" "}
+              <span className="text-amber-800 font-semibold">24 hours</span>.
             </p>
           </motion.div>
 
-          {/* Divider */}
-          <div className="w-full h-px bg-white/5" />
+          {/* Luxury Divider */}
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-amber-300/40 to-transparent" />
 
-          {/* Countdown */}
+          {/* Timer Section */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35 }}
-            className="w-full"
+            transition={{ delay: 0.32 }}
+            className="w-full flex flex-col items-center"
           >
-            <div className="flex items-center justify-center gap-1 mb-4">
-              <Timer size={12} className="text-luxury-gold/70" />
-              <span className="text-[9px] uppercase tracking-[0.25em] text-white/40 font-semibold">
-                Expected response in
+            <div className="flex items-center justify-center gap-2 mb-5 px-4 py-1.5 rounded-full bg-amber-50/80 border border-amber-200/80">
+              <Timer size={13} className="text-amber-600 animate-pulse" />
+              <span className="text-[10px] uppercase tracking-[0.25em] text-amber-900 font-bold">
+                Expected Response In
               </span>
             </div>
-            <div className="flex items-center justify-center gap-3">
-              <FlipDigit value={hours} label="Hours" />
-              <span className="text-2xl font-mono text-luxury-gold/60 mb-4">:</span>
-              <FlipDigit value={minutes} label="Mins" />
-              <span className="text-2xl font-mono text-luxury-gold/60 mb-4">:</span>
-              <FlipDigit value={seconds} label="Secs" />
+
+            <div className="flex items-center justify-center gap-3.5 sm:gap-5">
+              <FlipDigit value={hours} label="Hours" size="lg" theme="light" />
+              <span className="text-2xl sm:text-3xl font-mono text-amber-500 mb-6 animate-pulse">:</span>
+              <FlipDigit value={minutes} label="Mins" size="lg" theme="light" />
+              <span className="text-2xl sm:text-3xl font-mono text-amber-500 mb-6 animate-pulse">:</span>
+              <FlipDigit value={seconds} label="Secs" size="lg" theme="light" />
             </div>
           </motion.div>
 
           {/* Divider */}
-          <div className="w-full h-px bg-white/5" />
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-amber-300/40 to-transparent" />
 
-          {/* Note: timer stays on page */}
+          {/* Footnote note */}
           {!isHomepage && (
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="text-white/30 text-[10px] italic"
+              transition={{ delay: 0.38 }}
+              className="text-slate-400 text-[11px] font-light italic -mt-2"
             >
               The countdown will remain visible on this page after you close this.
             </motion.p>
@@ -271,31 +307,33 @@ export function SuccessPopup({
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="text-white/30 text-[10px] italic"
+              transition={{ delay: 0.38 }}
+              className="text-slate-400 text-[11px] font-light italic -mt-2"
             >
-              You can check the timer progress at any time on the Contact page.
+              You can check your active countdown at any time on the Contact page.
             </motion.p>
           )}
 
-          {/* CTA */}
+          {/* Action Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45 }}
-            className="w-full flex flex-col gap-3"
+            transition={{ delay: 0.42 }}
+            className="w-full flex flex-col gap-3 mt-1"
           >
             <a
               href="/products"
-              className="w-full bg-luxury-gold text-white py-4 rounded-lg flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-yellow-600 transition-all group"
+              className="w-full py-4 rounded-xl font-bold text-xs uppercase tracking-[0.2em] bg-gradient-to-r from-[#b89328] via-[#d4af37] to-[#b89328] text-white shadow-lg shadow-amber-500/20 hover:shadow-amber-500/35 hover:brightness-105 hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer flex items-center justify-center gap-2 border-none"
             >
-              Get Started — Explore Products
+              <span>Get Started — Explore Products</span>
+              <ArrowRight size={14} />
             </a>
+
             <button
               onClick={onClose}
-              className="w-full text-white/30 hover:text-white/60 text-xs py-2 transition-colors cursor-pointer"
+              className="w-full text-slate-400 hover:text-slate-700 text-xs font-medium py-2 transition-colors cursor-pointer border-none bg-transparent"
             >
-              Close
+              Close Window
             </button>
           </motion.div>
         </div>

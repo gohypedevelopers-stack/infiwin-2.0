@@ -16,6 +16,7 @@ export const LeadFormSection = () => {
     city: ""
   });
 
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const validate = () => {
@@ -41,9 +42,28 @@ export const LeadFormSection = () => {
     return isValid;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (validate()) {
+      setLoading(true);
+      try {
+        await fetch('/api/send-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            formType: 'Deal Price Lock-In Lead',
+            name: formData.name,
+            phone: formData.phone,
+            city: formData.city,
+            subject: `Deal Price Lock-In Request from ${formData.name}`,
+            message: `User requested catalog & architectural assistance. City: ${formData.city}`,
+          }),
+        });
+      } catch (err) {
+        console.error('Failed to send lead email:', err);
+      }
+      setLoading(false);
+
       // Track conversion (simulated)
       if ((window as any).gtag) {
         (window as any).gtag('event', 'generate_lead', {
@@ -55,6 +75,7 @@ export const LeadFormSection = () => {
       navigate("/thank-you");
     }
   };
+
 
   return (
     <div className="bg-white rounded-lg p-8 md:p-12 shadow-xl border border-slate-100 relative h-full">

@@ -6,6 +6,8 @@ import { TOTAL_SECONDS, LS_KEY, SuccessPopup } from "../SuccessPopup.tsx";
 
 export const ContactForms = () => {
   const [form, setForm] = useState({ name: "", phone: "", city: "", height: "", length: "", subject: "General Inquiry", message: "" });
+  const [sitePic, setSitePic] = useState<string>("");
+  const [sitePicName, setSitePicName] = useState<string>("");
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [loading, setLoading] = useState(false);
   const [mobileStep, setMobileStep] = useState(1);
@@ -46,16 +48,56 @@ export const ContactForms = () => {
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setSitePicName(file.name);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setSitePic(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleDimensionsSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (length === "" || height === "") {
+      setErrors((prev) => ({ ...prev, dimensions: "Please provide Length and Height." }));
+      return;
+    }
+    setLoading(true);
+    try {
+      await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formType: 'Homepage Custom Dimensions Quote',
+          length,
+          height,
+          sitePic,
+          sitePicName,
+          message: `Homepage Custom Quote Request for Length: ${length}ft, Height: ${height}ft`
+        }),
+      });
+    } catch (error) {
+      console.error('Error submitting homepage dimensions form:', error);
+    }
+    const deadline = Date.now() + TOTAL_SECONDS * 1000;
+    try { localStorage.setItem(LS_KEY, String(deadline)); } catch { /* ignore */ }
+    setRemaining(TOTAL_SECONDS);
+    setShowPopup(true);
+    setLoading(false);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errs: Record<string, string> = {};
     if (!form.name.trim()) errs.name = "Full name is required.";
     if (!form.phone.trim()) errs.phone = "Phone number is required.";
     if (!form.city.trim()) errs.city = "City is required.";
     
-    if (length === "" || height === "") {
-      errs.dimensions = "Please provide the dimensions (Length & Height) of your space.";
-    } else {
+    if (length !== "" && height !== "") {
       let dimError = "";
       if (typeof length === 'number' && length < 6) {
         dimError += "Length must be at least 6 ft. ";
@@ -65,6 +107,7 @@ export const ContactForms = () => {
       }
       if (dimError) errs.dimensions = dimError.trim();
     }
+
     
     if (Object.keys(errs).length) {
       setErrors(errs);
@@ -72,16 +115,38 @@ export const ContactForms = () => {
     }
 
     setLoading(true);
-    setTimeout(() => {
-      const deadline = Date.now() + TOTAL_SECONDS * 1000;
-      try { localStorage.setItem(LS_KEY, String(deadline)); } catch { /* ignore */ }
-      setRemaining(TOTAL_SECONDS);
-      setShowPopup(true);
-      setLoading(false);
-      setForm({ name: "", phone: "", city: "", height: "", length: "", subject: "General Inquiry", message: "" });
-      setLength("");
-      setHeight("");
-    }, 1000);
+
+    try {
+      await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formType: 'Homepage Request a Quote',
+          name: form.name,
+          phone: form.phone,
+          city: form.city,
+          subject: form.subject,
+          message: form.message,
+          length,
+          height,
+          sitePic,
+          sitePicName,
+        }),
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
+
+    const deadline = Date.now() + TOTAL_SECONDS * 1000;
+    try { localStorage.setItem(LS_KEY, String(deadline)); } catch { /* ignore */ }
+    setRemaining(TOTAL_SECONDS);
+    setShowPopup(true);
+    setLoading(false);
+    setForm({ name: "", phone: "", city: "", height: "", length: "", subject: "General Inquiry", message: "" });
+    setLength("");
+    setHeight("");
+    setSitePic("");
+    setSitePicName("");
   };
 
   return (
@@ -104,7 +169,8 @@ export const ContactForms = () => {
           Provide your specific dimensions so our engineering team can accurately design your custom quote.
         </p>
 
-        <form onSubmit={(e) => { e.preventDefault(); alert("Quote request submitted"); }} className="space-y-6">
+        <form onSubmit={handleDimensionsSubmit} className="space-y-6">
+
           <div className="flex gap-6 mb-2">
             <div className="flex-1">
               <label className="block text-[9px] font-bold text-white/40 uppercase tracking-widest mb-3">
@@ -146,10 +212,11 @@ export const ContactForms = () => {
             </label>
             <label className="flex items-center justify-center gap-2 w-full bg-[#1a1a1a] border border-white/10 rounded-sm px-4 py-3 text-white cursor-pointer hover:bg-white/5 transition-colors">
               <Upload size={16} />
-              <span className="text-sm font-light">Choose File</span>
-              <input type="file" className="hidden" accept="image/*" />
+              <span className="text-sm font-light">{sitePicName ? sitePicName : "Choose File"}</span>
+              <input type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
             </label>
           </div>
+
 
           <div className="mt-6 pt-6 border-t border-white/10 text-center">
             <div className="flex lg:hidden flex-col gap-4 mb-8">
