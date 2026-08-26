@@ -9,11 +9,14 @@ export const Footer = () => {
           <div className="col-span-2 md:col-span-1 flex flex-col items-start text-left">
             <Link to="/" className="block -ml-3.5 md:-mt-4 lg:-mt-6 mb-2">
               <img loading="lazy" src="https://i.postimg.cc/0Q7DD7KK/H-Logo-V-BG.png"
-                alt="INFIWIN"
+                alt="INFI WINDOW SYSTEM"
                 className="h-24 md:h-28 max-w-full object-contain brightness-0 invert"
                 referrerPolicy="no-referrer"
               />
             </Link>
+            <p className="text-luxury-gold text-xs font-bold uppercase tracking-[0.2em] mb-2">
+              INFI WINDOW SYSTEM
+            </p>
             <p className="text-white/40 text-[10px] md:text-sm font-light leading-relaxed max-w-xs mb-6">
               Premium architectural glass and slide & turn frameless balcony structures designed for Indian climatic conditions.
             </p>
@@ -58,7 +61,7 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-row flex-wrap justify-between items-center border-t border-white/5 pt-10 gap-y-4 text-[9px] uppercase tracking-widest text-white/30 font-medium">
-          <p>© 2026 Infiwin Glazing Inc. All rights reserved.</p>
+          <p>© 2026 INFI WINDOW SYSTEM. All rights reserved.</p>
           <div className="flex gap-4">
             <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
