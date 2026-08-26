@@ -222,7 +222,7 @@ export default function Contact() {
         {/* Centred text content */}
         <div className="relative z-10 text-center text-white px-6 mt-12">
           <p className="text-[10px] text-luxury-gold uppercase tracking-[0.3em]">
-            Get In Touch
+            INFI WINDOW SYSTEM · GET IN TOUCH
           </p>
           <h1 className="text-4xl md:text-6xl font-serif mb-2 leading-tight max-w-4xl mx-auto">
             Start Your Project
@@ -269,9 +269,12 @@ export default function Contact() {
                 <MapPin size={18} />
               </div>
               <div>
-                <h4 className="text-[9px] font-bold text-slate-900 uppercase tracking-widest mb-2">
+                <h4 className="text-[9px] font-bold text-slate-900 uppercase tracking-widest mb-1">
                   Headquarters
                 </h4>
+                <p className="text-luxury-gold font-bold text-xs uppercase tracking-wider mb-1">
+                  INFI WINDOW SYSTEM
+                </p>
                 <p className="text-slate-500 font-light text-sm leading-relaxed">
                   H 195, Sector 63, Noida, UP - 201309
                 </p>
