@@ -131,7 +131,7 @@ export const LeadFormSection = () => {
             </p>
 
             <a
-              href="https://wa.me/917337074370?text=Hi Infiwin, I am interested in getting a Slide & Turn Balcony System. Please share your product catalog!"
+              href={`https://wa.me/919136004100?text=${encodeURIComponent("Hi Infiwin, I am reaching out from your official website. I am interested in getting a Slide & Turn Balcony System. Please share your product catalog!")}`}
               target="_blank"
               rel="noreferrer"
               className="w-full bg-green-500 hover:bg-green-600 text-white py-4 rounded-lg flex items-center justify-center gap-2 font-semibold sm:font-bold tracking-wide sm:tracking-wider uppercase text-[11px] sm:text-sm transition-colors shadow-lg"

@@ -46,7 +46,7 @@ export const Footer = () => {
             <ul className="space-y-4 text-white/60 text-[12px] md:text-sm font-light mb-8">
               <li>Corporate Office: <br />H 195, Sector 63, Noida, UP - 201309</li>
               <li><a href="mailto:hi@infiwindow.com" className="hover:text-white transition-colors">hi@infiwindow.com</a></li>
-              <li><a href="tel:+917337074370" className="hover:text-white transition-colors">+91 73370 74370</a></li>
+              <li><a href="tel:+919136004100" className="hover:text-white transition-colors">+91 91360 04100</a></li>
             </ul>
             <div className="flex gap-4 items-center flex-wrap -ml-2">
               <img src="/footer stickers/9001-removebg-preview.png" alt="ISO 9001" className="h-12 object-contain" />

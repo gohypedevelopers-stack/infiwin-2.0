@@ -428,7 +428,7 @@ export default function GalleryDetail({ type }: GalleryDetailProps) {
               Request a Quote
             </Link>
             <a
-              href={`https://wa.me/917337074370?text=Hi Infiwin, I am interested in getting the ${data.title} system. Please share more details and a quote.`}
+              href={`https://wa.me/919136004100?text=${encodeURIComponent(`Hi Infiwin, I am reaching out from your official website regarding the ${data.title} system. Please share more details and a quote.`)}`}
               target="_blank"
               rel="noreferrer"
               className="bg-green-500 hover:bg-green-600 text-white px-6 py-3.5 rounded-lg font-semibold uppercase tracking-widest text-[10px] sm:text-xs transition-colors shadow-md text-center inline-flex items-center justify-center gap-2"

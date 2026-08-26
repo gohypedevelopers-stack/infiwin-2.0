@@ -86,7 +86,7 @@ export default function App() {
 
         {/* Global Sticky WA Icon on Bottom Right */}
         <a
-          href="https://wa.me/917337074370"
+          href="https://wa.me/919136004100?text=Hi%20Infiwin%2C%20I%20am%20reaching%20out%20from%20your%20official%20website."
           target="_blank"
           rel="noreferrer"
           className="hidden md:flex fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-transform hover:scale-110 items-center justify-center"

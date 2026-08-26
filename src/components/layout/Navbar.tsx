@@ -125,7 +125,7 @@ export const Navbar = () => {
                   >
                     Request Design Quote
                   </Link>
-                  <a href="tel:+917337074370" className="border border-slate-200 text-slate-800 px-5 h-11 rounded-lg uppercase tracking-widest text-xs font-bold w-full flex items-center justify-center">
+                  <a href="tel:+919136004100" className="border border-slate-200 text-slate-800 px-5 h-11 rounded-lg uppercase tracking-widest text-xs font-bold w-full flex items-center justify-center">
                     Call
                   </a>
                 </div>
@@ -146,14 +146,14 @@ export const Navbar = () => {
             className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-100 rounded-t-2xl px-3 pt-3 pb-2 flex items-center justify-between shadow-2xl pointer-events-auto"
           >
             <a
-              href="tel:+917337074370"
+              href="tel:+919136004100"
               className="w-12 h-12 rounded-lg bg-slate-900 text-white flex items-center justify-center active:bg-slate-800 shrink-0"
               aria-label="Call Us"
             >
               <Phone size={18} />
             </a>
             <a
-              href="https://wa.me/917337074370"
+              href="https://wa.me/919136004100?text=Hi%20Infiwin%2C%20I%20am%20reaching%20out%20from%20your%20official%20website."
               target="_blank"
               rel="noreferrer"
               className="w-12 h-12 rounded-lg bg-[#25D366] text-white flex items-center justify-center active:bg-green-600 shrink-0 mx-2"

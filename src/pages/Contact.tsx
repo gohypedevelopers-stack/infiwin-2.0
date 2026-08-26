@@ -190,7 +190,7 @@ export default function Contact() {
                 <h4 className="text-[9px] font-bold text-slate-900 uppercase tracking-widest mb-2">
                   Call Us
                 </h4>
-                <p className="text-slate-500 font-light text-sm">+91 73370 74370</p>
+                <p className="text-slate-500 font-light text-sm">+91 91360 04100</p>
               </div>
             </div>
 
@@ -360,7 +360,7 @@ export default function Contact() {
                   </p>
 
                   <a
-                    href={`https://wa.me/917337074370?text=Hi Infiwin, I am interested in getting a custom quote based on my dimensions. Length: ${length}ft, Height: ${height}ft`}
+                    href={`https://wa.me/919136004100?text=${encodeURIComponent(`Hi Infiwin, I am reaching out from your official website for a custom quote based on my dimensions. Length: ${length}ft, Height: ${height}ft`)}`}
                     target="_blank"
                     rel="noreferrer"
                     className="w-full bg-green-500 hover:bg-green-600 text-white py-4 rounded-lg flex items-center justify-center gap-2 font-semibold sm:font-bold tracking-wide sm:tracking-wider uppercase text-[11px] sm:text-sm transition-colors shadow-lg cursor-pointer"

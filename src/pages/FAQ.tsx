@@ -189,7 +189,7 @@ export default function FAQ() {
           </p>
           <div className="flex justify-center">
             <a
-              href="https://wa.me/917337074370"
+              href="https://wa.me/919136004100?text=Hi%20Infiwin%2C%20I%20am%20reaching%20out%20from%20your%20official%20website%20with%20a%20query."
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-black px-8 py-3 rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-[#25D366] hover:text-white transition-all flex items-center gap-2 group shadow-md hover:shadow-lg"

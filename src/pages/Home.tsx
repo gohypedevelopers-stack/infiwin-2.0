@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { HeroSection } from "../components/home/HeroSection";
 import { BenefitsSection } from "../components/home/BenefitsSection";
 import { BestSellerSection } from "../components/home/BestSellerSection";
@@ -7,10 +8,34 @@ import { ApplicationsSection } from "../components/home/ApplicationsSection";
 import { TestimonialsSection } from "../components/home/TestimonialsSection";
 import { ContactForms } from "../components/home/ContactForms.tsx";
 import { FAQSection } from "../components/home/FAQSection";
+import { HomeVideoIntroOverlay } from "../components/home/HomeVideoIntroOverlay";
 
 export default function Home() {
+  const [showIntroVideo, setShowIntroVideo] = useState(() => {
+    try {
+      return !sessionStorage.getItem("infiwin_intro_shown");
+    } catch {
+      return false;
+    }
+  });
+
+  const handleCloseIntro = () => {
+    try {
+      sessionStorage.setItem("infiwin_intro_shown", "true");
+    } catch {
+      // ignore
+    }
+    setShowIntroVideo(false);
+  };
+
   return (
     <div className="w-full">
+      {/* Upper Layer Video Overlay (shown only once on first website open) */}
+      <HomeVideoIntroOverlay
+        isOpen={showIntroVideo}
+        onClose={handleCloseIntro}
+      />
+
       <HeroSection />
       <BenefitsSection />
       <BestSellerSection />
