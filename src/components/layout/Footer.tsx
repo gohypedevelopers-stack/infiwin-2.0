@@ -47,6 +47,7 @@ export const Footer = () => {
           <div className="col-span-2 md:col-span-1 text-left">
             <div className="text-xs md:text-sm uppercase tracking-widest text-white font-bold mb-4">Contact Info</div>
             <ul className="space-y-4 text-white/60 text-[12px] md:text-sm font-light mb-8">
+              <li className="text-luxury-gold font-bold text-xs uppercase tracking-widest">INFI WINDOW SYSTEM</li>
               <li>Corporate Office: <br />H 195, Sector 63, Noida, UP - 201309</li>
               <li><a href="mailto:connect@infiwindow.com" className="hover:text-white transition-colors">connect@infiwindow.com</a></li>
 
